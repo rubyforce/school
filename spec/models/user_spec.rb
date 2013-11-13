@@ -216,24 +216,3 @@ describe User do
   end
 end
 
-describe User do
-  let(:user) { create(:user) }
-
-  describe '.total_invested' do
-    let!(:project1) { create(:project, price: 100, shares: 1) }
-    let!(:project2) { create(:project, price: 200, shares: 1) }
-
-    let(:investments1) { InvestmentsCreator.new(user, project1) }
-    let(:investments2) { InvestmentsCreator.new(user, project2) }
-
-    before do
-      investments1.create(quantity: 1)
-      investments2.create(quantity: 2)
-    end
-
-    it 'should calculate total investments' do
-      expect(user.reload.total_invested).to eq(500)
-    end
-  end
-end
-
