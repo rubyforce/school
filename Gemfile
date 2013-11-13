@@ -9,7 +9,7 @@ gem 'rails', '4.0.0'
 gem "rack-cache"
 
 gem 'grape'
-gem 'unicorn'
+gem 'thin'
 
 group :assets do
   gem 'sass-rails'
