@@ -68,66 +68,6 @@ class CreateDatabase < ActiveRecord::Migration
       t.datetime "updated_at"
     end
 
-    create_table "contacts", force: true do |t|
-      t.string   "name"
-      t.string   "email",      null: false
-      t.text     "message",    null: false
-      t.datetime "created_at"
-      t.datetime "updated_at"
-    end
-
-    create_table "investments", force: true do |t|
-      t.string   "identification_document"
-      t.datetime "created_at"
-      t.datetime "updated_at"
-      t.integer  "project_id",              null: false
-      t.string   "address_line_1"
-      t.string   "address_line_2"
-      t.string   "city"
-      t.integer  "zip_code"
-      t.integer  "phone_area_code"
-      t.integer  "phone_prefix"
-      t.integer  "phone_last_four"
-      t.boolean  "identification"
-      t.boolean  "individual_income"
-      t.boolean  "joint_income"
-      t.boolean  "business_representative"
-      t.boolean  "securities_firm"
-      t.boolean  "company_director"
-      t.boolean  "company_officer"
-      t.text     "net_worth"
-      t.integer  "quantity"
-      t.integer  "user_id"
-    end
-
-    add_index "investments", ["project_id"], name: "index_investments_on_project_id", using: :btree
-    add_index "investments", ["user_id"], name: "index_investments_on_user_id", using: :btree
-
-    create_table "posts", force: true do |t|
-      t.string   "title"
-      t.text     "content"
-      t.datetime "created_at"
-      t.datetime "updated_at"
-      t.string   "post_image"
-    end
-
-    create_table "projects", force: true do |t|
-      t.string   "name"
-      t.float    "price"
-      t.text     "description"
-      t.datetime "created_at"
-      t.datetime "updated_at"
-      t.string   "image"
-      t.string   "street"
-      t.string   "city"
-      t.string   "country"
-      t.float    "percent"
-      t.text     "short_description"
-      t.float    "raised"
-      t.float    "latitude"
-      t.float    "longitude"
-    end
-
     create_table "sessions", force: true do |t|
       t.string   "session_id", null: false
       t.text     "data"
@@ -137,12 +77,6 @@ class CreateDatabase < ActiveRecord::Migration
 
     add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
     add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
-
-    create_table "subscriptions", force: true do |t|
-      t.string   "email"
-      t.datetime "created_at"
-      t.datetime "updated_at"
-    end
 
     create_table "users", force: true do |t|
       t.string   "email",                   default: "",        null: false
