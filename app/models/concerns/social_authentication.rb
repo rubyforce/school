@@ -57,7 +57,9 @@ module SocialAuthentication
         user = create_user_by_auth(auth, name: auth.extra['raw_info']['name'], email: auth.info["email"])
       end
 
-      user.update_attributes(remote_facebook_avatar_url: image, facebook_link: link)
+      if user.present?
+        user.update_attributes(remote_facebook_avatar_url: image, facebook_link: link)
+      end
 
       user
     end
@@ -72,7 +74,9 @@ module SocialAuthentication
         user = create_user_by_auth(auth, name: auth.info["name"], email: auth.info["email"])
       end
 
-      user.update_attributes(remote_google_plus_avatar_url: image, google_plus_link: link)
+      if user.present?
+        user.update_attributes(remote_google_plus_avatar_url: image, google_plus_link: link)
+      end
 
       user
     end
@@ -87,7 +91,9 @@ module SocialAuthentication
         user = create_user_by_auth(auth, name: auth.info["name"], email: auth.info["email"])
       end
 
-      user.update_attributes(remote_linkedin_avatar_url: image, linkedin_link: link)
+      if user.present?
+        user.update_attributes(remote_linkedin_avatar_url: image, linkedin_link: link)
+      end
 
       user
     end

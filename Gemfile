@@ -86,6 +86,7 @@ gem 'pg'
 group :development, :test do
   gem 'bullet'
   gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-mocks'
   gem 'shoulda-matchers'
   gem 'debugger'
   gem 'factory_girl_rails'
@@ -94,17 +95,11 @@ group :development, :test do
   gem 'spork-rails', github: 'railstutorial/spork-rails'
   gem 'guard-spork'
   gem 'database_cleaner'
-end
-
-group :development do
-  gem 'heroku'
-  gem 'foreman'
-end
-
-group :development do
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-rspec'
+  gem 'heroku'
+  gem 'foreman'
 end
 
 gem 'omniauth'

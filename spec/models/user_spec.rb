@@ -36,7 +36,7 @@ describe User do
   end
 end
 
-describe User, :pending => true do
+describe User do
   describe '#find_for_facebook' do
     context 'with valid auth' do
       before do
@@ -61,7 +61,7 @@ describe User, :pending => true do
 
     context 'with invalid auth' do
       before do
-        @auth = double('auth', provider: 'facebook', uid: 'uid', extra: { 'raw_info' => { 'name' => '' } }, info: { 'email' => '' })
+        @auth = double('auth', provider: 'facebook', uid: 'uid', extra: { 'raw_info' => { 'name' => '' } }, info: { 'email' => '', 'urls' => { 'Facebook' => 'http://facebook.com' } })
         @user = User.find_for_facebook(nil, @auth)
       end
 
@@ -78,7 +78,8 @@ describe User, :pending => true do
   describe '#find_for_google' do
     context 'with valid auth' do
       before do
-        @user = User.find_for_google(nil, @google_auth)
+        @auth = double('auth', provider: 'google', uid: 'google-id', info: { 'email' => 'john.watson@example.com', 'name' => 'John Watson', 'urls' => { 'Google' => 'http://google.com/' } })
+        @user = User.find_for_google(nil, @auth)
       end
 
       it 'should create a new user by google auth' do
@@ -98,7 +99,7 @@ describe User, :pending => true do
 
     context 'with invalid auth' do
       before do
-        @auth = double('auth', provider: 'google', uid: 'uid', info: { 'email' => '', 'name' => 'John Watson' })
+        @auth = double('auth', provider: 'google', uid: 'uid', info: { 'email' => '', 'name' => 'John Watson', 'urls' => { 'Google' => 'http://google.com/' } })
         @user = User.find_for_google(nil, @auth)
       end
 
@@ -136,7 +137,7 @@ describe User, :pending => true do
 
     context 'with invalid auth' do
       before do
-        @auth = double('auth', provider: 'linkedin', uid: 'uid', info: { 'email' => '', 'name' => 'John Watson' })
+        @auth = double('auth', provider: 'linkedin', uid: 'uid', info: { 'email' => '', 'name' => 'John Watson', 'urls' => { 'public_profile' => 'http://public.com' } })
         @user = User.find_for_linkedin(nil, @auth)
       end
 

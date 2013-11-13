@@ -527,6 +527,7 @@ DEPENDENCIES
   redis
   redis-rails
   redis-store
+  rspec-mocks
   rspec-rails (~> 2.0)
   sass-rails
   sdoc
