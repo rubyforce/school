@@ -19,7 +19,6 @@
 //= require vendors/jquery.fancybox
 //= require ajax
 //= require sign-in_sign-up
-//= require rating
 //
 //= require vendors/infobubble
 //= require vendors/semantic.min
@@ -29,9 +28,3 @@
 //= require angular-ui
 //= require ng-rails-csrf
 //= require base
-//
-
-$(function() {
-  $('.ui.rating').rating();
-});
-

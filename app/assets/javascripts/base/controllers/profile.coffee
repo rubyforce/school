@@ -4,7 +4,6 @@ greenarea.controller 'ProfileController', [
     $scope.profileTab = 1
 
     $scope.user     = $element.data('user')
-    $scope.projects = $element.data('projects')
     $scope.urls     = $element.data('urls')
 
     $scope.open = (link) ->
