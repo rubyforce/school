@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <title><%= t('.title') %></title>
+    <meta charset="utf-8">
+    <meta name="description" content="html meta description" />
+    <meta name="keywords" content="html, meta, keywords" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link type="text/css" rel="stylesheet" href="/css/fancybox.css">
+
+    <%= yield :meta %>
+
+    <%= javascript_include_tag "application"%>
+    <%= stylesheet_link_tag "application" %>
+    <%= csrf_meta_tags %>
+
+    <!-- sensor=false tells google images we aren't trying to sense the user's location -->
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+    <%= analytics_init if Rails.env.production? %>
+
+    <!--[if lte IE 8]> <%= stylesheet_link_tag "ie8" %><![endif]-->
+
+    <%= stylesheet_link_tag '/css/semantic.min' %>
+  </head>
+
+  <body id="example" ng-controller='ApplicationController'>
+    <%= gflash %>
+
+    <div class="ui fixed transparent inverted main menu">
+      <div class="container" id="header">
+        <%= render 'layouts/menu' %>
+      </div>
+    </div>
+
+    <%= yield %>
+
+    <div class="ui divider"></div>
+
+    <div class="ui divided horizontal footer link list">
+      <a href="https://github.com/rubyforce/greenarea" class="item">Github</a>
+      <a href="https://github.com/rubyforce/greenarea-ios" class="item">Github iOS</a>
+      <a href="http://greenarea.herokuapp.com/" class="item">Greenarea</a>
+      <div class="item">Greenarea 2013</div>
+    </div>
+
+    <%= render 'layouts/js' %>
+  </body>
+</html>
+
