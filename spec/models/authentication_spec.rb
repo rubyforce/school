@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: authentications
+#
+#  id         :integer          not null, primary key
+#  provider   :string(255)      not null
+#  uid        :string(255)      not null
+#  email      :string(255)      not null
+#  user_id    :integer          not null
+#  created_at :datetime
+#  updated_at :datetime
+#  auth_token :string(255)
+#
+
 require 'spec_helper'
 
 describe Authentication do
