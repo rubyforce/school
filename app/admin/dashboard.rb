@@ -9,7 +9,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Users" do
           ul do
-            User.recent(10).map do |user|
+            User.all.map do |user|
               li link_to(user.email, admin_user_path(user))
             end
           end

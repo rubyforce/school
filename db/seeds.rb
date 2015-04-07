@@ -1,5 +1,5 @@
 User.destroy_all
-Project.destroy_all
+# Project.destroy_all
 
 User.create do |user|
   user.name                  = "Super Admin"
