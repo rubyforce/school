@@ -1,4 +1,4 @@
-class Users::RegistrationsController < Devise::RegistrationsController
+class StudentUsers::RegistrationsController < Devise::RegistrationsController
   layout false, only: [:new, :create]
 
   def create

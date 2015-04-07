@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150406151816) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
     t.text     "body"
@@ -81,69 +84,6 @@ ActiveRecord::Schema.define(version: 20150406151816) do
     t.datetime "updated_at"
   end
 
-  create_table "contacts", force: true do |t|
-    t.string   "name"
-    t.string   "email",      null: false
-    t.text     "message",    null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "employees", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "employees", ["email"], name: "index_employees_on_email", unique: true, using: :btree
-  add_index "employees", ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true, using: :btree
-
-  create_table "investments", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "project_id", null: false
-    t.integer  "quantity"
-    t.integer  "user_id"
-  end
-
-  add_index "investments", ["project_id"], name: "index_investments_on_project_id", using: :btree
-  add_index "investments", ["user_id"], name: "index_investments_on_user_id", using: :btree
-
-  create_table "posts", force: true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "post_image"
-  end
-
-  create_table "projects", force: true do |t|
-    t.string   "name"
-    t.float    "price"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image"
-    t.string   "street"
-    t.string   "city"
-    t.string   "country"
-    t.float    "percent"
-    t.text     "short_description"
-    t.float    "raised"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "user_id"
-  end
-
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
     t.text     "data"
@@ -154,11 +94,28 @@ ActiveRecord::Schema.define(version: 20150406151816) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
-  create_table "subscriptions", force: true do |t|
-    t.string   "email"
+  create_table "student_users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "middle_name"
+    t.integer  "age"
+    t.string   "gender"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "student_users", ["email"], name: "index_student_users_on_email", unique: true, using: :btree
+  add_index "student_users", ["reset_password_token"], name: "index_student_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",        null: false
