@@ -1,0 +1,15 @@
+<% user = activity.trackable %>
+<% project = activity.owner %>
+
+<div class="circular ui mini image">
+  <div>
+    <a href="<%= user_path(user) %>" title="<%= user.name %>"><img src="<%= user.profile_image %>" /></a>
+  </div>
+</div>
+<div class="entry">
+  <h5 class="entry-title" style="margin-left: 50px; margin-top: -30px;">
+    <a href="<%= user_path(user) %>"><%= user == p[:current_user] ? "You" : user.name %></a> invested to <a href="<%= project_path(project) %>"><%= project.name %></a>
+  </h5>
+</div>
+
+

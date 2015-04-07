@@ -1,0 +1,30 @@
+<div class="ui form segment">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %>
+    <div class="field">
+      <label>Email</label>
+      <div class="ui left labeled icon input">
+        <%= f.email_field :email, placeholder: "E-mail"%>
+        <i class="mail icon"></i>
+        <div class="ui corner label">
+          <i class="icon asterisk"></i>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <div class="ui left labeled icon input">
+        <%= f.password_field :password, placeholder: "Password"%>
+        <i class="lock icon"></i>
+        <div class="ui corner label">
+          <i class="icon asterisk"></i>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <%= f.submit "Log in", class: "ui blue submit button" %>
+    </div>
+
+    <%= render 'users/sessions/social' %>
+  </div>
+<% end %>

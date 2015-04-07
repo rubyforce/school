@@ -1,0 +1,18 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: greenarea_development
+  pool: 5
+  username: postgres
+  password: '123456'
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  database: greenarea_test
+  pool: 5
+  username: postgres
+  password: '123456'
+
