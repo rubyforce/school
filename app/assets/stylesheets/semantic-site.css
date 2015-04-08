@@ -1379,3 +1379,6 @@ body.progress .ui.progress .bar {
 .ui.buttons {
   float: right;
 }
+.positive.ui.button {
+  float: right;
+}
