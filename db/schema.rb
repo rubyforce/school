@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408175728) do
+ActiveRecord::Schema.define(version: 20150408202643) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(version: 20150408175728) do
     t.string   "job_title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email"
     t.boolean  "gender"
     t.text     "address"
     t.string   "middle_name"
@@ -95,6 +94,7 @@ ActiveRecord::Schema.define(version: 20150408175728) do
     t.integer  "salary"
     t.integer  "contact_no"
     t.string   "entry_no",      default: "auto"
+    t.string   "status"
   end
 
   create_table "sessions", force: true do |t|

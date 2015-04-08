@@ -12,9 +12,6 @@
     <%= e.text_field :last_name, :placeholder => "Last Name" %>
   </div>
   <div class="field">
-    <%= e.text_field :email, :placeholder => "Email" %>
-  </div>
-  <div class="field">
     <%= e.text_field :job_title, :placeholder => "Job Title" %>
   </div>
   <div class="field">
@@ -34,7 +31,7 @@
   </div>
   <div class="field">
     <%= e.label :marital_status %>
-    <%= select_tag(:email, options_for_select([['Married', 1], ['Not married', 2]]))%>
+    <%= select(:employee, :status, [['Married', 1], ['Not married', 2]]) %>
   </div>
   <div class="ui buttons">
   	<%= link_to "Cancel", :back, :class => "ui button" %>
