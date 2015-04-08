@@ -1,0 +1,5 @@
+<form class="ui fluid form">
+	<%= form_for [:admin, @employee] do |e| %>
+	  <% render :partial => 'form', :locals => { :e => e } %>
+	<% end %>
+</form>
