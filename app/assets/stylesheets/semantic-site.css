@@ -1371,3 +1371,11 @@ body.progress .ui.progress .bar {
   width: 80%;
   margin: 100px auto;
 }
+.ui.fluid.form {
+  margin-top: 100px;
+  width: 50% !important;
+  margin: 100px auto;
+}
+.ui.buttons {
+  float: right;
+}
