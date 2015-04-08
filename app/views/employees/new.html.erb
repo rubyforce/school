@@ -1,0 +1,21 @@
+<form class="ui fluid form">
+	<%= form_for @employee do |e| %>
+	  <div class="field">
+	    <%= e.text_field :first_name, :placeholder => "First Name" %>
+	  </div>
+	  <div class="field">
+	    <%= e.text_field :last_name, :placeholder => "Last Name" %>
+	  </div>
+	  <div class="field">
+	    <%= e.text_field :email, :placeholder => "Email" %>
+	  </div>
+	  <div class="field">
+	    <%= e.text_field :job_title, :placeholder => "Job Title" %>
+	  </div>
+	  <div class="ui buttons">
+	  	<%= link_to "Cancel", :back, :class => "ui button" %>
+		  <div class="or"></div>
+		  <%= e.submit "Save", :class => "ui positive button" %>
+		</div>
+	<% end %>
+</form>
