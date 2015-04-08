@@ -1,6 +1,12 @@
 <form class="ui fluid form">
   <div class="field">
+    <%= e.text_field :entry_no %>
+  </div>
+  <div class="field">
     <%= e.text_field :first_name, :placeholder => "First Name" %>
+  </div>
+  <div class="field">
+    <%= e.text_field :middle_name, :placeholder => "Father's/Spouse's name" %>
   </div>
   <div class="field">
     <%= e.text_field :last_name, :placeholder => "Last Name" %>
@@ -10,6 +16,21 @@
   </div>
   <div class="field">
     <%= e.text_field :job_title, :placeholder => "Job Title" %>
+  </div>
+  <div class="field">
+    <%= e.input :gender, :as => :radio, :label => "Gender", :collection => [["Male", false], ["Female", true]] %>
+  </div>
+  <div class="field">
+    <%= e.text_area :address, :placeholder => "Address" %>
+  </div>
+  <div class="field">
+    <%= e.text_field :qualification, :placeholder => "Qualification" %>
+  </div>
+  <div class="field">
+    <%= e.text_field :salary, :placeholder => "Salary" %>
+  </div>
+  <div class="field">
+    <%= e.text_field :contact_no, :placeholder => "Contact №" %>
   </div>
   <div class="ui buttons">
   	<%= link_to "Cancel", :back, :class => "ui button" %>
