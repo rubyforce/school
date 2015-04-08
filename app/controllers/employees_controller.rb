@@ -22,11 +22,11 @@ class EmployeesController < ApplicationController
 	end
 
 	def edit
-		@employee = Employee.find(params[:employee])
+		@employee = Employee.find(params[:id])
 	end
 
 	def update
-		@employee = Employee.find(params[:employee])
+		@employee = Employee.find(params[:id])
 
 		if @employee.update_attributes(params[:employee])
 			redirect_to employees_path

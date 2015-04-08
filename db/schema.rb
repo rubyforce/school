@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408095500) do
+ActiveRecord::Schema.define(version: 20150408112058) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -101,27 +104,15 @@ ActiveRecord::Schema.define(version: 20150408095500) do
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "student_users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
     t.string   "first_name"
-    t.string   "last_name"
     t.string   "middle_name"
-    t.integer  "age"
+    t.string   "last_name"
+    t.string   "email",       default: "", null: false
     t.string   "gender"
+    t.integer  "age"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "student_users", ["email"], name: "index_student_users_on_email", unique: true, using: :btree
-  add_index "student_users", ["reset_password_token"], name: "index_student_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",        null: false
