@@ -32,6 +32,10 @@
   <div class="field">
     <%= e.text_field :contact_no, :placeholder => "Contact №" %>
   </div>
+  <div class="field">
+    <%= e.label :marital_status %>
+    <%= select_tag(:email, options_for_select([['Married', 1], ['Not married', 2]]))%>
+  </div>
   <div class="ui buttons">
   	<%= link_to "Cancel", :back, :class => "ui button" %>
 	  <div class="or"></div>
