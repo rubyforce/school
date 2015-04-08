@@ -1,9 +1,12 @@
 require File.expand_path(File.join(Rails.root, 'api/api.rb'))
 
 Greenarea::Application.routes.draw do
-  devise_for :student_users, :controllers => { :sessions => :'student_users/sessions' }
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  namespace :admin do
+    resources :student_users
+  end
+
+  # devise_for :admin_users, ActiveAdmin::Devise.config
+  # ActiveAdmin.routes(self)
 
   devise_for :users, :controllers => { :omniauth_callbacks => :omniauth_callbacks, :registrations => :"users/registrations", :passwords => :"users/passwords", :sessions => :"users/sessions" }
 
