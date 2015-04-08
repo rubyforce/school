@@ -1366,3 +1366,8 @@ body.progress .ui.progress .bar {
     padding: 0% 23%;
   }
 }
+.column.table {
+  margin-top: 100px;
+  width: 80%;
+  margin: 100px auto;
+}
