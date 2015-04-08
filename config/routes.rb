@@ -1,7 +1,6 @@
 require File.expand_path(File.join(Rails.root, 'api/api.rb'))
 
 Greenarea::Application.routes.draw do
-  devise_for :employees
   devise_for :student_users, :controllers => { :sessions => :'student_users/sessions' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -12,6 +11,7 @@ Greenarea::Application.routes.draw do
   root 'home#index'
 
   resources :users, only: :show
+  resources :employees
 
   devise_scope :user do
     put '/users/upload_images', to: 'users/registrations#upload_images'
