@@ -19,9 +19,9 @@
           <td><%= su.created_at.strftime("%d/%m/%Y") %></td>
           <td><%= su.email %></td>
           <td><%= su.gender %></td>
-          <td><%= link_to "Show", student_user_path(su) %></td>
-          <td><%= link_to "Edit", edit_student_user_path(su) %></td>
-          <td><%= link_to "Delete", su, :confirm => "Are you sure?", :method => :delete %></td>
+          <td><%= link_to "Show", admin_student_user_path(su) %></td>
+          <td><%= link_to "Edit", edit_admin_student_user_path(su) %></td>
+          <td><%= link_to "Delete", [:admin, su], :confirm => "Are you sure?", :method => :delete %></td>
       </tr>
       <% end %>
     </tbody>
@@ -30,7 +30,7 @@
         <th></th>
         <th colspan="4">
           <div class="ui right floated small primary labeled icon button">
-            <i class="user icon"></i> <%=link_to "Add Student", new_student_user_path%>
+            <i class="user icon"></i> <%=link_to "Add Student", new_admin_student_user_path%>
           </div>
         </th>
       </tr>

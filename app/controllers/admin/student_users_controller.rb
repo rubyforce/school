@@ -1,4 +1,4 @@
-class StudentUsersController < ApplicationController
+class Admin::StudentUsersController < ApplicationController
   def index
     @student_users = StudentUser.all
   end
@@ -15,7 +15,7 @@ class StudentUsersController < ApplicationController
     @student_user = StudentUser.new(params[:student_user])
 
     if @student_user.save
-      redirect_to student_users_path
+      redirect_to admin_student_users_path
     else
       render :new
     end
@@ -29,7 +29,7 @@ class StudentUsersController < ApplicationController
     @student_user = StudentUser.find(params[:id])
 
     if @student_user.update_attributes(params[:student_user])
-      redirect_to student_users_path
+      redirect_to admin_student_users_path
     else
       render :edit
     end
@@ -39,6 +39,6 @@ class StudentUsersController < ApplicationController
     @student_user = StudentUser.find(params[:id])
     @student_user.destroy
 
-    redirect_to student_users_path
+    redirect_to admin_student_users_path
   end
 end
