@@ -18,7 +18,9 @@
 		      <td><%= employee.created_at.strftime("%d/%m/%Y") %></td>
 		      <td><%= employee.email %></td>
 		      <td><%= employee.job_title %></td>
-		      <td><%= link_to "Edit", edit_employee_path(employee) %></td>
+		      <td><%= link_to "Edit", edit_employee_path(employee) %>
+		      	<%= link_to "Destroy", employee, :method => :delete %>
+		      </td>
 	    </tr>
 	    <% end %>
 	  </tbody>
