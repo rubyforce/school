@@ -20,11 +20,4 @@
 //= require ajax
 //= require sign-in_sign-up
 //
-//= require vendors/infobubble
 //= require vendors/semantic.min
-//
-//= require angular
-//= require angularjs/rails/resource
-//= require angular-ui
-//= require ng-rails-csrf
-//= require base

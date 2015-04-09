@@ -11,40 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131005100953) do
+ActiveRecord::Schema.define(version: 20150409093958) do
 
-  create_table "active_admin_comments", force: true do |t|
-    t.string   "namespace"
-    t.text     "body"
-    t.string   "resource_id",   null: false
-    t.string   "resource_type", null: false
-    t.integer  "author_id"
-    t.string   "author_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
-
-  create_table "activities", force: true do |t|
-    t.integer  "trackable_id"
-    t.string   "trackable_type"
-    t.integer  "owner_id"
-    t.string   "owner_type"
-    t.string   "key"
-    t.text     "parameters"
-    t.integer  "recipient_id"
-    t.string   "recipient_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "activities", ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
-  add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type", using: :btree
-
-  create_table "admin_users", force: true do |t|
+  create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -62,7 +34,7 @@ ActiveRecord::Schema.define(version: 20131005100953) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "authentications", force: true do |t|
+  create_table "authentications", force: :cascade do |t|
     t.string   "provider",   null: false
     t.string   "uid",        null: false
     t.string   "email",      null: false
@@ -71,7 +43,7 @@ ActiveRecord::Schema.define(version: 20131005100953) do
     t.datetime "updated_at"
   end
 
-  create_table "carrier_wave_files", force: true do |t|
+  create_table "carrier_wave_files", force: :cascade do |t|
     t.string   "identifier"
     t.string   "original_filename"
     t.string   "content_type"
@@ -81,52 +53,7 @@ ActiveRecord::Schema.define(version: 20131005100953) do
     t.datetime "updated_at"
   end
 
-  create_table "contacts", force: true do |t|
-    t.string   "name"
-    t.string   "email",      null: false
-    t.text     "message",    null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "investments", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "project_id", null: false
-    t.integer  "quantity"
-    t.integer  "user_id"
-  end
-
-  add_index "investments", ["project_id"], name: "index_investments_on_project_id", using: :btree
-  add_index "investments", ["user_id"], name: "index_investments_on_user_id", using: :btree
-
-  create_table "posts", force: true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "post_image"
-  end
-
-  create_table "projects", force: true do |t|
-    t.string   "name"
-    t.float    "price"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image"
-    t.string   "street"
-    t.string   "city"
-    t.string   "country"
-    t.float    "percent"
-    t.text     "short_description"
-    t.float    "raised"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "user_id"
-  end
-
-  create_table "sessions", force: true do |t|
+  create_table "sessions", force: :cascade do |t|
     t.string   "session_id", null: false
     t.text     "data"
     t.datetime "created_at"
@@ -136,13 +63,7 @@ ActiveRecord::Schema.define(version: 20131005100953) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
-  create_table "subscriptions", force: true do |t|
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",        null: false
     t.string   "encrypted_password",     default: "",        null: false
     t.string   "reset_password_token"

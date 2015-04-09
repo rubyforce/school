@@ -57,8 +57,5 @@ class User < ActiveRecord::Base
   include SocialAuthentication
   include Addressable
   include Nameable
-
-  include PublicActivity::Model
-  tracked skip_defaults: true
 end
 
