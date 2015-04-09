@@ -13,7 +13,6 @@ gem "rack-cache"
 
 gem 'minitest'
 
-gem 'therubyracer', '0.12.1'
 gem 'libv8', '3.16.14.7'
 
 gem 'newrelic_rpm'
@@ -104,3 +103,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
+
+# Usage Twitter Bootstrap
+gem 'therubyracer', '0.12.1'
+gem "less-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
