@@ -25,14 +25,25 @@
     <%= stylesheet_link_tag '/css/semantic.min' %>
   </head>
 
-  <body id="example" ng-controller='ApplicationController'>
+  <body>
     <%= gflash %>
 
-    <div class="ui fixed transparent inverted main menu">
-      <div class="container" id="header">
-        <%= render 'layouts/menu' %>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <%= render 'layouts/menu' %>
+        </div><!--/.nav-collapse -->
       </div>
-    </div>
+    </nav>
 
     <%= yield %>
 
@@ -46,4 +57,3 @@
     <%= render 'layouts/js' %>
   </body>
 </html>
-

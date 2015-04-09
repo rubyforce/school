@@ -1,18 +1,21 @@
-<% unless current_user.present? %>
-  <div class="green item">
-    <a class="sign-in fancybox.ajax" href="<%= new_user_session_path %>"><i class="sign in icon "></i> Sign in</a>
-  </div>
-  <div class="red item">
-    <a class="sign-up fancybox.ajax" href="<%= new_user_registration_path %>"><i class="sign up icon"></i> Sign up</a>
-  </div>
-<% else %>
-  <div class="green item">
-    <a class="ui image label fancybox.ajax" href="<%= user_path(current_user) %>">
-      <%= image_tag current_user.profile_image, alt: current_user.name %>
-      <%= current_user.name %>
-    </a>
-  </div>
-  <div class="red item">
-    <i class="sign out icon"></i><%= link_to('Log Out', destroy_user_session_path, :method => :delete)%>
-  </div>
-<% end %>
+<ul class="nav navbar-nav navbar-right">
+  <% unless current_user.present? %>
+    <li>
+      <a class="sign-in fancybox.ajax" href="<%= new_user_session_path %>">Sign In</a>
+    </li>
+    <li>
+      <a class="sign-up fancybox.ajax" href="<%= new_user_registration_path %>">Sign Up</a>
+    </li>
+  <% else %>
+    <li class="active">
+      <a href="<%= user_path(current_user) %>">
+        <%= image_tag current_user.profile_image, alt: current_user.name %>
+        <%= current_user.name %>
+        <span class="sr-only">(current)</span>
+      </a>
+    </li>
+    <li>
+      <%= link_to('Log Out', destroy_user_session_path, :method => :delete)%>
+    </li>
+  <% end %>
+</ul>
