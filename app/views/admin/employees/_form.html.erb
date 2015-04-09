@@ -15,7 +15,7 @@
     <%= e.text_field :job_title, :placeholder => "Job Title" %>
   </div>
   <div class="field">
-    <%= e.input :gender, :as => :radio, :label => "Gender", :collection => [["Male", false], ["Female", true]] %>
+    <%= e.input :gender, :as => :radio, :label => "Gender", :collection => [["Male", 'male'], ["Female", 'female']] %>
   </div>
   <div class="field">
     <%= e.text_area :address, :placeholder => "Address" %>
@@ -27,7 +27,7 @@
     <%= e.text_field :salary, :placeholder => "Salary" %>
   </div>
   <div class="field">
-    <%= e.text_field :contact_no, :placeholder => "Contact №" %>
+    <%= e.text_field :contact_no, :placeholder => "Contact #" %>
   </div>
   <div class="field">
     <%= e.label :marital_status %>
