@@ -4,13 +4,13 @@ class StudentUser < ActiveRecord::Base
     :finance_mode, :entry_no, :group_no, :academic_year, :father_name, :mother_name,
     :remarks, :last_school
 
-  admission = [SOMETHING1 = 1, SOMETHING2 = 2]
+  ADMISSION = { admission1: 1, admission2: 2 }
   place_of_birth = [BELARUS = 1, USA = 2, INDIA = 3]
-  religion = [RELIGION1 = 1, RELIGION2 = 2]
-  caste = [CASTE1 = 1, CASTE2 = 2]
-  nationality = [NATIONALITY1 = 1, NATIONALITY2 = 2]
-  standard = [STANDARD1 = 1, STANDARD2 = 2]
-  division = [DIVISION1 = 1, DIVISION2 = 2]
-  transport = [CAR = 1, BUS = 2]
-  finance_mode = [FINANCE1 = 1, FINANCE2 = 2]
+  RELIGION = { religion1: 1, religion2: 2 }
+  CASTE = { caste1: 1, caste2: 2 }
+  NATIONALITY = { nationality1: 1, nationality2: 2 }
+  STANDARD = { standard1: 1, standard2: 2 }
+  DIVISION = { division1: 1, division2: 2 }
+  TRANSPORT = { car: 1, bus: 2 }
+  FINANCE_MODE = { finance1: 1, finance2: 2 }
 end
