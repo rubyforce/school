@@ -1,9 +1,4 @@
-<% if @employee.errors.any? %>
-  <% e.errors.full_messages.each do |err| %>
-    <%= err %>
-  <% end %>
-<% end %>
-
+<%= render partial: 'layouts/errors', :locals => { :object => @employee} %>
 <form class="ui fluid form">
   <div class="field">
     <%= e.text_field :entry_no %>
