@@ -79,6 +79,12 @@ gem 'pg'
 gem 'pghero'
 
 group :development, :test do
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-rails'
+  gem 'pry-coolline'
+  gem 'pry-byebug'
+
   gem 'rspec-rails', '~> 2.0'
   gem 'rspec-mocks'
   gem 'shoulda-matchers'
