@@ -1,5 +1,5 @@
 User.destroy_all
-Project.destroy_all
+# Project.destroy_all
 
 User.create do |user|
   user.name                  = "Super Admin"
@@ -17,3 +17,9 @@ User.create do |user|
   user.password_confirmation = "12345678"
 end
 
+Employee.create do |employee|
+  employee.first_name        = "Artsiom"
+  employee.last_name         = "Slabodnik"
+  employee.email             = "example@gmail.com"
+  employee.job_title         = "Junior Web Developer"
+end

@@ -53,6 +53,22 @@ ActiveRecord::Schema.define(version: 20150409093958) do
     t.datetime "updated_at"
   end
 
+  create_table "employees", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "job_title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "gender",                         null: false
+    t.text     "address"
+    t.string   "middle_name"
+    t.string   "qualification"
+    t.decimal  "salary"
+    t.string   "contact_no"
+    t.string   "entry_no",      default: "auto"
+    t.string   "status"
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.string   "session_id", null: false
     t.text     "data"
@@ -62,6 +78,17 @@ ActiveRecord::Schema.define(version: 20150409093958) do
 
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+
+  create_table "student_users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.string   "email",       default: "", null: false
+    t.string   "gender"
+    t.integer  "age"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",        null: false
