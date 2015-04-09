@@ -31,7 +31,7 @@
   </div>
   <div class="field">
     <%= e.label :marital_status %>
-    <%= select(:employee, :status, [['Married', 1], ['Not married', 2]]) %>
+    <%= select :employee, :status, Employee.status %>
   </div>
   <div class="ui buttons">
   	<%= link_to "Cancel", :back, :class => "ui button" %>

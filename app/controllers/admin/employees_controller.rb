@@ -8,7 +8,7 @@ class Admin::EmployeesController < ApplicationController
 	end
 
 	def new
-		@employee = Employee.new(status: 2)
+		@employee = Employee.new
 	end
 
 	def create
