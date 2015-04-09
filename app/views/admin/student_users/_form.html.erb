@@ -1,21 +1,91 @@
-<div>
-  <%= su.label :first_name %>
-  <%= su.text_field :first_name %>
+<%= render partial: 'layouts/errors', :locals => { :object => @student_user} %>
+<div class="field">
+  <%= su.text_field :entry_no, :placeholder => "Entry No." %>
 </div>
 
-<div>
-  <%= su.label :middle_name %>
-  <%= su.text_field :middle_name %>
+<div class="field">
+  <%= su.text_field :group_no, :placeholder => "Group No." %>
 </div>
 
-<div>
-  <%= su.label :last_name %>
-  <%= su.text_field :last_name %>
+<div class="field">
+  <%= su.text_field :admission_date, :placeholder => "Date of Admision" %>
 </div>
 
-<div>
-  <%= su.label :email %>
-  <%= su.text_field :email %>
+<div class="field">
+  <%= su.label :std_of_admission %>
+  <%= su.select :std, [["Admission1", StudentUser::ADMISSION[:admission1]], ["Admission2", StudentUser::ADMISSION[:admission2]]], :include_blank => true %>
 </div>
 
-<%= su.submit "Save" %>
+<div class="field">
+  <%= su.text_field :academic_year, :placeholder => "Academic Year" %>
+</div>
+
+<div class="field">
+  <%= su.text_field :first_name, :placeholder => "First Name" %>
+</div>
+
+<div class="field">
+  <%= su.text_field :father_name, :placeholder => "Father's Name" %>
+</div>
+
+<div class="field">
+  <%= su.text_field :father_name, :placeholder => "Mother's Name" %>
+</div>
+
+<div class="field">
+  <%= su.text_field :last_name, :placeholder => "Last Name" %>
+</div>
+
+<div class="field">
+  <%= su.label :place_of_birth %>
+  <%= su.country_select :birth_place, ["United States"] %>
+</div>
+
+<div class="field">
+  <%= su.label :religion %>
+  <%= su.select :religion, [["RELIGION1", StudentUser::RELIGION[:religion1]], ["RELIGION2", StudentUser::RELIGION[:religion2]]], :include_blank => true %>
+</div>
+
+<div class="field">
+  <%= su.label :caste %>
+  <%= su.select :caste, [["CASTE1", StudentUser::CASTE[:caste1]], ["CASTE2", StudentUser::CASTE[:caste2]]], :include_blank => true %>
+</div>
+
+<div class="field">
+  <%= su.label :nationality %>
+  <%= su.select :nationality, [["NATIONALITY1", StudentUser::NATIONALITY[:nationaity1]], ["NATIONALITY2", StudentUser::NATIONALITY[:nationality2]]], :include_blank => true %>
+</div>
+
+<div class="field">
+  <%= su.label :standard %>
+  <%= su.select :standard, [["STANDARD1", StudentUser::STANDARD[:standard1]], ["STANDARD2", StudentUser::STANDARD[:standard2]]], :include_blank => true %>
+</div>
+
+<div class="field">
+  <%= su.label :division %>
+  <%= su.select :division, [["DIVISION1", StudentUser::DIVISION[:division1]], ["DIVISION2", StudentUser::DIVISION[:division2]]], :include_blank => true %>
+</div>
+
+<div class="field">
+  <%= su.label :transport %>
+  <%= su.select :transport, [["Car", StudentUser::TRANSPORT[:car]], ["Bus", StudentUser::TRANSPORT[:bus]]], :include_blank => true %>
+</div>
+
+<div class="field">
+  <%= su.label :finance_mode %>
+  <%= su.select :finance_mode, [["FINANCE1", StudentUser::FINANCE_MODE[:finance1]], ["FINANCE2", StudentUser::FINANCE_MODE[:finance2]]], :include_blank => true %>
+</div>
+
+<div class="field">
+  <%= su.text_field :remarks, :placeholder => "Remarks" %>
+</div>
+
+<div class="field">
+  <%= su.text_field :last_school, :placeholder => "Last School" %>
+</div>
+
+<div class="ui buttons">
+  <%= link_to "Cancel", :back, :class => "ui button" %>
+  <div class="or"></div>
+  <%= su.submit "Save", :class => "ui positive button" %>
+</div>

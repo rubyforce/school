@@ -1,4 +1,12 @@
-<ul class="nav navbar-nav">
-  <li class="active"><a href="<%= root_path %>">Home</a></li>
-  <li><a href="<%= admin_employees_path %>">Employees</a></li>
-</ul>
+<div class="left menu">
+  <div class="green item <%= active_menu_item("home") %>">
+    <a href="<%= root_path %>"><i class="home icon"></i> Home</a>
+  </div>
+  <div class="green item">
+    <a href="<%= admin_employees_path %>"> Employees</a>
+  </div>
+  <div class="green item">
+    <a href="<%= admin_student_users_path %>"> Students</a>
+  </div>
+</div>
+
