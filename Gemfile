@@ -17,7 +17,6 @@ gem 'therubyracer', '0.12.1'
 gem 'libv8', '3.16.14.7'
 
 gem 'newrelic_rpm'
-gem 'asset_sync'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -44,7 +43,6 @@ gem 'cancan'
 gem 'protected_attributes'
 gem 'kaminari'
 gem 'carrierwave'
-gem 'fog'
 gem 'mini_magick'
 gem 'high_voltage'
 gem 'choices'
