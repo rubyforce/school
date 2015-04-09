@@ -1,5 +1,3 @@
-<form class="ui fluid form">
-	<%= semantic_form_for [:admin, @employee] do |e| %>
-	  <% render :partial => 'form', :locals => { :e => e } %>
-	<% end %>
-</form>
+<%= form_for [:admin, @employee], :html => { class: "ui fluid form" } do |e| %>
+  <% render :partial => 'form', :locals => { :e => e } %>
+<% end %>
