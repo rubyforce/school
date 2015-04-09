@@ -1,3 +1,9 @@
+<% if @employee.errors.any? %>
+  <% e.errors.full_messages.each do |err| %>
+    <%= err %>
+  <% end %>
+<% end %>
+
 <form class="ui fluid form">
   <div class="field">
     <%= e.text_field :entry_no %>
@@ -31,7 +37,7 @@
   </div>
   <div class="field">
     <%= e.label :marital_status %>
-    <%= select :employee, :status, Employee.status %>
+    <%= e.select :status, [["Married", Employee::MARRIED], ["Not married", Employee::NOT_MARRIED]] %>
   </div>
   <div class="ui buttons">
   	<%= link_to "Cancel", :back, :class => "ui button" %>
