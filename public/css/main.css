@@ -4,3 +4,11 @@
 .btn.btn-success.right {
   float: right;
 }
+.form-group.radio_button {
+  width: 70%;
+  margin: 20px auto;
+  padding: 0px;
+}
+.ui.buttons {
+  text-align: center;
+}
