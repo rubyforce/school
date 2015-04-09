@@ -20,6 +20,5 @@ end
 Employee.create do |employee|
   employee.first_name        = "Artsiom"
   employee.last_name         = "Slabodnik"
-  employee.email             = "example@gmail.com"
-  employee.job_title         = "Junior Web Developer"
+  employee.gender            = "male"
 end
