@@ -1,42 +1,42 @@
-# staging:
-#   facebook:
-#     id: <%= ENV['FACEBOOK_ID'] %>
-#     secret: <%= ENV['FACEBOOK_SECRET'] %>
-#   google:
-#     id: <%= ENV['GOOGLE_ID'] %>
-#     secret: <%= ENV['GOOGLE_SECRET'] %>
-#   linkedin:
-#     id: <%= ENV['LINKEDIN_ID'] %>
-#     secret: <%= ENV['LINKEDIN_SECRET'] %>
-#   email:
-#     host: <%= ENV['email_host'] %>
-#     port: <%= ENV['email_port'] %>
-#     domain: <%= ENV['email_domain'] %>
-#     username: <%= ENV['email_username'] %>
-#     password: <%= ENV['email_password'] %>
-#   redis:
-#     url: <%= ENV['REDISTOGO_URL'] %>
+staging:
+  facebook:
+    id: <%= ENV['FACEBOOK_ID'] %>
+    secret: <%= ENV['FACEBOOK_SECRET'] %>
+  google:
+    id: <%= ENV['GOOGLE_ID'] %>
+    secret: <%= ENV['GOOGLE_SECRET'] %>
+  linkedin:
+    id: <%= ENV['LINKEDIN_ID'] %>
+    secret: <%= ENV['LINKEDIN_SECRET'] %>
+  email:
+    host: <%= ENV['email_host'] %>
+    port: <%= ENV['email_port'] %>
+    domain: <%= ENV['email_domain'] %>
+    username: <%= ENV['email_username'] %>
+    password: <%= ENV['email_password'] %>
+  redis:
+    url: <%= ENV['REDISTOGO_URL'] %>
 
-# production:
-#   facebook:
-#     id: <%= ENV['FACEBOOK_ID'] %>
-#     secret: <%= ENV['FACEBOOK_SECRET'] %>
-#   google:
-#     id: <%= ENV['GOOGLE_ID'] %>
-#     secret: <%= ENV['GOOGLE_SECRET'] %>
-#   linkedin:
-#     id: <%= ENV['LINKEDIN_ID'] %>
-#     secret: <%= ENV['LINKEDIN_SECRET'] %>
-#   email:
-#     host: <%= ENV['email_host'] %>
-#     port: <%= ENV['email_port'] %>
-#     domain: <%= ENV['email_domain'] %>
-#     username: <%= ENV['email_username'] %>
-#     password: <%= ENV['email_password'] %>
-#     support_address: "petya.petinych@gmail.com"
-#     subject: "Message"
-#   redis:
-#     url: <%= ENV['REDISTOGO_URL'] %>
+production:
+  facebook:
+    id: <%= ENV['FACEBOOK_ID'] %>
+    secret: <%= ENV['FACEBOOK_SECRET'] %>
+  google:
+    id: <%= ENV['GOOGLE_ID'] %>
+    secret: <%= ENV['GOOGLE_SECRET'] %>
+  linkedin:
+    id: <%= ENV['LINKEDIN_ID'] %>
+    secret: <%= ENV['LINKEDIN_SECRET'] %>
+  email:
+    host: <%= ENV['email_host'] %>
+    port: <%= ENV['email_port'] %>
+    domain: <%= ENV['email_domain'] %>
+    username: <%= ENV['email_username'] %>
+    password: <%= ENV['email_password'] %>
+    support_address: "petya.petinych@gmail.com"
+    subject: "Message"
+  redis:
+    url: <%= ENV['REDISTOGO_URL'] %>
 
 development:
   facebook:
