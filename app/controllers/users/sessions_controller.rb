@@ -16,7 +16,7 @@ class Users::SessionsController < Devise::SessionsController
       flash.now[:success] = I18n.t('devise.sessions.signed_in')
 
       unless request.xhr?
-        redirect_to root_path
+        redirect_to authenticated_root_path
       end
     else
       flash.now[:errors] = I18n.t('devise.failure.invalid')
