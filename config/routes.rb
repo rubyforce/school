@@ -1,13 +1,8 @@
-require File.expand_path(File.join(Rails.root, 'api/api.rb'))
-
 Greenarea::Application.routes.draw do
   namespace :admin do
     resources :student_users
     resources :employees
   end
-
-  # devise_for :admin_users, ActiveAdmin::Devise.config
-  # ActiveAdmin.routes(self)
 
   devise_for :users, :controllers => { :omniauth_callbacks => :omniauth_callbacks, :registrations => :"users/registrations", :passwords => :"users/passwords", :sessions => :"users/sessions" }
 
@@ -21,6 +16,8 @@ Greenarea::Application.routes.draw do
   end
 
   mount GetVersion::Web => '/'
-  mount Api => '/api'
-end
 
+  authenticate :user, lambda { |user| user.role?('admin') } do
+    mount PgHero::Engine => '/db'
+  end
+end

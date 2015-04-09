@@ -1,22 +1,20 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.2.1'
 
 gem 'rake', '~> 10.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.2.0'
+
+gem 'puma'
+
 gem "rack-cache"
 
-gem 'grape'
-gem 'thin'
+gem 'minitest'
 
-group :assets do
-  gem 'sass-rails'
-  gem 'less-rails'
-end
-
-gem 'therubyracer'
+gem 'therubyracer', '0.12.1'
+gem 'libv8', '3.16.14.7'
 
 gem 'newrelic_rpm'
 gem 'asset_sync'
@@ -27,6 +25,10 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+group :assets do
+  gem 'sass-rails'
+end
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -35,42 +37,32 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
 
-gem 'haml'
-gem 'devise', git: 'git://github.com/plataformatec/devise.git'
+gem 'multi_json'
+gem 'json'
+gem 'devise'
 gem 'cancan'
 gem 'protected_attributes'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
-gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem 'high_voltage'
 gem 'choices'
-gem 'draper', github: 'drapergem/draper'
-gem 'acts-as-taggable-on'
-gem "acts_as_follower"
+gem 'draper'
 gem "geocoder"
-gem 'public_activity'
-gem 'facebook_share'
 
 gem 'jquery-validation-rails'
-
-gem 'sendgrid'
 
 gem 'get-version', require: 'get_version'
 gem "gritter", "1.0.3"
 
 # admin pages
-gem 'activeadmin',         github: 'gregbell/active_admin'
-gem 'inherited_resources', github: 'josevalim/inherited_resources'
-gem 'formtastic',          github: 'justinfrench/formtastic'
+gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'countries'
 gem 'country_select'
 gem 'state_select', github: 'stormsilver/state_select'
 
-gem 'honeybadger'
-
-gem 'minitest', '~> 4.7.5'
+gem 'airbrake'
 
 gem 'redis'
 gem 'redis-store'
@@ -84,13 +76,12 @@ group :doc do
 end
 
 gem 'pg'
+gem 'pghero'
 
 group :development, :test do
-  gem 'bullet'
   gem 'rspec-rails', '~> 2.0'
   gem 'rspec-mocks'
   gem 'shoulda-matchers'
-  gem 'debugger'
   gem 'factory_girl_rails'
   gem 'fuubar'
   gem 'spork'
@@ -109,10 +100,3 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
 gem 'omniauth-linkedin'
-
-gem 'angularjs-rails'
-gem 'angularjs-rails-resource'
-gem 'angular-ui-rails'
-gem 'ng-rails-csrf'
-gem 'google-analytics-rails'
-
