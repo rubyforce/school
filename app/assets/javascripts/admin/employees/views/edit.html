@@ -1,5 +1,17 @@
-<h1>Edit Employee</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">Update Existing Entry</div>
+    <div class="panel panel-default employee-list">
+      <div class="panel-body scrolling">
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat='employee in employees'>{{employee.firstName}}</li>
+        </ul>
+      </div>
+    </div>
 
-<span ng-repeat='employee in employees'>
-  {{employee.firstName}}
-</span>
+    <div class="panel panel-default update-employee">
+      <div class="panel-body alignment">
+        <h4 style="text-align: center; vertical-align:middle">All Fields From Add New Record</h4>
+      </div>
+    </div>
+  </div>
+</div>

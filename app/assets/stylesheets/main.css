@@ -14,7 +14,8 @@
 }
 .text-bottom {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
+  margin-top: -25px;
 }
 .panel.panel-default {
   border-radius: 0px;
@@ -28,4 +29,38 @@
 }
 .btn.btn-default {
   border-radius: 0px;
+}
+.panel.panel-default.employee-list {
+  width: 95%;
+  margin: 25px auto;
+}
+.panel-body.scrolling {
+  max-height: 174px;
+  overflow-y: auto;
+}
+.list-group-item:first-child {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.list-group-item:last-child {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.panel.panel-default.update-employee {
+  width: 95%;
+  margin: 25px auto;
+  height: 400px;
+  max-height: 400px;
+  display: table;
+}
+.panel-body.alignment {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.form-control {
+  border-radius: 0px;
+}
+.ui.buttons.padding {
+  padding: 15px;
 }
