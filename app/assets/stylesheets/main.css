@@ -15,7 +15,7 @@
 .text-bottom {
   text-align: center;
   margin-bottom: 30px;
-  margin-top: -25px;
+  margin-top: -60px;
 }
 .panel.panel-default {
   border-radius: 0px;
@@ -62,5 +62,5 @@
   border-radius: 0px;
 }
 .ui.buttons.padding {
-  padding: 15px;
+  padding-bottom: 15px;
 }
