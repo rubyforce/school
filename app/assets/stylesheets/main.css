@@ -16,3 +16,13 @@
   text-align: center;
   margin-bottom: 60px;
 }
+.panel.panel-default {
+  border-radius: 0px;
+}
+.nav-tabs.nav-justified > li > a {
+  border-bottom: none;
+  border-radius: 0 0 0 0;
+}
+.nav-tabs.nav-justified > li > a:hover {
+  background: #fff;
+}
