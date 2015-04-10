@@ -19,8 +19,6 @@ Greenarea::Application.routes.draw do
 
   resources :users, only: :show
 
-  mount GetVersion::Web => '/'
-
   authenticate :user, lambda { |user| user.role?('admin') } do
     mount PgHero::Engine => '/db'
   end

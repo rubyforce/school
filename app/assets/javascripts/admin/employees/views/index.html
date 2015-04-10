@@ -1,0 +1,17 @@
+<div ng-controller='EmployeesController' ui-view='employees'>
+  <ul class="nav nav-pills" role="tablist">
+    <li role="presentation" ui-sref-active="active">
+      <a ui-sref="employees.new">New Employee Record</a>
+    </li>
+
+    <li role="presentation" ui-sref-active="active">
+      <a ui-sref="employees.edit">Update Existing Records</a>
+    </li>
+
+    <li role="presentation" ui-sref-active="active">
+      <a ui-sref="employees.delete">Delete Records</a>
+    </li>
+  </ul>
+
+  <div ui-view></div>
+</div>

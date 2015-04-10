@@ -25,7 +25,10 @@ gem 'coffee-rails', '~> 4.0.0'
 
 group :assets do
   gem 'sass-rails'
+  gem "less-rails"
 end
+
+gem 'therubyracer', '0.12.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -49,9 +52,6 @@ gem 'draper'
 gem "geocoder"
 
 gem 'jquery-validation-rails'
-
-gem 'get-version', require: 'get_version'
-gem "gritter", "1.0.3"
 
 # admin pages
 gem 'formtastic', github: 'justinfrench/formtastic'
@@ -87,24 +87,19 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'fuubar'
-  gem 'spork'
-  gem 'spork-rails', github: 'railstutorial/spork-rails'
-  gem 'guard-spork'
   gem 'database_cleaner'
-  gem 'guard'
-  gem 'guard-bundler'
-  gem 'guard-rspec'
   gem 'heroku'
   gem 'foreman'
 end
 
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-twitter'
-gem 'omniauth-linkedin'
+gem 'angular-rails-templates'
+gem 'angularjs-rails-resource'
 
-# Usage Twitter Bootstrap
-gem 'therubyracer', '0.12.1'
-gem "less-rails"
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'rails-assets-angular-bootstrap', source: 'https://rails-assets.org'
+gem 'rails-assets-angular-ui', '~> 0.4.0', source: 'https://rails-assets.org/'
+gem 'rails-assets-angular', '1.3.15', source: 'https://rails-assets.org/'
+gem 'rails-assets-angular-ui-router', '0.2.13', source: 'https://rails-assets.org/'
+gem 'rails-assets-lodash', '~> 2.4.1', source: 'https://rails-assets.org/'
+gem 'rails-assets-select2', '3.4.3', source: 'https://rails-assets.org/'
+gem 'rails-assets-bootstrap-css', '3.2.0', source: 'https://rails-assets.org/'
+gem 'rails-assets-jquery-ui', '1.10.3', source: 'https://rails-assets.org/'

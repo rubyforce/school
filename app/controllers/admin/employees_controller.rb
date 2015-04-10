@@ -1,12 +1,16 @@
 class Admin::EmployeesController < ApplicationController
   load_and_authorize_resource
-  
+
+  respond_to :json
+
   def index
     @employees = Employee.all
+    respond_with @employees
   end
 
   def show
     @employee = Employee.find(params[:id])
+    respond_with @employee
   end
 
   def new
@@ -15,32 +19,27 @@ class Admin::EmployeesController < ApplicationController
 
   def create
     @employee = Employee.new(params[:employee])
+    @employee.save
 
-    if @employee.save
-      redirect_to admin_employees_path
-    else
-      render :new
-    end
+    respond_with @employee
   end
 
   def edit
     @employee = Employee.find(params[:id])
+    respond_with @employee
   end
 
   def update
     @employee = Employee.find(params[:id])
+    @employee.update_attributes(params[:employee])
 
-    if @employee.update_attributes(params[:employee])
-      redirect_to admin_employees_path
-    else
-      render :edit
-    end
+    respond_with @employee
   end
 
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
 
-    redirect_to admin_employees_path
+    respond_with @employee
   end
 end

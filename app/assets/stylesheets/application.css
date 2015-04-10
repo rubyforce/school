@@ -1,5 +1,13 @@
 /*
- *= require bootstrap
- *= require gritter
+ *= require jquery-ui
+
+ *= require bootstrap-css/bootstrap
+
+ *= require select2
+
+ *= require angular-ui
+
+ *= require main
+ *= require_self
  */
 
