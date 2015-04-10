@@ -55,3 +55,6 @@
   vertical-align: middle;
   text-align: center;
 }
+.form-control {
+  border-radius: 0px;
+}
