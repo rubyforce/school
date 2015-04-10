@@ -54,8 +54,6 @@ class User < ActiveRecord::Base
     self.role.to_s == r.to_s
   end
 
-  include SocialAuthentication
-  include Addressable
-  include Nameable
+	include Nameable
 end
 

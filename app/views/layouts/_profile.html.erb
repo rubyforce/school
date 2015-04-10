@@ -3,14 +3,10 @@
     <li>
       <a class="sign-in fancybox.ajax" href="<%= new_user_session_path %>">Sign In</a>
     </li>
-    <li>
-      <a class="sign-up fancybox.ajax" href="<%= new_user_registration_path %>">Sign Up</a>
-    </li>
   <% else %>
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= image_tag current_user.profile_image, alt: current_user.name %> <%= current_user.name %><span class="caret"></span></a>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_user.name %><span class="caret"></span></a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="<%= user_path(current_user) %>">Profile</a></li>
         <li><%= link_to('Log Out', destroy_user_session_path, :method => :delete)%></li>
       </ul>
     </li>
