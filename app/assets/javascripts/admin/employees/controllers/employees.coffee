@@ -4,6 +4,5 @@
         $state.go('employees.new')
 
         Employee.get().then (employees) ->
-            debugger;
             $scope.employees = employees
 ]
