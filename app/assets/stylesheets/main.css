@@ -48,4 +48,10 @@
   margin: 25px auto;
   height: 400px;
   max-height: 400px;
+  display: table;
+}
+.panel-body.alignment {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
