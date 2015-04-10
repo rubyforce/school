@@ -4,7 +4,7 @@ Greenarea::Application.routes.draw do
     resources :employees
   end
 
-  devise_for :users, :controllers => { :passwords => :"users/passwords", :sessions => :"users/sessions" }
+  devise_for :users
 
   # You can have the root of your site routed with "root"
   devise_scope :user do
