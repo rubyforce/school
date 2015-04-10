@@ -10,7 +10,8 @@ class Admin::EmployeesController < ApplicationController
 
   def show
     @employee = Employee.find(params[:id])
-    respond_with @employee
+
+    render :json => @employee
   end
 
   def new
@@ -21,25 +22,23 @@ class Admin::EmployeesController < ApplicationController
     @employee = Employee.new(params[:employee])
     @employee.save
 
-    respond_with @employee
+    render :json => @employee
   end
 
   def edit
     @employee = Employee.find(params[:id])
-    respond_with @employee
+    render :json => @employee
   end
 
   def update
     @employee = Employee.find(params[:id])
     @employee.update_attributes(params[:employee])
-
-    respond_with @employee
+    render :json => @employee
   end
 
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
-
-    respond_with @employee
+    render :json => @employee
   end
 end
