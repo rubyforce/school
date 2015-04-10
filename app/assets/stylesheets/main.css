@@ -26,3 +26,11 @@
 .nav-tabs.nav-justified > li > a:hover {
   background: #fff;
 }
+.panel.panel-default.employee-list {
+  width: 95%;
+  margin: 25px auto;
+}
+.panel-body.scrolling {
+  max-height: 174px;
+  overflow-y: auto;
+}
