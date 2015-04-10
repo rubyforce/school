@@ -1,4 +1,6 @@
 class Admin::EmployeesController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @employees = Employee.all
   end

@@ -1,4 +1,6 @@
 class Admin::StudentUsersController < ApplicationController
+  load_and_authorize_resource
+  
   def index
     @student_users = StudentUser.all
   end

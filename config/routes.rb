@@ -7,7 +7,15 @@ Greenarea::Application.routes.draw do
   devise_for :users, :controllers => { :passwords => :"users/passwords", :sessions => :"users/sessions" }
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  devise_scope :user do
+    authenticated :user do
+      root 'home#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
 
   resources :users, only: :show
 
