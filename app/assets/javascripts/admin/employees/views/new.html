@@ -3,122 +3,206 @@
   <div class="panel-body">
     <form name='form' ng-controller='CreateEmployeesController' class="form-horizontal" ng-submit='create()'>
       <div class="col-sm-12">
-        <div class="form-group">
-          <label for='employee.entry_no' class="col-sm-2 control-label">Entry #</label>
-          <div class="col-sm-3">
-            <input name='employee.entry_no' type='text' ng-model='employee.entry_no' class="form-control" />
+        <!-- First Column -->
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='employee.entry_no' class="control-label">Entry #</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='employee.entry_no' type='text' ng-model='employee.entry_no' class="form-control" />
+            </div>
           </div>
-          <label for='employee.address' class="col-sm-2 control-label">Address</label>
-          <div class="col-sm-3">
-            <textarea name='employee.address' rows="3" cols="3" ng-model='employee.address' class="form-control" /></textarea>
-          </div>
-        </div>
 
-        <div class="form-group">
-          <label for='employee.first_name' class="col-sm-2 control-label">First Name</label>
-          <div class="col-sm-3">
-            <input name='employee.first_name' type='text' ng-model='employee.first_name' class="form-control" />
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='employee.first_name' class="control-label">First Name</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='employee.first_name' type='text' ng-model='employee.first_name' class="form-control" />
+            </div>
           </div>
-          <label for='employee.contact_no' class="col-sm-2 control-label">Contact #</label>
-          <div class="col-sm-3">
-            <input name='employee.contact_no' type='text' ng-model='employee.contact_no' class="form-control" />
-          </div>
-        </div>
 
-        <div class="form-group">
-          <label for='employee.middle_name' class="col-sm-2 control-label">Father's / Spouses Name</label>
-          <div class="col-sm-3">
-            <input name='employee.middle_name' type='text' ng-model='employee.middle_name' class="form-control" />
+          <div class="form-group">
+            <div class="col-sm-5">
+              <label for='employee.middle_name' class="control-label">Father's/Spouses Name</label>
+            </div>
+            <div class="col-sm-5">
+              <input name='employee.middle_name' type='text' ng-model='employee.middle_name' class="form-control" />
+            </div>
           </div>
-          <label for='employee.qualification' class="col-sm-2 control-label">Qualification</label>
-          <div class="col-sm-3">
-            <input name='employee.qualification' type='text' ng-model='employee.qualification' class="form-control" />
-          </div>
-        </div>
 
-        <div class="form-group">
-          <label for='employee.last_name' class="col-sm-2 control-label">Last Name</label>
-          <div class="col-sm-3">
-            <input name='employee.last_name' type='text' ng-model='employee.last_name' class="form-control" />
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='employee.last_name' class="control-label">Last Name</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='employee.last_name' type='text' ng-model='employee.last_name' class="form-control" />
+            </div>
           </div>
-          <label for='' class="col-sm-2 control-label">Section</label>
-          <div class="col-sm-3">
-            <select class="form-control">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-        </div>
 
-        <div class="form-group">
-          <!--<label for='' class="col-sm-2 control-label">Date of Birth</label>
-          <div class="col-sm-3">
-            <input name='' type='text' ng-model='' class="form-control" />
-          </div> -->
-          <label for='' class="col-sm-2 control-label">Pay Band</label>
-          <div class="col-sm-3">
-            <select class="form-control">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-        </div>
 
-        <div class="form-group radio_button">
-          <label for='employee.gender' class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">Male
-          </label>
-          <label for='employee.gender' class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="female">Female
-          </label>
-        </div>
-        <div class="form-group">
-          <label for='employee.marital_status' class="col-sm-2 control-label">Marital Status</label>
-          <div class="col-sm-3">
-            <select name='employee.marital_status' ng-model='employee.marital_status' class="form-control">
-              <option value="1">Married</option>
-              <option value="2">Not Married</option>
-            </select>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='employee.gender' class="control-label">Gender</label>
+            </div>
+            <div class="col-sm-6">
+              <label for='employee.gender' class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">Male
+              </label>
+              <label for='employee.gender' class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="female">Female
+              </label>
+            </div>
           </div>
-          <label for='employee.salary' class="col-sm-2 control-label">Salary</label>
-          <div class="col-sm-3">
-            <input name='employee.salary' type='text' ng-model='employee.salary' class="form-control" />
+          <div class="form-group">
+            <div class="col-sm-4">  
+              <label for='employee.marital_status' class="control-label">Marital Status</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='employee.marital_status' ng-model='employee.marital_status' class="form-control">
+                <option value="1">Married</option>
+                <option value="2">Not Married</option>
+              </select>
+            </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <label class="col-sm-2 control-label">Year of Joining</label>
-          <div class="col-sm-3">
-            <select class="form-control">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label class="control-label">Year of Joining</label>
+            </div>
+            <div class="col-sm-6">
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label class="control-label">Paid type</label>
+            </div>
+            <div class="col-sm-6">
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <label class="col-sm-2 control-label">Paid type</label>
-          <div class="col-sm-3">
-            <select class="form-control">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-        </div>
+        <!-- End First Column -->
 
-        <div class="ui buttons">
-          <button type="submit" class="btn btn-default">Save and Continue</button>
+        <!-- Second Column -->
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='employee.address' class="control-label">Address</label>
+            </div>
+            <div class="col-sm-6">
+              <textarea name="employee.address" ng-model="employee.address" class="form-control"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='employee.contact_no' class="control-label">Contact #</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='employee.contact_no' type='text' ng-model='employee.contact_no' class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='employee.qualification' class="control-label">Qualification</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='employee.qualification' type='text' ng-model='employee.qualification' class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label class="control-label">Section</label>
+            </div>
+            <div class="col-sm-6">
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label class="control-label">Pay Band</label>
+            </div>
+            <div class="col-sm-6">
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='employee.marital_status' class="control-label">Marital Status</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='employee.marital_status' ng-model='employee.marital_status' class="form-control">
+                <option value="1">Married</option>
+                <option value="2">Not Married</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label class="control-label">Year of Joining</label>
+            </div>
+            <div class="col-sm-6">
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label class="control-label">Paid type</label>
+            </div>
+            <div class="col-sm-6">
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- End Second Column -->
+        <div class="form-group">
+          <div class="ui buttons">
+            <button type="submit" class="btn btn-default">Save and Continue</button>
+          </div>
         </div>
       <div>
     </form>
