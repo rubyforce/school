@@ -2,13 +2,16 @@
   <div class="panel-heading">Update Existing Entry</div>
     <div class="panel panel-default employee-list">
       <div class="panel-body scrolling">
-        <ul class="list-group">
-          <li class="list-group-item" ng-repeat='employee in employees'>
-            <a href="#">
-              {{employee.firstName}}
-            </a>
-          </li>
-        </ul>
+        <table class="table table-bordered scrolling">
+          <tbody>
+            <tr ng-repeat='employee in employees'>
+              <th scope="row" width="5%">{{employee.id}}</th>
+              <td>
+                <a href="#">{{employee.firstName}}</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 

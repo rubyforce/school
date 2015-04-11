@@ -64,7 +64,6 @@
 .ui.buttons.padding {
   padding-bottom: 15px;
 }
-.list-group-item a {
-  cursor: pointer;
+.table-bordered a {
   text-decoration: none;
 }
