@@ -8,6 +8,7 @@
  *= require angular-ui
 
  *= require main
+ *= require signin
  *= require_self
  */
 
