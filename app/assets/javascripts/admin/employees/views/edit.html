@@ -3,7 +3,11 @@
     <div class="panel panel-default employee-list">
       <div class="panel-body scrolling">
         <ul class="list-group">
-          <li class="list-group-item" ng-repeat='employee in employees'>{{employee.firstName}}</li>
+          <li class="list-group-item" ng-repeat='employee in employees'>
+            <a href="#">
+              {{employee.firstName}}
+            </a>
+          </li>
         </ul>
       </div>
     </div>
