@@ -94,3 +94,6 @@ form .update_form {
   max-height: 400px;
   overflow-y: auto;
 }
+.alert {
+  border-radius: 0px;
+}
