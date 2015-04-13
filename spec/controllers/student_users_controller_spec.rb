@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe StudentUsersController do
+describe StudentsController do
 
 end

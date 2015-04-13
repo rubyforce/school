@@ -1,5 +1,5 @@
 <h1>Edit Student</h1>
 
-<%= form_for [:admin, @student_user] do |su| %>
+<%= form_for [:admin, @student] do |su| %>
   <% render :partial => "form", :locals => { :su=> su } %>
 <% end %>

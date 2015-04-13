@@ -1,4 +1,4 @@
-class StudentUser < ActiveRecord::Base
+class Student < ActiveRecord::Base
   attr_accessible :first_name, :middle_name, :last_name, :division, :transport,
     :admission_date, :birth_place, :religion, :caste, :std, :nationality, :standard,
     :finance_mode, :entry_no, :group_no, :academic_year, :father_name, :mother_name,
