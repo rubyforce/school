@@ -3,8 +3,8 @@
   ($scope, Student) ->
 
     $scope.clicked = false
-
     $scope.show_form = false
+    $scope.alert = false
 
     $scope.editing = (user) ->
       $scope.currentUser = user
@@ -13,4 +13,5 @@
 
     $scope.update = ->
       $scope.currentUser.update()
+      $scope.alert = true
 ]
