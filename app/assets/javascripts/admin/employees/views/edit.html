@@ -7,7 +7,7 @@
             <tr ng-repeat='employee in employees'>
               <th scope="row" width="5%">{{employee.id}}</th>
               <td>
-                <a href="#" ng-click="editing(employees[$index])">{{employee.firstName}}</a>
+                <a href="#" ng-click="editing(employees[$index])" ng-model="clicked">{{employee.firstName}}</a>
               </td>
             </tr>
           </tbody>
@@ -16,8 +16,8 @@
     </div>
 
     <div class="panel panel-default update-employee">
-      <div class="panel-body alignment" ng-hide="editing">
-        <h4 style="text-align: center; vertical-align:middle">All Fields From Add New Record</h4>
+      <div class="panel-body alignment" ng-hide="clicked">
+        <button type="submit" class="btn btn-default">All Fields From Add New Record</button>
       </div>
       <form name='form' class="form-horizontal update" ng-submit='update()' ng-show="show_form">
         <div class="col-sm-12">
