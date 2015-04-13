@@ -49,8 +49,7 @@
 .panel.panel-default.update-employee {
   width: 95%;
   margin: 25px auto;
-  height: 400px;
-  max-height: 400px;
+  height: 300px;
   display: table;
 }
 .panel-body.alignment {
@@ -66,4 +65,9 @@
 }
 .table-bordered a {
   text-decoration: none;
+}
+.form-horizontal.update {
+  padding: 20px;
+  height: 300px;
+  overflow-y: auto
 }
