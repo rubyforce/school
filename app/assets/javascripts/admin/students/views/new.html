@@ -4,154 +4,223 @@
     <form name='form' ng-controller='CreateStudentsController' class="form-horizontal" ng-submit='create()'>
     <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new student.</div>
       <div class="col-sm-12">
-        <div class="form-group">
-          <label for='student.entry_no' class="col-sm-2 control-label">Entry #</label>
-          <div class="col-sm-3">
-            <input name='group.entry_no' type='text' ng-model='student.entry_no' class="form-control" />
+        <!-- First column -->
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.entry_no' class="control-label">Entry #</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='group.entry_no' type='text' ng-model='student.entry_no' class="form-control" />
+            </div>
           </div>
 
-          <label for='student.religion' class="col-sm-2 control-label">Religion</label>
-          <div class="col-sm-3">
-            <select name='student.religion' ng-model='student.religion' class="form-control">
-              <option value="1">Value1</option>
-              <option value="2">Value2</option>
-            </select>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.group_no' class="control-label">Group #</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='student.group_no' type='text' ng-model='student.group_no' class="form-control" /></input>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.admission_date' class="control-label">Date of Admission</label>
+            </div>
+            <div class="col-sm-6">
+              <div class="input-group">
+                <input name='student.admission_date' ng-model='student.admission_date' class="form-control" ui-date/>
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.std' class="control-label">Std. of Admission</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='student.std' ng-model='student.std' class="form-control">
+                <option value="1">Value1</option>
+                <option value="2">Value2</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.academic_year' class="control-label">Academic Year</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='student.academic_year' type='text' ng-model='student.academic_year' class="form-control" /></input>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.first_name' class="control-label">First Name</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='student.first_name' type='text' ng-model='student.first_name' class="form-control" required /></input>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.father_name' class="control-label">Father's Name</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='student.father_name' type='text' ng-model='student.father_name' class="form-control" /></input>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.mother_name' class="control-label">Mother's Name</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='student.mother_name' type='text' ng-model='student.mother_name' class="form-control" /></input>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.last_name' class="control-label">Last Name</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='student.last_name' type='text' ng-model='student.last_name' class="form-control" required /></input>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.birth_place' class="control-label">Place of Birth</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='student.birth_place' ng-model='student.birth_place' class="form-control">
+                <option value="1">Value1</option>
+                <option value="2">Value2</option>
+                <option value="3">Value3</option>
+              </select>
+            </div>
           </div>
         </div>
+        <!-- End first column -->
 
-        <div class="form-group">
-          <label for='student.group_no' class="col-sm-2 control-label">Group #</label>
-          <div class="col-sm-3">
-            <input name='student.group_no' type='text' ng-model='student.group_no' class="form-control" /></input>
+        <!-- Second column -->
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.religion' class="control-label">Religion</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='student.religion' ng-model='student.religion' class="form-control">
+                <option value="1">Value1</option>
+                <option value="2">Value2</option>
+              </select>
+            </div>
           </div>
 
-          <label for='student.caste' class="col-sm-2 control-label">Caste</label>
-          <div class="col-sm-3">
-            <select name='student.caste' ng-model='student.caste' class="form-control">
-              <option value="1">Value1</option>
-              <option value="2">Value2</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for='student.admission_date' class="col-sm-2 control-label">Date of Admission</label>
-          <div class='col-sm-3'>
-            <input name='student.admission_date' type='text' ng-model='student.admission_date' class="form-control" id='datetimepicker4' />
-          </div>
-          
-            
-          <label for='student.nationality' class="col-sm-2 control-label">Nationality</label>
-          <div class="col-sm-3">
-            <select name='student.nationality' ng-model='student.nationality' class="form-control">
-              <option value="1">Value1</option>
-              <option value="2">Value2</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for='student.std' class="col-sm-2 control-label">Std. of Admission</label>
-          <div class="col-sm-3">
-            <select name='student.std' ng-model='student.std' class="form-control">
-              <option value="1">Value1</option>
-              <option value="2">Value2</option>
-            </select>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.caste' class="control-label">Caste</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='student.caste' ng-model='student.caste' class="form-control">
+                <option value="1">Value1</option>
+                <option value="2">Value2</option>
+              </select>
+            </div>
           </div>
 
-          <label for='student.standard' class="col-sm-2 control-label">Standard</label>
-          <div class="col-sm-3">
-            <select name='student.standard' ng-model='student.standard' class="form-control">
-              <option value="1">Value1</option>
-              <option value="2">Value2</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for='student.academic_year' class="col-sm-2 control-label">Academic Year</label>
-          <div class="col-sm-3">
-            <input name='student.academic_year' type='text' ng-model='student.academic_year' class="form-control" /></input>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.nationality' class="control-label">Nationality</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='student.nationality' ng-model='student.nationality' class="form-control">
+                <option value="1">Value1</option>
+                <option value="2">Value2</option>
+              </select>
+            </div>
           </div>
 
-          <label for='student.division' class="col-sm-2 control-label">Division</label>
-          <div class="col-sm-3">
-            <select name='student.division' ng-model='student.division' class="form-control">
-              <option value="1">Value1</option>
-              <option value="2">Value2</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for='student.first_name' class="col-sm-2 control-label">First Name</label>
-          <div class="col-sm-3">
-            <input name='student.first_name' type='text' ng-model='student.first_name' class="form-control" required /></input>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.standard' class="control-label">Standard</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='student.standard' ng-model='student.standard' class="form-control">
+                <option value="1">Value1</option>
+                <option value="2">Value2</option>
+              </select>
+            </div>
           </div>
 
-          <label for='student.transport' class="col-sm-2 control-label">Transport</label>
-          <div class="col-sm-3">
-            <select name='student.transport' ng-model='student.transport' class="form-control">
-              <option value="1">Bus</option>
-              <option value="2">Car</option>
-              <option value="3">Plain</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for='student.father_name' class="col-sm-2 control-label">Father's Name</label>
-          <div class="col-sm-3">
-            <input name='student.father_name' type='text' ng-model='student.father_name' class="form-control" /></input>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.division' class="control-label">Division</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='student.division' ng-model='student.division' class="form-control">
+                <option value="1">Value1</option>
+                <option value="2">Value2</option>
+              </select>
+            </div>
           </div>
 
-          <label for='student.finance_mode' class="col-sm-2 control-label">Finance Mode</label>
-          <div class="col-sm-3">
-            <select name='student.finance_mode' ng-model='student.finance_mode' class="form-control">
-              <option value="1">Value1</option>
-              <option value="2">Value2</option>
-              <option value="3">Value3</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for='student.mother_name' class="col-sm-2 control-label">Mother's Name</label>
-          <div class="col-sm-3">
-            <input name='student.mother_name' type='text' ng-model='student.mother_name' class="form-control" /></input>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.transport' class="control-label">Transport</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='student.transport' ng-model='student.transport' class="form-control">
+                <option value="1">Bus</option>
+                <option value="2">Car</option>
+                <option value="3">Plain</option>
+              </select>
+            </div>
           </div>
 
-          <label for='student.remarks' class="col-sm-2 control-label">Remarks</label>
-          <div class="col-sm-3">
-            <input name='student.remarks' type='text' ng-model='student.remarks' class="form-control" /></input>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.finance_mode' class="control-label">Finance Mode</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='student.finance_mode' ng-model='student.finance_mode' class="form-control">
+                <option value="1">Value1</option>
+                <option value="2">Value2</option>
+                <option value="3">Value3</option>
+              </select>
+            </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <label for='student.last_name' class="col-sm-2 control-label">Last Name</label>
-          <div class="col-sm-3">
-            <input name='student.last_name' type='text' ng-model='student.last_name' class="form-control" required /></input>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.remarks' class="control-label">Remarks</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='student.remarks' type='text' ng-model='student.remarks' class="form-control" /></input>
+            </div>
           </div>
 
-          <label for='student.last_school' class="col-sm-2 control-label">Last School</label>
-          <div class="col-sm-3">
-            <input name='student.last_school' type='text' ng-model='student.last_school' class="form-control" /></input>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.last_school' class="control-label">Last School</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='student.last_school' type='text' ng-model='student.last_school' class="form-control" /></input>
+            </div>
           </div>
         </div>
-
-        <div class="form-group">
-          <label for='student.birth_place' class="col-sm-2 control-label">Place of Birth</label>
-          <div class="col-sm-3">
-            <select name='student.birth_place' ng-model='student.birth_place' class="form-control">
-              <option value="1">Value1</option>
-              <option value="2">Value2</option>
-              <option value="3">Value3</option>
-            </select>
+        <!-- End second column -->
+        <div class="form-group ui buttons">
+          <div class=" col-sm-12">
+            <button type="submit" class="btn btn-default">Save and Continue</button>
           </div>
-        </div>
-
-        <div class="ui buttons">
-          <button type="submit" class="btn btn-default">Save and Continue</button>
         </div>
       <div>
     </form>

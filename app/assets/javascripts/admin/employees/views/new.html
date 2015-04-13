@@ -47,7 +47,12 @@
               <label for='employee.datetime' class="control-label">Date of birth</label>
             </div>
             <div class="col-sm-6">
-              <input name='employee.datetime' ng-model='employee.datetime' class="form-control" ui-date required/>
+              <div class="input-group">
+                <input name='employee.datetime' ng-model='employee.datetime' class="form-control" ui-date required/>
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
             </div>
           </div>
 

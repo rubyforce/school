@@ -1,9 +1,9 @@
 <div class="panel panel-default" ng-controller="DeleteStudentsController">
   <div class="panel-heading">Delete Entry</div>
+    <div class="alert-message">
+      <div class="alert alert-success" role="alert" ng-show="alert">You successfully removed the student.</div>
+    </div>
     <div class="panel panel-default student-list">
-      <div class="alert-message">
-        <div class="alert alert-success" role="alert" ng-show="alert">You successfully removed the student.</div>
-      </div>
       <div class="panel-body scrolling">
         <table class="table table-bordered scrolling">
           <tbody>

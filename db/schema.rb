@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20150413213234) do
     t.datetime "updated_at"
     t.string   "entry_no",       default: "auto"
     t.integer  "group_no"
-    t.date     "admission_date"
+    t.string   "admission_date"
     t.string   "std"
     t.string   "academic_year",  default: "auto"
     t.string   "father_name"
