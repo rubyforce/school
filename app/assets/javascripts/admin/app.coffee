@@ -18,7 +18,27 @@ employees.config [
                 templateUrl: "admin/employees/views/delete.html"
 ]
 
-@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees'])
+@students = angular.module('admin.students', [])
+
+students.config [
+    '$stateProvider', '$urlRouterProvider'
+    ($stateProvider, $urlRouterProvider) ->
+        $stateProvider
+            .state 'students',
+                url: "/students"
+                templateUrl: "admin/students/views/index.html"
+            .state 'students.new',
+                url: "/new"
+                templateUrl: "admin/students/views/new.html"
+            .state 'students.edit',
+                url: "/edit"
+                templateUrl: "admin/students/views/edit.html"
+            .state 'students.delete',
+                url: "/delete"
+                templateUrl: "admin/students/views/delete.html"
+]
+
+@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students'])
 
 admin.config [
     '$stateProvider', '$urlRouterProvider'

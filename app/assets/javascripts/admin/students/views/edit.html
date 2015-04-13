@@ -1,0 +1,55 @@
+<div class="panel panel-default" ng-controller='UpdateStudentsController'>
+  <div class="panel-heading">Update Existing Entry</div>
+    <div class="panel panel-default student-list">
+      <div class="panel-body scrolling">
+        <table class="table table-bordered scrolling">
+          <tbody>
+            <tr ng-repeat='student in students'>
+              <th scope="row" width="5%">{{student.id}}</th>
+              <td>
+                <a href="#" ng-click="editing(students[$index])" ng-model="clicked">{{student.firstName}}</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel panel-default update-student" ng-hide="clicked">
+      <div class="panel-body alignment">
+        <button type="submit" class="btn btn-default">All Fields From Add New Record</button>
+      </div>
+    </div>
+
+    <form name='form' class="form-horizontal update" ng-submit='update(students[$index])' ng-show="show_form">
+      <div class="panel panel-default update-student">
+        <div class="update_form">
+          <div class="col-sm-12">
+            <!-- Firs column -->
+            <div class="col-sm-6">
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.entry_no' class="control-label">Entry #</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.entry_no' type='text' ng-model='currentUser.entryNo' class="form-control" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui buttons padding">
+        <button type="submit" class="btn btn-default">&lt;&lt; Previous Record</button>
+        <button type="submit" class="btn btn-default">Save and Continue</button>
+        <button type="submit" class="btn btn-default">Next Record &gt;&gt;</button>
+      </div>
+    </form>
+    <div class="ui buttons padding" ng-hide="clicked">
+      <button type="submit" class="btn btn-default">&lt;&lt; Previous Record</button>
+      <button type="submit" class="btn btn-default">Save and Continue</button>
+      <button type="submit" class="btn btn-default">Next Record &gt;&gt;</button>
+    </div>
+  </div>
+</div>
