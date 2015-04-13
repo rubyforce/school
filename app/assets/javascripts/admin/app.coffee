@@ -38,7 +38,7 @@ students.config [
                 templateUrl: "admin/students/views/delete.html"
 ]
 
-@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students'])
+@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'ui.date'])
 
 admin.config [
     '$stateProvider', '$urlRouterProvider'

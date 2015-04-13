@@ -227,6 +227,9 @@ GEM
       rails-assets-objectpath (~> 1.1.0)
       rails-assets-tv4 (~> 1.0.15)
     rails-assets-angular-ui (0.4.0)
+    rails-assets-angular-ui-date (0.0.7)
+      rails-assets-angular (~> 1.0)
+      rails-assets-jquery-ui (>= 1.9, < 2)
     rails-assets-angular-ui-router (0.2.13)
       rails-assets-angular (>= 1.0.8)
     rails-assets-bootstrap-css (3.2.0)
@@ -391,6 +394,7 @@ DEPENDENCIES
   rails-assets-angular-bootstrap!
   rails-assets-angular-schema-form!
   rails-assets-angular-ui (~> 0.4.0)!
+  rails-assets-angular-ui-date!
   rails-assets-angular-ui-router (= 0.2.13)!
   rails-assets-bootstrap-css (= 3.2.0)!
   rails-assets-jquery-ui (= 1.10.3)!
