@@ -3,6 +3,7 @@
     ($scope, Student) ->
         DEFAULT_STUDENT =
             entry_no: 'auto'
+            academic_year: 'auto'
 
         build = -> _.clone(DEFAULT_STUDENT)
 
