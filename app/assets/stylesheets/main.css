@@ -47,16 +47,24 @@
   border-bottom-left-radius: 0px;
 }
 .panel.panel-default.update-employee {
+  position: relative;
   width: 95%;
   margin: 25px auto;
-  height: 400px;
+  height: 300px;
   max-height: 400px;
-  display: table;
+  overflow-y: auto;
 }
 .panel-body.alignment {
-  display: table-cell;
-  vertical-align: middle;
+  position: absolute;
   text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 50%;
+  height: 30%;
+  margin: auto;
+
 }
 .form-control {
   border-radius: 0px;
