@@ -7,9 +7,9 @@
       $scope.currentUser = user
       $scope.clicked = false
 
-    $scope.remove = (student)->
+    $scope.remove = ()->
       debugger
-      $scope.currentUser.delete().then(response) ->
+      $scope.currentUser.delete().then (student) ->
         index = _.indexOf($scope.students, student)
         $scope.students.splice(index, 1)
         $scope.alert = true
