@@ -51,7 +51,12 @@
                   <label for='currentUser.admission_date' class="control-label">Date of Admission</label>
                 </div>
                 <div class="col-sm-6">
-                  <input name='currentUser.admission_date' type='text' ng-model='currentUser.admissionDate' class="form-control" />
+                  <div class="input-group">
+                    <input name='currentUser.admission_date' ng-model='currentUser.admissionDate' class="form-control" ui-date/>
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>
                 </div>
               </div>
 
