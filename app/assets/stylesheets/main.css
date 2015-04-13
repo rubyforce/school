@@ -67,3 +67,6 @@
 .table-bordered a {
   text-decoration: none;
 }
+form .update_form {
+  padding: 20px;  
+}
