@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20150409123037) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
-  create_table "students", force: :cascade do |t|
+  create_table "student_users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email",          default: "",     null: false
