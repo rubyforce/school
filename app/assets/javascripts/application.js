@@ -7,6 +7,7 @@
 //= require angular-bootstrap
 //= require angular-ui
 //= require angular-ui-router
+//= require angular-ui-date
 //
 //= require angular-rails-templates
 //= require angularjs/rails/resource
