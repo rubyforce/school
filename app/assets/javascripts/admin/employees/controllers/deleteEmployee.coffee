@@ -9,7 +9,7 @@
 
     $scope.remove = (employee)->
       $scope.currentUser.delete().then (response) ->
-      index = _.indexOf($scope.employees, employee)
-      $scope.employees.splice(index, 1)
-      $scope.alert = true
+        index = _.indexOf($scope.employees, employee)
+        $scope.employees.splice(index, 1)
+        $scope.alert = true
 ]
