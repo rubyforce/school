@@ -28,3 +28,15 @@ Employee.create do |employee|
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
 end
+
+Employee.create do |employee|
+  employee.first_name        = "Valera"
+  employee.last_name         = "Slabodnik"
+  employee.gender            = "male"
+end
+
+Employee.create do |employee|
+  employee.first_name        = "Alexander"
+  employee.last_name         = "Slabodnik"
+  employee.gender            = "male"
+end
