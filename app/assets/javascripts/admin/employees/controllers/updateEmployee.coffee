@@ -6,6 +6,8 @@
 
     $scope.show_form = false
 
+    $scope.alert = false
+
     $scope.editing = (user) ->
       $scope.currentUser = user
       $scope.show_form = true
@@ -13,4 +15,5 @@
 
     $scope.update = ->
       $scope.currentUser.update()
+      $scope.alert = true
 ]

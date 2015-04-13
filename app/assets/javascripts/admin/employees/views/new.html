@@ -2,6 +2,7 @@
   <div class="panel-heading">New Employee Entry</div>
   <div class="panel-body">
     <form name='form' ng-controller='CreateEmployeesController' class="form-horizontal" ng-submit='create()'>
+      <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new employee.</div>
       <div class="col-sm-12">
         <!-- First Column -->
         <div class="col-sm-6">
@@ -19,7 +20,7 @@
               <label for='employee.first_name' class="control-label">First Name</label>
             </div>
             <div class="col-sm-6">
-              <input name='employee.first_name' type='text' ng-model='employee.first_name' class="form-control" />
+              <input name='employee.first_name' type='text' ng-model='employee.first_name' class="form-control" required/>
             </div>
           </div>
 
@@ -37,7 +38,7 @@
               <label for='employee.last_name' class="control-label">Last Name</label>
             </div>
             <div class="col-sm-6">
-              <input name='employee.last_name' type='text' ng-model='employee.last_name' class="form-control" />
+              <input name='employee.last_name' type='text' ng-model='employee.last_name' class="form-control" required/>
             </div>
           </div>
 
@@ -48,10 +49,10 @@
             </div>
             <div class="col-sm-6">
               <label for='employee.gender' class="radio-inline">
-                <input type="radio" name="employee.gender" value="male" ng-model="employee.gender">Male
+                <input type="radio" name="employee.gender" value="male" ng-model="employee.gender" required>Male
               </label>
               <label for='employee.gender' class="radio-inline">
-                <input type="radio" name="employee.gender" value="female" ng-model="employee.gender">Female
+                <input type="radio" name="employee.gender" value="female" ng-model="employee.gender" required>Female
               </label>
             </div>
           </div>
