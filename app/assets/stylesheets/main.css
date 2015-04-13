@@ -70,3 +70,7 @@
 form .update_form {
   padding: 20px;  
 }
+.alert-message {
+  width: 95%;
+  margin: 10px auto;
+}

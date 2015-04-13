@@ -1,6 +1,9 @@
 <div class="panel panel-default" ng-controller="DeleteEmployeesController">
   <div class="panel-heading">Delete Entry</div>
     <div class="panel panel-default employee-list">
+      <div class="alert-message">
+        <div class="alert alert-success" role="alert" ng-show="alert">You successfully removed the employee.</div>
+      </div>
       <div class="panel-body scrolling">
         <table class="table table-bordered scrolling">
           <tbody>
