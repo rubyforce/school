@@ -12,7 +12,5 @@
       $scope.clicked = true
 
     $scope.update = ->
-      debugger
-      Employee.get($scope.currentUser).then (response) ->
-        $scope.currentUser.update()
+      $scope.currentUser.update()
 ]

@@ -67,6 +67,6 @@
 .table-bordered a {
   text-decoration: none;
 }
-.form-horizontal.update {
-  padding: 20px;
+form .update_form {
+  padding: 20px;  
 }
