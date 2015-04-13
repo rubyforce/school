@@ -2,8 +2,10 @@
   '$scope', 'Employee'
   ($scope, Employee) ->
     $scope.alert = false
+    $scope.clicked = true
     $scope.deleting = (user) ->
       $scope.currentUser = user
+      $scope.clicked = false
 
     $scope.remove = (employee)->
       $scope.currentUser.delete().then (response) ->
