@@ -70,3 +70,14 @@
 form .update_form {
   padding: 20px;  
 }
+.panel.panel-default.student-list {
+  width: 95%;
+  margin: 25px auto;
+}
+.panel.panel-default.update-student {
+  width: 95%;
+  margin: 25px auto;
+  height: 400px;
+  max-height: 400px;
+  display: table;
+}

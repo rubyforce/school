@@ -20,14 +20,13 @@
         <button type="submit" class="btn btn-default">All Fields From Add New Record</button>
       </div>
     </div>
-
     <form name='form' class="form-horizontal update" ng-submit='update(students[$index])' ng-show="show_form">
+
       <div class="panel panel-default update-student">
         <div class="update_form">
           <div class="col-sm-12">
             <!-- Firs column -->
             <div class="col-sm-6">
-
               <div class="form-group">
                 <div class="col-sm-4">
                   <label for='currentUser.entry_no' class="control-label">Entry #</label>
@@ -36,7 +35,202 @@
                   <input name='currentUser.entry_no' type='text' ng-model='currentUser.entryNo' class="form-control" />
                 </div>
               </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.group_no' class="control-label">Group #</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.group_no' type='text' ng-model='currentUser.groupNo' class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.admission_date' class="control-label">Date of Admission</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.admission_date' type='text' ng-model='currentUser.admissionDate' class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label class="control-label">Std. of Admission</label>
+                </div>
+                <div class="col-sm-6">
+                  <select name='currentUser.nationality' ng-model='currentUser.nationality' class="form-control">
+                    <option value="1">Value1</option>
+                    <option value="2">Value2</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.academic_year' class="control-label">Academic Year</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.academic_year' type='text' ng-model='currentUser.academicYear' class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.first_name' class="control-label">First Name</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.first_name' type='text' ng-model='currentUser.firstName' class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.father_name' class="control-label">Father's Name</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.father_name' type='text' ng-model='currentUser.fatherName' class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.mother_name' class="control-label">Mother's Name</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.mother_name' type='text' ng-model='currentUser.motherName' class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.last_name' class="control-label">Last Name</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.last_name' type='text' ng-model='currentUser.lastName' class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label class="control-label">Place of Birth</label>
+                </div>
+                <div class="col-sm-6">
+                  <select name='currentUser.birth_place' ng-model='currentUser.birthPlace' class="form-control">
+                    <option value="1">Value1</option>
+                    <option value="2">Value2</option>
+                  </select>
+                </div>
+              </div>
             </div>
+            <!-- End First Column -->
+
+            <!-- Second Column -->
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label class="control-label">Religion</label>
+                </div>
+                <div class="col-sm-6">
+                  <select name='currentUser.religion' ng-model='currentUser.religion' class="form-control">
+                    <option value="1">Value1</option>
+                    <option value="2">Value2</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label class="control-label">Caste</label>
+                </div>
+                <div class="col-sm-6">
+                  <select name='currentUser.caste' ng-model='currentUser.caste' class="form-control">
+                    <option value="1">Value1</option>
+                    <option value="2">Value2</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label class="control-label">Nationality</label>
+                </div>
+                <div class="col-sm-6">
+                  <select name='currentUser.nationality' ng-model='currentUser.nationality' class="form-control">
+                    <option value="1">Value1</option>
+                    <option value="2">Value2</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label class="control-label">standard</label>
+                </div>
+                <div class="col-sm-6">
+                  <select name='currentUser.standard' ng-model='currentUser.standard' class="form-control">
+                    <option value="1">Value1</option>
+                    <option value="2">Value2</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label class="control-label">division</label>
+                </div>
+                <div class="col-sm-6">
+                  <select name='currentUser.division' ng-model='currentUser.division' class="form-control">
+                    <option value="1">Value1</option>
+                    <option value="2">Value2</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label class="control-label">Transport</label>
+                </div>
+                <div class="col-sm-6">
+                  <select name='currentUser.transport' ng-model='currentUser.transport' class="form-control">
+                    <option value="1">Bus</option>
+                    <option value="2">Car</option>
+                    <option value="3">Plain</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label class="control-label">Finance Mode</label>
+                </div>
+                <div class="col-sm-6">
+                  <select name='currentUser.finance_mode' ng-model='currentUser.financeMode' class="form-control">
+                    <option value="1">Value1</option>
+                    <option value="2">Value2</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.remarks' class="control-label">Remarks</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.remarks' type='text' ng-model='currentUser.remarks' class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.last_school' class="control-label">Last School</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.last_school' type='text' ng-model='currentUser.lastSchool' class="form-control" />
+                </div>
+              </div>
+            </div>
+            <!-- End Second Column -->
           </div>
         </div>
       </div>
