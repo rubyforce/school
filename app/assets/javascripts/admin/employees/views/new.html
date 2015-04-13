@@ -2,6 +2,7 @@
   <div class="panel-heading">New Employee Entry</div>
   <div class="panel-body">
     <form name='form' ng-controller='CreateEmployeesController' class="form-horizontal" ng-submit='create()'>
+      <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new employee.</div>
       <div class="col-sm-12">
         <!-- First Column -->
         <div class="col-sm-6">
