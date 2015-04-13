@@ -9,8 +9,11 @@
 
         $scope.student = build()
 
+        $scope.alert = false
+
         $scope.create = ->
             new Student($scope.student).create().then (response) ->
                 $scope.students.push(new Student(response))
                 $scope.student = build()
+                $scope.alert = true
 ]

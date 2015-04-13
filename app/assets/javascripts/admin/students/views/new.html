@@ -2,6 +2,7 @@
   <div class="panel-heading">New Student Entry</div>
   <div class="panel-body">
     <form name='form' ng-controller='CreateStudentsController' class="form-horizontal" ng-submit='create()'>
+    <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new student.</div>
       <div class="col-sm-12">
         <div class="form-group">
           <label for='student.entry_no' class="col-sm-2 control-label">Entry #</label>
@@ -85,7 +86,7 @@
         <div class="form-group">
           <label for='student.first_name' class="col-sm-2 control-label">First Name</label>
           <div class="col-sm-3">
-            <input name='student.first_name' type='text' ng-model='student.first_name' class="form-control" /></input>
+            <input name='student.first_name' type='text' ng-model='student.first_name' class="form-control" required /></input>
           </div>
 
           <label for='student.transport' class="col-sm-2 control-label">Transport</label>
@@ -129,7 +130,7 @@
         <div class="form-group">
           <label for='student.last_name' class="col-sm-2 control-label">Last Name</label>
           <div class="col-sm-3">
-            <input name='student.last_name' type='text' ng-model='student.last_name' class="form-control" /></input>
+            <input name='student.last_name' type='text' ng-model='student.last_name' class="form-control" required /></input>
           </div>
 
           <label for='student.last_school' class="col-sm-2 control-label">Last School</label>

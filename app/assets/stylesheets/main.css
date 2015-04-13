@@ -74,3 +74,17 @@ form .update_form {
   width: 95%;
   margin: 10px auto;
 }
+
+}
+.panel.panel-default.stiudent-list {
+  width: 95%;
+  margin: 25px auto;
+}
+
+.panel.panel-default.update-student {
+  width: 95%;
+  margin: 25px auto;
+  height: 400px;
+  max-height: 400px;
+  display: table;
+}
