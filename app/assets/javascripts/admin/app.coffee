@@ -50,3 +50,4 @@ admin.config [
                 url: "/home"
                 templateUrl: "admin/views/home/index.html"
 ]
+

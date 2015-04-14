@@ -1,17 +1,30 @@
 @employees.controller 'UpdateEmployeesController', [
-  '$scope', 'Employee'
-  ($scope, Employee) ->
+  '$scope', 'Employee', '$timeout'
+  ($scope, Employee, $timeout) ->
+    makeTableSelectable = ->
+        $timeout ->
+            table = $('table')
+            table.tableselect
+                multiple: false
+                activeClass: 'warning'
+                onSelectionChanged: (element) ->
+                    return unless element?
+                    user = $scope.employees[element.data('index')]
+                    $scope.$apply ->
+                        editing(user)
+
+    $scope.$watch 'currentPage', makeTableSelectable
+
+    editing = (user) ->
+      $scope.currentUser = user
+      $scope.show_form = true
+      $scope.clicked = true
 
     $scope.clicked = false
 
     $scope.show_form = false
 
     $scope.alert = false
-
-    $scope.editing = (user) ->
-      $scope.currentUser = user
-      $scope.show_form = true
-      $scope.clicked = true
 
     $scope.update = ->
       $scope.currentUser.update()
