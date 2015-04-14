@@ -18,11 +18,6 @@ employees.config [
                 templateUrl: "admin/employees/views/delete.html"
 ]
 
-employees.filter 'offset', ->
-  (input, start) ->
-    start = parseInt(start, 10)
-    input.slice start
-
 @students = angular.module('admin.students', [])
 
 students.config [
