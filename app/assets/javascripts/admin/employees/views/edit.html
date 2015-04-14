@@ -7,7 +7,7 @@
             <tr ng-repeat='employee in employees | offset:(currentPage-1)*itemsPerPage | limitTo:itemsPerPage'>
               <th scope="row" width="5%">{{employee.id}}</th>
               <td>
-                <a href="#" ng-click="editing(employees[$index])" ng-model="clicked">{{employee.firstName}}</a>
+                <a href="#" ng-click="editing(employees[$index + (currentPage - 1) * itemsPerPage])" ng-model="clicked">{{employee.firstName}}</a>
               </td>
             </tr>
           </tbody>
