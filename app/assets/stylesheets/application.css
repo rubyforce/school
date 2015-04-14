@@ -9,6 +9,7 @@
 
  *= require main
  *= require signin
+ *= require sessions
  *= require_self
  */
 
