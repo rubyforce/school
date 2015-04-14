@@ -7,13 +7,31 @@
       <div class="panel-body scrolling">
         <table class="table table-bordered scrolling">
           <tbody>
-            <tr ng-repeat='employee in employees'>
+            <tr ng-repeat='employee in employees | offset: currentPage*itemsPerPage | limitTo: itemsPerPage'>
               <th scope="row" width="5%">{{employee.id}}</th>
               <td>
                 <a href="" ng-click="deleting(employees[$index])">{{employee.firstName}}</a>
               </td>
             </tr>
           </tbody>
+          <tfoot>
+            <td colspan="3">
+              <div class="pagination">
+                <ul>
+                  <li ng-class="prevPageDisabled()">
+                    <a href ng-click="prevPage()">« Prev</a>
+                  </li>
+                  <li ng-repeat="n in range()"
+                    ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+                    <a href="#">{{n+1}}</a>
+                  </li>
+                  <li ng-class="nextPageDisabled()">
+                    <a href ng-click="nextPage()">Next »</a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tfoot>
         </table>
       </div>
     </div>
