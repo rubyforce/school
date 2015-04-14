@@ -18,3 +18,4 @@
 //= require lodash
 //
 //= require_tree ./admin
+//= require_tree ./vendors
