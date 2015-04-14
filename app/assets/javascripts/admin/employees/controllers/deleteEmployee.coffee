@@ -16,20 +16,6 @@
     $scope.itemsPerPage = 5
     $scope.currentPage = 0
 
-    $scope.prevPage = ->
-      if $scope.currentPage > 0
-        $scope.currentPage--
-
-    $scope.prevPageDisabled = ->
-      if $scope.currentPage == 0 then 'disabled' else ''
-
     $scope.pageCount = ->
-      Math.ceil($scope.employees.length / $scope.itemsPerPage) - 1
-
-    $scope.nextPage = ->
-      if $scope.currentPage < $scope.pageCount()
-        $scope.currentPage++
-
-    $scope.nextPageDisabled = ->
-      if $scope.currentPage == $scope.pageCount() then 'disabled' else ''
+      Math.ceil($scope.employees.length / $scope.itemsPerPage)
 ]
