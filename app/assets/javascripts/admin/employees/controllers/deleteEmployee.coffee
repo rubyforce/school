@@ -25,9 +25,10 @@
 
     $scope.remove = ->
       $scope.currentUser.delete().then (employee) ->
-        index = _.indexOf($scope.employees, employee)
-        $scope.employees.splice(index, 1)
         $scope.alert = true
+
+      index = _.indexOf($scope.employees, $scope.currentUser)
+      $scope.employees.splice(index, 1)
 
     $scope.itemsPerPage = 5
     $scope.currentPage = 1

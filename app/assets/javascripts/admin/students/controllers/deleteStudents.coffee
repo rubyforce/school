@@ -7,10 +7,10 @@
       $scope.currentUser = user
       $scope.clicked = false
 
-    $scope.remove = ()->
-      debugger
+    $scope.remove = ->
       $scope.currentUser.delete().then (student) ->
-        index = _.indexOf($scope.students, student)
-        $scope.students.splice(index, 1)
         $scope.alert = true
+
+      index = _.indexOf($scope.students, $scope.currentUser)
+      $scope.students.splice(index, 1)
 ]
