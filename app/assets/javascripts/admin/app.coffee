@@ -18,6 +18,11 @@ employees.config [
                 templateUrl: "admin/employees/views/delete.html"
 ]
 
+employees.filter 'offset', ->
+  (input, start) ->
+    start = parseInt(start, 10)
+    input.slice start
+
 @students = angular.module('admin.students', [])
 
 students.config [
@@ -38,7 +43,7 @@ students.config [
                 templateUrl: "admin/students/views/delete.html"
 ]
 
-@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'ui.date'])
+@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'ui.date', 'ui.bootstrap'])
 
 admin.config [
     '$stateProvider', '$urlRouterProvider'

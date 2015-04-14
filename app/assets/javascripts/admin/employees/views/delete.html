@@ -7,7 +7,7 @@
       <div class="panel-body scrolling">
         <table class="table table-bordered scrolling">
           <tbody>
-            <tr ng-repeat='employee in employees'>
+            <tr ng-repeat='employee in employees | offset:(currentPage-1)*itemsPerPage | limitTo:itemsPerPage'>
               <th scope="row" width="5%">{{employee.id}}</th>
               <td>
                 <a href="" ng-click="deleting(employees[$index])">{{employee.firstName}}</a>
@@ -15,6 +15,8 @@
             </tr>
           </tbody>
         </table>
+        <pagination total-items='employees.length' ng-model='currentPage' items-per-page='itemsPerPage' max-size="5" data-previous-text="&laquo;" data-next-text="&raquo;">
+        </pagination>
       </div>
     </div>
 
