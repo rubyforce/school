@@ -38,6 +38,9 @@
   max-height: 450px;
   overflow-y: auto;
 }
+table tbody td {
+  cursor: pointer;
+}
 .list-group-item:first-child {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;

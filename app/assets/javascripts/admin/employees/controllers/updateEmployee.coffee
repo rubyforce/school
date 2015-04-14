@@ -2,16 +2,16 @@
   '$scope', 'Employee', '$timeout'
   ($scope, Employee, $timeout) ->
     makeTableSelectable = ->
-        $timeout ->
-            table = $('table')
-            table.tableselect
-                multiple: false
-                activeClass: 'warning'
-                onSelectionChanged: (element) ->
-                    return unless element?
-                    user = $scope.employees[element.data('index')]
-                    $scope.$apply ->
-                        editing(user)
+      $timeout ->
+        table = $('table')
+        table.tableselect
+          multiple: false
+          activeClass: 'warning'
+          onSelectionChanged: (element) ->
+            return unless element?
+            user = $scope.employees[element.data('index')]
+            $scope.$apply ->
+              editing(user)
 
     $scope.$watch 'currentPage', makeTableSelectable
 

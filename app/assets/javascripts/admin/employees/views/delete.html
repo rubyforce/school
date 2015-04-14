@@ -5,13 +5,19 @@
     </div>
     <div class="panel panel-default employee-list">
       <div class="panel-body scrolling">
-        <table class="table table-bordered scrolling">
+        <table class="table table-bordered table-striped scrolling">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Contact #</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr ng-repeat='employee in employees | offset:(currentPage-1)*itemsPerPage | limitTo:itemsPerPage'>
-              <th scope="row" width="5%">{{employee.id}}</th>
-              <td>
-                <a href="" ng-click="deleting(employees[$index + (currentPage - 1) * itemsPerPage])">{{employee.firstName}}</a>
-              </td>
+            <tr data-index='{{$index + (currentPage - 1) * itemsPerPage}}' ng-repeat='employee in employees | offset:(currentPage-1)*itemsPerPage | limitTo:itemsPerPage'>
+              <td>{{employee.firstName}}</td>
+              <td>{{employee.lastName}}</td>
+              <td>{{employee.contactNo}}</td>
             </tr>
           </tbody>
         </table>
