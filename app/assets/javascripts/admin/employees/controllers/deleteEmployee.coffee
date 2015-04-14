@@ -14,7 +14,7 @@
         $scope.alert = true
 
     $scope.itemsPerPage = 5
-    $scope.currentPage = 0
+    $scope.currentPage = 1
 
     $scope.pageCount = ->
       Math.ceil($scope.employees.length / $scope.itemsPerPage)
