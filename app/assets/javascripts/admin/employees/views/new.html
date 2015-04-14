@@ -62,11 +62,11 @@
               <label for='employee.gender' class="control-label">Gender</label>
             </div>
             <div class="col-sm-6">
-              <label for='employee.gender' class="radio-inline">
-                <input type="radio" name="employee.gender" value="male" ng-model="employee.gender" required>Male
+              <label for='employee.gender.male' class="radio-inline">
+                <input type="radio" id="employee.gender.male" group='gender' value="male" ng-model="employee.gender" required>Male
               </label>
-              <label for='employee.gender' class="radio-inline">
-                <input type="radio" name="employee.gender" value="female" ng-model="employee.gender" required>Female
+              <label for='employee.gender.female' class="radio-inline">
+                <input type="radio" id="employee.gender.female" group='gender' value="female" ng-model="employee.gender" required>Female
               </label>
             </div>
           </div>
