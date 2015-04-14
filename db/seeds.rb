@@ -21,22 +21,26 @@ Employee.create do |employee|
   employee.first_name        = "Artsiom"
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
+  employee.datetime          = "10/10/2010"
 end
 
 Employee.create do |employee|
   employee.first_name        = "Zahar"
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
+  employee.datetime          = "10/10/2010"
 end
 
 Employee.create do |employee|
   employee.first_name        = "Valera"
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
+  employee.datetime          = "10/10/2010"
 end
 
 Employee.create do |employee|
   employee.first_name        = "Alexander"
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
+  employee.datetime          = "10/10/2010"
 end
