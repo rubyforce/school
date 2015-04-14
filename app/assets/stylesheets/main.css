@@ -100,3 +100,6 @@ form .update_form {
 .alert {
   border-radius: 0px;
 }
+.input-group-addon {
+  border-radius: 0px;
+}
