@@ -4,6 +4,8 @@ class Employee < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name, :gender, :contact_no
 
+  belongs_to :cash_management
+
   MARRIED = 1
   NOT_MARRIED = 2
 end
