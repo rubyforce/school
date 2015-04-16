@@ -47,7 +47,6 @@
         $('#objects-list').find("tr[data-index='#{selectIndex}']").click();
 
     $scope.previous = ->
-      debugger
       selectIndex = $scope.employees.indexOf($scope.currentUser) - 1;
       if selectIndex >= $scope.employees.length
         selectIndex = 0
