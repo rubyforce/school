@@ -38,7 +38,21 @@ students.config [
                 templateUrl: "admin/students/views/delete.html"
 ]
 
-@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'ui.date', 'ui.bootstrap'])
+@settlements = angular.module('admin.settlements', [])
+
+settlements.config [
+    '$stateProvider', '$urlRouterProvider'
+    ($stateProvider, $urlRouterProvider) ->
+        $stateProvider
+            .state 'settlements',
+                url: "/settlements"
+                templateUrl: "admin/settlements/views/index.html"
+            .state 'settlements.new',
+                url: "/new"
+                templateUrl: "admin/settlements/views/new.html"
+]
+
+@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'admin.settlements', 'ui.date', 'ui.bootstrap'])
 
 admin.config [
     '$stateProvider', '$urlRouterProvider'
