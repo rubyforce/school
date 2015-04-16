@@ -81,15 +81,15 @@ ActiveRecord::Schema.define(version: 20150416082028) do
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "settlements", force: :cascade do |t|
-    t.decimal  "opening_cash",   default: 500.0
-    t.decimal  "cash_paid",      default: 500.0
-    t.decimal  "cash_in_hand",   default: 4500.0
+    t.string   "opening_cash"
+    t.string   "cash_paid"
+    t.string   "cash_in_hand"
     t.string   "cash_deposited"
     t.string   "cash_moved"
-    t.decimal  "cash_closing",   default: 500.0
+    t.string   "cash_closing"
     t.string   "remark"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "students", force: :cascade do |t|
