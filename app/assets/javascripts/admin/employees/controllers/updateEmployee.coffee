@@ -45,4 +45,15 @@
       $scope.currentPage = Math.ceil(selectIndex / ($scope.itemsPerPage - 1))
       $timeout ->
         $('#objects-list').find("tr[data-index='#{selectIndex}']").click();
+
+    $scope.previous = ->
+      debugger
+      selectIndex = $scope.employees.indexOf($scope.currentUser) - 1;
+      if selectIndex >= $scope.employees.length
+        selectIndex = 0
+      editing($scope.employees[selectIndex])
+
+      $scope.currentPage = Math.ceil(selectIndex / ($scope.itemsPerPage - 1))
+      $timeout ->
+        $('#objects-list').find("tr[data-index='#{selectIndex}']").click();
 ]
