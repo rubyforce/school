@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416082028) do
+ActiveRecord::Schema.define(version: 20150416123107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,26 @@ ActiveRecord::Schema.define(version: 20150416082028) do
     t.datetime "updated_at"
   end
 
+  create_table "cash_managements", force: :cascade do |t|
+    t.string   "cash_opening"
+    t.string   "cash_paid"
+    t.string   "cash_in_hand"
+    t.string   "cash_deposited"
+    t.string   "cash_moved"
+    t.string   "cash_closing"
+    t.string   "remark"
+    t.string   "expense_made"
+    t.string   "nature_expense"
+    t.string   "payment"
+    t.string   "authorized_by"
+    t.decimal  "amount"
+    t.string   "expense_by"
+    t.string   "month"
+    t.string   "year"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -79,18 +99,6 @@ ActiveRecord::Schema.define(version: 20150416082028) do
 
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
-
-  create_table "settlements", force: :cascade do |t|
-    t.string   "opening_cash"
-    t.string   "cash_paid"
-    t.string   "cash_in_hand"
-    t.string   "cash_deposited"
-    t.string   "cash_moved"
-    t.string   "cash_closing"
-    t.string   "remark"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
 
   create_table "students", force: :cascade do |t|
     t.string   "first_name"

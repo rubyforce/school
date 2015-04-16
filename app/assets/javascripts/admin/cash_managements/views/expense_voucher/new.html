@@ -1,0 +1,82 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Create Expense Voucher</div>
+  <div class="panel-body">
+    <form name='form' ng-controller='CreateExpenseController' class="form-horizontal" ng-submit='create()'>
+      <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new expense voucher.</div>
+      <div class="col-sm-12">
+        <!-- First Column -->
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='expense.expense_made' class="control-label">Expense Made</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='expense.expense_made' type='text' ng-model='expense.expense_made' class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='expense.nature_expense' class="control-label">Nature of Expense</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='expense.nature_expense' ng-model='expense.nature_expense' class="form-control">
+                <option value="1">Lorem Sit Amet</option>
+                <option value="2">Lorem Ipsum Dolor</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='expense.payment' class="control-label">Payment Made to</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='expense.payment' type='text' ng-model='expense.payment' class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='expense.authorized_by' class="control-label">Authorized By</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='expense.authorized_by' ng-model='expense.authorized_by' class="form-control">
+                <option value="1">Lorem Sit Amet</option>
+                <option value="2">Lorem Ipsum Dolor</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='expense.amount' class="control-label">Amount</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='expense.amount' type='text' ng-model='expense.amount' class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='expense.expense_by' class="control-label">Expense By</label>
+            </div>
+            <div class="col-sm-6">
+              <select name='expense.expense_by' ng-model='expense.expense_by' class="form-control">
+                <option value="1">Lorem Sit Amet</option>
+                <option value="2">Lorem Ipsum Dolor</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- End First Column -->
+
+      <div class="form-group ui buttons">
+        <div class=" col-sm-12">
+          <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>SAVE and PRINT </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

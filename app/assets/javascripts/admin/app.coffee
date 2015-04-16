@@ -38,21 +38,27 @@ students.config [
                 templateUrl: "admin/students/views/delete.html"
 ]
 
-@settlements = angular.module('admin.settlements', [])
+@cash_managements = angular.module('admin.cash_managements', [])
 
-settlements.config [
+cash_managements.config [
     '$stateProvider', '$urlRouterProvider'
     ($stateProvider, $urlRouterProvider) ->
         $stateProvider
-            .state 'settlements',
-                url: "/settlements"
-                templateUrl: "admin/settlements/views/index.html"
-            .state 'settlements.new',
-                url: "/new"
-                templateUrl: "admin/settlements/views/new.html"
+            .state 'cash_managements',
+                url: "/cash_managements"
+                templateUrl: "admin/cash_managements/views/index.html"
+            .state 'cash_managements.settlements',
+                url: "/settlements/new"
+                templateUrl: "admin/cash_managements/views/settlements/new.html"
+            .state 'cash_managements.expense',
+                url: "/expense_voucher/new"
+                templateUrl: "admin/cash_managements/views/expense_voucher/new.html"
+            .state 'cash_managements.salary',
+                url: "/salary/new"
+                templateUrl: "admin/cash_managements/views/salary/new.html"
 ]
 
-@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'admin.settlements', 'ui.date', 'ui.bootstrap'])
+@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'admin.cash_managements', 'ui.date', 'ui.bootstrap'])
 
 admin.config [
     '$stateProvider', '$urlRouterProvider'
