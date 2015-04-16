@@ -3,10 +3,10 @@
   ($scope, CashManagement) ->
 
     DEFAULT_SETTLEMENT =
-      opening_cash: 'Rs. 5000'
-      cash_paid:    'Rs. 500'
-      cash_in_hand: 'Rs. 4500'
-      cash_closing: 'Rs. 500'
+      opening_cash: '5000'
+      cash_paid:    '500'
+      cash_in_hand: '4500'
+      cash_closing: '500'
 
     build = -> _.clone(DEFAULT_SETTLEMENT)
 

@@ -54,12 +54,12 @@ ActiveRecord::Schema.define(version: 20150416123107) do
   end
 
   create_table "cash_managements", force: :cascade do |t|
-    t.string   "cash_opening"
-    t.string   "cash_paid"
-    t.string   "cash_in_hand"
+    t.decimal  "cash_opening"
+    t.decimal  "cash_paid"
+    t.decimal  "cash_in_hand"
     t.string   "cash_deposited"
     t.string   "cash_moved"
-    t.string   "cash_closing"
+    t.decimal  "cash_closing"
     t.string   "remark"
     t.string   "expense_made"
     t.string   "nature_expense"

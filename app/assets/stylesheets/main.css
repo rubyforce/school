@@ -103,3 +103,7 @@ form .update_form {
 .input-group-addon {
   border-radius: 0px;
 }
+.control-label.weight {
+  font-weight: 100;
+  float: right;
+}
