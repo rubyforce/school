@@ -3,7 +3,7 @@
   ($scope, CashManagement, Employee) ->
 
     $scope.alert = false
-    Employee.query(first_name: $scope.first_name).then ((response) ->
+    Employee.query().then ((response) ->
       $scope.employee = response
     )
 

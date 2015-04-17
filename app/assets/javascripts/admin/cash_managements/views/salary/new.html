@@ -50,8 +50,12 @@
             <tbody>
               <tr ng-repeat="employee in employees">
                 <td>{{employee.firstName}}</td>
-                <td></td>
-                <td></td>
+                <td>
+                  <label>
+                    <input type="checkbox" name="employee.salary_check" value="100" ng-model="employee.salary_check"> 2000
+                  </label>
+                </td>
+                <td><input type="text" ng-model="employee.remark" class="form-control"></td>
               </tr>
             </tbody>
           </table>
