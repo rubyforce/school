@@ -1,0 +1,72 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Create Salary Expense Voucher</div>
+  <div class="panel-body">
+    <form name='form' ng-controller='CreateSalaryController' class="form-horizontal" ng-submit='create()'>
+      <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new salary.</div>
+      <div class="col-sm-12">
+        <!-- First Column -->
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='salary.month' class="control-label">Salary for the month of</label>
+            </div>
+            <div class="col-sm-4">
+              <select name='salary.month' ng-model='salary.month' class="form-control">
+                <option value="1">Lorem Sit Amet</option>
+                <option value="2">Lorem Ipsum Dolor</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- End First Column -->
+
+        <!-- Second Column -->
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='salary.year' class="control-label" style="float: right">year</label>
+            </div>
+            <div class="col-sm-4">
+              <select name='salary.year' ng-model='salary.year' class="form-control">
+                <option value="1">Lorem Sit Amet</option>
+                <option value="2">Lorem Ipsum Dolor</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <!-- End Second Column -->
+      </div>
+
+      <div class="panel panel-default employee-salary">
+        <div class="update_form">
+          <table id='objects-list' class="table table-bordered table-striped scrolling">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Salary</th>
+                <th>Remark if any</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="employee in employees">
+                <td>{{employee.firstName}}</td>
+                <td>
+                  <label>
+                    <input type="checkbox" name="employee.salary_check" value="100" ng-model="employee.salary_check"> 2000
+                  </label>
+                </td>
+                <td><input type="text" ng-model="employee.remark" class="form-control"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="form-group ui buttons">
+        <div class=" col-sm-12">
+          <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>CREATE SALARY </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

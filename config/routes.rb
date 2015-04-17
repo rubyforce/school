@@ -2,7 +2,7 @@ Greenarea::Application.routes.draw do
   namespace :admin do
     resources :students
     resources :employees
-    resources :settlements
+    resources :cash_managements
   end
 
   devise_for :users

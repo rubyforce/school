@@ -57,6 +57,14 @@ table tbody td {
   max-height: 400px;
   overflow-y: auto;
 }
+.panel.panel-default.employee-salary {
+  position: relative;
+  width: 95%;
+  margin: 25px auto;
+  height: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+}
 .panel-body.alignment {
   position: absolute;
   text-align: center;
@@ -102,4 +110,8 @@ form .update_form {
 }
 .input-group-addon {
   border-radius: 0px;
+}
+.control-label.weight {
+  font-weight: 100;
+  float: right;
 }
