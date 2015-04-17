@@ -3,9 +3,8 @@
   ($scope, CashManagement, Employee) ->
 
     $scope.alert = false
-    debugger
     Employee.query(first_name: $scope.first_name).then ((response) ->
-      $scope.user = response
+      $scope.employee = response
     )
 
     $scope.create = ->

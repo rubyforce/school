@@ -39,9 +39,22 @@
 
       <div class="panel panel-default update-employee">
         <div class="update_form">
-          <div class="col-sm-12">
-            <li ng-repeat="user in employees">{{user.firstName}}</li>
-          </div>
+          <table id='objects-list' class="table table-bordered table-striped scrolling">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Salary</th>
+                <th>Remark if any</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="employee in employees">
+                <td>{{employee.firstName}}</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
