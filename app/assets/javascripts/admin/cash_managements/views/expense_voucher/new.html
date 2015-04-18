@@ -21,12 +21,11 @@
             </div>
             <div class="col-sm-6">
               <select name='expense.nature_expense' ng-model='expense.nature_expense' class="form-control">
-                <option value="1">Lorem Sit Amet</option>
-                <option value="2">Lorem Ipsum Dolor</option>
+                <option ng-repeat="nature in natures">{{nature.nature_expense}}</option>
               </select>
             </div>
             <div class="col-sm-2">
-              <a href="" class="btn btn-default">+</a>
+              <a href="" class="btn btn-default" ng-click="openForm('sm')">+</a>
             </div>
           </div>
 
