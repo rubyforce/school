@@ -10,7 +10,7 @@
             <div class="col-sm-4">
               <label for='salary.month' class="control-label">Salary for the month of</label>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-6">
               <select name='salary.month' ng-model='salary.month' class="form-control">
                 <option value="1">January</option>
                 <option value="2">February</option>
@@ -36,20 +36,9 @@
             <div class="col-sm-4">
               <label for='salary.year' class="control-label" style="float: right">year</label>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-6">
               <select name='salary.year' ng-model='salary.year' class="form-control">
-                <option value="1">2015</option>
-                <option value="2">2016</option>
-                <option value="3">2017</option>
-                <option value="4">2018</option>
-                <option value="5">2019</option>
-                <option value="6">2020</option>
-                <option value="7">2021</option>
-                <option value="8">2022</option>
-                <option value="9">2023</option>
-                <option value="10">2024</option>
-                <option value="11">2025</option>
-                <option value="12" >2026</option>
+                <option ng-repeat="year in years">{{year}}</option>
               </select>
             </div>
           </div>
