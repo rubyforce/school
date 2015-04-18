@@ -10,12 +10,11 @@
             <div class="col-sm-4">
               <label for='settlement.opening_cash' class="control-label">Opening Cash</label>
             </div>
-            <div class="col-sm-6">
-              <div class="col-sm-3">
-                <label for='settlement.opening_cash' class="control-label weight">Rs.</label>
-              </div>
-              <div class="col-sm-6">
-                <input name='settlement.opening_cash' type='text' ng-model='settlement.opening_cash' class="form-control" ng-disabled="settlement.opening_cash" />
+
+            <div class="col-sm-8">
+              <div class="input-group">
+                <div class="input-group-addon">Rs.</div>
+                <input type="text" class="form-control" name="settlement.opening_cash" ng-model='settlement.opening_cash'>
               </div>
             </div>
           </div>
@@ -24,12 +23,10 @@
             <div class="col-sm-4">
               <label for='settlement.cash_paid' class="control-label ">Cash Paid</label>
             </div>
-            <div class="col-sm-6">
-              <div class="col-sm-3">
-                <label for='settlement.opening_cash' class="control-label weight">Rs.</label>
-              </div>
-              <div class="col-sm-6">
-                <input name='settlement.cash_paid' type='text' ng-model='settlement.cash_paid' class="form-control" ng-disabled="settlement.cash_paid" />
+            <div class="col-sm-8">
+              <div class="input-group">
+                <div class="input-group-addon">Rs.</div>
+                <input type="text" class="form-control" name="settlement.cash_paid" ng-model='settlement.cash_paid'>
               </div>
             </div>
           </div>
@@ -38,12 +35,10 @@
             <div class="col-sm-4">
               <label for='settlement.cash_in_hand' class="control-label">Cash In Hand</label>
             </div>
-            <div class="col-sm-6">
-              <div class="col-sm-3">
-                <label for='settlement.opening_cash' class="control-label weight">Rs.</label>
-              </div>
-              <div class="col-sm-6">
-                <input name='settlement.cash_in_hand' type='text' ng-model='settlement.cash_in_hand' class="form-control" ng-disabled="settlement.cash_in_hand" />
+            <div class="col-sm-8">
+              <div class="input-group">
+                <div class="input-group-addon">Rs.</div>
+                <input type="text" class="form-control" name="settlement.cash_in_hand" ng-model='settlement.cash_in_hand'>
               </div>
             </div>
           </div>
@@ -52,7 +47,7 @@
             <div class="col-sm-5">
               <label for='settlement.cash_deposited' class="control-label">Cash Deposited in Bank</label>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
               <label for='settlement.cash_deposited.true' class="radio-inline">
                 <input type="radio" id="settlement.cash_deposited.true" value="true" ng-model="settlement.cash_deposited">Yes
               </label>
@@ -60,8 +55,11 @@
                 <input type="radio" id="settlement.cash_deposited.false" value="false" ng-model="settlement.cash_deposited">No
               </label>
             </div>
-            <div class="col-sm-3">
-              <input type='text' ng-model='default' class="form-control" ng-disabled="default" />
+            <div class="col-sm-4">
+              <div class="input-group">
+                <div class="input-group-addon">Rs.</div>
+                <input type="text" class="form-control" name="settlement.cash_deposited" ng-model='default'>
+              </div>
             </div>
           </div>
 
@@ -69,7 +67,7 @@
             <div class="col-sm-5">
               <label for='settlement.cash_moved' class="control-label">Cash Moved</label>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
               <label for='settlement.cash_moved.true' class="radio-inline">
                 <input type="radio" id="settlement.cash_moved.true" value="true" ng-model="settlement.cash_moved">Yes
               </label>
@@ -77,8 +75,11 @@
                 <input type="radio" id="settlement.cash_moved.false" value="false" ng-model="settlement.cash_moved">No
               </label>
             </div>
-            <div class="col-sm-3">
-              <input type='text' ng-model='default' class="form-control" ng-disabled="default" />
+            <div class="col-sm-4">
+              <div class="input-group">
+                <div class="input-group-addon">Rs.</div>
+                <input type="text" class="form-control" name="settlement.cash_moved" ng-model='default'>
+              </div>
             </div>
           </div>
 
@@ -86,12 +87,10 @@
             <div class="col-sm-4">
               <label for='settlement.cash_closing' class="control-label">Closing Cash</label>
             </div>
-            <div class="col-sm-6">
-              <div class="col-sm-3">
-                <label for='settlement.opening_cash' class="control-label weight">Rs.</label>
-              </div>
-              <div class="col-sm-6">
-                <input name='settlement.cash_closing' type='text' ng-model='settlement.cash_closing' class="form-control" ng-disabled="settlement.cash_closing" />
+            <div class="col-sm-8">
+              <div class="input-group">
+                <div class="input-group-addon">Rs.</div>
+                <input type="text" class="form-control" name="settlement.cash_closing" ng-model='settlement.cash_closing'>
               </div>
             </div>
           </div>
@@ -100,7 +99,7 @@
             <div class="col-sm-4">
               <label for='settlement.remark' class="control-label">Remark</label>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-8">
               <input name='settlement.remark' type='text' ng-model='settlement.remark' class="form-control" ng-disabled="settlement.remark" />
             </div>
           </div>
