@@ -10,11 +10,21 @@
         size: size
         controller: 'CreateExpenseController')
       NatureSharedObjects.modalWindow.result.then (index) ->
-        $scope.natures.push (index)
+        $scope.title = index
+        $scope.natures.push ($scope.title)
+
+    $scope.add = ->
+      debugger
+      NatureSharedObjects.modalWindow.close
+        nature_expense: $scope.title
+
+    $scope.close = ->
+      NatureSharedObjects.modalWindow.dismiss 'cancel'
 
     $scope.alert = false
 
     $scope.create = ->
+      debugger
       new CashManagement($scope.expense).create().then (response) ->
         $scope.cash_managements.push(new CashManagement(response))
         $scope.alert = true
