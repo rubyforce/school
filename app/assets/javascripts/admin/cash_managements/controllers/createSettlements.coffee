@@ -13,12 +13,12 @@
     $scope.default = "Rs. 4000"
 
     $scope.alert = false
-    
+
     $scope.settlement = build()
-    
+
     $scope.create = ->
       new CashManagement($scope.settlement).create().then (response) ->
         $scope.cash_managements.push(new CashManagement(response))
         $scope.alert = true
-    
+
 ]
