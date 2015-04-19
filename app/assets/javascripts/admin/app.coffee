@@ -38,6 +38,8 @@ students.config [
                 templateUrl: "admin/students/views/delete.html"
 ]
 
+@admissions = angular.module('admin.admissions', [])
+
 @cash_managements = angular.module('admin.cash_managements', [])
 
 cash_managements.config [
@@ -58,7 +60,7 @@ cash_managements.config [
                 templateUrl: "admin/cash_managements/views/salary/new.html"
 ]
 
-@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'admin.cash_managements', 'ui.date', 'ui.bootstrap'])
+@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'admin.cash_managements', 'admin.admissions', 'ui.date', 'ui.bootstrap', 'angular-country-select'])
 
 admin.config [
     '$stateProvider', '$urlRouterProvider'
