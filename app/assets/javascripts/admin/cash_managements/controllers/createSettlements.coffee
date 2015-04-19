@@ -10,7 +10,7 @@
 
     build = -> _.clone(DEFAULT_SETTLEMENT)
 
-    $scope.default = "Rs. 4000"
+    $scope.default = 4000
 
     $scope.alert = false
 
