@@ -2,16 +2,22 @@
   <div class="panel-heading">Update Existing Entry</div>
     <div class="panel panel-default student-list">
       <div class="panel-body scrolling">
-        <table class="table table-bordered scrolling">
+        <table id='objects-list' class="table table-bordered table-striped scrolling">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr ng-repeat='student in students'>
-              <th scope="row" width="5%">{{student.id}}</th>
-              <td>
-                <a href="#" ng-click="editing(students[$index])" ng-model="clicked">{{student.firstName}}</a>
-              </td>
+            <tr data-index='{{$index + (currentPage - 1) * itemsPerPage}}' ng-repeat='student in students | offset:(currentPage-1)*itemsPerPage | limitTo:itemsPerPage'>
+              <td>{{student.firstName}}</td>
+              <td>{{student.lastName}}</td>
             </tr>
           </tbody>
         </table>
+        <pagination total-items='students.length' ng-model='currentPage' items-per-page='itemsPerPage' max-size="5" data-previous-text="&laquo;" data-next-text="&raquo;">
+        </pagination>
       </div>
     </div>
 
@@ -122,10 +128,7 @@
                   <label class="control-label">Place of Birth</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name='currentUser.birth_place' ng-model='currentUser.birthPlace' class="form-control">
-                    <option value="1">Value1</option>
-                    <option value="2">Value2</option>
-                  </select>
+                  <input name='currentUser.birth_place' country-select data-ng-model="currentUser.birthPlace"></input>
                 </div>
               </div>
             </div>
@@ -162,10 +165,7 @@
                   <label class="control-label">Nationality</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name='currentUser.nationality' ng-model='currentUser.nationality' class="form-control">
-                    <option value="1">Value1</option>
-                    <option value="2">Value2</option>
-                  </select>
+                  <input name='currentUser.nationality' country-select data-ng-model="currentUser.nationality"></input>
                 </div>
               </div>
 
@@ -241,15 +241,15 @@
         </div>
       </div>
       <div class="ui buttons padding">
-        <button type="submit" class="btn btn-default">&lt;&lt; Previous Record</button>
+        <a href="#" ng-click="previous()" class="btn btn-default">&lt;&lt; Previous Record</a>
         <button type="submit" class="btn btn-default">Save and Continue</button>
-        <button type="submit" class="btn btn-default">Next Record &gt;&gt;</button>
+        <a href="#" ng-click="next()" class="btn btn-default" ng-disabled='students.length === 0'>Next Record &gt;&gt;</a>
       </div>
     </form>
     <div class="ui buttons padding" ng-hide="clicked">
-      <button type="submit" class="btn btn-default">&lt;&lt; Previous Record</button>
-      <button type="submit" class="btn btn-default">Save and Continue</button>
-      <button type="submit" class="btn btn-default">Next Record &gt;&gt;</button>
+      <button type="submit" class="btn btn-default" ng-disabled='students.length === 0'>&lt;&lt; Previous Record</button>
+      <button type="submit" class="btn btn-default" ng-disabled='students.length === 0'>Save and Continue</button>
+      <button type="submit" class="btn btn-default" ng-disabled='students.length === 0'>Next Record &gt;&gt;</button>
     </div>
   </div>
 </div>

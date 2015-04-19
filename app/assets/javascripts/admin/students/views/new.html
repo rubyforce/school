@@ -100,11 +100,7 @@
               <label for='student.birth_place' class="control-label">Place of Birth</label>
             </div>
             <div class="col-sm-6">
-              <select name='student.birth_place' ng-model='student.birth_place' class="form-control">
-                <option value="1">Value1</option>
-                <option value="2">Value2</option>
-                <option value="3">Value3</option>
-              </select>
+              <input name='student.birth_place' country-select data-ng-model="student.birth_place"></input>
             </div>
           </div>
         </div>
@@ -141,10 +137,7 @@
               <label for='student.nationality' class="control-label">Nationality</label>
             </div>
             <div class="col-sm-6">
-              <select name='student.nationality' ng-model='student.nationality' class="form-control">
-                <option value="1">Value1</option>
-                <option value="2">Value2</option>
-              </select>
+              <input name='student.nationality' country-select data-ng-model="student.nationality"></input>
             </div>
           </div>
 

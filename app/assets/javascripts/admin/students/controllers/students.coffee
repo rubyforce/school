@@ -1,5 +1,5 @@
 @students.controller 'StudentsController', [
-    '$scope', '$state', 'Student'
+    '$scope', '$state', 'Student', 'Admission'
     ($scope, $state, Student) ->
         $state.go('students.new')
 
