@@ -10,12 +10,18 @@
             <tr>
               <th>First Name</th>
               <th>Last Name</th>
+              <th>Group #</th>
+              <th>Date of Admission</th>
+              <th>Entry #</th>
             </tr>
           </thead>
           <tbody>
             <tr data-index='{{$index + (currentPage - 1) * itemsPerPage}}' ng-repeat='student in students | offset:(currentPage-1)*itemsPerPage | limitTo:itemsPerPage'>
               <td>{{student.firstName}}</td>
               <td>{{student.lastName}}</td>
+              <td>{{student.groupNo}}</td>
+              <td>{{student.admissionDate}}</td>
+              <td>{{student.entryNo}}</td>
             </tr>
           </tbody>
         </table>

@@ -1,6 +1,4 @@
 class Admin::CashManagementsController < ApplicationController
-  load_and_authorize_resource
-
   respond_to :json
 
   def index

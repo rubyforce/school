@@ -1,8 +1,6 @@
 class Admin::StudentsController < ApplicationController
-  load_and_authorize_resource
-
   respond_to :json
-  
+
   def index
     @students = Student.all
     respond_with @students
