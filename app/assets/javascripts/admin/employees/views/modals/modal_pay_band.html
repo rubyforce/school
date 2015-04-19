@@ -1,6 +1,6 @@
 <div class="modal-header">
   <a type="button" class="close" ng-click="close()" aria-label="Close"><span aria-hidden="true">&times;</span></a>
-  <h4 class="modal-title">New title!</h4>
+  <h4 class="modal-title">New Pay Band</h4>
 </div>
 <div class="modal-body">
   <div class="form-horizontal">
@@ -13,6 +13,6 @@
   </div>
 </div>
 <div class="modal-footer">
-  <a class="btn btn-default btn-sm" ng-click="addPay()">OK</a>
+  <a class="btn btn-default btn-sm" ng-click="addPay()" ng-disabled="!title">OK</a>
   <a class="btn btn-default" ng-click="close()">Cancel</a>
 </div>

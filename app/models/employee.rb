@@ -5,7 +5,4 @@ class Employee < ActiveRecord::Base
 
 
   belongs_to :cash_management
-
-  MARRIED = 1
-  NOT_MARRIED = 2
 end
