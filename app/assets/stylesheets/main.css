@@ -124,3 +124,6 @@ form .update_form {
 .modal-content {
   border-radius: 0px;
 }
+.table.meals .center {
+  text-align: center;
+}
