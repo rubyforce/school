@@ -75,10 +75,10 @@ ActiveRecord::Schema.define(version: 20150419161331) do
     t.string   "expense_by"
     t.string   "month"
     t.string   "year"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.boolean  "cash_deposited_enabled"
-    t.boolean  "cash_moved_enabled"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "cash_deposited_enabled", default: false
+    t.boolean  "cash_moved_enabled",     default: false
   end
 
   create_table "employees", force: :cascade do |t|
