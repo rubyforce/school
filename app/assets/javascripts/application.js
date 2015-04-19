@@ -18,5 +18,6 @@
 //= require lodash
 //= require angular-country-select
 //
+//= require ./admin/app
 //= require_tree ./admin
 //= require_tree ./vendors

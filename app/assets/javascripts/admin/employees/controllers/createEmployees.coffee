@@ -11,7 +11,6 @@
     $scope.employee = build()
 
     $scope.create = ->
-      debugger
       new Employee($scope.employee).create().then (response) ->
         $scope.employees.push(new Employee(response))
         $scope.employee = build()
