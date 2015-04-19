@@ -1,5 +1,5 @@
 @students.controller 'CreateStudentsController', [
-  '$scope', 'Student', 'Admission'
+  '$scope', 'Student'
   ($scope, Student) ->
     DEFAULT_STUDENT =
       entry_no: 'auto'
