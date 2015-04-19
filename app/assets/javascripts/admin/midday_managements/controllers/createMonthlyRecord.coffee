@@ -9,4 +9,6 @@
         $scope.midday_managements.push(new MiddayManagement(response))
         $scope.alert = true
 
+    $scope.reset = ->
+      $scope.midday_meal =null
 ]
