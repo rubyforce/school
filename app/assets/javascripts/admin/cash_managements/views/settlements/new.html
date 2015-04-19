@@ -49,16 +49,16 @@
             </div>
             <div class="col-sm-3">
               <label for='settlement.cash_deposited.true' class="radio-inline">
-                <input type="radio" id="settlement.cash_deposited.true" value="on" ng-model="settlement.cash_deposited">Yes
+                <input type="radio" id="settlement.cash_deposited.true" value="1" ng-model="settlement.cash_deposited">Yes
               </label>
               <label for='settlement.cash_deposited.false' class="radio-inline">
-                <input type="radio" id="settlement.cash_deposited.false" value="off" ng-model="settlement.cash_deposited">No
+                <input type="radio" id="settlement.cash_deposited.false" value="0" ng-model="settlement.cash_deposited">No
               </label>
             </div>
             <div class="col-sm-4">
               <div class="input-group">
                 <div class="input-group-addon">Rs.</div>
-                <input type="text" class="form-control" name="settlement.cash_deposited" ng-model='settlement.cash_deposited'>
+                <input type="text" class="form-control" name="settlement.cash_deposited_enabled" ng-model='settlement.cash_deposited_enabled'>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@
             <div class="col-sm-4">
               <div class="input-group">
                 <div class="input-group-addon">Rs.</div>
-                <input type="text" class="form-control" name="settlement.cash_moved" ng-model='settlement.cash_moved'>
+                <input type="text" class="form-control" name="settlement.cash_moved_enabled" ng-model='settlement.cash_moved_enabled'>
               </div>
             </div>
           </div>
