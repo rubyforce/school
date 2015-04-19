@@ -1,1 +1,84 @@
-monthly
+<div class="panel panel-default">
+  <div class="panel-heading">Daily Item Usage for Mid Day Meal</div>
+  <div class="panel-body">
+    <form name='form' ng-controller='CreateMonthlyRecordController' class="form-horizontal" ng-submit='create()'>
+      <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new daily meal.</div>
+      <div class="col-sm-12">
+        <!-- First Column -->
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='midday_meal.month' class="control-label">Month</label>
+            </div>
+            <div class="col-sm-6">
+              <div class="input-group">
+                <input name='midday_meal.month' ng-model='midday_meal.month' class="form-control" ui-date/>
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="col-sm-4">
+                <label for='midday_meal.item_name' class="control-label">Item Name</label>
+              </div>
+              <div class="col-sm-4">
+                <select name='midday_meal.item_name' ng-model='midday_meal.item_name' class="form-control">
+                  <option value="1">LOrem</option>
+                  <option value="2">Ipsum</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-body scrolling">
+            <table id='objects-list' class="table scrolling">
+              <thead>
+                <tr>
+                  <th>Item Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr >
+                  <td>kdfiu</td>
+                </tr>
+              </tbody>
+            </table>
+            <pagination total-items='employees.length' ng-model='currentPage' items-per-page='itemsPerPage' max-size="5" data-previous-text="&laquo;" data-next-text="&raquo;">
+            </pagination>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td width="27%">Expense made towards: Fuel and Vegetables</td>
+                <td>
+                  <input name='midday_meal.vegetable' type='text' ng-model='midday_meal.vegetable' class="form-control" />
+                </td>
+                <td width="12%">Cooks and helpers</td>
+                <td>
+                  <input name='midday_meal.cook' type='text' ng-model='midday_meal.cook' class="form-control" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="form-group ui buttons">
+          <div class=" col-sm-12">
+            <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>Save</button>
+            <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>Reset</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
