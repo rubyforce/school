@@ -72,7 +72,7 @@
           </div>
 
           <div class="form-group">
-            <div class="col-sm-4">  
+            <div class="col-sm-4">
               <label for='employee.marital_status' class="control-label">Marital Status</label>
             </div>
             <div class="col-sm-6">
@@ -97,22 +97,18 @@
               </select>
             </div>
           </div>
-          
+
           <div class="form-group">
             <div class="col-sm-4">
               <label for='employee.paid_type' class="control-label">Paid type</label>
             </div>
             <div class="col-sm-6">
               <select name="employee.paid_type" class="form-control" ng-model="employee.paid_type">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option ng-repeat="paid in paid_types">{{paid.paid_type}}</option>
               </select>
             </div>
             <div class="col-sm-2">
-              <a href="" class="btn btn-default">+</a>
+              <a ng-click="openPaidForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
         </div>
@@ -153,15 +149,11 @@
             </div>
             <div class="col-sm-6">
               <select name="employee.section" class="form-control" ng-model="employee.section">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option ng-repeat="section in sections">{{section.section}}</option>
               </select>
             </div>
             <div class="col-sm-2">
-              <a href="" class="btn btn-default">+</a>
+              <a ng-click="openSectionForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
 
@@ -171,15 +163,11 @@
             </div>
             <div class="col-sm-6">
               <select name="employee.pay_band" class="form-control" ng-model="employee.pay_band">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option ng-repeat="pay in pay_bands">{{pay.pay_band}}</option>
               </select>
             </div>
             <div class="col-sm-2">
-              <a href="" class="btn btn-default">+</a>
+              <a ng-click="openPayBandForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
 

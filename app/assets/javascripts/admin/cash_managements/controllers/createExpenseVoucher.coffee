@@ -14,7 +14,6 @@
         $scope.natures.push ($scope.title)
 
     $scope.add = ->
-      debugger
       NatureSharedObjects.modalWindow.close
         nature_expense: $scope.title
 
@@ -24,7 +23,6 @@
     $scope.alert = false
 
     $scope.create = ->
-      debugger
       new CashManagement($scope.expense).create().then (response) ->
         $scope.cash_managements.push(new CashManagement(response))
         $scope.alert = true
