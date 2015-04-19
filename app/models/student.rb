@@ -4,6 +4,8 @@ class Student < ActiveRecord::Base
     :finance_mode, :entry_no, :group_no, :academic_year, :father_name, :mother_name,
     :remarks, :last_school
 
+  belongs_to :admission
+
   ADMISSION = { admission1: 1, admission2: 2 }
   RELIGION = { religion1: 1, religion2: 2 }
   CASTE = { caste1: 1, caste2: 2 }

@@ -87,7 +87,7 @@ table tbody td {
   text-decoration: none;
 }
 form .update_form {
-  padding: 20px;  
+  padding: 20px;
 }
 .alert-message {
   width: 95%;
@@ -95,7 +95,7 @@ form .update_form {
 }
 .panel.panel-default.student-list {
   width: 95%;
-  margin: 25px auto; 
+  margin: 25px auto;
 }
 .panel.panel-default.update-student {
   position: relative;
@@ -114,4 +114,10 @@ form .update_form {
 .control-label.weight {
   font-weight: 100;
   float: right;
+}
+.select2-choice {
+  width: 247px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
 }
