@@ -121,3 +121,6 @@ form .update_form {
   font-size: 14px;
   border: 1px solid #ccc;
 }
+.modal-content {
+  border-radius: 0px;
+}
