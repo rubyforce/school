@@ -58,7 +58,26 @@ cash_managements.config [
                 templateUrl: "admin/cash_managements/views/salary/new.html"
 ]
 
-@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'admin.cash_managements', 'ui.date', 'ui.bootstrap'])
+@midday_managements = angular.module('admin.midday_managements', [])
+
+midday_managements.config [
+    '$stateProvider', '$urlRouterProvider'
+    ($stateProvider, $urlRouterProvider) ->
+        $stateProvider
+            .state 'midday_managements',
+                url: "/midday_managements"
+                templateUrl: "admin/midday_managements/views/index.html"
+            .state 'midday_managements.daily_meal',
+                url: "/daily_meal/new"
+                templateUrl: "admin/midday_managements/views/daily_meal/new.html"
+            .state 'midday_managements.monthly_record',
+                url: "/monthly_record/new"
+                templateUrl: "admin/midday_managements/views/monthly_record/new.html"
+]
+
+@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees',
+                                  'admin.students', 'admin.cash_managements', 'admin.midday_managements',
+                                  'ui.date', 'ui.bootstrap'])
 
 admin.config [
     '$stateProvider', '$urlRouterProvider'
@@ -70,4 +89,3 @@ admin.config [
                 url: "/home"
                 templateUrl: "admin/views/home/index.html"
 ]
-
