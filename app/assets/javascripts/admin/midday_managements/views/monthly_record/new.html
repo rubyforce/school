@@ -25,12 +25,12 @@
             <div class="col-sm-6">
               <div class="form-group">
                 <div class="col-sm-4">
-                  <label for='midday_meal.item_name' class="control-label">Item Name</label>
+                  <label for='midday_meal.name' class="control-label">Item Name</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name='midday_meal.item_name' ng-model='midday_meal.item_name' class="form-control">
-                    <option value="1">LOrem</option>
-                    <option value="2">Ipsum</option>
+                  <select name='midday_meal.name' ng-model='midday_meal.name' class="form-control">
+                    <option value="Lorem">LOrem</option>
+                    <option value="Ipsum">Ipsum</option>
                   </select>
                 </div>
               </div>
@@ -46,22 +46,24 @@
               </div>
             </div>
             <div class="col-sm-2">
-              <a class="btn btn-default">Add</a>
+              <a class="btn btn-default" ng-click="create()">Add</a>
             </div>
           </div>
         </div>
 
         <div class="panel panel-default">
           <div class="panel-body scrolling">
-            <table id='objects-list' class="table scrolling">
+            <table class="table scrolling">
               <thead>
                 <tr>
                   <th>Item Name</th>
+                  <th>Qty. in kgs.</th>
                 </tr>
               </thead>
               <tbody>
-                <tr >
-                  <td>kdfiu</td>
+                <tr ng-repeat="midday in midday_managements">
+                  <td>{{midday.name}}</td>
+                  <td>{{midday.qty}}</td>
                 </tr>
               </tbody>
             </table>

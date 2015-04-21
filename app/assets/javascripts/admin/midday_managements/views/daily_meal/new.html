@@ -55,8 +55,7 @@
                 <tr>
                   <td class="center">
                     <select name='midday_meal.item_name' ng-model='midday_meal.item_name' class="form-control">
-                      <option value="1">LOrem</option>
-                      <option value="2">Ipsum</option>
+                      <option ng-repeat="midday in midday_managements">{{midday.name}}</option>
                     </select>
                   </td>
                   <td class="center">50</td>
