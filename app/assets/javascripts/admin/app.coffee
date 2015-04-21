@@ -75,9 +75,11 @@ midday_managements.config [
                 templateUrl: "admin/midday_managements/views/monthly_record/new.html"
 ]
 
+@meals = angular.module('admin.meals', [])
+
 @admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees',
                                   'admin.students', 'admin.cash_managements', 'admin.midday_managements',
-                                  'ui.date', 'ui.bootstrap'])
+                                  'admin.meals', 'ui.date', 'ui.bootstrap'])
 
 admin.config [
     '$stateProvider', '$urlRouterProvider'
