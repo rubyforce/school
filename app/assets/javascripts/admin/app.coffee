@@ -62,6 +62,7 @@ cash_managements.config [
 
 @paid_types = angular.module('admin.paid_types', [])
 
+<<<<<<< HEAD
 @midday_managements = angular.module('admin.midday_managements', [])
 
 midday_managements.config [
@@ -81,9 +82,21 @@ midday_managements.config [
 
 @meals = angular.module('admin.meals', [])
 
-@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees',
-                                  'admin.students', 'admin.cash_managements', 'admin.midday_managements',
-                                  'admin.meals', 'admin.paid_types', 'ui.date', 'ui.bootstrap', 'angular-country-select'])
+
+@admin = angular.module('admin', [
+    'ui.router',
+    'rails',
+    'templates',
+    'ui.date',
+    'ui.bootstrap',
+    'angular-country-select',
+
+    'admin.employees',
+    'admin.students',
+    'admin.cash_managements',
+    'admin.admissions',
+    'admin.paid_types',
+])
 
 admin.config [
     '$stateProvider', '$urlRouterProvider'
