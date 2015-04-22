@@ -62,7 +62,28 @@ cash_managements.config [
 
 @paid_types = angular.module('admin.paid_types', [])
 
-@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'admin.cash_managements', 'admin.admissions', 'admin.paid_types', 'ui.date', 'ui.bootstrap', 'angular-country-select'])
+@midday_managements = angular.module('admin.midday_managements', [])
+
+midday_managements.config [
+    '$stateProvider', '$urlRouterProvider'
+    ($stateProvider, $urlRouterProvider) ->
+        $stateProvider
+            .state 'midday_managements',
+                url: "/midday_managements"
+                templateUrl: "admin/midday_managements/views/index.html"
+            .state 'midday_managements.daily_meal',
+                url: "/daily_meal/new"
+                templateUrl: "admin/midday_managements/views/daily_meal/new.html"
+            .state 'midday_managements.monthly_record',
+                url: "/monthly_record/new"
+                templateUrl: "admin/midday_managements/views/monthly_record/new.html"
+]
+
+@meals = angular.module('admin.meals', [])
+
+@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees',
+                                  'admin.students', 'admin.cash_managements', 'admin.midday_managements',
+                                  'admin.meals', 'admin.paid_types', 'ui.date', 'ui.bootstrap', 'angular-country-select'])
 
 admin.config [
     '$stateProvider', '$urlRouterProvider'

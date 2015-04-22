@@ -4,6 +4,7 @@ Greenarea::Application.routes.draw do
     resources :employees
     resources :cash_managements
     resources :paid_types
+    resources :midday_managements
   end
 
   devise_for :users

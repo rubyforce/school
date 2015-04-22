@@ -104,6 +104,26 @@ ActiveRecord::Schema.define(version: 20150421185802) do
     t.string   "remark"
   end
 
+  create_table "meals", force: :cascade do |t|
+    t.string   "meal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "midday_managements", force: :cascade do |t|
+    t.string   "month"
+    t.string   "item_name"
+    t.string   "ordered"
+    t.string   "received"
+    t.string   "vegetable"
+    t.string   "cook"
+    t.string   "date"
+    t.string   "qty"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
   create_table "paid_types", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false

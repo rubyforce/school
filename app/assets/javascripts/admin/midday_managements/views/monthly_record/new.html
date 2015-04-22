@@ -1,0 +1,85 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Daily Item Usage for Mid Day Meal</div>
+  <div class="panel-body">
+    <form name='form' ng-controller='CreateMonthlyRecordController' class="form-horizontal" ng-submit='create()'>
+      <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new daily meal.</div>
+      <!-- First Column -->
+      <div class="col-sm-12">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='midday_meal.month' class="control-label">Month</label>
+            </div>
+            <div class="col-sm-6">
+              <div class="input-group">
+                <input name='midday_meal.month' ng-model='midday_meal.month' class="form-control" ui-date/>
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='midday_meal.name' class="control-label">Item Name</label>
+                </div>
+                <div class="col-sm-6">
+                  <select name='midday_meal.name' ng-model='midday_meal.name' class="form-control">
+                    <option value="chicken">Chicken</option>
+                    <option value="meat">Meat</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='midday_meal.qty' class="control-label">Qty. in kgs.</label>
+                </div>
+                <div class="col-sm-4">
+                  <input name='midday_meal.qty' type='text' ng-model='midday_meal.qty' class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <a class="btn btn-default" ng-click="add()">Add</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-body scrolling">
+            <table class="table scrolling">
+              <thead>
+                <tr>
+                  <th>Item Name</th>
+                  <th>Qty. in kgs.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="midday in midday_managements">
+                  <td>{{midday.name}}</td>
+                  <td>{{midday.qty}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <pagination total-items='employees.length' ng-model='currentPage' items-per-page='itemsPerPage' max-size="5" data-previous-text="&laquo;" data-next-text="&raquo;">
+            </pagination>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group ui buttons">
+        <div class=" col-sm-12">
+          <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>Save</button>
+          <a ng-click="reset()" class="btn btn-default">Reset</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
