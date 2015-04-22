@@ -129,10 +129,12 @@
               <label for='student.caste' class="control-label">Caste</label>
             </div>
             <div class="col-sm-6">
-              <select name='student.caste' ng-model='student.caste' class="form-control">
-                <option value="1">Value1</option>
-                <option value="2">Value2</option>
+              <select name="student.caste" class="form-control" ng-model="student.religion_id">
+                <option ng-repeat="caste in castes" value='{{caste.id}}'>{{caste.name}}</option>
               </select>
+            </div>
+            <div class="col-sm-2" ng-controller="CreateCastesController">
+              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
 

@@ -9,7 +9,6 @@
         controller: 'CreateAdmissionsController')
 
       AdmissionsSharedObjects.modalWindow.result.then (admission) ->
-        debugger
         $scope.admissions.push(admission)
 
     $scope.create = ->
