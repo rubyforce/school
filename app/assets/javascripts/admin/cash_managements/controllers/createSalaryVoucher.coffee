@@ -16,7 +16,7 @@
 
     $scope.months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
                       "November", "December"]
-    
+
     $scope.create = ->
       new CashManagement($scope.salary).create().then (response) ->
         $scope.cash_managements.push(new CashManagement(response))

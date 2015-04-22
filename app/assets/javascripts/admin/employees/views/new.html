@@ -104,11 +104,11 @@
             </div>
             <div class="col-sm-6">
               <select name="employee.paid_type" class="form-control" ng-model="employee.paid_type">
-                <option ng-repeat="paid in paid_types">{{paid.paid_type}}</option>
+                <option ng-repeat="paid in paid_types">{{paid.title}}</option>
               </select>
             </div>
-            <div class="col-sm-2">
-              <a ng-click="openPaidForm('sm')" class="btn btn-default">+</a>
+            <div class="col-sm-2" ng-controller="CreatePaidTypesController">
+              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
         </div>
