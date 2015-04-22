@@ -12,7 +12,6 @@
         $scope.sections.push(section)
 
     $scope.create = ->
-      debugger
       new Section($scope.section).create().then (response) ->
         SectionsSharedObjects.modalWindow.close(response)
 
