@@ -14,4 +14,7 @@
     $scope.create = ->
       new PaidType($scope.paid_type).create().then (response) ->
         PaidTypesSharedObjects.modalWindow.close(response)
+
+    $scope.close = ->
+        PaidTypesSharedObjects.modalWindow.dismiss 'cancel'
 ]
