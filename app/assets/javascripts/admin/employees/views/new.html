@@ -148,7 +148,7 @@
               <label for="employee.section" class="control-label">Section</label>
             </div>
             <div class="col-sm-6">
-              <select name="employee.section" class="form-control" ng-model="employee.section">
+              <select name="employee.section" class="form-control" ng-model="employee.section_id">
                 <option ng-repeat="section in sections" value='{{section.id}}'>{{section.title}}</option>
               </select>
             </div>
@@ -162,8 +162,8 @@
               <label for="employee.pay_band" class="control-label">Pay Band</label>
             </div>
             <div class="col-sm-6">
-              <select name="employee.pay_band" class="form-control" ng-model="employee.pay_band">
-                <option ng-repeat="pay in pay_bands">{{pay.title}}</option>
+              <select name="employee.pay_band" class="form-control" ng-model="employee.pay_band_id">
+                <option ng-repeat="pay in pay_bands" value='{{pay.id}}'>{{pay.title}}</option>
               </select>
             </div>
             <div class="col-sm-2" ng-controller="CreatePayBandsController">
