@@ -61,6 +61,7 @@ cash_managements.config [
 ]
 
 @paid_types = angular.module('admin.paid_types', [])
+@sections = angular.module('admin.sections', [])
 
 @midday_managements = angular.module('admin.midday_managements', [])
 
@@ -95,6 +96,7 @@ midday_managements.config [
     'admin.cash_managements',
     'admin.admissions',
     'admin.paid_types',
+    'admin.sections',
     'admin.midday_managements'
 ])
 
