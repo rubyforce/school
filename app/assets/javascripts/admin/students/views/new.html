@@ -40,13 +40,15 @@
 
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='student.std' class="control-label">Std. of Admission</label>
+              <label for='student.admission' class="control-label">Std. of Admission</label>
             </div>
             <div class="col-sm-6">
-              <select name='student.std' ng-model='student.std' class="form-control">
-                <option value="1">Value1</option>
-                <option value="2">Value2</option>
+              <select name="student.admission" class="form-control" ng-model="student.admission_id">
+                <option ng-repeat="admission in admissions" value='{{admission.id}}'>{{admission.name}}</option>
               </select>
+            </div>
+            <div class="col-sm-2" ng-controller="CreateAdmissionsController">
+              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
 

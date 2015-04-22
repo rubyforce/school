@@ -99,7 +99,7 @@ midday_managements.config [
     'admin.paid_types',
     'admin.sections',
     'admin.pay_bands',
-    'admin.midday_managements'
+    'admin.midday_managements',
 ])
 
 admin.config [
