@@ -6,6 +6,7 @@ Greenarea::Application.routes.draw do
     resources :paid_types
     resources :midday_managements
     resources :sections
+    resources :pay_bands
   end
 
   devise_for :users

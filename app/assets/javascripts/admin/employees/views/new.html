@@ -163,11 +163,11 @@
             </div>
             <div class="col-sm-6">
               <select name="employee.pay_band" class="form-control" ng-model="employee.pay_band">
-                <option ng-repeat="pay in pay_bands">{{pay.pay_band}}</option>
+                <option ng-repeat="pay in pay_bands">{{pay.title}}</option>
               </select>
             </div>
-            <div class="col-sm-2">
-              <a ng-click="openPayBandForm('sm')" class="btn btn-default">+</a>
+            <div class="col-sm-2" ng-controller="CreatePayBandsController">
+              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
 
