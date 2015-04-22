@@ -1,6 +1,8 @@
 @employees.controller 'CreateEmployeesController', [
-  '$scope', 'Employee', '$modal', 'SharedObjects', 'PaidType'
-  ($scope, Employee, $modal, SharedObjects, PaidType) ->
+  '$scope', 'Employee', '$modal', 'SharedObjects'
+  ($scope, Employee, $modal, SharedObjects) ->
+
+
     DEFAULT_EMPLOYEE =
       entry_no: 'auto'
 
@@ -9,10 +11,6 @@
     $scope.alert = false
 
     $scope.employee = build()
-
-    PaidType.query().then ((response) ->
-      $scope.paid_type = response
-    )
 
     $scope.create = ->
       new Employee($scope.employee).create().then (response) ->
