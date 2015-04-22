@@ -11,3 +11,4 @@
 //= require_tree ./pay_bands
 //= require_tree ./religions
 //= require_tree ./castes
+//= require_tree ./standards

@@ -152,10 +152,12 @@
               <label for='student.standard' class="control-label">Standard</label>
             </div>
             <div class="col-sm-6">
-              <select name='student.standard' ng-model='student.standard' class="form-control">
-                <option value="1">Value1</option>
-                <option value="2">Value2</option>
+              <select name="student.standard" class="form-control" ng-model="student.standard_id">
+                <option ng-repeat="standard in standards" value='{{standard.id}}'>{{standard.name}}</option>
               </select>
+            </div>
+            <div class="col-sm-2" ng-controller="CreateStandardsController">
+              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
 

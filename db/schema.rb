@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422230236) do
+ActiveRecord::Schema.define(version: 20150422234014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -167,6 +167,12 @@ ActiveRecord::Schema.define(version: 20150422230236) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
+  create_table "standards", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -182,9 +188,7 @@ ActiveRecord::Schema.define(version: 20150422230236) do
     t.string   "father_name"
     t.string   "mother_name"
     t.string   "birth_place"
-    t.string   "caste"
     t.string   "nationality"
-    t.string   "standard"
     t.string   "division"
     t.string   "transport"
     t.string   "finance_mode"
