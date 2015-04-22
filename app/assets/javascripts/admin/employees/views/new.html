@@ -104,7 +104,7 @@
             </div>
             <div class="col-sm-6">
               <select name="employee.paid_type" class="form-control" ng-model="employee.paid_type">
-                <option ng-repeat="paid in paid_types">{{paid.title}}</option>
+                <option ng-repeat="paid in paid_types" value='{{paid.id}}'>{{paid.title}}</option>
               </select>
             </div>
             <div class="col-sm-2" ng-controller="CreatePaidTypesController">
