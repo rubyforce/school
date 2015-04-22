@@ -95,6 +95,7 @@ midday_managements.config [
     'admin.cash_managements',
     'admin.admissions',
     'admin.paid_types',
+    'admin.midday_managements'
 ])
 
 admin.config [
