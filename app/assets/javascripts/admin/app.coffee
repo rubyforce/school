@@ -60,7 +60,9 @@ cash_managements.config [
                 templateUrl: "admin/cash_managements/views/salary/new.html"
 ]
 
-@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'admin.cash_managements', 'admin.admissions', 'ui.date', 'ui.bootstrap', 'angular-country-select'])
+@paid_types = angular.module('admin.paid_types', [])
+
+@admin = angular.module('admin', ['ui.router', 'rails', 'templates', 'admin.employees', 'admin.students', 'admin.cash_managements', 'admin.admissions', 'admin.paid_types', 'ui.date', 'ui.bootstrap', 'angular-country-select'])
 
 admin.config [
     '$stateProvider', '$urlRouterProvider'
@@ -72,4 +74,3 @@ admin.config [
                 url: "/home"
                 templateUrl: "admin/views/home/index.html"
 ]
-

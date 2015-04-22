@@ -1,6 +1,8 @@
 @employees.controller 'CreateEmployeesController', [
   '$scope', 'Employee', '$modal', 'SharedObjects'
   ($scope, Employee, $modal, SharedObjects) ->
+
+
     DEFAULT_EMPLOYEE =
       entry_no: 'auto'
 
@@ -16,7 +18,6 @@
         $scope.employee = build()
         $scope.alert = true
 
-    $scope.paid_types = []
     $scope.sections = []
     $scope.pay_bands = []
 

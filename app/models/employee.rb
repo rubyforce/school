@@ -5,4 +5,5 @@ class Employee < ActiveRecord::Base
 
 
   belongs_to :cash_management
+	belongs_to :paid_type
 end
