@@ -4,3 +4,6 @@
 //= require_tree ./cash_managements
 //= require_tree ./students
 //= require_tree ./admissions
+//= require_tree ./meals
+//= require_tree ./midday_managements
+//= require_tree ./paid_types
