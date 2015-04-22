@@ -8,12 +8,12 @@ gem 'rake', '~> 10.1.0'
 gem 'rails', '4.2.0'
 
 gem 'puma'
-
 gem "rack-cache"
 
 gem 'minitest'
 
 gem 'libv8', '3.16.14.7'
+gem 'therubyracer', '0.12.1'
 
 gem 'newrelic_rpm'
 
@@ -27,8 +27,6 @@ group :assets do
   gem 'sass-rails'
   gem "less-rails"
 end
-
-gem 'therubyracer', '0.12.1'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -46,7 +44,6 @@ gem 'protected_attributes'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'high_voltage'
 gem 'choices'
 gem 'draper'
 gem "geocoder"
@@ -94,6 +91,7 @@ end
 
 gem 'angular-rails-templates'
 gem 'angularjs-rails-resource'
+gem 'angular_rails_csrf'
 
 gem 'rails-assets-angular-bootstrap', source: 'https://rails-assets.org'
 gem 'rails-assets-angular-ui', '~> 0.4.0', source: 'https://rails-assets.org/'
