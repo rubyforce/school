@@ -62,7 +62,6 @@ cash_managements.config [
 
 @paid_types = angular.module('admin.paid_types', [])
 
-<<<<<<< HEAD
 @midday_managements = angular.module('admin.midday_managements', [])
 
 midday_managements.config [
