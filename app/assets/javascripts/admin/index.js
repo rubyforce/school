@@ -9,3 +9,4 @@
 //= require_tree ./paid_types
 //= require_tree ./sections
 //= require_tree ./pay_bands
+////= require_tree ./religions

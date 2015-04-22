@@ -8,6 +8,7 @@ Greenarea::Application.routes.draw do
     resources :sections
     resources :pay_bands
     resources :admissions
+    resources :religions
   end
 
   devise_for :users

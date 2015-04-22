@@ -1,10 +1,11 @@
 class Student < ActiveRecord::Base
   attr_accessible :first_name, :middle_name, :last_name, :division, :transport,
-    :admission_date, :birth_place, :religion, :caste, :nationality, :standard,
+    :admission_date, :birth_place, :caste, :nationality, :standard,
     :finance_mode, :entry_no, :group_no, :academic_year, :father_name, :mother_name,
-    :remarks, :last_school, :admission_id
+    :remarks, :last_school, :admission_id, :religion_id
 
   belongs_to :admission
+  belongs_to :religion
 
   ADMISSION = { admission1: 1, admission2: 2 }
   RELIGION = { religion1: 1, religion2: 2 }

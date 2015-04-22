@@ -63,6 +63,7 @@ cash_managements.config [
 @paid_types = angular.module('admin.paid_types', [])
 @sections = angular.module('admin.sections', [])
 @pay_bands = angular.module('admin.pay_bands', [])
+@religions = angular.module('admin.religions', [])
 
 @midday_managements = angular.module('admin.midday_managements', [])
 
@@ -100,6 +101,7 @@ midday_managements.config [
     'admin.sections',
     'admin.pay_bands',
     'admin.midday_managements',
+    'admin.religions'
 ])
 
 admin.config [

@@ -115,10 +115,12 @@
               <label for='student.religion' class="control-label">Religion</label>
             </div>
             <div class="col-sm-6">
-              <select name='student.religion' ng-model='student.religion' class="form-control">
-                <option value="1">Value1</option>
-                <option value="2">Value2</option>
+              <select name="student.religion" class="form-control" ng-model="student.religion_id">
+                <option ng-repeat="religion in religions" value='{{religion.id}}'>{{religion.name}}</option>
               </select>
+            </div>
+            <div class="col-sm-2" ng-controller="CreateReligionsController">
+              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
 
