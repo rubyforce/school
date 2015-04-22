@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421154340) do
+ActiveRecord::Schema.define(version: 20150421185802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,8 +75,10 @@ ActiveRecord::Schema.define(version: 20150421154340) do
     t.string   "expense_by"
     t.string   "month"
     t.string   "year"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "cash_deposited_enabled", default: false
+    t.boolean  "cash_moved_enabled",     default: false
   end
 
   create_table "employees", force: :cascade do |t|
@@ -120,6 +122,12 @@ ActiveRecord::Schema.define(version: 20150421154340) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "name"
+  end
+
+  create_table "paid_types", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sessions", force: :cascade do |t|

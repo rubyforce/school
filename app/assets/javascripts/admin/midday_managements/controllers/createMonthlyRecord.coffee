@@ -13,5 +13,5 @@
       $scope.midday_managements.push(new MiddayManagement($scope.midday_meal))
 
     $scope.reset = ->
-      $scope.midday_meal =null
+      $scope.midday_meal = {}
 ]

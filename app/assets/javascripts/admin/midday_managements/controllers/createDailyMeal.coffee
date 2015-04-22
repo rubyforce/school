@@ -13,6 +13,6 @@
         $scope.alert = true
 
     $scope.reset = ->
-      $scope.midday_meal = null
+      $scope.midday_meal = {}
 
 ]
