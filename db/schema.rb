@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422131408) do
+ActiveRecord::Schema.define(version: 20150422223016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -166,7 +166,6 @@ ActiveRecord::Schema.define(version: 20150422131408) do
     t.string   "entry_no",       default: "auto"
     t.integer  "group_no"
     t.string   "admission_date"
-    t.string   "std"
     t.string   "academic_year",  default: "auto"
     t.string   "father_name"
     t.string   "mother_name"
