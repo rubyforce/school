@@ -11,6 +11,7 @@ Greenarea::Application.routes.draw do
     resources :religions
     resources :castes
     resources :standards
+    resources :divisions
   end
 
   devise_for :users

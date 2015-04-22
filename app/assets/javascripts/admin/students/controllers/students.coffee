@@ -1,6 +1,6 @@
 @students.controller 'StudentsController', [
-  '$scope', '$state', 'Student', 'Admission', 'Religion', 'Caste', 'Standard'
-  ($scope, $state, Student, Admission, Religion, Caste, Standard) ->
+  '$scope', '$state', 'Student', 'Admission', 'Religion', 'Caste', 'Standard', 'Division'
+  ($scope, $state, Student, Admission, Religion, Caste, Standard, Division) ->
     $state.go('students.new')
 
     Student.get().then (students) ->
@@ -17,4 +17,7 @@
 
     Standard.get().then (standards) ->
       $scope.standards = standards
+
+    Division.get().then (divisions) ->
+      $scope.divisions = divisions
 ]

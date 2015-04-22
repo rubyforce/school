@@ -66,6 +66,7 @@ cash_managements.config [
 @religions = angular.module('admin.religions', [])
 @castes = angular.module('admin.castes', [])
 @standards = angular.module('admin.standards', [])
+@divisions = angular.module('admin.divisions', [])
 
 @midday_managements = angular.module('admin.midday_managements', [])
 
@@ -106,6 +107,7 @@ midday_managements.config [
     'admin.religions',
     'admin.castes',
     'admin.standards'
+    'admin.divisions'
 ])
 
 admin.config [

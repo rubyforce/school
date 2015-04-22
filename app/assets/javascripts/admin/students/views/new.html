@@ -162,14 +162,16 @@
           </div>
 
           <div class="form-group">
-            <div class="col-sm-4">
+             <div class="col-sm-4">
               <label for='student.division' class="control-label">Division</label>
             </div>
             <div class="col-sm-6">
-              <select name='student.division' ng-model='student.division' class="form-control">
-                <option value="1">Value1</option>
-                <option value="2">Value2</option>
+              <select name="student.division" class="form-control" ng-model="student.division_id">
+                <option ng-repeat="division in divisions" value='{{division.id}}'>{{division.name}}</option>
               </select>
+            </div>
+            <div class="col-sm-2" ng-controller="CreateDivisionsController">
+              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
 

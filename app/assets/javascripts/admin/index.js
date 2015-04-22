@@ -12,3 +12,4 @@
 //= require_tree ./religions
 //= require_tree ./castes
 //= require_tree ./standards
+//= require_tree ./divisions
