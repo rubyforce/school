@@ -195,7 +195,7 @@
             </div>
             <div class="col-sm-6">
               <select name="student.finance_mode" class="form-control" ng-model="student.finance_mode_id">
-                <option ng-repeat="finance_mode in finance_modes">{{finance_mode.title}}</option>
+                <option ng-repeat="finance_mode in finance_modes" value="{{finance_mode.id}}">{{finance_mode.name}}</option>
               </select>
             </div>
             <div class="col-sm-2" ng-controller="CreateFinanceModesController">
