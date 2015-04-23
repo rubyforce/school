@@ -4,11 +4,11 @@ class CreateCashManagements < ActiveRecord::Migration
       t.decimal  :cash_opening
       t.decimal  :cash_paid
       t.decimal  :cash_in_hand
-      t.string   :cash_deposited
-      t.string   :cash_moved
+      t.decimal   :cash_deposited
+      t.decimal   :cash_moved
       t.decimal  :cash_closing
       t.string   :remark
-      t.string   :expense_made  
+      t.string   :expense_made
       t.string   :nature_expense
       t.string   :payment
       t.string   :authorized_by

@@ -38,7 +38,7 @@
             <div class="col-sm-8">
               <div class="input-group">
                 <div class="input-group-addon">Rs.</div>
-                <input type="text" class="form-control" name="settlement.cash_in_hand" ng-model='settlement.cash_in_hand'>
+                <input type="text" class="form-control" name="settlement.cash_in_hand" ng-model='settlement.cash_in_hand = (settlement.opening_cash - settlement.cash_paid)'>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@
             <div class="col-sm-4">
               <div class="input-group">
                 <div class="input-group-addon">Rs.</div>
-                <input type="text" class="form-control" name="settlement.cash_deposited_enabled" ng-model='settlement.cash_deposited'>
+                <input type="text" class="form-control" name="settlement.cash_deposited_enabled" ng-model='settlement.cash_deposited' ng-disabled="settlement.cash_deposited_enabled == null || settlement.cash_deposited_enabled == 0">
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@
             <div class="col-sm-4">
               <div class="input-group">
                 <div class="input-group-addon">Rs.</div>
-                <input type="text" class="form-control" name="settlement.cash_moved_enabled" ng-model='settlement.cash_moved'>
+                <input type="text" class="form-control" name="settlement.cash_moved_enabled" ng-model='settlement.cash_moved' ng-disabled="settlement.cash_moved_enabled == null || settlement.cash_moved_enabled == 0">
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@
             <div class="col-sm-8">
               <div class="input-group">
                 <div class="input-group-addon">Rs.</div>
-                <input type="text" class="form-control" name="settlement.cash_closing" ng-model='settlement.cash_closing'>
+                <input type="text" class="form-control" name="settlement.cash_closing" ng-model='settlement.cash_closing = (settlement.cash_in_hand - settlement.cash_deposited - settlement.cash_moved)'>
               </div>
             </div>
           </div>
