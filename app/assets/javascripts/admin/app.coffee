@@ -88,6 +88,7 @@ midday_managements.config [
 ]
 
 @meals = angular.module('admin.meals', [])
+@natures = angular.module('admin.natures', [])
 
 
 @admin = angular.module('admin', [
@@ -111,7 +112,8 @@ midday_managements.config [
     'admin.standards',
     'admin.divisions',
     'admin.transports',
-    'admin.finance_modes'
+    'admin.finance_modes',
+    'admin.natures'
 ])
 
 admin.config [

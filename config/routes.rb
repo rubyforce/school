@@ -14,6 +14,7 @@ Greenarea::Application.routes.draw do
     resources :divisions
     resources :transports
     resources :finance_modes
+    resources :natures
   end
 
   devise_for :users

@@ -20,12 +20,12 @@
               <label for='expense.nature_expense' class="control-label">Nature of Expense</label>
             </div>
             <div class="col-sm-6">
-              <select name='expense.nature_expense' ng-model='expense.nature_expense' class="form-control">
-                <option ng-repeat="nature in natures">{{nature.nature_expense}}</option>
+              <select name='expense.nature_expense' ng-model='expense.nature_expense_id' class="form-control">
+                <option ng-repeat="nature in natures" value="{{nature.id}}">{{nature.title}}</option>
               </select>
             </div>
             <div class="col-sm-2">
-              <a href="" class="btn btn-default" ng-click="openForm('sm')">+</a>
+              <a href="" class="btn btn-default" ng-click="openForm('sm')" ng-controller="CreateNaturesController">+</a>
             </div>
           </div>
 
