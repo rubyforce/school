@@ -1,8 +1,29 @@
 @students.controller 'StudentsController', [
-    '$scope', '$state', 'Student'
-    ($scope, $state, Student) ->
-        $state.go('students.new')
+  '$scope', '$state', 'Student', 'Admission', 'Religion', 'Caste', 'Standard', 'Division', 'Transport', 'FinanceMode'
+  ($scope, $state, Student, Admission, Religion, Caste, Standard, Division, Transport, FinanceMode) ->
+    $state.go('students.new')
 
-        Student.get().then (students) ->
-            $scope.students = students
+    Student.get().then (students) ->
+      $scope.students = students
+
+    Admission.get().then (admissions) ->
+      $scope.admissions = admissions
+
+    Religion.get().then (religions) ->
+      $scope.religions = religions
+
+    Caste.get().then (castes) ->
+      $scope.castes = castes
+
+    Standard.get().then (standards) ->
+      $scope.standards = standards
+
+    Division.get().then (divisions) ->
+      $scope.divisions = divisions
+
+    Transport.get().then (transports) ->
+      $scope.transports = transports
+
+    FinanceMode.get().then (finance_modes) ->
+      $scope.finance_modes = finance_modes
 ]
