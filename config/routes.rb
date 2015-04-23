@@ -7,6 +7,13 @@ Greenarea::Application.routes.draw do
     resources :midday_managements
     resources :sections
     resources :pay_bands
+    resources :admissions
+    resources :religions
+    resources :castes
+    resources :standards
+    resources :divisions
+    resources :transports
+    resources :finance_modes
   end
 
   devise_for :users

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422104959) do
+ActiveRecord::Schema.define(version: 20150423001119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,18 @@ ActiveRecord::Schema.define(version: 20150422104959) do
     t.boolean  "cash_moved_enabled",     default: false
   end
 
+  create_table "castes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "divisions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -102,6 +114,15 @@ ActiveRecord::Schema.define(version: 20150422104959) do
     t.string   "year"
     t.string   "salary_check"
     t.string   "remark"
+    t.integer  "paid_type_id"
+    t.integer  "section_id"
+    t.integer  "pay_band_id"
+  end
+
+  create_table "finance_modes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "meals", force: :cascade do |t|
@@ -136,6 +157,12 @@ ActiveRecord::Schema.define(version: 20150422104959) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "religions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sections", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
@@ -152,32 +179,44 @@ ActiveRecord::Schema.define(version: 20150422104959) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
+  create_table "standards", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email",          default: "",     null: false
+    t.string   "email",           default: "",     null: false
     t.string   "gender"
     t.integer  "age"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "entry_no",       default: "auto"
+    t.string   "entry_no",        default: "auto"
     t.integer  "group_no"
     t.string   "admission_date"
-    t.string   "std"
-    t.string   "academic_year",  default: "auto"
+    t.string   "academic_year",   default: "auto"
     t.string   "father_name"
     t.string   "mother_name"
     t.string   "birth_place"
-    t.string   "religion"
     t.string   "caste"
     t.string   "nationality"
-    t.string   "standard"
-    t.string   "division"
-    t.string   "transport"
-    t.string   "finance_mode"
     t.string   "remarks"
     t.string   "last_school"
     t.integer  "admission_id"
+    t.integer  "religion_id"
+    t.integer  "caste_id"
+    t.integer  "standard_id"
+    t.integer  "division_id"
+    t.integer  "transport_id"
+    t.integer  "finance_mode_id"
+  end
+
+  create_table "transports", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

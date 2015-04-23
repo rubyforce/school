@@ -118,27 +118,22 @@
                 </div>
                 <div class="col-sm-6">
                   <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option ng-repeat="year in years">{{year}}</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-group">
                 <div class="col-sm-4">
-                  <label class="control-label">Paid type</label>
+                  <label for='employee.paid_type' class="control-label">Paid type</label>
                 </div>
                 <div class="col-sm-6">
-                  <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                  <select name="employee.paid_type" class="form-control" ng-model="employee.paid_type">
+                    <option ng-repeat="paid in paid_types" value='{{paid.id}}'>{{paid.title}}</option>
                   </select>
+                </div>
+                <div class="col-sm-2" ng-controller="CreatePaidTypesController">
+                  <a ng-click="openForm('sm')" class="btn btn-default">+</a>
                 </div>
               </div>
             </div>
@@ -175,31 +170,29 @@
 
               <div class="form-group">
                 <div class="col-sm-4">
-                  <label class="control-label">Section</label>
+                  <label for="employee.section" class="control-label">Section</label>
                 </div>
                 <div class="col-sm-6">
-                  <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                  <select name="employee.section" class="form-control" ng-model="employee.section">
+                    <option ng-repeat="section in sections" value='{{section.id}}'>{{section.title}}</option>
                   </select>
+                </div>
+                <div class="col-sm-2" ng-controller="CreateSectionsController">
+                  <a ng-click="openForm('sm')" class="btn btn-default">+</a>
                 </div>
               </div>
 
               <div class="form-group">
                 <div class="col-sm-4">
-                  <label class="control-label">Pay Band</label>
+                  <label for="employee.pay_band" class="control-label">Pay Band</label>
                 </div>
                 <div class="col-sm-6">
-                  <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                  <select name="employee.pay_band" class="form-control" ng-model="employee.pay_band">
+                    <option ng-repeat="pay in pay_bands" value='{{pay.id}}'>{{pay.title}}</option>
                   </select>
+                </div>
+                <div class="col-sm-2" ng-controller="CreatePayBandsController">
+                  <a ng-click="openForm('sm')" class="btn btn-default">+</a>
                 </div>
               </div>
 

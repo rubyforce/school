@@ -1,5 +1,5 @@
 class Section < ActiveRecord::Base
   attr_accessible :title
 
-  belongs_to :employee
+  has_many :empolyees
 end
