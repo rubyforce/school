@@ -91,11 +91,11 @@
                   <label for='currentUser.gender' class="control-label">Gender</label>
                 </div>
                 <div class="col-sm-6">
-                  <label for='employee.gender.male' class="radio-inline">
-                    <input type="radio" id="employee.gender.male" value="male" ng-model="employee.gender">Male
+                  <label for='currentUser.gender.male' class="radio-inline">
+                    <input type="radio" id="currentUser.gender.male" value="male" ng-model="currentUser.gender">Male
                   </label>
-                  <label for='employee.gender.female' class="radio-inline">
-                    <input type="radio" id="employee.gender.female" value="female" ng-model="employee.gender">Female
+                  <label for='currentUser.gender.female' class="radio-inline">
+                    <input type="radio" id="currentUser.gender.female" value="female" ng-model="currentUser.gender">Female
                   </label>
                 </div>
               </div>
@@ -117,7 +117,7 @@
                   <label class="control-label">Year of Joining</label>
                 </div>
                 <div class="col-sm-6">
-                  <select class="form-control">
+                  <select class="form-control"  ng-model='currentUser.year'>
                     <option ng-repeat="year in years">{{year}}</option>
                   </select>
                 </div>
@@ -125,10 +125,10 @@
 
               <div class="form-group">
                 <div class="col-sm-4">
-                  <label for='employee.paid_type' class="control-label">Paid type</label>
+                  <label for='currentUser.paid_type' class="control-label">Paid type</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name="employee.paid_type" class="form-control" ng-model="employee.paid_type">
+                  <select name="currentUser.paid_type" class="form-control" ng-model="currentUser.paidTypeId">
                     <option ng-repeat="paid in paid_types" value='{{paid.id}}'>{{paid.title}}</option>
                   </select>
                 </div>
@@ -170,10 +170,10 @@
 
               <div class="form-group">
                 <div class="col-sm-4">
-                  <label for="employee.section" class="control-label">Section</label>
+                  <label for="currentUser.section" class="control-label">Section</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name="employee.section" class="form-control" ng-model="employee.section">
+                  <select name="currentUser.section" class="form-control" ng-model="currentUser.sectionId">
                     <option ng-repeat="section in sections" value='{{section.id}}'>{{section.title}}</option>
                   </select>
                 </div>
@@ -184,10 +184,10 @@
 
               <div class="form-group">
                 <div class="col-sm-4">
-                  <label for="employee.pay_band" class="control-label">Pay Band</label>
+                  <label for="currentUser.pay_band" class="control-label">Pay Band</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name="employee.pay_band" class="form-control" ng-model="employee.pay_band">
+                  <select name="currentUser.pay_band" class="form-control" ng-model="currentUser.payBandId">
                     <option ng-repeat="pay in pay_bands" value='{{pay.id}}'>{{pay.title}}</option>
                   </select>
                 </div>
