@@ -77,7 +77,7 @@
                   <label for='currentUser.admission' class="control-label">Std. of Admission</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name="currentUser.admission" class="form-control" ng-model="currentUser.admission_id">
+                  <select name="currentUser.admission" class="form-control" ng-model="currentUser.admissionId">
                     <option ng-repeat="admission in admissions" value='{{admission.id}}'>{{admission.name}}</option>
                   </select>
                 </div>
@@ -149,7 +149,7 @@
                   <label for='currentUser.religion' class="control-label">Religion</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name="currentUser.religion" class="form-control" ng-model="currentUser.religion_id">
+                  <select name="currentUser.religion" class="form-control" ng-model="currentUser.religionId">
                     <option ng-repeat="religion in religions" value='{{religion.id}}'>{{religion.name}}</option>
                   </select>
                 </div>
@@ -163,7 +163,7 @@
                   <label for='currentUser.caste' class="control-label">Caste</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name="currentUser.caste" class="form-control" ng-model="currentUser.religion_id">
+                  <select name="currentUser.caste" class="form-control" ng-model="currentUser.casteId">
                     <option ng-repeat="caste in castes" value='{{caste.id}}'>{{caste.name}}</option>
                   </select>
                 </div>
@@ -186,7 +186,7 @@
                   <label for='currentUser.standard' class="control-label">Standard</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name="currentUser.standard" class="form-control" ng-model="currentUser.standard_id">
+                  <select name="currentUser.standard" class="form-control" ng-model="currentUser.standardId">
                     <option ng-repeat="standard in standards" value='{{standard.id}}'>{{standard.name}}</option>
                   </select>
                 </div>
@@ -200,7 +200,7 @@
                   <label for='currentUser.division' class="control-label">Division</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name="currentUser.division" class="form-control" ng-model="currentUser.division_id">
+                  <select name="currentUser.division" class="form-control" ng-model="currentUser.divisionId">
                     <option ng-repeat="division in divisions" value='{{division.id}}'>{{division.name}}</option>
                   </select>
                 </div>
@@ -214,7 +214,7 @@
                   <label for='currentUser.transport' class="control-label">Transport</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name="currentUser.transport" class="form-control" ng-model="currentUser.transport_id">
+                  <select name="currentUser.transport" class="form-control" ng-model="currentUser.transportId">
                     <option ng-repeat="transport in transports" value='{{transport.id}}'>{{transport.name}}</option>
                   </select>
                 </div>
@@ -228,7 +228,7 @@
                   <label for='currentUser.finance_mode' class="control-label">Finance Mode</label>
                 </div>
                 <div class="col-sm-6">
-                  <select name="currentUser.finance_mode" class="form-control" ng-model="currentUser.finance_mode_id">
+                  <select name="currentUser.finance_mode" class="form-control" ng-model="currentUser.financeModeId">
                     <option ng-repeat="finance_mode in finance_modes" value="{{finance_mode.id}}">{{finance_mode.name}}</option>
                   </select>
                 </div>
