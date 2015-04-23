@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-  <div class="panel-heading">Create Salary Expense Voucher</div>
+  <div class="panel-heading">Create Salary Marking</div>
   <div class="panel-body">
     <form name='form' ng-controller='CreateSalaryController' class="form-horizontal" ng-submit='create()'>
       <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new salary.</div>
@@ -50,7 +50,7 @@
                 <td>{{employee.firstName}}</td>
                 <td>
                   <label>
-                    <input type="checkbox" name="employee.salary_check" value="100" ng-model="employee.salary_check"> 2000
+                    <input type="checkbox" name="employee.salary_check" value="{{employee.salary}}" ng-model="employee.salary_check"> {{employee.salary}}
                   </label>
                 </td>
                 <td><input type="text" ng-model="employee.remark" class="form-control"></td>

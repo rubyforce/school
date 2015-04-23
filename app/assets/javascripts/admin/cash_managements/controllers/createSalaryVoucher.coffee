@@ -4,10 +4,6 @@
 
     $scope.alert = false
 
-    Employee.query().then ((response) ->
-      $scope.employee = response
-    )
-
     $scope.years = []
     i = 0
     while i <= 100
