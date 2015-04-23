@@ -8,7 +8,8 @@
         size: size
         controller: 'CreateReligionsController')
 
-      ReligionsSharedObjects.modalWindow.result.then (Religion) ->
+      ReligionsSharedObjects.modalWindow.result.then (religion) ->
+        debugger
         $scope.religions.push(religion)
 
     $scope.create = ->

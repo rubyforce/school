@@ -188,22 +188,29 @@ ActiveRecord::Schema.define(version: 20150423001119) do
   create_table "students", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email",          default: "",     null: false
+    t.string   "email",           default: "",     null: false
     t.string   "gender"
     t.integer  "age"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "entry_no",       default: "auto"
+    t.string   "entry_no",        default: "auto"
     t.integer  "group_no"
     t.string   "admission_date"
-    t.string   "academic_year",  default: "auto"
+    t.string   "academic_year",   default: "auto"
     t.string   "father_name"
     t.string   "mother_name"
     t.string   "birth_place"
+    t.string   "caste"
     t.string   "nationality"
     t.string   "remarks"
     t.string   "last_school"
     t.integer  "admission_id"
+    t.integer  "religion_id"
+    t.integer  "caste_id"
+    t.integer  "standard_id"
+    t.integer  "division_id"
+    t.integer  "transport_id"
+    t.integer  "finance_mode_id"
   end
 
   create_table "transports", force: :cascade do |t|
