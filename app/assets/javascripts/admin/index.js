@@ -13,3 +13,5 @@
 //= require_tree ./castes
 //= require_tree ./standards
 //= require_tree ./divisions
+//= require_tree ./transports
+//= require_tree ./finance_modes

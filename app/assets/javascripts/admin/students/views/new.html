@@ -162,7 +162,7 @@
           </div>
 
           <div class="form-group">
-             <div class="col-sm-4">
+            <div class="col-sm-4">
               <label for='student.division' class="control-label">Division</label>
             </div>
             <div class="col-sm-6">
@@ -180,11 +180,12 @@
               <label for='student.transport' class="control-label">Transport</label>
             </div>
             <div class="col-sm-6">
-              <select name='student.transport' ng-model='student.transport' class="form-control">
-                <option value="1">Bus</option>
-                <option value="2">Car</option>
-                <option value="3">Plain</option>
+              <select name="student.transport" class="form-control" ng-model="student.transport_id">
+                <option ng-repeat="transport in transports" value='{{transport.id}}'>{{transport.name}}</option>
               </select>
+            </div>
+            <div class="col-sm-2" ng-controller="CreateTransportsController">
+              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
 
@@ -193,11 +194,12 @@
               <label for='student.finance_mode' class="control-label">Finance Mode</label>
             </div>
             <div class="col-sm-6">
-              <select name='student.finance_mode' ng-model='student.finance_mode' class="form-control">
-                <option value="1">Value1</option>
-                <option value="2">Value2</option>
-                <option value="3">Value3</option>
+              <select name="student.finance_mode" class="form-control" ng-model="student.finance_mode_id">
+                <option ng-repeat="finance_mode in finance_modes">{{finance_mode.title}}</option>
               </select>
+            </div>
+            <div class="col-sm-2" ng-controller="CreateFinanceModesController">
+              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
             </div>
           </div>
 
