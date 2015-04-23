@@ -75,15 +75,14 @@
             <div class="col-sm-6">
               <div class="form-group">
                 <div class="col-sm-4">
-                  <label for='midday_meal.name' class="control-label">Item Name</label>
+                  <label for='midday_meal.meal' class="control-label">Item Name</label>
                 </div>
                 <div class="col-sm-4">
-                  <select name='midday_meal.name' ng-model='midday_meal.name' class="form-control">
-                    <option value="chicken">Chicken</option>
-                    <option value="meat">Meat</option>
+                  <select name='midday_meal.meal' ng-model='midday_meal.meal' class="form-control">
+                    <option ng-repeat="meal in meals" value="{{meal.id}}">{{meal.title}}</option>
                   </select>
                 </div>
-                <div class="col-sm-2" ng-controller="CreatePaidTypesController">
+                <div class="col-sm-2" ng-controller="CreateMealsController">
                   <a ng-click="openForm('sm')" class="btn btn-default">+</a>
                 </div>
               </div>

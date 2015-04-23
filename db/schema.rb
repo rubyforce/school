@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 20150423122134) do
   end
 
   create_table "meals", force: :cascade do |t|
-    t.string   "meal"
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -142,7 +142,7 @@ ActiveRecord::Schema.define(version: 20150423122134) do
     t.string   "qty"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "name"
+    t.string   "meal"
     t.decimal  "no_student_1"
     t.decimal  "no_student_2"
     t.decimal  "no_student_3"

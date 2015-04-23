@@ -1,6 +1,6 @@
 @cash_managements.controller 'CreateSalaryController', [
-  '$scope', 'CashManagement', 'Employee'
-  ($scope, CashManagement, Employee) ->
+  '$scope', 'CashManagement'
+  ($scope, CashManagement) ->
 
     $scope.alert = false
 

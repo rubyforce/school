@@ -1,4 +1,4 @@
-class MealsController < ApplicationController
+class Admin::MealsController < ApplicationController
   respond_to :json
 
   def index

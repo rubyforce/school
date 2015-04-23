@@ -16,5 +16,5 @@
         SectionsSharedObjects.modalWindow.close(response)
 
     $scope.close = ->
-        SectionsSharedObjects.modalWindow.dismiss 'cancel'
+      SectionsSharedObjects.modalWindow.dismiss 'cancel'
 ]

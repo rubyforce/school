@@ -69,6 +69,8 @@ cash_managements.config [
 @divisions = angular.module('admin.divisions', [])
 @transports = angular.module('admin.transports', [])
 @finance_modes = angular.module('admin.finance_modes', [])
+@meals = angular.module('admin.meals', [])
+@natures = angular.module('admin.natures', [])
 
 @midday_managements = angular.module('admin.midday_managements', [])
 
@@ -86,10 +88,6 @@ midday_managements.config [
                 url: "/monthly_record/new"
                 templateUrl: "admin/midday_managements/views/monthly_record/new.html"
 ]
-
-@meals = angular.module('admin.meals', [])
-@natures = angular.module('admin.natures', [])
-
 
 @admin = angular.module('admin', [
     'ui.router',
@@ -113,7 +111,8 @@ midday_managements.config [
     'admin.divisions',
     'admin.transports',
     'admin.finance_modes',
-    'admin.natures'
+    'admin.natures',
+    'admin.meals'
 ])
 
 admin.config [
