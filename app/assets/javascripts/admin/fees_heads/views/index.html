@@ -1,0 +1,17 @@
+<div ng-controller='FeesHeadsController' ui-view='fees_heads'>
+  <div class="text-bottom">
+    <h1>Fees Managements</h1>
+  </div>
+
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation" ui-sref-active="active">
+      <a ui-sref="fees_heads.new">Fees Heads</a>
+    </li>
+
+    <li role="presentation" ui-sref-active="active">
+      <a ui-sref="fees_heads.student_fees">Individual Student Concession</a>
+    </li>
+  </ul>
+
+  <div ui-view></div>
+</div>
