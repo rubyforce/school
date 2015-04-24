@@ -1,8 +1,8 @@
 <div class="panel panel-default">
   <div class="panel-heading">Daily Item Usage for Mid Day Meal</div>
   <div class="panel-body" ng-controller='CreateDailyMealsManagementsController'>
-    <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new daily meal.</div>
     <form name='form' ng-controller='CreateDailyMealsController' class="form-horizontal">
+      <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new daily meal.</div>
       <!-- First Column -->
       <div class="col-sm-12">
         <div class="col-sm-6">
@@ -98,7 +98,7 @@
                   <label for='meal.qty' class="control-label">Qty. in kgs.</label>
                 </div>
                 <div class="col-sm-4">
-                  <input name='daily_meal.qty' type='text' ng-model='daily_meal.qty' class="form-control" />
+                  <input name='daily_meal.qty' type='text' ng-model='daily_meal.qty' class="form-control" ng-disabled="!daily_meal.total_number"/>
                 </div>
               </div>
             </div>
