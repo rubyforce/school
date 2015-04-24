@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150424174414) do
-
+ActiveRecord::Schema.define(version: 20150424184603) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -130,6 +129,15 @@ ActiveRecord::Schema.define(version: 20150424174414) do
     t.integer  "pay_band_id"
   end
 
+  create_table "fees_heads", force: :cascade do |t|
+    t.string   "name"
+    t.string   "type"
+    t.string   "amount"
+    t.string   "recurrence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "finance_modes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -236,6 +244,16 @@ ActiveRecord::Schema.define(version: 20150424174414) do
     t.integer  "transport_id"
     t.integer  "finance_mode_id"
   end
+
+  create_table "students_fees_heads", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "fees_head_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "students_fees_heads", ["fees_head_id"], name: "index_students_fees_heads_on_fees_head_id", using: :btree
+  add_index "students_fees_heads", ["student_id"], name: "index_students_fees_heads_on_student_id", using: :btree
 
   create_table "transports", force: :cascade do |t|
     t.string   "name"

@@ -91,6 +91,20 @@ midday_managements.config [
                 templateUrl: "admin/midday_managements/views/monthly_record/new.html"
 ]
 
+@fees_heads = angular.module('admin.fees_heads', [])
+
+fees_heads.config [
+    '$stateProvider', '$urlRouterProvider'
+    ($stateProvider, $urlRouterProvider) ->
+        $stateProvider
+            .state 'fees_heads',
+                url: "/fees_heads"
+                templateUrl: "admin/fees_heads/views/index.html"
+            .state 'fees_heads.new',
+                url: "/new"
+                templateUrl: "admin/fees_heads/views/new.html"
+]
+
 @admin = angular.module('admin', [
     'ui.router',
     'rails',
@@ -117,6 +131,7 @@ midday_managements.config [
     'admin.meals',
     'admin.daily_meals',
     'admin.monthly_records'
+    'admin.fees_heads'
 ])
 
 admin.config [

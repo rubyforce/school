@@ -18,6 +18,7 @@ Greenarea::Application.routes.draw do
     resources :meals
     resources :daily_meals
     resources :monthly_records
+    resources :fees_heads
   end
 
   devise_for :users
