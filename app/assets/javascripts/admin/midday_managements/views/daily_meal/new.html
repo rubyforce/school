@@ -131,12 +131,12 @@
               <tbody>
                 <tr ng-repeat="daily in daily_meals">
                   <td class="center">{{daily.meal}}</td>
-                  <td class="center">{{daily.noOfStudent1}}</td>
-                  <td class="center">{{daily.noOfStudent2}}</td>
-                  <td class="center">{{daily.noOfStudent3}}</td>
-                  <td class="center">{{daily.noOfStudent4}}</td>
-                  <td class="center">{{daily.noOfStudent5}}</td>
-                  <td class="center">{{daily.totalNumber}}</td>
+                  <td class="center">{{daily.noOfStudent1 | number}}</td>
+                  <td class="center">{{daily.noOfStudent2 | number}}</td>
+                  <td class="center">{{daily.noOfStudent3 | number}}</td>
+                  <td class="center">{{daily.noOfStudent4 | number}}</td>
+                  <td class="center">{{daily.noOfStudent5 | number}}</td>
+                  <td class="center">{{daily.totalNumber | number}}</td>
                   <td class="center">{{daily.qty | number}} Kgs</td>
                 </tr>
               </tbody>
