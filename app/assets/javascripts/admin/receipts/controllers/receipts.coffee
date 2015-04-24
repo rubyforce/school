@@ -1,6 +1,7 @@
 @receipts.controller 'ReceiptsController', [
-  '$scope', '$state', 'Receipt', 'FeesHead', 'Student'
-  ($scope, $state, Receipt, FeesHead, Student) ->
+  '$scope', '$state', 'Receipt', 'FeesHead', 'Student', 'Standard', 'Division'
+  ($scope, $state, Receipt, FeesHead, Student, Standard, Division) ->
+    $state.go('receipts.new')
 
     Receipt.get().then (receipts) ->
       $scope.receipts = receipts
@@ -10,4 +11,10 @@
 
     Student.get().then (students) ->
       $scope.students = students
+
+    Standard.get().then (standards) ->
+      $scope.standards = standards
+
+    Division.get().then (divisions) ->
+      $scope.divisions = divisions
 ]

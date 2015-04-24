@@ -111,6 +111,9 @@ receipts.config [
     '$stateProvider', '$urlRouterProvider'
     ($stateProvider, $urlRouterProvider) ->
         $stateProvider
+            .state 'receipts',
+                url: "/receipts"
+                templateUrl: "admin/receipts/views/index.html"
             .state 'receipts.new',
                 url: "/new"
                 templateUrl: "admin/receipts/views/new.html"
