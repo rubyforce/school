@@ -1,10 +1,7 @@
-@midday_managements.controller 'CreateMonthlyRecordController', [
+@midday_managements.controller 'CreateMonthlyRecordManagementsController', [
   '$scope', 'MiddayManagement'
   ($scope, MiddayManagement) ->
-
-    $scope.months = ["January", "February", "March", "April", "May", "June",
-                     "July", "August", "September", "October", "November", "December"]
-
+    
     $scope.alert = false
 
     $scope.create = ->

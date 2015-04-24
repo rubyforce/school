@@ -72,6 +72,7 @@ cash_managements.config [
 @meals = angular.module('admin.meals', [])
 @natures = angular.module('admin.natures', [])
 @daily_meals = angular.module('admin.daily_meals', [])
+@monthly_records = angular.module('admin.monthly_records', [])
 
 @midday_managements = angular.module('admin.midday_managements', [])
 
@@ -114,7 +115,8 @@ midday_managements.config [
     'admin.finance_modes',
     'admin.natures',
     'admin.meals',
-    'admin.daily_meals'
+    'admin.daily_meals',
+    'admin.monthly_records'
 ])
 
 admin.config [

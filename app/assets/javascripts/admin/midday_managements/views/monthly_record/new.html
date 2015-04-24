@@ -1,17 +1,17 @@
 <div class="panel panel-default">
   <div class="panel-heading">Daily Item Usage for Mid Day Meal</div>
-  <div class="panel-body">
-    <form name='form' ng-controller='CreateMonthlyRecordController' class="form-horizontal" ng-submit='create()'>
+  <div class="panel-body" ng-controller='CreateMonthlyRecordManagementsController'>
+    <form name='form' ng-controller='CreateMonthlyRecordsController' class="form-horizontal">
       <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new daily meal.</div>
       <div class="col-sm-12">
         <!-- First Column -->
         <div class="col-sm-6">
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='midday_meal.month' class="control-label">Month</label>
+              <label for='monthly_record.month' class="control-label">Month</label>
             </div>
             <div class="col-sm-6">
-              <select name='midday_meal.month' ng-model='midday_meal.month' class="form-control">
+              <select name='monthly_record.month' ng-model='monthly_record.month' class="form-control">
                 <option ng-repeat="month in months">{{month}}</option>
               </select>
             </div>
@@ -24,14 +24,20 @@
               <table class="table meals">
                 <thead>
                   <tr>
-                    <th class="center">I-V</th>
-                    <th class="center">VI-VIII</th>
+                    <th class="center">I</th>
+                    <th class="center">II</th>
+                    <th class="center">III</th>
+                    <th class="center">IV</th>
+                    <th class="center">V</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                    <td class="center">300</td>
                     <td class="center">500</td>
-                    <td class="center">500</td>
+                    <td class="center">520</td>
+                    <td class="center">648</td>
+                    <td class="center">320</td>
                   </tr>
                 </tbody>
               </table>
@@ -54,28 +60,31 @@
               <tbody>
                 <tr>
                   <td class="center">
-                    <select name='midday_meal.item_name' ng-model='midday_meal.item_name' class="form-control">
-                      <option ng-repeat="midday in midday_managements">{{midday.name}}</option>
+                    <select name='monthly_record.item_name' ng-model='monthly_record.item_name' class="form-control">
+                      <option ng-repeat="daily in daily_meals">{{daily.meal}}</option>
                     </select>
                   </td>
                   <td class="center">50</td>
                   <td class="center">100</td>
                   <td class="center">50</td>
                   <td class="center">
-                    <input name='midday_meal.ordered' type='text' ng-model='midday_meal.ordered' class="form-control" />
+                    <input name='monthly_record.ordered' type='text' ng-model='monthly_record.ordered' class="form-control" />
                   </td>
                   <td class="center">
-                    <input name='midday_meal.received' type='text' ng-model='midday_meal.received' class="form-control" />
+                    <input name='monthly_record.received' type='text' ng-model='monthly_record.received' class="form-control" />
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div class="col-sm-2">
-            <a class="btn btn-default btn-lg">Add</a>
+            <a class="btn btn-default btn-lg" ng-click="add()">Add</a>
           </div>
         </div>
+      </form>
 
+      <br />
+      <form name='form'  class="form-horizontal" ng-submit='create()'>
         <div class="panel panel-default">
           <div class="panel-body scrolling">
             <table id='objects-list' class="table scrolling">
@@ -85,8 +94,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr >
-                  <td>kdfiu</td>
+                <tr ng-repeat="monthly_record in monthly_records">
+                  <td>{{monthly_record.itemName}}</td>
                 </tr>
               </tbody>
             </table>
