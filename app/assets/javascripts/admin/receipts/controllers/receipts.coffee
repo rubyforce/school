@@ -1,5 +1,5 @@
 @receipts.controller 'ReceiptsController', [
-  '$scope', '$state', 'Receipt' 'FeesHead', 'Student'
+  '$scope', '$state', 'Receipt', 'FeesHead', 'Student'
   ($scope, $state, Receipt, FeesHead, Student) ->
 
     Receipt.get().then (receipts) ->
