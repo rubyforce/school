@@ -1,5 +1,5 @@
 class Meal < ActiveRecord::Base
   attr_accessible :title
 
-  has_many :midday_managements, dependent: :destroy
+  has_many :daily_meals, dependent: :destroy
 end

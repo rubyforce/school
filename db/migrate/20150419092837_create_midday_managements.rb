@@ -7,8 +7,6 @@ class CreateMiddayManagements < ActiveRecord::Migration
       t.string :received
       t.string :vegetable
       t.string :cook
-      t.string :date
-      t.string :qty
 
       t.timestamps null: false
     end

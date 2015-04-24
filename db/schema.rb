@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423122134) do
+ActiveRecord::Schema.define(version: 20150424070443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,20 @@ ActiveRecord::Schema.define(version: 20150423122134) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "daily_meals", force: :cascade do |t|
+    t.string   "date"
+    t.decimal  "no_of_student1"
+    t.decimal  "no_of_student2"
+    t.decimal  "no_of_student3"
+    t.decimal  "no_of_student4"
+    t.decimal  "no_of_student5"
+    t.decimal  "total_number"
+    t.decimal  "qty"
+    t.string   "meal"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "divisions", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -138,16 +152,9 @@ ActiveRecord::Schema.define(version: 20150423122134) do
     t.string   "received"
     t.string   "vegetable"
     t.string   "cook"
-    t.string   "date"
-    t.string   "qty"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "meal"
-    t.decimal  "no_student_1"
-    t.decimal  "no_student_2"
-    t.decimal  "no_student_3"
-    t.decimal  "no_student_4"
-    t.decimal  "no_student_5"
   end
 
   create_table "natures", force: :cascade do |t|

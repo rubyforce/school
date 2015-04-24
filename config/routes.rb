@@ -16,6 +16,7 @@ Greenarea::Application.routes.draw do
     resources :finance_modes
     resources :natures
     resources :meals
+    resources :daily_meals
   end
 
   devise_for :users

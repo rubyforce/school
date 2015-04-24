@@ -1,11 +1,8 @@
-@midday_managements.controller 'CreateDailyMealController', [
+@midday_managements.controller 'CreateDailyMealsManagementsController', [
   '$scope', 'MiddayManagement'
   ($scope, MiddayManagement) ->
 
     $scope.alert = false
-
-    $scope.months = ["January", "February", "March", "April", "May", "June",
-                     "July", "August", "September", "October", "November", "December"]
 
     $scope.create = ->
       new MiddayManagement($scope.midday_meal).create().then (response) ->
