@@ -1,8 +1,8 @@
 <div class="panel panel-default">
   <div class="panel-heading">Daily Item Usage for Mid Day Meal</div>
-  <div class="panel-body">
+  <div class="panel-body" ng-controller='CreateDailyMealsManagementsController'>
+    <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new daily meal.</div>
     <form name='form' ng-controller='CreateDailyMealsController' class="form-horizontal" ng-submit='create()'>
-      <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new daily meal.</div>
       <!-- First Column -->
       <div class="col-sm-12">
         <div class="col-sm-6">
@@ -112,7 +112,7 @@
 
     <br />
     <div class="col-sm-12">
-      <form name='form' ng-controller='CreateDailyMealsManagementsController' class="form-horizontal" ng-submit='create()'>
+      <form name='form' class="form-horizontal" ng-submit='create()'>
         <div class="panel panel-default">
           <div class="panel-body scrolling">
             <table class="table meals">
