@@ -193,11 +193,6 @@ ActiveRecord::Schema.define(version: 20150425224226) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "receipt_fees_heads", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "receipts", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "total"
