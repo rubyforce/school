@@ -6,7 +6,7 @@ class CreateFeesHeads < ActiveRecord::Migration
       t.string :amount
       t.string :recurrence
 
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end

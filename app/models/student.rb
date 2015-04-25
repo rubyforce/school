@@ -13,4 +13,5 @@ class Student < ActiveRecord::Base
   belongs_to :finance_mode
   has_many   :students_fees_heads
   has_many   :fees_heads, through: :students_fees_heads
+  has_many   :receipts
 end
