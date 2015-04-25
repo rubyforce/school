@@ -58,7 +58,9 @@
               <tbody>
                 <tr ng-repeat='fees_head in fees_heads'>
                   <td>{{fees_head.name}}</td>
-                  <td style="text-align: right;">{{fees_head.amount}}</td>
+                  <td style="text-align: right;">
+                    <input type="checkbox" name="fees_head.amount" value="{{fees_head.amount}}" ng-model="fees_head.amount"> {{fees_head.amount}}</input>
+                  </td>
                   <td>
                     <input name='fees_head.concession' type='text' ng-model='fees_head.concession' class="form-control" />
                   </td>
