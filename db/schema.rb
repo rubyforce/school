@@ -135,8 +135,11 @@ ActiveRecord::Schema.define(version: 20150425224226) do
     t.string   "type"
     t.string   "amount"
     t.string   "recurrence"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "class"
+    t.string   "division"
+    t.string   "student_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "finance_modes", force: :cascade do |t|

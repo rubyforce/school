@@ -5,6 +5,9 @@ class CreateFeesHeads < ActiveRecord::Migration
       t.string :type
       t.string :amount
       t.string :recurrence
+      t.string :class
+      t.string :division
+      t.string :student_name
 
       t.timestamps
     end
