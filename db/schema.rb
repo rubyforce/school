@@ -135,11 +135,10 @@ ActiveRecord::Schema.define(version: 20150425224226) do
     t.string   "type"
     t.string   "amount"
     t.string   "recurrence"
-    t.string   "class"
-    t.string   "division"
-    t.string   "student_name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "concession"
+    t.integer  "difference"
   end
 
   create_table "finance_modes", force: :cascade do |t|
@@ -189,6 +188,11 @@ ActiveRecord::Schema.define(version: 20150425224226) do
 
   create_table "pay_bands", force: :cascade do |t|
     t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "receipt_fees_heads", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

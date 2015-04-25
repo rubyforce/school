@@ -59,6 +59,10 @@
                 <tr ng-repeat='fees_head in fees_heads'>
                   <td>{{fees_head.name}}</td>
                   <td style="text-align: right;">{{fees_head.amount}}</td>
+                  <td>
+                    <input name='fees_head.concession' type='text' ng-model='fees_head.concession' class="form-control" />
+                  </td>
+                  <td>{{fees_head.difference}}</td>
                 </tr>
               </tbody>
             </table>
