@@ -108,20 +108,6 @@ fees_heads.config [
                 templateUrl: "admin/fees_heads/views/student_fees/new.html"
 ]
 
-@receipts = angular.module('admin.receipts', [])
-
-receipts.config [
-    '$stateProvider', '$urlRouterProvider'
-    ($stateProvider, $urlRouterProvider) ->
-        $stateProvider
-            .state 'receipts',
-                url: "/receipts"
-                templateUrl: "admin/receipts/views/index.html"
-            .state 'receipts.new',
-                url: "/new"
-                templateUrl: "admin/receipts/views/new.html"
-]
-
 @admin = angular.module('admin', [
     'ui.router',
     'rails',
@@ -149,7 +135,6 @@ receipts.config [
     'admin.daily_meals',
     'admin.monthly_records'
     'admin.fees_heads'
-    'admin.receipts'
 ])
 
 admin.config [
