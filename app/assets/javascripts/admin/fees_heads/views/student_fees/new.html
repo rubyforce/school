@@ -49,14 +49,16 @@
             <table class="table table-bordered">
               <thead>
                 <tr>
-                  <th width="40%" style="text-align: right;">Actual</th>
-                  <th width="30%" style="text-align: center;">Amount with Concession</th>
-                  <th width="30" style="text-align: center;">Difference</th>
+                  <th width="25%" style="text-align: center;">Fees</th>
+                  <th width="25%" style="text-align: center;">Actual</th>
+                  <th width="25%" style="text-align: center;">Amount with Concession</th>
+                  <th width="25" style="text-align: center;">Difference</th>
                 </tr>
               </thead>
               <tbody>
                 <tr ng-repeat='fees_head in fees_heads'>
                   <td>{{fees_head.name}}</td>
+                  <td style="text-align: right;">{{fees_head.amount}}</td>
                 </tr>
               </tbody>
             </table>
