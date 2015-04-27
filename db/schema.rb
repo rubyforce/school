@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 20150425224226) do
     t.decimal  "cash_opening"
     t.decimal  "cash_paid"
     t.decimal  "cash_in_hand"
-    t.decimal  "cash_deposited"
-    t.decimal  "cash_moved"
+    t.string   "cash_deposited"
+    t.string   "cash_moved"
     t.decimal  "cash_closing"
     t.string   "remark"
     t.string   "expense_made"
@@ -135,8 +135,8 @@ ActiveRecord::Schema.define(version: 20150425224226) do
     t.string   "type"
     t.string   "amount"
     t.string   "recurrence"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "concession"
     t.integer  "difference"
   end
@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(version: 20150425224226) do
   end
 
   create_table "meals", force: :cascade do |t|
-    t.string   "title"
+    t.string   "meal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -160,9 +160,11 @@ ActiveRecord::Schema.define(version: 20150425224226) do
     t.string   "received"
     t.string   "vegetable"
     t.string   "cook"
+    t.string   "date"
+    t.string   "qty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "meal"
+    t.string   "name"
   end
 
   create_table "monthly_records", force: :cascade do |t|
@@ -192,17 +194,12 @@ ActiveRecord::Schema.define(version: 20150425224226) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "receipt_fees_heads", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "receipts", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "total"
     t.string   "bank_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "receipts_fees_heads", force: :cascade do |t|
@@ -274,8 +271,8 @@ ActiveRecord::Schema.define(version: 20150425224226) do
   create_table "students_fees_heads", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "fees_head_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "students_fees_heads", ["fees_head_id"], name: "index_students_fees_heads_on_fees_head_id", using: :btree
