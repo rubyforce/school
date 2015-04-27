@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150424184603) do
+ActiveRecord::Schema.define(version: 20150425224226) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -188,6 +189,29 @@ ActiveRecord::Schema.define(version: 20150424184603) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "receipt_fees_heads", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "receipts", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "total"
+    t.string   "bank_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "receipts_fees_heads", force: :cascade do |t|
+    t.integer  "receipt_id"
+    t.integer  "fees_head_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "receipts_fees_heads", ["fees_head_id"], name: "index_receipts_fees_heads_on_fees_head_id", using: :btree
+  add_index "receipts_fees_heads", ["receipt_id"], name: "index_receipts_fees_heads_on_receipt_id", using: :btree
 
   create_table "religions", force: :cascade do |t|
     t.string   "name"

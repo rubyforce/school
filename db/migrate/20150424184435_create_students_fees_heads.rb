@@ -4,7 +4,7 @@ class CreateStudentsFeesHeads < ActiveRecord::Migration
       t.belongs_to :student, index: :true
       t.belongs_to :fees_head, index: :true
 
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end
