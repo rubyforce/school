@@ -16,7 +16,6 @@
 //= require bootstrap-css
 //= require select2
 //= require lodash
-//= require angular-country-select
 //
 //= require ./admin/app
 //= require_tree ./admin

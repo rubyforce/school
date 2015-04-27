@@ -135,8 +135,8 @@ ActiveRecord::Schema.define(version: 20150425224226) do
     t.string   "type"
     t.string   "amount"
     t.string   "recurrence"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "finance_modes", force: :cascade do |t|
@@ -190,17 +190,12 @@ ActiveRecord::Schema.define(version: 20150425224226) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "receipt_fees_heads", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "receipts", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "total"
     t.string   "bank_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "receipts_fees_heads", force: :cascade do |t|
@@ -272,8 +267,8 @@ ActiveRecord::Schema.define(version: 20150425224226) do
   create_table "students_fees_heads", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "fees_head_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "students_fees_heads", ["fees_head_id"], name: "index_students_fees_heads_on_fees_head_id", using: :btree

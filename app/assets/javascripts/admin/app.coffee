@@ -111,7 +111,6 @@ fees_heads.config [
     'templates',
     'ui.date',
     'ui.bootstrap',
-    'angular-country-select',
 
     'admin.employees',
     'admin.students',
