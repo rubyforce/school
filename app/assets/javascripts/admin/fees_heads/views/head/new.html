@@ -52,11 +52,13 @@
             </div> -->
           </div>
 
+<!--
           <div class="panel panel-default">
             <div class="panel-body scrolling" style="height: 200px;">
 
             </div>
           </div>
+-->
         </div>
 
         <div class="col-sm-6">
@@ -66,11 +68,15 @@
                 <thead>
                   <tr>
                     <th>Fees Name</th>
+                    <th>Amount</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr ng-repeat='fees_head in fees_heads'>
-                    <td>{{fees_head.name}}</td>
+                    <td><a ng-click='select(fees_head)'>{{fees_head.name}}</a></td>
+                    <td>{{fees_head.amount}}</td>
+                    <td><a ng-click='remove(fees_head)'>Remove</a></td>
                   </tr>
                 </tbody>
               </table>
@@ -82,7 +88,8 @@
 
       <div class="form-group ui buttons">
         <div class=" col-sm-12">
-          <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>SAVE </button>
+          <button type="button" class="btn btn-default" ng-click='new()' ng-disabled='form.$invalid'>New</button>
+          <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>Save</button>
         </div>
       </div>
     </form>
