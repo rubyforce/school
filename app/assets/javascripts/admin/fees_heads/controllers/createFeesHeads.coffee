@@ -1,11 +1,12 @@
 @fees_heads.controller 'CreateFeesHeadsController', [
   '$scope', 'FeesHead'
   ($scope, FeesHead) ->
-
     $scope.alert = false
 
     build = ->
         newRecord: true
+
+    $scope.fees_head = build()
 
     $scope.select = (fees_head) ->
         $scope.fees_head = fees_head
