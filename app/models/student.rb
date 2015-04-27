@@ -13,7 +13,7 @@ class Student < ActiveRecord::Base
   belongs_to :finance_mode
 
   has_many   :students_fees_heads, :dependent => :destroy
-  has_many   :fees_heads, through: :students_fees_heads, :dependent => :destroy
+  has_many   :fees_heads, through: :students_fees_heads
   has_many   :receipts, :dependent => :destroy
 
   accepts_nested_attributes_for :fees_heads, :allow_destroy => true
