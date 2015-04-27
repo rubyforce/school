@@ -34,7 +34,7 @@
             </div>
             <div class="col-sm-6">
               <select name='student_fees.name' ng-model='student_fees.name' class="form-control">
-                <option ng-repeat="student in students" value="{{student.id}}">{{student.firstName}}</option>
+                <option ng-repeat="student in students" value="{{student.id}}">{{student.firstName + " " + student.lastName + " " + student.middleName}}</option>
               </select>
             </div>
           </div>
@@ -59,7 +59,8 @@
                 <tr ng-repeat='fees_head in fees_heads'>
                   <td>{{fees_head.name}}</td>
                   <td style="text-align: right;">
-                    <input type="checkbox" name="fees_head.amount" value="{{fees_head.amount}}" ng-model="fees_head.amount"> {{fees_head.amount}}</input>
+                    <input type="checkbox" name="fees_head.amount" value="{{isEnabled()}}"></input>
+                    <input type='text' ng-model="fees_head.amount">{{fees_head.amount}}</input>
                   </td>
                   <td>
                     <input name='fees_head.concession' type='text' ng-model='fees_head.concession' class="form-control" />
