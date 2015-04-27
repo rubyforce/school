@@ -3,7 +3,7 @@ class Admin::StudentsController < ApplicationController
 
   def index
     @students = Student.all
-    respond_with @students
+    render :json => @students.as_json(:include => :students_fees_heads)
   end
 
   def show

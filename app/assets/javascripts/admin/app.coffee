@@ -100,9 +100,12 @@ fees_heads.config [
             .state 'fees_heads',
                 url: "/fees_heads"
                 templateUrl: "admin/fees_heads/views/index.html"
-            .state 'fees_heads.new',
-                url: "/new"
-                templateUrl: "admin/fees_heads/views/new.html"
+            .state 'fees_heads.head',
+                url: "/head/new"
+                templateUrl: "admin/fees_heads/views/head/new.html"
+            .state 'fees_heads.student_fees',
+                url: "/student_fees/new"
+                templateUrl: "admin/fees_heads/views/student_fees/new.html"
 ]
 
 @admin = angular.module('admin', [

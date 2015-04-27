@@ -3,12 +3,11 @@ class Admin::FeesHeadsController < ApplicationController
 
   def index
     @fees_heads = FeesHead.all
-    respond_with @fees_heads
+    render :json => @fees_heads
   end
 
   def show
     @fees_head = FeesHead.find(params[:id])
-
     render :json => @fees_head
   end
 
