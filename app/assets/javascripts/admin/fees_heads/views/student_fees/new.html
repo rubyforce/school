@@ -8,10 +8,10 @@
         <div class="col-sm-6">
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='student.standard' class="control-label">Class</label>
+              <label for='student.standardId' class="control-label">Class</label>
             </div>
             <div class="col-sm-6">
-              <select name='student_fees.class' ng-model='student_fees.class' class="form-control">
+              <select name='search.standardId' ng-model='search.standardId' class="form-control">
                 <option ng-repeat="standard in standards" value="{{standard.id}}">{{standard.name}}</option>
               </select>
             </div>
@@ -19,10 +19,10 @@
 
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='student_fees.division' class="control-label">Division</label>
+              <label for='search.divisionId' class="control-label">Division</label>
             </div>
             <div class="col-sm-6">
-              <select name="student_fees.division" class="form-control" ng-model="student_fees.division">
+              <select name="search.divisionId" class="form-control" ng-model="search.division">
                 <option ng-repeat="division in divisions" value='{{division.id}}'>{{division.name}}</option>
               </select>
             </div>
@@ -33,10 +33,7 @@
               <label for='student' class="control-label">Student</label>
             </div>
             <div class="col-sm-6">
-              <select name='student_fees.name' ng-model='student_fees.name' class="form-control">
-                <option ng-repeat="student in students | filter:bySelectors" value="{{student.id}}">
-                  {{student.firstName + " " + student.lastName + " " + student.middleName}}
-                </option>
+              <select ng-model='student' ng-options='(student.firstName + " " + student.lastName + " " + student.middleName) for student in students | filter:bySelectors' class="form-control">
               </select>
             </div>
           </div>
@@ -61,8 +58,11 @@
                 <tr ng-repeat='fees_head in fees_heads'>
                   <td>{{fees_head.name}}</td>
                   <td style="text-align: left;">
-                    <input type="checkbox" value="{{isEnabled(fees_head)}}"></input>
+                    <input type="checkbox" ng-model='student.studentsFeesHeads[fees_head.id.toString()].enabled' ng-value="isEnabled(fees_head)"></input>
                     {{fees_head.amount}}
+
+                    <input type="hidden" ng-model='student.studentsFeesHeads[fees_head.id.toString()].id' ng-value='fees_head.id' ng-disabled="!student.studentsFeesHeads[fees_head.id].enabled && !isEnabled(fees_head)"></input>
+                    <input type="hidden" ng-model='student.studentsFeesHeads[fees_head.id.toString()]._destroy' ng-value='!student.studentsFeesHeads[fees_head].enabled && isEnabled(fees_head)'></input>
                   </td>
                   <td>
                     <input name='fees_head.concession' type='text' ng-model='fees_head.concession' class="form-control" />

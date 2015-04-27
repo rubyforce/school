@@ -1,8 +1,9 @@
 @students.factory "Student", [
-    "$http", 'RailsResource'
-    ($http, RailsResource) ->
-        class Student extends RailsResource
-          @configure
-              url: '/admin/students'
-              name: 'student'
+    "$http", 'RailsResource', 'railsResourceFactory', 'railsSerializer'
+    ($http, RailsResource, railsResourceFactory, railsSerializer) ->
+        Student = railsResourceFactory
+           url: '/admin/students'
+           name: 'student'
+           serializer: railsSerializer ->
+               @nestedAttribute('students_fees_heads')
 ]
