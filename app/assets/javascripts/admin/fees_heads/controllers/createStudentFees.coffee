@@ -15,14 +15,12 @@
         true
 
     $scope.create = ->
-      # TODO: where is studentsFeesHeads?
       debugger
-
       $scope.student.update().then (response) ->
           $scope.alert = true
 
     $scope.isEnabled = (fees_head) ->
-        _.contains $scope.student?.studentsFeesHeads?,
+        _.contains $scope.student?.studentsFeesHeadsAttributes?,
             (search_head) ->
-                parseInt(search_head.fees_head.id, 10) is parseInt(fees_head.id, 10)
+                parseInt(search_head.fees_head_id, 10) is parseInt(fees_head.id, 10)
 ]

@@ -57,15 +57,20 @@
               <tbody>
                 <tr ng-repeat='fees_head in fees_heads'>
                   <td>{{fees_head.name}}</td>
+
                   <td style="text-align: left;">
-                    <input type="checkbox" ng-model='student.studentsFeesHeads[fees_head.id.toString()].enabled' ng-value="isEnabled(fees_head)"></input>
+                    <input type="checkbox" ng-model='student.studentsFeesHeadsAttributes[$index].enabled' ng-value="isEnabled(fees_head)"></input>
                     {{fees_head.amount}}
 
-                    <input type="hidden" ng-model='student.studentsFeesHeads[fees_head.id.toString()].id' ng-value='fees_head.id' ng-disabled="!student.studentsFeesHeads[fees_head.id].enabled && !isEnabled(fees_head)"></input>
-                    <input type="hidden" ng-model='student.studentsFeesHeads[fees_head.id.toString()]._destroy' ng-value='!student.studentsFeesHeads[fees_head].enabled && isEnabled(fees_head)'></input>
+                    <input type="hidden" ng-model='student.studentsFeesHeadsAttributes[$index].id' ng-value='student.studentsFeesHeadsAttributes[$index].id' ng-disabled="!isEnabled(fees_head)"></input>
+
+<input type="hidden" ng-model='student.studentsFeesHeadsAttributes[$index].fees_head_id' value='{{fees_head.id}}'></input>
+<input type="hidden" ng-model='student.studentsFeesHeadsAttributes[$index].student_id' value='{{student.id}}'></input>
+
+                    <input type="hidden" ng-model='student.studentsFeesHeadsAttributes[$index]._destroy' ng-disabled='!isEnabled(fees_head)'></input>
                   </td>
                   <td>
-                    <input name='fees_head.concession' type='text' ng-model='fees_head.concession' class="form-control" />
+                    <input name='fees_head.concession' type='text' ng-model='student.studentsFeesHeadsAttributes[$index].concession' class="form-control" />
                   </td>
                   <td>{{fees_head.difference}}</td>
                 </tr>
