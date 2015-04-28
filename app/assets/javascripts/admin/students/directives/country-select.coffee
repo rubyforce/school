@@ -257,9 +257,7 @@
       replace: true
       link: (scope, elem, attrs) ->
         if ! !attrs.ngModel
-          assignCountry = $parse(attrs.ngModel).assign
           elem.bind 'change', (e) ->
-            assignCountry elem.val()
             return
           scope.$watch attrs.ngModel, (country) ->
             elem.val country

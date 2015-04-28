@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 20150425224226) do
     t.decimal  "cash_opening"
     t.decimal  "cash_paid"
     t.decimal  "cash_in_hand"
-    t.string   "cash_deposited"
-    t.string   "cash_moved"
+    t.decimal  "cash_deposited"
+    t.decimal  "cash_moved"
     t.decimal  "cash_closing"
     t.string   "remark"
     t.string   "expense_made"
@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(version: 20150425224226) do
   end
 
   create_table "meals", force: :cascade do |t|
-    t.string   "meal"
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -160,11 +160,9 @@ ActiveRecord::Schema.define(version: 20150425224226) do
     t.string   "received"
     t.string   "vegetable"
     t.string   "cook"
-    t.string   "date"
-    t.string   "qty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "name"
+    t.string   "meal"
   end
 
   create_table "monthly_records", force: :cascade do |t|
