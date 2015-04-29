@@ -32,7 +32,7 @@
                     # to make checkbox as checked
                     found.isNew = -> false
 
-                    found.properties =
+                    found.properties = {}
                     found.properties.enabled = true
                     found.properties.name = f.name
                     found.properties.amount = f.amount
