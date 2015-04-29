@@ -69,6 +69,14 @@ table tbody td {
   max-height: 200px;
   overflow-y: auto;
 }
+.panel.panel-default.cheque {
+  position: relative;
+  width: 95%;
+  margin: 25px auto;
+  height: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+}
 .panel-heading.fees {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
