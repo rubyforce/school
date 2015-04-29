@@ -30,21 +30,22 @@
                 # we will skip `properties` for passing only required data.
                 if found?
                     # to make checkbox as checked
-                    found._destroy = true
+                    found.isNew = -> false
 
-                    found.properties = {}
+                    found.properties =
+                    found.properties.enabled = true
                     found.properties.name = f.name
                     found.properties.amount = f.amount
-                    found.isNew = -> false
                 else
                     found =  {}
                     found.feesHeadId = f.id
                     found.studentId = $scope.student.id
+
                     # to make checkbox as unchecked because of new record.
-                    found._destroy = false
                     found.isNew = -> true
 
                     found.properties = {}
+                    found.properties.enabled = false
                     found.properties.name = f.name
                     found.properties.amount = f.amount
 
@@ -60,7 +61,7 @@
                 collection = _.clone(@collection)
 
                 for item in collection
-                    if !!item._destroy then item._destroy = 0 else item._destroy = 1
+                    if item.properties.enabled then item._destroy = 0 else item._destroy = 1
                     delete item.properties
 
                 _(collection).remove (item) ->
