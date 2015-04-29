@@ -106,6 +106,15 @@ fees_heads.config [
             .state 'fees_heads.student_fees',
                 url: "/student_fees/new"
                 templateUrl: "admin/fees_heads/views/student_fees/new.html"
+            .state 'fees_heads.fees_collection',
+                url: "/fees_collection/new"
+                templateUrl: "admin/fees_heads/views/fees_collection/new.html"
+            .state 'fees_heads.cancel_receipt',
+                url: "/cancel_receipt/cancel"
+                templateUrl: "admin/fees_heads/views/cancel_receipt/cancel.html"
+            .state 'fees_heads.cheque_no',
+                url: "/cheque_no/cheque"
+                templateUrl: "admin/fees_heads/views/cheque_no/cheque.html"
 ]
 
 @admin = angular.module('admin', [
