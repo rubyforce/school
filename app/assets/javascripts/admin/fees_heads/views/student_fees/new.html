@@ -70,9 +70,9 @@
                     <input type="hidden" ng-model='student.studentsFeesHeadsAttributes[$index]._destroy' ng-disabled='!isEnabled(fees_head)'></input>
                   </td>
                   <td>
-                    <input name='fees_head.concession' type='text' ng-model='student.studentsFeesHeadsAttributes[$index].concession' class="form-control" />
+                    <input name='fees_head.concession' type='text' ng-model='student.studentsFeesHeadsAttributes[$index].concession' class="form-control" ng-disabled="!student.studentsFeesHeadsAttributes[$index].enabled"/>
                   </td>
-                  <td>{{fees_head.difference}}</td>
+                  <td>{{fees_head.difference = fees_head.amount - student.studentsFeesHeadsAttributes[$index].concession}}</td>
                 </tr>
               </tbody>
             </table>
