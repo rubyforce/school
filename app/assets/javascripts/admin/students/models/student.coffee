@@ -5,5 +5,5 @@
            url: '/admin/students'
            name: 'student'
            serializer: railsSerializer ->
-               @nestedAttribute('students_fees_heads')
+               @nestedAttribute('studentsFeesHeads')
 ]

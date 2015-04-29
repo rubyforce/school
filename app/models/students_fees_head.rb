@@ -1,5 +1,5 @@
 class StudentsFeesHead < ActiveRecord::Base
-  attr_accessible :enabled, :student_id, :fees_head_id, :concession
+  attr_accessible :enabled, :student_id, :fees_head_id, :concession, :_destroy
 
   attr_accessor :enabled
 
