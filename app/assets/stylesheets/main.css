@@ -57,6 +57,22 @@ table tbody td {
   max-height: 400px;
   overflow-y: auto;
 }
+.panel.panel-default.fees {
+  position: relative;
+  width: 95%;
+  margin: 25px auto;
+  overflow-y: auto;
+}
+.panel.panel-default.receipt {
+  position: relative;
+  padding: 10px 10px 10px 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.panel-heading.fees {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
 .panel.panel-default.employee-salary {
   position: relative;
   width: 95%;
