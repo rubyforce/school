@@ -16,7 +16,7 @@ class Admin::FeesHeadsController < ApplicationController
   end
 
   def create
-    @fees_head = FeesHead.new(params[:fees_head])
+    @fees_head = FeesHead.new(permitted_params)
     @fees_head.save
 
     render :json => @fees_head
@@ -29,7 +29,7 @@ class Admin::FeesHeadsController < ApplicationController
 
   def update
     @fees_head = FeesHead.find(params[:id])
-    @fees_head.update_attributes(params[:fees_head])
+    @fees_head.update_attributes(permitted_params)
     render :json => @fees_head
   end
 
@@ -37,5 +37,10 @@ class Admin::FeesHeadsController < ApplicationController
     @fees_head = FeesHead.find(params[:id])
     @fees_head.destroy
     render :json => @fees_head
+  end
+
+  # TODO: permit only accessible params here. we don't need to permit all for security reasons.
+  def permitted_params
+    params.require(:feed_head).permit!
   end
 end
