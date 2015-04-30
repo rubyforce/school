@@ -41,6 +41,6 @@ class Admin::FeesHeadsController < ApplicationController
 
   # TODO: permit only accessible params here. we don't need to permit all for security reasons.
   def permitted_params
-    params.require(:feed_head).permit!
+    params.require(:fees_head).permit!
   end
 end
