@@ -24,7 +24,7 @@
           <!-- End First Column -->
 
           <students-filter></students-filter>
-          
+
         </div>
       </div>
     </div>
@@ -46,14 +46,19 @@
 
               <div class="form-group">
                 <div class="col-sm-8">
-                  <label class="control-label">Student Name: Test</label>
+                  <label class="control-label">Student Name: {{ student.fullName() }}</label>
                 </div>
               </div>
 
               <div class="form-group">
                 <div class="col-sm-8">
-                  <label class="control-label">Class: VI</label>
-                  <label class="control-label">Division: A</label>
+                  <label class="control-label">Class: {{ student.className(standards) }}</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <label class="control-label">Division: {{ student.divisionName(divisions) }}</label>
                 </div>
               </div>
 
@@ -74,30 +79,22 @@
                     <thead>
                       <tr>
                         <th width="25%" style="text-align: center;">Fees</th>
-                        <th width="25%" style="text-align: center;">Paid</th>
-                        <th width="25%" style="text-align: center;">Balance</th>
+                        <th width="25%" style="text-align: center;">Actual</th>
+                        <th width="25%" style="text-align: center;">Amount with Concession</th>
+                        <th width="25" style="text-align: center;">Difference</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Fees Head 1 <input type="checkbox">1800</td>
-                        <td>1800</td>
-                        <td>0</td>
-                      </tr>
-                      <tr>
-                        <td>Fees Head 1 <input type="checkbox">1800</td>
-                        <td>1800</td>
-                        <td>0</td>
-                      </tr>
-                      <tr>
-                        <td>Fees Head 1 <input type="checkbox">1800</td>
-                        <td>1800</td>
-                        <td>0</td>
-                      </tr>
-                      <tr>
-                        <td>Fees Head 1 <input type="checkbox">1800</td>
-                        <td>1800</td>
-                        <td>0</td>
+                      <tr ng-repeat='f in studentsFeesHeads'>
+                        <td>{{f.properties.name}}</td>
+
+                        <td style="text-align: left;">
+                          <input type="checkbox" ng-model='f.properties.enabled'>{{f.properties.amount}}</input>
+                        </td>
+                        <td>
+                          <input ng-model='f.concession' type='text' class="form-control" />
+                        </td>
+                        <td>{{f.difference}}</td>
                       </tr>
                     </tbody>
                   </table>

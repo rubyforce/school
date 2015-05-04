@@ -26,7 +26,7 @@
       <label for='student' class="control-label">Student</label>
     </div>
     <div class="col-sm-6">
-      <select ng-model='student' ng-options='(student.firstName + " " + student.lastName + " " + student.middleName) for student in students | filter:bySelectors' class="form-control">
+      <select ng-model='student' ng-options='student.fullName() for student in students | filter:bySelectors' class="form-control">
       </select>
     </div>
   </div>
