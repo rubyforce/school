@@ -1,4 +1,5 @@
 Greenarea::Application.routes.draw do
+
   namespace :admin do
     resources :students
     resources :employees
