@@ -19,7 +19,7 @@
       if $scope.fees_head.isNew()
           new FeesHead($scope.fees_head).create().then (response) ->
             $scope.fees_heads.push(new FeesHead(response))
-            $scope.fees_head = build()
+            $scope.fees_head = new FeesHead()
             $scope.alert = true
       else
           $scope.fees_head.update().then (response) ->
