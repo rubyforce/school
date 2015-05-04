@@ -43,4 +43,8 @@ class Admin::FeesHeadsController < ApplicationController
   def permitted_params
     params.require(:fees_head).permit!
   end
+  
+  def finder_needs_type_condition? 
+    :true == (@finder_needs_type_condition ||= descends_from_active_record? ? :false : :true)
+  end
 end
