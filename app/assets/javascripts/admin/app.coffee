@@ -1,3 +1,5 @@
+@directives = angular.module('admin.directives', [])
+
 @employees = angular.module('admin.employees', [])
 
 employees.config [
@@ -142,7 +144,9 @@ fees_heads.config [
     'admin.meals',
     'admin.daily_meals',
     'admin.monthly_records'
-    'admin.fees_heads'
+    'admin.fees_heads',
+
+    'admin.directives',
 ])
 
 admin.config [

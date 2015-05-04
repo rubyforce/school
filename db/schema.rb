@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428063654) do
+ActiveRecord::Schema.define(version: 20150504065059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 20150428063654) do
     t.decimal  "cash_opening"
     t.decimal  "cash_paid"
     t.decimal  "cash_in_hand"
-    t.decimal  "cash_deposited"
-    t.decimal  "cash_moved"
+    t.string   "cash_deposited"
+    t.string   "cash_moved"
     t.decimal  "cash_closing"
     t.string   "remark"
     t.string   "expense_made"
@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(version: 20150428063654) do
   end
 
   create_table "meals", force: :cascade do |t|
-    t.string   "title"
+    t.string   "meal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -160,9 +160,11 @@ ActiveRecord::Schema.define(version: 20150428063654) do
     t.string   "received"
     t.string   "vegetable"
     t.string   "cook"
+    t.string   "date"
+    t.string   "qty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "meal"
+    t.string   "name"
   end
 
   create_table "monthly_records", force: :cascade do |t|
@@ -194,10 +196,14 @@ ActiveRecord::Schema.define(version: 20150428063654) do
 
   create_table "receipts", force: :cascade do |t|
     t.integer  "student_id"
-    t.integer  "total"
-    t.string   "bank_name"
+    t.decimal  "total",         default: 0.0
+    t.text     "bank_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "number"
+    t.string   "cheque_number"
+    t.datetime "date"
+    t.decimal  "cash",          default: 0.0
   end
 
   create_table "receipts_fees_heads", force: :cascade do |t|

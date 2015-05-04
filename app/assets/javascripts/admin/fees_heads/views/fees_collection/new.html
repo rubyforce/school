@@ -12,7 +12,7 @@
               </div>
               <div class="col-sm-6">
                 <div class="input-group">
-                  <input name='datetime' ng-model='' class="form-control" ui-date/>
+                  <input name='datetime' ng-model='receipt.date' class="form-control" ui-date/>
                   <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -20,53 +20,11 @@
               </div>
             </div>
 
-            <div class="form-group">
-              <div class="col-sm-4">
-                <label for='group_no' class="control-label">Group #</label>
-              </div>
-              <div class="col-sm-6">
-                <input name='group_no' type='text' ng-model='' class="form-control" />
-              </div>
-            </div>
           </div>
           <!-- End First Column -->
 
-          <!-- Second Column -->
-          <div class="col-sm-6">
-            <div class="form-group">
-              <div class="col-sm-4">
-                <label for='standard' class="control-label">Standard</label>
-              </div>
-              <div class="col-sm-6">
-                <select name='standard' ng-model='' class="form-control">
-                  
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-sm-4">
-                <label for='standard' class="control-label">Division</label>
-              </div>
-              <div class="col-sm-6">
-                <select name='standard' ng-model='' class="form-control">
-                  
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-sm-4">
-                <label for='standard' class="control-label">Student Name</label>
-              </div>
-              <div class="col-sm-6">
-                <select name='standard' ng-model='' class="form-control">
-                  
-                </select>
-              </div>
-            </div>
-          </div>
-          <!-- End Second Column -->
+          <students-filter></students-filter>
+          
         </div>
       </div>
     </div>
@@ -157,7 +115,7 @@
                   <label for='cash' class="control-label">Cash</label>
                 </div>
                 <div class="col-sm-6">
-                  <input name='cash' type='text' ng-model='' class="form-control" />
+                  <input name='cash' type='text' ng-model='receipt.cash' class="form-control" />
                 </div>
               </div>
             </div>
@@ -170,14 +128,14 @@
                   <label for='cheque' class="control-label">Cheque #</label>
                 </div>
                 <div class="col-sm-3">
-                  <input name='cheque' type='text' ng-model='' class="form-control" />
+                  <input name='cheque' type='text' ng-model='receipt.cheque_number' class="form-control" />
                 </div>
                 <div class="col-sm-2">
                   <label for='date' class="control-label">Date</label>
                 </div>
                 <div class="col-sm-4">
                   <div class="input-group">
-                    <input name='date' ng-model='' class="form-control" ui-date/>
+                    <input name='date' ng-model='receipt.date' class="form-control" ui-date/>
                     <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -190,7 +148,7 @@
                   <label for='bank' class="control-label">Bank Name</label>
                 </div>
                 <div class="col-sm-6">
-                  <input name='bank' type='text' ng-model='' class="form-control" />
+                  <input name='bank' type='text' ng-model='receipt.bank_name' class="form-control" />
                 </div>
               </div>
             </div>
@@ -205,4 +163,3 @@
     <button type="submit" class="btn btn-default" >Reset</button>
   </div>
 </div>
-
