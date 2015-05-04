@@ -1,36 +1,34 @@
 @fees_heads.controller 'CreateFeesCollectionController', [
-    '$scope', 'Student', '$timeout'
-    ($scope, Student, $timeout) ->
+    '$scope', 'Receipt', '$timeout'
+    ($scope, Receipt, $timeout) ->
         $scope.alert = false
-
-        $scope.student = new Student()
-        $scope.student.studentsFeesHeads = []
-
-        # Lets use separate collection to store fees heads, it will help us to control
-        # items in ng-repeat.
-        $scope.studentsFeesHeads = []
 
         build = ->
             new Receipt()
 
         $scope.receipt = build()
+        $scope.receipt.receiptsFeesHeads = []
+
+        # Lets use separate collection to store fees heads, it will help us to control
+        # items in ng-repeat.
+        $scope.receiptsFeesHeads = []
 
         $scope.reset = ->
             $scope.receipt = build()
 
         # Lets watch on change $scope.student to merge fees_heads with existing
-        # student.studentsFeesHeads by feesHeadId id because of uniqueness.
-        $scope.$watch 'student', (time) ->
+        # receipt.receiptsFeesHeads feesHeadId id because of uniqueness.
+        $scope.$watch 'receipt', (time) ->
             return unless time?
             render()
 
         render = ->
             # Before making merges between student.studentsFeesHeads and fees_heads
             # we should clean up the previous populated collection.
-            $scope.studentsFeesHeads = []
+            $scope.receiptsFeesHeads = []
 
             for f in $scope.fees_heads
-                found = _.find $scope.student.studentsFeesHeads, (o) -> o.feesHeadId is f.id
+                found = _.find $scope.receipt.receiptsFeesHeads, (o) -> o.feesHeadId is f.id
 
                 # We extend our resource by properties hash for storing skipped on requests
                 # data. Lets say we want to use extra `enabled` flag. We added as
@@ -47,7 +45,7 @@
                 else
                     found =  {}
                     found.feesHeadId = f.id
-                    found.studentId = $scope.student.id
+                    found.receiptId = $scope.receipt.id
 
                     # to make checkbox as unchecked because of new record.
                     found.isNew = -> true
@@ -57,9 +55,9 @@
                     found.properties.name = f.name
                     found.properties.amount = f.amount
 
-                collection = _($scope.studentsFeesHeads)
+                collection = _($scope.receiptsFeesHeads)
                 unless collection.contains((o) -> o.feesHeadId is found.id)
-                    $scope.studentsFeesHeads.push(found)
+                    $scope.receiptsFeesHeads.push(found)
 
         class NestedAttributes
             constructor: (@collection) ->
@@ -81,23 +79,24 @@
 
         # TODO: create receipt and show page for printing.
         $scope.create = ->
-            return false if _.isUndefined($scope.student.id)
+            return false if _.isUndefined($scope.receipt.id)
 
             # Lets rebuild nested attributes before passing it to our endpoint.
             # It should contains only required params like:
             # - fees_head_id: integer
-            # - student_id: integer
+            # - receipt_id: integer
             # - concession: decimal
             # - id: integer (isNew => false)
             # - _destroy: integer/boolean(1,0) for existing records.
-            studentsFeesHeadsAttributes = new NestedAttributes($scope.studentsFeesHeads)
-            studentsFeesHeadsAttributes = studentsFeesHeadsAttributes.get()
+            receiptsFeesHeadsAttributes = new NestedAttributes($scope.studentsFeesHeads)
+            receiptsFeesHeadsAttributes = receiptsFeesHeadsAttributes.get()
 
             # Reassign and pass to server updated or added new items
-            $scope.student.studentsFeesHeads = studentsFeesHeadsAttributes
-            $scope.student.update().then (response) ->
+            $scope.receipt.receiptsFeesHeads = receiptsFeesHeads
+
+            $scope.receipt.create().then (response) ->
                 $scope.alert = true
-                $scope.student.studentsFeesHeads = response.studentsFeesHeads
+                $scope.receipt.receiptsFeesHeads = response.receiptsFeesHeads
                 $timeout(render)
 
 ]
