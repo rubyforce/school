@@ -1,5 +1,6 @@
 <div class="panel panel-default" ng-controller='CreateFeesCollectionController'>
   <div class="panel-heading">Fees Collection</div>
+  <div class="alert alert-success" role="alert" ng-show="alert" style="width: 95%; margin: 25px auto;">You successfully saved a new fees collection.</div>
   <form name='form' class="form-horizontal update">
     <div class="panel panel-default fees">
       <div class="update_form">
@@ -31,7 +32,6 @@
   </form>
 
   <form name='name' class="form-horizontal update">
-    <div class="alert alert-success" role="alert" ng-show="alert">You successfully saved a new fees collection.</div>
     <div class="panel panel-default fees">
       <button type="submit" class="btn btn-default" disabled>Receipt # {{ receipt.number }}</button>
 
@@ -47,7 +47,7 @@
               </div>
 
               <div class="form-group">
-                <div class="col-sm-8">
+                <div class="col-sm-12">
                   <label class="control-label">Student Name: {{ student.fullName() }}</label>
                 </div>
               </div>
