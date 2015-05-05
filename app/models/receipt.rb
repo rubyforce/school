@@ -1,5 +1,5 @@
 class Receipt < ActiveRecord::Base
-  has_many   :receipts_fees_heads, :dependent => true
+  has_many   :receipts_fees_heads, :dependent => :destroy
   has_many   :fees_heads, through: :receipts_fees_heads
   belongs_to :student
 
