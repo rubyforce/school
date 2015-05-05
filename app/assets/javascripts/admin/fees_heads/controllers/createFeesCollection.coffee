@@ -79,20 +79,11 @@
 
         # TODO: create receipt and show page for printing.
         $scope.create = ->
-            return false if _.isUndefined($scope.receipt.id)
-
-            # Lets rebuild nested attributes before passing it to our endpoint.
-            # It should contains only required params like:
-            # - fees_head_id: integer
-            # - receipt_id: integer
-            # - concession: decimal
-            # - id: integer (isNew => false)
-            # - _destroy: integer/boolean(1,0) for existing records.
-            receiptsFeesHeadsAttributes = new NestedAttributes($scope.studentsFeesHeads)
+            debugger
+            receiptsFeesHeadsAttributes = new NestedAttributes($scope.receiptsFeesHeads)
             receiptsFeesHeadsAttributes = receiptsFeesHeadsAttributes.get()
 
-            # Reassign and pass to server updated or added new items
-            $scope.receipt.receiptsFeesHeads = receiptsFeesHeads
+            $scope.receipt.receiptsFeesHeads = receiptsFeesHeadsAttributes
 
             $scope.receipt.create().then (response) ->
                 $scope.alert = true
