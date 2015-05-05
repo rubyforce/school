@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505074933) do
+ActiveRecord::Schema.define(version: 20150505081300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 20150505074933) do
     t.decimal  "cash_opening"
     t.decimal  "cash_paid"
     t.decimal  "cash_in_hand"
-    t.string   "cash_deposited"
-    t.string   "cash_moved"
+    t.decimal  "cash_deposited"
+    t.decimal  "cash_moved"
     t.decimal  "cash_closing"
     t.string   "remark"
     t.string   "expense_made"
@@ -135,13 +135,9 @@ ActiveRecord::Schema.define(version: 20150505074933) do
     t.string   "type_name"
     t.string   "amount"
     t.string   "recurrence"
-    t.string   "class"
-    t.string   "division"
-    t.string   "student_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "concession"
-    t.integer  "difference"
+    t.decimal  "concession"
   end
 
   create_table "finance_modes", force: :cascade do |t|
@@ -151,7 +147,7 @@ ActiveRecord::Schema.define(version: 20150505074933) do
   end
 
   create_table "meals", force: :cascade do |t|
-    t.string   "meal"
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -163,11 +159,9 @@ ActiveRecord::Schema.define(version: 20150505074933) do
     t.string   "received"
     t.string   "vegetable"
     t.string   "cook"
-    t.string   "date"
-    t.string   "qty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "name"
+    t.string   "meal"
   end
 
   create_table "monthly_records", force: :cascade do |t|
