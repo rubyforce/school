@@ -1,6 +1,6 @@
 @fees_heads.controller 'CreateFeesCollectionController', [
-    '$scope', 'Receipt', '$timeout'
-    ($scope, Receipt, $timeout) ->
+    '$scope', 'Receipt', '$timeout', '$stateParams'
+    ($scope, Receipt, $timeout, $stateParams) ->
         $scope.alert = false
 
         build = ->
@@ -83,11 +83,10 @@
             receiptsFeesHeadsAttributes = new NestedAttributes($scope.receiptsFeesHeads)
             receiptsFeesHeadsAttributes = receiptsFeesHeadsAttributes.get()
 
-            $scope.receipt.receiptsFeesHeads = receiptsFeesHeadsAttributes
+            $scope.receipt.receiptsFeesHeads = receiptsFeesHeadsAttributes[$stateParams.id]
 
             $scope.receipt.create().then (response) ->
                 $scope.alert = true
                 $scope.receipt.receiptsFeesHeads = response.receiptsFeesHeads
                 $timeout(render)
-
 ]

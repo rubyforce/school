@@ -117,6 +117,9 @@ fees_heads.config [
             .state 'fees_heads.cheque_no',
                 url: "/cheque_no/cheque"
                 templateUrl: "admin/fees_heads/views/cheque_no/cheque.html"
+            .state 'fees_heads.receipt',
+                url: "/receipts/{id}"
+                templateUrl: "admin/fees_heads/views/receipt/receipt.html"
 ]
 
 @admin = angular.module('admin', [
