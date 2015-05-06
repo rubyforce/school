@@ -83,10 +83,9 @@
             receiptsFeesHeadsAttributes = new NestedAttributes($scope.receiptsFeesHeads)
             receiptsFeesHeadsAttributes = receiptsFeesHeadsAttributes.get()
 
-            $scope.receipt.receiptsFeesHeads = receiptsFeesHeadsAttributes[$stateParams.id]
 
             $scope.receipt.create().then (response) ->
                 $scope.alert = true
-                $scope.receipt.receiptsFeesHeads = response.receiptsFeesHeads
+                $scope.receipt.receiptsFeesHeads = response.receiptsFeesHeads[$stateParams.id]
                 $timeout(render)
 ]
