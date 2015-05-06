@@ -1,17 +1,7 @@
 @cash_managements.controller 'CreateSalaryController', [
   '$scope', 'CashManagement'
   ($scope, CashManagement) ->
-
     $scope.alert = false
-
-    $scope.years = []
-    i = 0
-    while i <= 100
-      $scope.years.push(2013 + i)
-      i++
-
-    $scope.months = ["January", "February", "March", "April", "May", "June", "July",
-                     "August", "September", "October", "November", "December"]
 
     $scope.create = ->
       new CashManagement($scope.salary).create().then (response) ->

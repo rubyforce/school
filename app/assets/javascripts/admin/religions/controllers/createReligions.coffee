@@ -9,7 +9,6 @@
         controller: 'CreateReligionsController')
 
       ReligionsSharedObjects.modalWindow.result.then (religion) ->
-        debugger
         $scope.religions.push(religion)
 
     $scope.create = ->

@@ -15,12 +15,6 @@
 
     $scope.$watch 'currentPage', makeTableSelectable
 
-    $scope.years = []
-    i = 0
-    while i <= 100
-      $scope.years.push(2013 + i)
-      i++
-
     editing = (user) ->
       $scope.currentUser = user
       $scope.show_form = true

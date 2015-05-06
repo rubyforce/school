@@ -6,31 +6,13 @@
       <div class="col-sm-12">
         <!-- First Column -->
         <div class="col-sm-6">
-          <div class="form-group">
-            <div class="col-sm-4">
-              <label for='salary.month' class="control-label">Salary for the month of</label>
-            </div>
-            <div class="col-sm-6">
-              <select name='salary.month' ng-model='salary.month' class="form-control">
-                <option ng-repeat="month in months">{{month}}</option>
-              </select>
-            </div>
-          </div>
+          <months ng-model='salary.month' title='Salary for the month of'></months>
         </div>
         <!-- End First Column -->
 
         <!-- Second Column -->
         <div class="col-sm-6">
-          <div class="form-group">
-            <div class="col-sm-4">
-              <label for='salary.year' class="control-label" style="float: right">year</label>
-            </div>
-            <div class="col-sm-6">
-              <select name='salary.year' ng-model='salary.year' class="form-control">
-                <option ng-repeat="year in years">{{year}}</option>
-              </select>
-            </div>
-          </div>
+          <years ng-model='salary.year' title='Year'></years>
         </div>
         <!-- End Second Column -->
       </div>

@@ -6,16 +6,8 @@
       <div class="col-sm-12">
         <!-- First Column -->
         <div class="col-sm-6">
-          <div class="form-group">
-            <div class="col-sm-4">
-              <label for='monthly_record.month' class="control-label">Month</label>
-            </div>
-            <div class="col-sm-6">
-              <select name='monthly_record.month' ng-model='monthly_record.month' class="form-control">
-                <option ng-repeat="month in months">{{month}}</option>
-              </select>
-            </div>
-          </div>
+          <months ng-model='monthly_record.month' title='Month'></months>
+
           <div class="form-group">
             <div class="col-sm-4">
               <label for='meals_made' class="control-label">Meals Made:</label>

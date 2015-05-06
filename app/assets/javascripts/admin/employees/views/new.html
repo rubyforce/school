@@ -83,16 +83,7 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <div class="col-sm-4">
-              <label for="employee.year" class="control-label">Year of Joining</label>
-            </div>
-            <div class="col-sm-6">
-              <select name="employee.year" class="form-control" ng-model="employee.year">
-                <option ng-repeat="year in years">{{year}}</option>
-              </select>
-            </div>
-          </div>
+          <years ng-model='employee.year' title='Year of Joining'></years>
 
           <div class="form-group">
             <div class="col-sm-4">

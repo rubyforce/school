@@ -1,7 +1,6 @@
 @cash_managements.controller 'CreateExpenseController', [
   '$scope', 'CashManagement'
   ($scope, CashManagement) ->
-
     $scope.alert = false
 
     $scope.create = ->
