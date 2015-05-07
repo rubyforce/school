@@ -118,7 +118,7 @@ fees_heads.config [
                 url: "/cheque_no/cheque"
                 templateUrl: "admin/fees_heads/views/cheque_no/cheque.html"
             .state 'fees_heads.receipt',
-                url: "/receipts/{id}"
+                url: "/receipts/:id"
                 templateUrl: "admin/fees_heads/views/receipt/receipt.html"
 ]
 
