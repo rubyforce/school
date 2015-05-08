@@ -3,7 +3,7 @@
   <div class="page-header">
     <h1 style="text-align: center"><%= @receipt.student.full_name %></h1>
   </div>
-  <p class="lead" style="text-align: center">Class: VI  Division: VI</p> 
+  <p class="lead" style="text-align: center">Class: VI  Division: VI</p>
   <div class="panel panel-default">
     <button type="submit" class="btn btn-default" disabled>Receipt # <%= @receipt.number %></button>
 
@@ -13,7 +13,7 @@
           <div class="panel panel-default receipt" style="width: 95%; margin: 20px auto;">
             <div class="panel panel-default">
               <table class="table table-bordered">
-                <%= render "fees_head", collection: @receipt.fees_heads %>
+                <%= render partial: "fees_head", collection: @receipt.fees_heads %>
               </table>
             </div>
           </div>
