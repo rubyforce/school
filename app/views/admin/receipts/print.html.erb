@@ -13,25 +13,7 @@
           <div class="panel panel-default receipt" style="width: 95%; margin: 20px auto;">
             <div class="panel panel-default">
               <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th width="25%" style="text-align: center;">Fees</th>
-                    <th width="25%" style="text-align: center;">Actual</th>
-                    <th width="25%" style="text-align: center;">Amount with Concession</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>{{f.properties.name}}</td>
-
-                    <td style="text-align: left;">
-                      <input type="checkbox" ng-model='f.properties.enabled'>{{f.properties.amount}}</input>
-                    </td>
-                    <td>
-                      <input ng-model='f.concession' type='text' class="form-control" />
-                    </td>
-                  </tr>
-                </tbody>
+                <%= render "fees_head", collection: @receipt.fees_heads %>
               </table>
             </div>
           </div>
