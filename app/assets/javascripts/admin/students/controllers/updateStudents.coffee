@@ -1,6 +1,6 @@
 @students.controller 'UpdateStudentsController', [
-  '$scope', 'Student', '$timeout'
-  ($scope, Student, $timeout) ->
+  '$scope', 'Student', '$timeout', 'uuid4'
+  ($scope, Student, $timeout, uuid4) ->
     makeTableSelectable = ->
       $timeout ->
         table = $('table')

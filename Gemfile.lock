@@ -240,6 +240,7 @@ GEM
     rails-assets-angular-uuid4 (0.3.0)
       rails-assets-angular (> 0.9.0)
     rails-assets-bootstrap-css (3.2.0)
+    rails-assets-fontawesome-actions (0.6.0)
     rails-assets-jquery (2.1.4)
     rails-assets-jquery-ui (1.10.3)
       rails-assets-jquery (>= 1.6)
@@ -407,6 +408,7 @@ DEPENDENCIES
   rails-assets-angular-ui-router (= 0.2.13)!
   rails-assets-angular-uuid4!
   rails-assets-bootstrap-css (= 3.2.0)!
+  rails-assets-fontawesome-actions!
   rails-assets-jquery-ui (= 1.10.3)!
   rails-assets-lodash (~> 2.4.1)!
   rails-assets-objectpath!

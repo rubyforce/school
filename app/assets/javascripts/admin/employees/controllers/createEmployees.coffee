@@ -1,6 +1,6 @@
 @employees.controller 'CreateEmployeesController', [
-  '$scope', 'Employee'
-  ($scope, Employee) ->
+  '$scope', 'Employee', 'uuid4'
+  ($scope, Employee, uuid4) ->
 
 
     DEFAULT_EMPLOYEE =
@@ -17,6 +17,9 @@
     while i <= 100
       $scope.years.push(2013 + i)
       i++
+
+    $scope.generate = ->
+      $scope.employee.entry_no = uuid4.generate()
 
     $scope.create = ->
       new Employee($scope.employee).create().then (response) ->
