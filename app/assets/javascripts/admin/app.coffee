@@ -125,6 +125,7 @@ fees_heads.config [
     'templates',
     'ui.date',
     'ui.bootstrap',
+    'uuid4',
 
     'admin.employees',
     'admin.students',
