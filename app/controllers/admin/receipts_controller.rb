@@ -11,6 +11,11 @@ class Admin::ReceiptsController < ApplicationController
     render :json => @receipt.as_json(:include => :receipts_fees_heads)
   end
 
+  def print
+    @receipt = Receipt.find(params[:id])
+    render :layout => 'print'
+  end
+
   def new
     @receipt = Receipt.new
   end

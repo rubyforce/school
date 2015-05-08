@@ -1,6 +1,6 @@
 @fees_heads.controller 'CreateFeesCollectionController', [
-    '$scope', 'Receipt', '$timeout', '$state'
-    ($scope, Receipt, $timeout, $state) ->
+    '$scope', 'Receipt', '$timeout', '$state', '$window', '$location'
+    ($scope, Receipt, $timeout, $state, $window, $location) ->
         $scope.alert = false
 
         build = ->
@@ -83,12 +83,18 @@
             receiptsFeesHeadsAttributes = receiptsFeesHeadsAttributes.get()
 
             $scope.receipt.receiptsFeesHeads = receiptsFeesHeadsAttributes
+            $scope.receipt.studentId = $scope.student?.id
 
             $scope.receipt.create().then (response) ->
-                id = response.id
-                $state.go('fees_heads.receipt', {id: id})
                 $scope.alert = true
-                $scope.receipt.receiptsFeesHeads = response.receiptsFeesHeads
+
+                $scope.receipt = new Receipt()
+
+                protocol = $location.protocol()
+                host = $window.location.host
+                domain = "#{protocol}://#{host}" # Example: http://example.com
+                $window.open("#{domain}/admin/receipts/#{response.id}/print",'_blank')
+
                 $timeout(render)
 
 ]
