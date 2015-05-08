@@ -1,6 +1,6 @@
 @students.controller 'CreateStudentsController', [
-  '$scope', 'Student'
-  ($scope, Student) ->
+  '$scope', 'Student', 'uuid4'
+  ($scope, Student, uuid4) ->
     DEFAULT_STUDENT =
       entry_no: 'auto'
       academic_year: 'auto'
@@ -10,6 +10,9 @@
     $scope.student = build()
 
     $scope.alert = false
+
+    $scope.generate = ->
+      $scope.student.entry_no = uuid4.generate()
 
     $scope.create = ->
       new Student($scope.student).create().then (response) ->
