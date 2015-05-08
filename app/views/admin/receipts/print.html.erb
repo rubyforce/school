@@ -1,1 +1,66 @@
-<h1><%= @receipt.student.full_name %></h1>
+<%= stylesheet_link_tag "application" %>
+<div class="container">
+  <div class="page-header">
+    <h1 style="text-align: center"><%= @receipt.student.full_name %></h1>
+  </div>
+  <p class="lead" style="text-align: center">Class: VI  Division: VI</p> 
+  <div class="panel panel-default">
+    <button type="submit" class="btn btn-default" disabled>Receipt # <%= @receipt.number %></button>
+
+    <div class="update_form">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default receipt" style="width: 95%; margin: 20px auto;">
+            <div class="panel panel-default">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th width="25%" style="text-align: center;">Fees</th>
+                    <th width="25%" style="text-align: center;">Actual</th>
+                    <th width="25%" style="text-align: center;">Amount with Concession</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{f.properties.name}}</td>
+
+                    <td style="text-align: left;">
+                      <input type="checkbox" ng-model='f.properties.enabled'>{{f.properties.amount}}</input>
+                    </td>
+                    <td>
+                      <input ng-model='f.concession' type='text' class="form-control" />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <table class="table" style="width: 95%; margin: 50px auto">
+            <thead>
+              <tr>
+                <th width="25%" style="text-align: center;">Cash</th>
+                <th width="25%" style="text-align: center;">Cheque #</th>
+                <th width="25%" style="text-align: center;">Bank Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center"><%= @receipt.cash %></td>
+
+                <td style="text-align: center"><%= @receipt.cheque_number %></td>
+                <td style="text-align: center"><%= @receipt.bank_name %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer class="footer" style="text-align: center; margin-top: 50px;">
+      <div class="container">
+        <p class="text-muted">© Company 2015</p>
+      </div>
+    </footer>
+  </div>
+</div>

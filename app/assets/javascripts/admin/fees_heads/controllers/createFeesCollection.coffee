@@ -86,6 +86,7 @@
             $scope.receipt.studentId = $scope.student?.id
 
             $scope.receipt.create().then (response) ->
+                debugger
                 $scope.alert = true
 
                 $scope.receipt = new Receipt()
