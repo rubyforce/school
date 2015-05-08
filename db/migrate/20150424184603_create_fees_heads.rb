@@ -3,7 +3,7 @@ class CreateFeesHeads < ActiveRecord::Migration
     create_table :fees_heads do |t|
       t.string :name
       t.string :type
-      t.string :amount
+      t.decimal :amount
       t.string :recurrence
       t.string :class
       t.string :division

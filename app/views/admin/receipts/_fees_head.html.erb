@@ -9,6 +9,8 @@
   <tr>
     <td style="text-align: center;"><%= fees_head.name %></td>
     <td style="text-align: center;"><%= fees_head.amount %></td>
-    <td style="text-align: center;"><%= fees_head.concession %></td>
+    <% @receipt.receipts_fees_heads.each do |fees| %>
+      <td style="text-align: center;"><%= fees_head.amount -= fees.concession %></td>
+    <% end %>
   </tr>
 </tbody>

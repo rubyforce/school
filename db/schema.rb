@@ -133,7 +133,7 @@ ActiveRecord::Schema.define(version: 20150505081300) do
   create_table "fees_heads", force: :cascade do |t|
     t.string   "name"
     t.string   "type_name"
-    t.string   "amount"
+    t.decimal  "amount"
     t.string   "recurrence"
     t.datetime "created_at"
     t.datetime "updated_at"
