@@ -20,7 +20,12 @@ Greenarea::Application.routes.draw do
     resources :daily_meals
     resources :monthly_records
     resources :fees_heads
-    resources :receipts
+
+    resources :receipts do
+      member do
+        get :print
+      end
+    end
   end
 
   devise_for :users

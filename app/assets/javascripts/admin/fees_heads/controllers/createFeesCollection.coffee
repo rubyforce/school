@@ -1,6 +1,6 @@
 @fees_heads.controller 'CreateFeesCollectionController', [
-    '$scope', 'Receipt', '$timeout'
-    ($scope, Receipt, $timeout) ->
+    '$scope', 'Receipt', '$timeout', '$state', '$window', '$location'
+    ($scope, Receipt, $timeout, $state, $window, $location) ->
         $scope.alert = false
 
         build = ->
@@ -79,15 +79,22 @@
 
         # TODO: create receipt and show page for printing.
         $scope.create = ->
-            debugger
             receiptsFeesHeadsAttributes = new NestedAttributes($scope.receiptsFeesHeads)
             receiptsFeesHeadsAttributes = receiptsFeesHeadsAttributes.get()
 
             $scope.receipt.receiptsFeesHeads = receiptsFeesHeadsAttributes
+            $scope.receipt.studentId = $scope.student?.id
 
             $scope.receipt.create().then (response) ->
                 $scope.alert = true
-                $scope.receipt.receiptsFeesHeads = response.receiptsFeesHeads
+
+                $scope.receipt = new Receipt()
+
+                protocol = $location.protocol()
+                host = $window.location.host
+                domain = "#{protocol}://#{host}" # Example: http://example.com
+                $window.open("#{domain}/admin/receipts/#{response.id}/print",'_blank')
+
                 $timeout(render)
 
 ]
