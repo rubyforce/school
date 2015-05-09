@@ -13,6 +13,11 @@
             <div class="col-sm-6">
               <input name='employee.entry_no' type='text' ng-model='employee.entry_no' class="form-control" />
             </div>
+            <div class="col-sm-2">
+              <a ng-click="generate()" class="btn btn-default">
+                <i class="fa fa-refresh"></i>
+              </a>
+            </div>
           </div>
 
           <div class="form-group">
@@ -95,7 +100,9 @@
               </select>
             </div>
             <div class="col-sm-2" ng-controller="CreatePaidTypesController">
-              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
+              <a ng-click="openForm('sm')" class="btn btn-default">
+                <i class="fa fa-folder-plus"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -140,7 +147,9 @@
               </select>
             </div>
             <div class="col-sm-2" ng-controller="CreateSectionsController">
-              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
+              <a ng-click="openForm('sm')" class="btn btn-default">
+                <i class="fa fa-folder-plus"></i>
+              </a>
             </div>
           </div>
 
@@ -154,7 +163,9 @@
               </select>
             </div>
             <div class="col-sm-2" ng-controller="CreatePayBandsController">
-              <a ng-click="openForm('sm')" class="btn btn-default">+</a>
+              <a ng-click="openForm('sm')" class="btn btn-default">
+                <i class="fa fa-folder-plus"></i>
+              </a>
             </div>
           </div>
 
