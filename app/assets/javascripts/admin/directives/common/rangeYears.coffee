@@ -2,16 +2,18 @@
     ->
         compile = (element) ->
             element.find('.from').datepicker
-                defaultDate: "+1w"
+                defaultDate: "-0y"
                 changeMonth: true
-                numberOfMonths: 3
+                changeYear: true
+                yearRange: "1990:+5"
                 onClose: ( selectedDate ) ->
                     element.find('.to').datepicker( "option", "minDate", selectedDate )
 
             element.find('.to').datepicker
-                defaultDate: "+1w"
+                defaultDate: "+1y"
                 changeMonth: true
-                numberOfMonths: 3
+                changeYear: true
+                yearRange: "1990:+5"
                 onClose: ( selectedDate ) ->
                     element.find('.from').datepicker( "option", "minDate", selectedDate )
 
