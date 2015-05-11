@@ -4,6 +4,7 @@
     $scope.dateOptions =
       changeMonth: true
       changeYear: true
+      yearRange: "1950:-0"
 
     $scope.alert = false
 

@@ -4,6 +4,7 @@
     $scope.dateOptions =
       changeMonth: true
       changeYear: true
+      yearRange: "1950:-0"
 
     DEFAULT_STUDENT =
       entry_no: 'auto'
@@ -17,6 +18,8 @@
 
     $scope.generate = ->
       $scope.student.entry_no = uuid4.generate()
+
+    $scope.generate()
 
     $scope.create = ->
       new Student($scope.student).create().then (response) ->
