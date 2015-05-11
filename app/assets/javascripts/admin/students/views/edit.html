@@ -88,7 +88,7 @@
                 </div>
               </div>
 
-              <years ng-model='currentUser.academic_year' title='Academic Year'></years>
+              <range-years ng-model='currentUser.academic_year' title='Academic Year'></range-years>
 
               <div class="form-group">
                 <div class="col-sm-4">
@@ -132,6 +132,15 @@
                 </div>
                 <div class="col-sm-6">
                   <country-select data-ng-model="currentUser.birthPlace" class="form-control"></country-select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.birthday' class="control-label">Date of Birth</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.birthday' ng-model='currentUser.birthday' class="form-control" ui-date='dateOptions'/>
                 </div>
               </div>
             </div>
@@ -259,6 +268,24 @@
                 </div>
                 <div class="col-sm-6">
                   <input name='currentUser.last_school' type='text' ng-model='currentUser.lastSchool' class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.contact_no' class="control-label">Contact No</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.contact_no' type='text' ng-model='currentUser.contact_no' class="form-control" /></input>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.address' class="control-label">Address</label>
+                </div>
+                <div class="col-sm-6">
+                  <textarea name='currentUser.address' type='text' ng-model='currentUser.address' class="form-control" /></textarea>
                 </div>
               </div>
             </div>

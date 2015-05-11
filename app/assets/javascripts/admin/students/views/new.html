@@ -59,7 +59,7 @@
             </div>
           </div>
 
-          <years ng-model='student.academic_year' title='Academic Year'></years>
+          <range-years ng-model='student.academic_year' title='Academic Year'></range-years>
 
           <div class="form-group">
             <div class="col-sm-4">
@@ -103,6 +103,15 @@
             </div>
             <div class="col-sm-6">
               <country-select data-ng-model="student.birth_place" class="form-control"></country-select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.birthday' class="control-label">Date of Birth</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='student.birthday' ng-model='student.birthday' class="form-control" ui-date='dateOptions'/>
             </div>
           </div>
         </div>
@@ -232,8 +241,27 @@
               <input name='student.last_school' type='text' ng-model='student.last_school' class="form-control" /></input>
             </div>
           </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.contact_no' class="control-label">Contact No</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='student.contact_no' type='text' ng-model='student.contact_no' class="form-control" /></input>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.address' class="control-label">Address</label>
+            </div>
+            <div class="col-sm-6">
+              <textarea name='student.address' type='text' ng-model='student.address' class="form-control" /></textarea>
+            </div>
+          </div>
         </div>
         <!-- End second column -->
+
         <div class="form-group ui buttons">
           <div class=" col-sm-12">
             <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>Save and Continue</button>
