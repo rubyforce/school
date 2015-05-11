@@ -88,7 +88,7 @@
                 </div>
               </div>
 
-              <range-years ng-model='currentUser.academic_year' title='Academic Year'></range-years>
+              <range-years from='currentUser.academic_year_from' to='currentUser.academic_year_to' title='Academic Year'></range-years>
 
               <div class="form-group">
                 <div class="col-sm-4">
@@ -276,7 +276,7 @@
                   <label for='currentUser.contact_no' class="control-label">Contact No</label>
                 </div>
                 <div class="col-sm-6">
-                  <input name='currentUser.contact_no' type='text' ng-model='currentUser.contact_no' class="form-control" /></input>
+                  <input name='currentUser.contact_no' type='text' ng-model='currentUser.contact_no' class="form-control" />
                 </div>
               </div>
 
@@ -285,7 +285,7 @@
                   <label for='currentUser.address' class="control-label">Address</label>
                 </div>
                 <div class="col-sm-6">
-                  <textarea name='currentUser.address' type='text' ng-model='currentUser.address' class="form-control" /></textarea>
+                  <textarea name='currentUser.address' type='text' ng-model='currentUser.address' class="form-control" />
                 </div>
               </div>
             </div>

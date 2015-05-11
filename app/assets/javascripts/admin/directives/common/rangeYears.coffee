@@ -1,28 +1,52 @@
 @directives.directive 'rangeYears', [
     ->
-        link = (scope) ->
-            scope.years = (i for i in [2014..2030])
+        compile = (element) ->
+            element.find('.from').datepicker
+                defaultDate: "+1w"
+                changeMonth: true
+                numberOfMonths: 3
+                onClose: ( selectedDate ) ->
+                    element.find('.to').datepicker( "option", "minDate", selectedDate )
 
-        link: link
+            element.find('.to').datepicker
+                defaultDate: "+1w"
+                changeMonth: true
+                numberOfMonths: 3
+                onClose: ( selectedDate ) ->
+                    element.find('.from').datepicker( "option", "minDate", selectedDate )
+
+        compile: compile
         restrict: 'E'
-        require: '^ngModel'
         replace: true
         scope:
             title: '@'
-            ngModel: '='
+            from: '='
+            to: '='
         template: """
           <div class="form-group">
             <div class="col-sm-4">
-              <label class="control-label" style="float: right">{{ title }}</label>
+              <label class="control-label">{{ title }}</label>
             </div>
-            <div class="col-sm-6">
-              <select ng-model='ngModel' class="form-control">
-                <option ng-repeat="year in years">{{year}}</option>
-              </select>
 
-              <select ng-model='ngModel' class="form-control">
-                <option ng-repeat="year in years">{{year}}</option>
-              </select>
+            <div class="col-sm-6">
+              <div class="form-inline">
+                  <div class="form-group col-sm-12">
+                      <div class="col-sm-3">
+                          <label class="control-label">From:</label>
+                      </div>
+                      <div class="col-sm-9">
+                          <input ng-model='from' type='text' class="form-control from input-sm"></input>
+                      </div>
+                  </div>
+                  <div class="form-group col-sm-12">
+                      <div class="col-sm-3">
+                          <label class="control-label">To:</label>
+                      </div>
+                      <div class="col-sm-9">
+                          <input ng-model='to' type='text' class="form-control to input-sm"></input>
+                      </div>
+                  </div>
+              </div>
             </div>
           </div>
         """
