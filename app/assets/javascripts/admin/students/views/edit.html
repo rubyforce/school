@@ -88,14 +88,7 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <div class="col-sm-4">
-                  <label for='currentUser.academic_year' class="control-label">Academic Year</label>
-                </div>
-                <div class="col-sm-6">
-                  <input name='currentUser.academic_year' type='text' ng-model='currentUser.academicYear' class="form-control" />
-                </div>
-              </div>
+              <years ng-model='currentUser.academic_year' title='Academic Year'></years>
 
               <div class="form-group">
                 <div class="col-sm-4">
