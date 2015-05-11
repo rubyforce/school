@@ -14,7 +14,11 @@
     $scope.find = ->
       Receipt.query(number: $scope.number).then (response) ->
         $scope.receipt = response[0]
-        $scope.clicked = true
+
+        if $scope.receipt
+          $scope.clicked = true
+        else 
+          $scope.alert = true 
 
     $scope.cancel = ->
         if $scope.receipt
@@ -23,7 +27,4 @@
     
           $scope.receipt.update()
           reset()
-
-        else 
-          $scope.alert = true
 ]

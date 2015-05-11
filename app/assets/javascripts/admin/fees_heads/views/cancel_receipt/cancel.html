@@ -11,7 +11,7 @@
                 <label for='receipt' class="control-label">Receipt #</label>
               </div>
               <div class="col-sm-6">
-                <input name='receipt' type='text' ng-model='number' class="form-control" />
+                <input name='receipt' type='text' ng-model='number' class="form-control" required/>
               </div>
             </div>
 
@@ -92,8 +92,8 @@
       </div>
     </form>
     <div class="ui buttons padding">
-      <a ng-click="find()" class="btn btn-default" >Find Receipt</a>
-      <a ng-click="cancel()" class="btn btn-default" >Cancel Receipt</a>
+      <a ng-click="find()" class="btn btn-default" ng-disabled="form.$invalid">Find Receipt</a>
+      <a ng-click="cancel()" class="btn btn-default" ng-disabled="form.$invalid">Cancel Receipt</a>
     </div>
   </div>
 </div>
