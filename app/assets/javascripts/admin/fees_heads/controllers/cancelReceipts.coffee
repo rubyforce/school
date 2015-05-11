@@ -8,13 +8,17 @@
       $scope.remark = ''
       $scope.number = ''
 
+
+
     $scope.cancel = ->
       Receipt.query(number: $scope.number).then (response) ->
+        debugger
         $scope.receipt = response[0]
-        $scope.receipt.remark = $scope.remark
 
         if $scope.receipt
           $scope.receipt.status = "cancel"
+          $scope.receipt.remark = $scope.remark
+    
           $scope.receipt.update()
           reset()
 

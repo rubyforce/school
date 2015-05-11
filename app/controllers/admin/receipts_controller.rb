@@ -6,6 +6,8 @@ class Admin::ReceiptsController < ApplicationController
 
     if params[:number].present?
       @receipts = @receipts.where(number: params[:number])
+    else
+      @receipts = @receipts.where(cheque_number: params[:cheque_number])
     end
 
     @receipts = @receipts.all
