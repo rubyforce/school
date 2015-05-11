@@ -60,6 +60,9 @@ cash_managements.config [
             .state 'cash_managements.salary',
                 url: "/salary/new"
                 templateUrl: "admin/cash_managements/views/salary/new.html"
+            .state 'cash_managements.salary_receipt',
+                url: "/salary_receipts/:id"
+                templateUrl: "admin/fees_heads/views/salary_receipt/salary_receipt.html"
 ]
 
 @paid_types = angular.module('admin.paid_types', [])

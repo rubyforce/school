@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 20150511114622) do
     t.integer  "section_id"
     t.integer  "pay_band_id"
     t.datetime "birthday"
+    t.decimal  "salary"
   end
 
   create_table "expense_receipts", force: :cascade do |t|
@@ -159,7 +160,7 @@ ActiveRecord::Schema.define(version: 20150511114622) do
   create_table "fees_heads", force: :cascade do |t|
     t.string   "name"
     t.string   "type_name"
-    t.decimal  "amount"
+    t.string   "amount"
     t.string   "recurrence"
     t.datetime "created_at"
     t.datetime "updated_at"
