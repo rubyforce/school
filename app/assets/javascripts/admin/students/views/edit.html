@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-sm-6">
                   <div class="input-group">
-                    <input name='currentUser.admission_date' ng-model='currentUser.admissionDate' class="form-control" ui-date/>
+                    <input name='currentUser.admission_date' ng-model='currentUser.admissionDate' class="form-control" ui-date='dateOptions'/>
                     <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -88,14 +88,7 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <div class="col-sm-4">
-                  <label for='currentUser.academic_year' class="control-label">Academic Year</label>
-                </div>
-                <div class="col-sm-6">
-                  <input name='currentUser.academic_year' type='text' ng-model='currentUser.academicYear' class="form-control" />
-                </div>
-              </div>
+              <range-years from='currentUser.academic_year_from' to='currentUser.academic_year_to' title='Academic Year'></range-years>
 
               <div class="form-group">
                 <div class="col-sm-4">
@@ -133,12 +126,14 @@
                 </div>
               </div>
 
+              <place-of-birth ng-model="currentUser.birthPlace"></place-of-birth>
+
               <div class="form-group">
                 <div class="col-sm-4">
-                  <label class="control-label">Place of Birth</label>
+                  <label for='currentUser.birthday' class="control-label">Date of Birth</label>
                 </div>
                 <div class="col-sm-6">
-                  <country-select data-ng-model="currentUser.birthPlace" class="form-control"></country-select>
+                  <input name='currentUser.birthday' ng-model='currentUser.birthday' class="form-control" ui-date='dateOptions'/>
                 </div>
               </div>
             </div>
@@ -266,6 +261,24 @@
                 </div>
                 <div class="col-sm-6">
                   <input name='currentUser.last_school' type='text' ng-model='currentUser.lastSchool' class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.contact_no' class="control-label">Contact No</label>
+                </div>
+                <div class="col-sm-6">
+                  <input name='currentUser.contact_no' type='text' ng-model='currentUser.contact_no' class="form-control" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.address' class="control-label">Address</label>
+                </div>
+                <div class="col-sm-6">
+                  <textarea name='currentUser.address' type='text' ng-model='currentUser.address' class="form-control" />
                 </div>
               </div>
             </div>
