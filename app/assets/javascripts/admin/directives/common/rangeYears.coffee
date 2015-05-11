@@ -36,7 +36,7 @@
                       <div class="col-sm-3">
                           <label class="control-label">From:</label>
                       </div>
-                      <div class="col-sm-9">
+                      <div class="col-sm-9" style="margin-bottom: 10px;">
                           <input ng-model='from' type='text' class="form-control from input-sm"></input>
                       </div>
                   </div>

@@ -13,7 +13,7 @@
         template: """
           <div class="form-group">
             <div class="col-sm-4">
-              <label class="control-label" style="float: right">{{ title }}</label>
+              <label class="control-label">{{ title }}</label>
             </div>
             <div class="col-sm-6">
               <select ng-model='ngModel' class="form-control">

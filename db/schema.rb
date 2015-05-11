@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20150511093921) do
 
   # These are extensions that must be enabled in order to support this database
@@ -134,7 +133,7 @@ ActiveRecord::Schema.define(version: 20150511093921) do
   create_table "fees_heads", force: :cascade do |t|
     t.string   "name"
     t.string   "type_name"
-    t.string   "amount"
+    t.decimal  "amount"
     t.string   "recurrence"
     t.datetime "created_at"
     t.datetime "updated_at"
