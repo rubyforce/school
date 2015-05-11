@@ -11,12 +11,26 @@ class Admin::ReceiptsController < ApplicationController
     end
 
     @receipts = @receipts.all
-    render :json => @receipts.as_json(:include => :receipts_fees_heads)
+    render :json => @receipts.as_json(
+      :include => [
+        :receipts_fees_heads,
+        :fees_heads,
+        :student => {
+          :only => [ :id, :first_name, :last_name ],
+          :methods => [ :full_name ],
+          :include => [ :standard, :division ]
+        }
+      ]
+    )
   end
 
   def show
     @receipt = Receipt.find(params[:id])
-    render :json => @receipt.as_json(:include => :receipts_fees_heads)
+    render :json => @receipt.as_json(
+     :include => [
+        :receipts_fees_heads
+      ]
+    )
   end
 
   def print
