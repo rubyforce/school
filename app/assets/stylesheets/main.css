@@ -27,7 +27,7 @@
 .nav-tabs.nav-justified > li > a:hover {
   background: #fff;
 }
-.btn.btn-default {
+.btn {
   border-radius: 0px;
 }
 .panel.panel-default.employee-list {

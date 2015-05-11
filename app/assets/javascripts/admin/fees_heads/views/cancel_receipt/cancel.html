@@ -24,11 +24,75 @@
               </div>
             </div>
             <!-- End First Column -->
+
+             <div class="panel panel-default update-employee">
+              <div class="panel-body alignment" ng-hide="clicked">
+                <button type="submit" class="btn btn-default" disabled>Snapshot of Receipt</button>
+              </div>
+              <div ng-show="clicked" style="width: 95%; margin: 0 auto">
+                <div class="page-header">
+                  <button type="submit" class="btn btn-warning" style="float: right" disabled ng-show="receipt.chequeStatus">{{receipt.chequeStatus}}</button>
+                  <button type="submit" class="btn btn-danger" style="float: right" disabled ng-show="receipt.status">{{receipt.status}}</button>
+                  <h1 style="text-align: center">{{receipt.student.fullName}}</h1>
+                </div>
+                <p class="lead" style="text-align: center">Class: {{receipt.student.standard.name}} Division: {{receipt.student.division.name}}</p>
+                <div class="panel panel-default">
+                  <button type="submit" class="btn btn-default" disabled>Receipt # {{receipt.number}}</button>
+
+                  <div class="update_form">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="panel panel-default receipt" style="width: 95%; margin: 20px auto;">
+                          <div class="panel panel-default">
+                            <table class="table table-bordered" ng-repeat="f in receipt.feesHeads">
+                              <thead>
+                                <tr>
+                                  <th width="25%" style="text-align: center;">Fees</th>
+                                  <th width="25%" style="text-align: center;">Actual</th>
+                                  <th width="25%" style="text-align: center;">Amount with Concession</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td style="text-align: center;">{{f.name}}</td>
+                                  <td style="text-align: center;">{{f.amount}}</td>
+                                  <td style="text-align: center;" ng-repeat="receipt in receipt.receiptsFeesHeads">{{receipt.concession}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <table class="table" style="width: 95%; margin: 50px auto">
+                          <thead>
+                            <tr>
+                              <th width="25%" style="text-align: center;">Cash</th>
+                              <th width="25%" style="text-align: center;">Cheque #</th>
+                              <th width="25%" style="text-align: center;">Bank Name</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td style="text-align: center">{{receipt.cash}}</td>
+
+                              <td style="text-align: center">{{receipt.chequeNumber}}</td>
+                              <td style="text-align: center">{{receipt.bankName}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </form>
     <div class="ui buttons padding">
+      <a ng-click="find()" class="btn btn-default" >Find Receipt</a>
       <a ng-click="cancel()" class="btn btn-default" >Cancel Receipt</a>
     </div>
   </div>
