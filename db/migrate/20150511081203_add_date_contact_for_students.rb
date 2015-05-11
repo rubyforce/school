@@ -1,7 +1,7 @@
 class AddDateContactForStudents < ActiveRecord::Migration
   def change
-    rename_column :employees, :datetime, :birthday
-    change_column :employees, :birthday, :date
+    remove_column :employees, :datetime
+    add_column :employees, :birthday, :datetime
 
     add_column :students, :birthday, :date
     add_column :students, :contact_no, :string

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505081300) do
+ActiveRecord::Schema.define(version: 20150511081203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,19 +121,19 @@ ActiveRecord::Schema.define(version: 20150505081300) do
     t.string   "contact_no"
     t.string   "entry_no",      default: "auto"
     t.string   "status"
-    t.string   "datetime"
     t.string   "year"
     t.string   "salary_check"
     t.string   "remark"
     t.integer  "paid_type_id"
     t.integer  "section_id"
     t.integer  "pay_band_id"
+    t.datetime "birthday"
   end
 
   create_table "fees_heads", force: :cascade do |t|
     t.string   "name"
     t.string   "type_name"
-    t.decimal  "amount"
+    t.string   "amount"
     t.string   "recurrence"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -268,6 +268,9 @@ ActiveRecord::Schema.define(version: 20150505081300) do
     t.integer  "division_id"
     t.integer  "transport_id"
     t.integer  "finance_mode_id"
+    t.date     "birthday"
+    t.string   "contact_no"
+    t.text     "address"
   end
 
   create_table "students_fees_heads", force: :cascade do |t|
