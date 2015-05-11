@@ -21,7 +21,6 @@ Employee.create do |employee|
   employee.first_name        = "Artsiom"
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
-  employee.datetime          = "10/10/2010"
   employee.contact_no        = "123456789"
 end
 
@@ -29,7 +28,6 @@ Employee.create do |employee|
   employee.first_name        = "Zahar"
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
-  employee.datetime          = "10/10/2010"
   employee.contact_no        = "123456789"
 end
 
@@ -37,7 +35,6 @@ Employee.create do |employee|
   employee.first_name        = "Valera"
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
-  employee.datetime          = "10/10/2010"
   employee.contact_no        = "123456789"
 end
 
@@ -45,7 +42,6 @@ Employee.create do |employee|
   employee.first_name        = "Alexander"
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
-  employee.datetime          = "10/10/2010"
   employee.contact_no        = "123456789"
 end
 
@@ -53,7 +49,6 @@ Employee.create do |employee|
   employee.first_name        = "Petya"
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
-  employee.datetime          = "10/10/2010"
   employee.contact_no        = "123456789"
 end
 
@@ -61,7 +56,6 @@ Employee.create do |employee|
   employee.first_name        = "Ololoeva"
   employee.last_name         = "Slabodnik"
   employee.gender            = "female"
-  employee.datetime          = "10/10/2010"
   employee.contact_no        = "123456789"
 end
 
@@ -69,7 +63,6 @@ Employee.create do |employee|
   employee.first_name        = "Zaharoeva"
   employee.last_name         = "Slabodnik"
   employee.gender            = "female"
-  employee.datetime          = "10/10/2010"
   employee.contact_no        = "123456789"
 end
 
@@ -77,7 +70,6 @@ Employee.create do |employee|
   employee.first_name        = "Valeroeva"
   employee.last_name         = "Slabodnik"
   employee.gender            = "female"
-  employee.datetime          = "10/10/2010"
   employee.contact_no        = "123456789"
 end
 
@@ -85,7 +77,6 @@ Employee.create do |employee|
   employee.first_name        = "Alexanderoeva"
   employee.last_name         = "Slabodnik"
   employee.gender            = "female"
-  employee.datetime          = "10/10/2010"
   employee.contact_no        = "123456789"
 end
 
@@ -93,6 +84,5 @@ Employee.create do |employee|
   employee.first_name        = "Petoeva"
   employee.last_name         = "Slabodnik"
   employee.gender            = "female"
-  employee.datetime          = "10/10/2010"
   employee.contact_no        = "123456789"
 end
