@@ -12,7 +12,6 @@
 
     $scope.cancel = ->
       Receipt.query(number: $scope.number).then (response) ->
-        debugger
         $scope.receipt = response[0]
 
         if $scope.receipt

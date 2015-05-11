@@ -6,7 +6,7 @@ class Admin::ReceiptsController < ApplicationController
 
     if params[:number].present?
       @receipts = @receipts.where(number: params[:number])
-    else
+    elsif params[:cheque_number].present?
       @receipts = @receipts.where(cheque_number: params[:cheque_number])
     end
 

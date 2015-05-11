@@ -10,7 +10,6 @@
 
     $scope.cheque = ->
       Receipt.query(cheque_number: $scope.cheque_number).then (response) ->
-        debugger
         $scope.receipt = response[0]
 
         if $scope.receipt
