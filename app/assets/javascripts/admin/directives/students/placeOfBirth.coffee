@@ -33,13 +33,13 @@
                       <div class="form-group">
                         <label for="title" class="col-sm-2 control-label">Title</label>
                         <div class="col-sm-10">
-                          <input type="text" name="title" id="title" ng-model="place_of_birth.name" class="form-control" required>
+                          <input type="text" name="title" id="title" ng-model="place_of_birth.title" class="form-control" required>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <a class="btn btn-default btn-sm" ng-click="create()" ng-disabled="!place_of_birth.name">OK</a>
+                    <a class="btn btn-default btn-sm" ng-click="create()" ng-disabled="!place_of_birth.title">OK</a>
                     <a class="btn btn-default" ng-click="close()">Cancel</a>
                   </div>
                 """
