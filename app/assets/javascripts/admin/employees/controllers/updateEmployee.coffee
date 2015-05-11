@@ -1,6 +1,11 @@
 @employees.controller 'UpdateEmployeesController', [
   '$scope', 'Employee', '$timeout'
   ($scope, Employee, $timeout) ->
+    $scope.dateOptions =
+      changeMonth: true
+      changeYear: true
+      yearRange: "1950:-0"
+
     makeTableSelectable = ->
       $timeout ->
         table = $('table')

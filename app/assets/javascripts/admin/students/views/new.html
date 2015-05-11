@@ -25,7 +25,7 @@
               <label for='student.group_no' class="control-label">Group #</label>
             </div>
             <div class="col-sm-6">
-              <input name='student.group_no' type='text' ng-model='student.group_no' class="form-control" /></input>
+              <input name='student.group_no' type='text' ng-model='student.group_no' class="form-control" />
             </div>
           </div>
 
@@ -35,7 +35,7 @@
             </div>
             <div class="col-sm-6">
               <div class="input-group">
-                <input name='student.admission_date' ng-model='student.admission_date' class="form-control" ui-date/>
+                <input name='student.admission_date' ng-model='student.admission_date' class="form-control" ui-date='dateOptions'/>
                 <span class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -59,21 +59,14 @@
             </div>
           </div>
 
-          <div class="form-group">
-            <div class="col-sm-4">
-              <label for='student.academic_year' class="control-label">Academic Year</label>
-            </div>
-            <div class="col-sm-6">
-              <input name='student.academic_year' type='text' ng-model='student.academic_year' class="form-control" /></input>
-            </div>
-          </div>
+          <range-years from='student.academic_year_from' to='student.academic_year_to' title='Academic Year'></range-years>
 
           <div class="form-group">
             <div class="col-sm-4">
               <label for='student.first_name' class="control-label">First Name</label>
             </div>
             <div class="col-sm-6">
-              <input name='student.first_name' type='text' ng-model='student.first_name' class="form-control" required /></input>
+              <input name='student.first_name' type='text' ng-model='student.first_name' class="form-control" required></input>
             </div>
           </div>
 
@@ -82,7 +75,7 @@
               <label for='student.father_name' class="control-label">Father's Name</label>
             </div>
             <div class="col-sm-6">
-              <input name='student.father_name' type='text' ng-model='student.father_name' class="form-control" /></input>
+              <input name='student.father_name' type='text' ng-model='student.father_name' class="form-control" />
             </div>
           </div>
 
@@ -91,7 +84,7 @@
               <label for='student.mother_name' class="control-label">Mother's Name</label>
             </div>
             <div class="col-sm-6">
-              <input name='student.mother_name' type='text' ng-model='student.mother_name' class="form-control" /></input>
+              <input name='student.mother_name' type='text' ng-model='student.mother_name' class="form-control" />
             </div>
           </div>
 
@@ -100,16 +93,18 @@
               <label for='student.last_name' class="control-label">Last Name</label>
             </div>
             <div class="col-sm-6">
-              <input name='student.last_name' type='text' ng-model='student.last_name' class="form-control" required /></input>
+              <input name='student.last_name' type='text' ng-model='student.last_name' class="form-control" required />
             </div>
           </div>
 
+          <place-of-birth ng-model="student.birthPlace"></place-of-birth>
+
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='student.birth_place' class="control-label">Place of Birth</label>
+              <label for='student.birthday' class="control-label">Date of Birth</label>
             </div>
             <div class="col-sm-6">
-              <country-select data-ng-model="student.birth_place" class="form-control"></country-select>
+              <input name='student.birthday' ng-model='student.birthday' class="form-control" ui-date='dateOptions'/>
             </div>
           </div>
         </div>
@@ -227,7 +222,7 @@
               <label for='student.remarks' class="control-label">Remarks</label>
             </div>
             <div class="col-sm-6">
-              <input name='student.remarks' type='text' ng-model='student.remarks' class="form-control" /></input>
+              <input name='student.remarks' type='text' ng-model='student.remarks' class="form-control" />
             </div>
           </div>
 
@@ -236,11 +231,30 @@
               <label for='student.last_school' class="control-label">Last School</label>
             </div>
             <div class="col-sm-6">
-              <input name='student.last_school' type='text' ng-model='student.last_school' class="form-control" /></input>
+              <input name='student.last_school' type='text' ng-model='student.last_school' class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.contact_no' class="control-label">Contact No</label>
+            </div>
+            <div class="col-sm-6">
+              <input name='student.contact_no' type='text' ng-model='student.contact_no' class="form-control" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.address' class="control-label">Address</label>
+            </div>
+            <div class="col-sm-6">
+              <textarea name='student.address' type='text' ng-model='student.address' class="form-control" /></textarea>
             </div>
           </div>
         </div>
         <!-- End second column -->
+
         <div class="form-group ui buttons">
           <div class=" col-sm-12">
             <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>Save and Continue</button>

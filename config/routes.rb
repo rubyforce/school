@@ -10,6 +10,7 @@ Greenarea::Application.routes.draw do
     resources :pay_bands
     resources :admissions
     resources :religions
+    resources :place_of_births
     resources :castes
     resources :standards
     resources :divisions

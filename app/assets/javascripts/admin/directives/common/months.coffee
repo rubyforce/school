@@ -29,7 +29,7 @@
               <label class="control-label">{{ title }}</label>
             </div>
             <div class="col-sm-6">
-              <select cng-model='ngModel' lass="form-control">
+              <select ng-model='ngModel' class="form-control">
                 <option ng-repeat="month in months">{{month}}</option>
               </select>
             </div>
