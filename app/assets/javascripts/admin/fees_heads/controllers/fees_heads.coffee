@@ -14,7 +14,4 @@
 
     FeesHead.get().then (fees_heads) ->
       $scope.fees_heads = fees_heads
-
-    Receipt.get().then (receipts) ->
-      $scope.receipts = receipts
 ]
