@@ -8,7 +8,7 @@
                @nestedAttribute('studentsFeesHeads')
 
         Student.prototype.fullName = ->
-            _([@firstName, @lastName, @middleName]).compact().value().join(" ")
+            _([@firstName, @lastName]).compact().value().join(" ")
 
         Student.prototype.className = (collection) ->
             item = _.find(collection, (item) => item.id is @standardId)

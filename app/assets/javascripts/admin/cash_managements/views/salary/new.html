@@ -1,18 +1,18 @@
 <div class="panel panel-default">
-  <div class="panel-heading">Create Salary Marking</div>
+  <div class="panel-heading">Create salary_receipt Marking</div>
   <div class="panel-body">
     <form name='form' ng-controller='CreateSalaryController' class="form-horizontal" ng-submit='create()'>
       <div class="alert alert-success" role="alert" ng-show="alert">You successfully added a new salary.</div>
       <div class="col-sm-12">
         <!-- First Column -->
         <div class="col-sm-6">
-          <months ng-model='salary.month' title='Salary for the month of'></months>
+          <months ng-model='salary_receipt.month' title='Salary for the month of'></months>
         </div>
         <!-- End First Column -->
 
         <!-- Second Column -->
         <div class="col-sm-6">
-          <years ng-model='salary.year' title='Year'></years>
+          <years ng-model='salary_receipt.year' title='Year'></years>
         </div>
         <!-- End Second Column -->
       </div>
@@ -28,14 +28,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr ng-repeat="employee in employees">
-                <td>{{employee.firstName}}</td>
-                <td>
-                  <label>
-                    <input type="checkbox" name="employee.salary_check" value="{{employee.salary}}" ng-model="employee.salary_check"> {{employee.salary}}
-                  </label>
+              <tr ng-repeat='f in employeeSalaryReceipts'>
+                <td>{{f.properties.name}}</td>
+
+                <td style="text-align: left;">
+                  <input type="checkbox" ng-model='f.properties.enabled'>{{f.salary}}</input>
                 </td>
-                <td><input type="text" ng-model="employee.remark" class="form-control"></td>
+
+                <td>
+                  <input type="text" ng-model="f.remark" class="form-control">
+                </td>
               </tr>
             </tbody>
           </table>
@@ -44,7 +46,7 @@
 
       <div class="form-group ui buttons">
         <div class=" col-sm-12">
-          <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>CREATE SALARY </button>
+          <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>CREATE SALARY AND PRINT</button>
         </div>
       </div>
     </form>
