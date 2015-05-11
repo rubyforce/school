@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150505081300) do
+ActiveRecord::Schema.define(version: 20150511104402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,20 @@ ActiveRecord::Schema.define(version: 20150505081300) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "employee_expense_receipts", force: :cascade do |t|
+    t.decimal  "expense"
+    t.integer  "employee_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "employee_salary_receipts", force: :cascade do |t|
+    t.decimal  "salary"
+    t.integer  "employee_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -117,7 +131,6 @@ ActiveRecord::Schema.define(version: 20150505081300) do
     t.text     "address"
     t.string   "middle_name"
     t.string   "qualification"
-    t.decimal  "salary"
     t.string   "contact_no"
     t.string   "entry_no",      default: "auto"
     t.string   "status"
@@ -130,10 +143,21 @@ ActiveRecord::Schema.define(version: 20150505081300) do
     t.integer  "pay_band_id"
   end
 
+  create_table "expense_receipts", force: :cascade do |t|
+    t.string   "expense_made"
+    t.string   "nature_of_expense"
+    t.string   "payment_made"
+    t.string   "authorized_by"
+    t.decimal  "amount"
+    t.string   "expense_by"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "fees_heads", force: :cascade do |t|
     t.string   "name"
     t.string   "type_name"
-    t.decimal  "amount"
+    t.string   "amount"
     t.string   "recurrence"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -216,6 +240,13 @@ ActiveRecord::Schema.define(version: 20150505081300) do
 
   create_table "religions", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "salary_receipts", force: :cascade do |t|
+    t.string   "year"
+    t.string   "month"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

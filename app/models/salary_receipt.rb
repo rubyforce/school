@@ -1,4 +1,3 @@
 class SalaryReceipt < ActiveRecord::Base
-  belongs_to :employee
-  belongs_to :salary
+  has_many :empoyee_salary_receipts
 end
