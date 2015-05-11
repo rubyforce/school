@@ -13,13 +13,12 @@
 
     $scope.find = ->
       Receipt.query(number: $scope.number).then (response) ->
-        debugger
         $scope.receipt = response[0]
         $scope.clicked = true
 
     $scope.cancel = ->
         if $scope.receipt
-          $scope.receipt.status = "Canceled"
+          $scope.receipt.status = "canceled"
           $scope.receipt.remark = $scope.remark
     
           $scope.receipt.update()
