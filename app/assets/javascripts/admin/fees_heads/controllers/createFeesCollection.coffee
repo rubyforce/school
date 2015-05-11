@@ -1,6 +1,10 @@
 @fees_heads.controller 'CreateFeesCollectionController', [
     '$scope', 'Receipt', '$timeout', '$state', '$window', '$location'
     ($scope, Receipt, $timeout, $state, $window, $location) ->
+        $scope.dateOptions =
+            changeMonth: true
+            changeYear: true
+
         $scope.alert = false
 
         build = ->

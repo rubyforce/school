@@ -1,6 +1,9 @@
 @midday_managements.controller 'CreateDailyMealsManagementsController', [
   '$scope', 'MiddayManagement'
   ($scope, MiddayManagement) ->
+    $scope.dateOptions =
+      changeMonth: true
+      changeYear: true
 
     $scope.alert = false
 

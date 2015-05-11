@@ -1,6 +1,10 @@
 @students.controller 'CreateStudentsController', [
   '$scope', 'Student', 'uuid4'
   ($scope, Student, uuid4) ->
+    $scope.dateOptions =
+      changeMonth: true
+      changeYear: true
+
     DEFAULT_STUDENT =
       entry_no: 'auto'
       academic_year: 'auto'

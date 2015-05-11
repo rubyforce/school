@@ -1,6 +1,10 @@
 @students.controller 'UpdateStudentsController', [
   '$scope', 'Student', '$timeout', 'uuid4'
   ($scope, Student, $timeout, uuid4) ->
+    $scope.dateOptions =
+      changeMonth: true
+      changeYear: true
+
     makeTableSelectable = ->
       $timeout ->
         table = $('table')
