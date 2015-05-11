@@ -2,7 +2,13 @@ class Admin::ReceiptsController < ApplicationController
   respond_to :json
 
   def index
-    @receipts = Receipt.all
+    @receipts = Receipt
+
+    if params[:number].present?
+      @receipts = @receipts.where(number: params[:number])
+    end
+
+    @receipts = @receipts.all
     render :json => @receipts.as_json(:include => :receipts_fees_heads)
   end
 

@@ -201,7 +201,7 @@ ActiveRecord::Schema.define(version: 20150511081912) do
     t.string   "cheque_number"
     t.datetime "date"
     t.decimal  "cash",          default: 0.0
-    t.string   "cancel"
+    t.string   "status"
     t.string   "remark"
   end
 
