@@ -134,13 +134,13 @@ ActiveRecord::Schema.define(version: 20150511104402) do
     t.string   "contact_no"
     t.string   "entry_no",      default: "auto"
     t.string   "status"
-    t.string   "datetime"
     t.string   "year"
     t.string   "salary_check"
     t.string   "remark"
     t.integer  "paid_type_id"
     t.integer  "section_id"
     t.integer  "pay_band_id"
+    t.datetime "birthday"
   end
 
   create_table "expense_receipts", force: :cascade do |t|
@@ -215,6 +215,12 @@ ActiveRecord::Schema.define(version: 20150511104402) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "place_of_births", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "receipts", force: :cascade do |t|
     t.integer  "student_id"
     t.decimal  "total",         default: 0.0
@@ -276,15 +282,14 @@ ActiveRecord::Schema.define(version: 20150511104402) do
   create_table "students", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email",           default: "",     null: false
+    t.string   "email",              default: "",     null: false
     t.string   "gender"
     t.integer  "age"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "entry_no",        default: "auto"
+    t.string   "entry_no",           default: "auto"
     t.integer  "group_no"
     t.string   "admission_date"
-    t.string   "academic_year",   default: "auto"
     t.string   "father_name"
     t.string   "mother_name"
     t.string   "birth_place"
@@ -299,6 +304,11 @@ ActiveRecord::Schema.define(version: 20150511104402) do
     t.integer  "division_id"
     t.integer  "transport_id"
     t.integer  "finance_mode_id"
+    t.date     "birthday"
+    t.string   "contact_no"
+    t.text     "address"
+    t.date     "academic_year_from"
+    t.date     "academic_year_to"
   end
 
   create_table "students_fees_heads", force: :cascade do |t|
