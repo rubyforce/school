@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20150511165501) do
   end
 
   create_table "daily_meals", force: :cascade do |t|
-    t.string   "date"
+    t.datetime "date"
     t.decimal  "no_of_student1"
     t.decimal  "no_of_student2"
     t.decimal  "no_of_student3"
