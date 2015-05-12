@@ -1,6 +1,6 @@
 @fees_heads.controller 'FeesHeadsController', [
-  '$scope', '$state', 'FeesHead', 'Student', 'Division', 'Standard', 'Receipt'
-  ($scope, $state, FeesHead, Student, Division, Standard, Receipt) ->
+  '$scope', '$state', 'FeesHead', 'Student', 'Division', 'Standard', 'Receipt', 'FinanceMode'
+  ($scope, $state, FeesHead, Student, Division, Standard, Receipt, FinanceMode) ->
     $state.go('fees_heads.head')
 
     Student.get().then (students) ->
@@ -14,4 +14,7 @@
 
     FeesHead.get().then (fees_heads) ->
       $scope.fees_heads = fees_heads
+
+    FinanceMode.get().then (finance_modes) ->
+      $scope.finance_modes = finance_modes
 ]
