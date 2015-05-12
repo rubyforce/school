@@ -16,5 +16,6 @@
       $scope.daily_meal.qty = parseInt($scope.daily_meal.total_number, 10) * parseInt($scope.qty, 10)
 
     $scope.reset = ->
-      $scope.daily_meal = {}
+      $scope.qty = ''
+      $scope.daily_meal.meal = ''
 ]

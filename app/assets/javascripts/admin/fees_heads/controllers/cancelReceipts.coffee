@@ -21,10 +21,11 @@
           $scope.alert = true 
 
     $scope.cancel = ->
-        if $scope.receipt
-          $scope.receipt.status = "canceled"
-          $scope.receipt.remark = $scope.remark
-    
-          $scope.receipt.update()
-          reset()
+      debugger
+      if $scope.receipt
+        $scope.receipt.status = "canceled"
+        $scope.receipt.remark = $scope.remark
+  
+        $scope.receipt.update()
+        reset()
 ]

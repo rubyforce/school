@@ -10,6 +10,10 @@ class Admin::ReceiptsController < ApplicationController
       @receipts = @receipts.where(cheque_number: params[:cheque_number])
     end
 
+    if params[:cheque_number].present?
+      @receipts = @receipts.where(cheque_number: params[:cheque_number])
+    end
+
     @receipts = @receipts.all
     render :json => @receipts.as_json(
       :include => [
