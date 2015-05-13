@@ -97,6 +97,20 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.gender' class="control-label">Gender</label>
+            </div>
+            <div class="col-sm-6">
+              <label for='student.gender.male' class="radio-inline">
+                <input type="radio" id="student.gender.male" value="male" ng-model="student.gender">Male
+              </label>
+              <label for='student.gender.female' class="radio-inline">
+                <input type="radio" id="student.gender.female" value="female" ng-model="student.gender">Female
+              </label>
+            </div>
+          </div>
+
           <place-of-birth ng-model="student.birthPlace"></place-of-birth>
 
           <div class="form-group">
