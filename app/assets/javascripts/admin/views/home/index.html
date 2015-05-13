@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" ng-controller="HomeController">
   <div class="col-sm-12">
     <div class="col-sm-6">
       <div class="panel panel-default">
@@ -18,7 +18,7 @@
               </tr>
               <tr>
                 <td style="border-top: none;">Total Students</td>
-                <td style="border-top: none;">1000</td>
+                <td style="border-top: none;">{{students.length}}</td>
               </tr>
               <tr>
                 <td style="border-top: none;">Total Teaching Staff</td>
