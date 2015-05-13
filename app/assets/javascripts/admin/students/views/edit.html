@@ -126,6 +126,20 @@
                 </div>
               </div>
 
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label for='currentUser.gender' class="control-label">Gender</label>
+                </div>
+                <div class="col-sm-6">
+                  <label for='currentUser.gender.male' class="radio-inline">
+                    <input type="radio" id="currentUser.gender.male" value="male" ng-model="currentUser.gender">Male
+                  </label>
+                  <label for='currentUser.gender.female' class="radio-inline">
+                    <input type="radio" id="currentUser.gender.female" value="female" ng-model="currentUser.gender">Female
+                  </label>
+                </div>
+              </div>
+
               <place-of-birth ng-model="currentUser.birthPlace"></place-of-birth>
 
               <div class="form-group">
