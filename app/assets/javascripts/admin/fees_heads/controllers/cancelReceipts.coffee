@@ -21,7 +21,9 @@
           $scope.alert = true 
 
     $scope.cancel = ->
+      debugger
       if $scope.receipt
+        $scope.receipt = new Receipt(id:  $scope.receipt.id)
         $scope.receipt.status = "canceled"
         $scope.receipt.remark = $scope.remark
   
