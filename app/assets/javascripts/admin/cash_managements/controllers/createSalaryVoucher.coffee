@@ -1,6 +1,6 @@
 @cash_managements.controller 'CreateSalaryController', [
-  '$scope', 'SalaryReceipt', '$location', '$window'
-  ($scope, SalaryReceipt, $location, $window) ->
+  '$scope', 'SalaryReceipt', '$location', '$window', '$timeout'
+  ($scope, SalaryReceipt, $location, $window, $timeout) ->
     $scope.alert = false
 
     render = ->
