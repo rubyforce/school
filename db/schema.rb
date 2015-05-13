@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 20150511165501) do
     t.integer  "section_id"
     t.integer  "pay_band_id"
     t.datetime "birthday"
+    t.decimal  "salary"
   end
 
   create_table "expense_receipts", force: :cascade do |t|

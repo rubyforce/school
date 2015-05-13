@@ -22,6 +22,7 @@ Employee.create do |employee|
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
   employee.contact_no        = "123456789"
+  employee.salary            = 3000
 end
 
 Employee.create do |employee|
@@ -29,6 +30,7 @@ Employee.create do |employee|
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
   employee.contact_no        = "123456789"
+  employee.salary            = 5000
 end
 
 Employee.create do |employee|
@@ -36,6 +38,7 @@ Employee.create do |employee|
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
   employee.contact_no        = "123456789"
+  employee.salary            = 2500
 end
 
 Employee.create do |employee|
@@ -43,6 +46,7 @@ Employee.create do |employee|
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
   employee.contact_no        = "123456789"
+  employee.salary            = 1800
 end
 
 Employee.create do |employee|
@@ -50,6 +54,7 @@ Employee.create do |employee|
   employee.last_name         = "Slabodnik"
   employee.gender            = "male"
   employee.contact_no        = "123456789"
+  employee.salary            = 2000
 end
 
 Employee.create do |employee|
@@ -57,6 +62,7 @@ Employee.create do |employee|
   employee.last_name         = "Slabodnik"
   employee.gender            = "female"
   employee.contact_no        = "123456789"
+  employee.salary            = 1000
 end
 
 Employee.create do |employee|
@@ -64,6 +70,7 @@ Employee.create do |employee|
   employee.last_name         = "Slabodnik"
   employee.gender            = "female"
   employee.contact_no        = "123456789"
+  employee.salary            = 2700
 end
 
 Employee.create do |employee|
@@ -71,6 +78,7 @@ Employee.create do |employee|
   employee.last_name         = "Slabodnik"
   employee.gender            = "female"
   employee.contact_no        = "123456789"
+  employee.salary            = 1000
 end
 
 Employee.create do |employee|
@@ -78,6 +86,7 @@ Employee.create do |employee|
   employee.last_name         = "Slabodnik"
   employee.gender            = "female"
   employee.contact_no        = "123456789"
+  employee.salary            = 2000
 end
 
 Employee.create do |employee|
@@ -85,4 +94,5 @@ Employee.create do |employee|
   employee.last_name         = "Slabodnik"
   employee.gender            = "female"
   employee.contact_no        = "123456789"
+  employee.salary            = 1500
 end
