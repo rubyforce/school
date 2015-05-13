@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20150511165501) do
   end
 
   create_table "daily_meals", force: :cascade do |t|
-    t.datetime "date"
+    t.string   "date"
     t.decimal  "no_of_student1"
     t.decimal  "no_of_student2"
     t.decimal  "no_of_student3"
@@ -159,7 +159,7 @@ ActiveRecord::Schema.define(version: 20150511165501) do
   create_table "fees_heads", force: :cascade do |t|
     t.string   "name"
     t.string   "type_name"
-    t.decimal  "amount"
+    t.string   "amount"
     t.string   "recurrence"
     t.datetime "created_at"
     t.datetime "updated_at"
