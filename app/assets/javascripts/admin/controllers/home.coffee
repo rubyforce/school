@@ -1,5 +1,7 @@
 @admin.controller 'HomeController', [
-    '$scope'
-    ($scope) ->
-        debugger;
+    '$scope', 'Student', 'Employee'
+    ($scope, Student, Employee) ->
+
+      Student.get().then (students) ->
+        $scope.students = students
 ]
