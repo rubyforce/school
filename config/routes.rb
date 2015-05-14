@@ -28,6 +28,12 @@ Greenarea::Application.routes.draw do
       end
     end
 
+    resources :expense_receipts do
+      member do
+        get :print
+      end
+    end
+
     resources :receipts do
       member do
         get :print
