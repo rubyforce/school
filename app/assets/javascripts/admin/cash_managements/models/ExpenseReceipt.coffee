@@ -2,10 +2,8 @@
   "$http", 'RailsResource', 'railsResourceFactory', 'railsSerializer'
   ($http, RailsResource, railsResourceFactory, railsSerializer) ->
     ExpenseReceipt = railsResourceFactory
-     url: '/admin/expense_receipts'
-     name: 'expense_receipt'
-     serializer: railsSerializer ->
-       @nestedAttribute('employeeExpenseReceipts')
+      url: '/admin/expense_receipts'
+      name: 'expense_receipt'
 
     ExpenseReceipt
 ]
