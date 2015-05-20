@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519133638) do
+ActiveRecord::Schema.define(version: 20150520134106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -317,6 +317,7 @@ ActiveRecord::Schema.define(version: 20150519133638) do
     t.text     "address"
     t.date     "academic_year_from"
     t.date     "academic_year_to"
+    t.decimal  "remaining_amount",   default: 0.0
   end
 
   create_table "students_fees_heads", force: :cascade do |t|
