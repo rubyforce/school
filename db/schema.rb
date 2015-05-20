@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20150511165501) do
   end
 
   create_table "daily_meals", force: :cascade do |t|
-    t.string   "date"
+    t.datetime "date"
     t.decimal  "no_of_student1"
     t.decimal  "no_of_student2"
     t.decimal  "no_of_student3"
@@ -133,6 +133,7 @@ ActiveRecord::Schema.define(version: 20150511165501) do
     t.text     "address"
     t.string   "middle_name"
     t.string   "qualification"
+    t.decimal  "salary"
     t.string   "contact_no"
     t.string   "entry_no",      default: "auto"
     t.string   "status"
@@ -143,7 +144,6 @@ ActiveRecord::Schema.define(version: 20150511165501) do
     t.integer  "section_id"
     t.integer  "pay_band_id"
     t.datetime "birthday"
-    t.decimal  "salary"
   end
 
   create_table "expense_receipts", force: :cascade do |t|
@@ -160,7 +160,7 @@ ActiveRecord::Schema.define(version: 20150511165501) do
   create_table "fees_heads", force: :cascade do |t|
     t.string   "name"
     t.string   "type_name"
-    t.string   "amount"
+    t.decimal  "amount"
     t.string   "recurrence"
     t.datetime "created_at"
     t.datetime "updated_at"

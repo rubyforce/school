@@ -6,7 +6,7 @@
     $scope.fees_head = new FeesHead()
 
     $scope.select = (fees_head) ->
-        $scope.fees_head = fees_head
+      $scope.fees_head = fees_head
 
     $scope.new = ->
         $scope.fees_head = new FeesHead()
