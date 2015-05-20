@@ -44,6 +44,15 @@
             </tbody>
           </table>
         </div>
+        <div class="col-sm-12">
+          <p class="bg-success">
+            <% if @receipt.remaining_amount <= 0 %>
+              You Owe <%= @receipt.remaining_amount * (-1) %>
+            <% else %>
+              We Owe you <%= @receipt.remaining_amount %>
+            <% end %>
+          </p>
+        </div>
       </div>
     </div>
     <footer class="footer" style="text-align: center; margin-top: 50px;">

@@ -4,4 +4,9 @@ class Receipt < ActiveRecord::Base
   belongs_to :student
 
   accepts_nested_attributes_for :receipts_fees_heads, allow_destroy: true
+
+  def remaining_amount
+    sum = fees_heads.sum(:amount)
+    cash - sum
+  end
 end
