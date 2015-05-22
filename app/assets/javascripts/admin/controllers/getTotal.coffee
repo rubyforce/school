@@ -3,11 +3,11 @@
   ($scope) ->
 
     $scope.getTotalMale = ->
-      _($scope.students).filter((student) ->
+      _($scope.dashboard.students_male).filter((student) ->
         student.gender == 'male'
       ).size()
     $scope.getTotalFemale = ->
-      _($scope.students).filter((student) ->
+      _($scope.dashboard.students_female).filter((student) ->
         student.gender == 'female'
       ).size()
     $scope.getTotalGovtPay = ->
