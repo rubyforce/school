@@ -66,5 +66,3 @@ module Greenarea
     config.assets.precompile += %w( .svg .eot .woff .ttf )
   end
 end
-
-module Dashboard ; end

@@ -10,4 +10,8 @@
       _($scope.students).filter((student) ->
         student.gender == 'female'
       ).size()
+    $scope.getTotalGovtPay = ->
+      _($scope.employees).filter((employee) ->
+        employee.paidType(employees) == 'government pay'
+      ).size()
 ]
