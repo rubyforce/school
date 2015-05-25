@@ -6,15 +6,35 @@ class Admin::ReceiptsController < ApplicationController
 
     if params[:number].present?
       @receipts = @receipts.where(number: params[:number])
+    elsif params[:cheque_number].present?
+      @receipts = @receipts.where(cheque_number: params[:cheque_number])
+    end
+
+    if params[:cheque_number].present?
+      @receipts = @receipts.where(cheque_number: params[:cheque_number])
     end
 
     @receipts = @receipts.all
-    render :json => @receipts.as_json(:include => :receipts_fees_heads)
+    render :json => @receipts.as_json(
+      :include => [
+        :receipts_fees_heads,
+        :fees_heads,
+        :student => {
+          :only => [ :id, :first_name, :last_name ],
+          :methods => [ :full_name ],
+          :include => [ :standard, :division ]
+        }
+      ]
+    )
   end
 
   def show
     @receipt = Receipt.find(params[:id])
-    render :json => @receipt.as_json(:include => :receipts_fees_heads)
+    render :json => @receipt.as_json(
+     :include => [
+        :receipts_fees_heads
+      ]
+    )
   end
 
   def print
@@ -28,6 +48,7 @@ class Admin::ReceiptsController < ApplicationController
 
   def create
     @receipt = Receipt.new(params[:receipt])
+    # @receipt.student.fees_heads << @receipt.fees_heads
     @receipt.save
     render :json => @receipt.as_json(:include => :receipts_fees_heads)
   end
@@ -47,5 +68,9 @@ class Admin::ReceiptsController < ApplicationController
     @receipt = Receipt.find(params[:id])
     @receipt.destroy
     render :json => @receipt.as_json(:include => :receipts_fees_heads)
+  end
+
+  def check
+    @student = Receipt.find(params[:student])
   end
 end

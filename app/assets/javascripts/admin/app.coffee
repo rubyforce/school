@@ -18,6 +18,10 @@ employees.config [
             .state 'employees.delete',
                 url: "/delete"
                 templateUrl: "admin/employees/views/delete.html"
+            .state 'employees.salary',
+                url: "/salary/new"
+                templateUrl: "admin/cash_managements/views/salary/new.html"
+
 ]
 
 @students = angular.module('admin.students', [])
@@ -55,11 +59,8 @@ cash_managements.config [
                 url: "/settlements/new"
                 templateUrl: "admin/cash_managements/views/settlements/new.html"
             .state 'cash_managements.expense',
-                url: "/expense_voucher/new"
-                templateUrl: "admin/cash_managements/views/expense_voucher/new.html"
-            .state 'cash_managements.salary',
-                url: "/salary/new"
-                templateUrl: "admin/cash_managements/views/salary/new.html"
+                url: "/expense/new"
+                templateUrl: "admin/cash_managements/views/expense/new.html"
 ]
 
 @paid_types = angular.module('admin.paid_types', [])
@@ -117,9 +118,6 @@ fees_heads.config [
             .state 'fees_heads.cheque_no',
                 url: "/cheque_no/cheque"
                 templateUrl: "admin/fees_heads/views/cheque_no/cheque.html"
-            .state 'fees_heads.receipt',
-                url: "/receipts/:id"
-                templateUrl: "admin/fees_heads/views/receipt/receipt.html"
 ]
 
 @admin = angular.module('admin', [

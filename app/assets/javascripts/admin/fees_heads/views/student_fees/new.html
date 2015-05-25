@@ -20,6 +20,7 @@
                   <th width="25%" style="text-align: center;">Fees</th>
                   <th width="25%" style="text-align: center;">Actual</th>
                   <th width="25%" style="text-align: center;">Amount with Concession</th>
+                  <th width="25%" style="text-align: center;">Difference</th>
                 </tr>
               </thead>
               <tbody>
@@ -31,6 +32,9 @@
                   </td>
                   <td>
                     <input ng-model='f.concession' type='text' class="form-control" />
+                  </td>
+                  <td>
+                    {{f.amountConcession = f.properties.amount - f.concession}}
                   </td>
                 </tr>
               </tbody>

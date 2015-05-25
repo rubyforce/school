@@ -13,6 +13,13 @@
           <div class="panel panel-default receipt" style="width: 95%; margin: 20px auto;">
             <div class="panel panel-default">
               <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th width="25%" style="text-align: center;">Fees</th>
+                    <th width="25%" style="text-align: center;">Actual</th>
+                    <th width="25%" style="text-align: center;">Amount with Concession</th>
+                  </tr>
+                </thead>
                 <%= render partial: "fees_head", collection: @receipt.fees_heads %>
               </table>
             </div>
@@ -37,11 +44,16 @@
             </tbody>
           </table>
         </div>
+        <div class="col-sm-12">
+          <p class="bg-primary">
+            Total to Pay <%= @receipt.total %>
+          </p>
+        </div>
       </div>
     </div>
     <footer class="footer" style="text-align: center; margin-top: 50px;">
       <div class="container">
-        <p class="text-muted">Created at <%= @receipt.created_at.strftime("%d/%d/%Y") %></p>
+        <p class="text-muted">Created at <%= @receipt.created_at.strftime("%d/%m/%Y") %></p>
       </div>
     </footer>
   </div>

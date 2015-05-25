@@ -18,6 +18,9 @@ class Admin::StudentsController < ApplicationController
 
   def create
     @student = Student.new(params[:student])
+    if params[:student][:students_fees_heads_attributes].blank?
+      params[:student].delete(:students_fees_heads_attributes)
+    end
     @student.save
 
     render :json => @student.as_json(:include => :students_fees_heads)
@@ -30,6 +33,9 @@ class Admin::StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
+    if params[:student][:students_fees_heads_attributes].blank?
+      params[:student].delete(:students_fees_heads_attributes)
+    end
     @student.update_attributes(params[:student])
     render :json => @student.as_json(:include => :students_fees_heads)
   end

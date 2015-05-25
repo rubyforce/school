@@ -20,5 +20,10 @@
             return unless item?
             item.name
 
+        Student.prototype.financeName = (collection) ->
+            item = _.find(collection, (item) => item.id is @financeModeId)
+            return unless item?
+            item.name
+
         Student
 ]

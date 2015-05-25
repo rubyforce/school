@@ -27,7 +27,7 @@
 .nav-tabs.nav-justified > li > a:hover {
   background: #fff;
 }
-.btn.btn-default {
+.btn {
   border-radius: 0px;
 }
 .panel.panel-default.employee-list {
@@ -35,7 +35,7 @@
   margin: 25px auto;
 }
 .panel-body.scrolling {
-  max-height: 450px;
+  max-height: 350px;
   overflow-y: auto;
 }
 table tbody td {

@@ -1,9 +1,9 @@
-# https://github.com/FineLinePrototyping/angularjs-rails-resource/issues/105
-@cash_managements.factory "CashManagement", [
-    "$http", 'RailsResource'
-    ($http, RailsResource) ->
-        class CashManagement extends RailsResource
-          @configure
-              url: '/admin/cash_managements'
-              name: 'cash_management'
+@cash_managements.factory "ExpenseReceipt", [
+  "$http", 'RailsResource', 'railsResourceFactory', 'railsSerializer'
+  ($http, RailsResource, railsResourceFactory, railsSerializer) ->
+    ExpenseReceipt = railsResourceFactory
+      url: '/admin/expense_receipts'
+      name: 'expense_receipt'
+
+    ExpenseReceipt
 ]

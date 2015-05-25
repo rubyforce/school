@@ -3,7 +3,7 @@ class Admin::ExpenseReceiptsController < ApplicationController
 
   def index
     @expense_receipts = ExpenseReceipt.all
-    respond_with @expense_receipts
+    render :json => @expense_receipts
   end
 
   def show

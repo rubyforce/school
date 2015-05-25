@@ -4,20 +4,27 @@
 
     $scope.alert = false
 
+    $scope.clicked = false
+
     reset = ->
       $scope.remark = ''
       $scope.number = ''
 
-    $scope.cancel = ->
+
+    $scope.find = ->
       Receipt.query(number: $scope.number).then (response) ->
         $scope.receipt = response[0]
-        $scope.receipt.remark = $scope.remark
 
         if $scope.receipt
-          $scope.receipt.status = "cancel"
-          $scope.receipt.update()
-          reset()
-
-        else 
+          $scope.clicked = true
+        else
           $scope.alert = true
+
+    $scope.cancel = ->
+      if $scope.receipt
+        $scope.receipt = new Receipt(id:  $scope.receipt.id)
+        $scope.receipt.status = "canceled"
+        $scope.receipt.remark = $scope.remark
+        $scope.receipt.update()
+        reset()
 ]
