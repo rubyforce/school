@@ -1,5 +1,5 @@
 <div class="home" ng-controller="HomeController">
-  <div class="row" ng-controller="GetTotalController">
+  <div class="row">
     <div class="col-sm-12">
       <div class="col-sm-6">
         <div class="panel panel-default" style="height: 255px;">
@@ -19,11 +19,11 @@
                 </tr>
                 <tr>
                   <td style="border-top: none;">Total Students</td>
-                  <td style="border-top: none;">{{students.length}}</td>
+                  <td style="border-top: none;">{{dashboard.students.length}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Total Teaching Staff</td>
-                  <td style="border-top: none;">{{employees.length}}</td>
+                  <td style="border-top: none;">{{dashboard.employees.length}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Total Non-teaching Staff</td>
