@@ -6,7 +6,7 @@
           <div class="panel-body">
             <table class="table">
               <thead>
-               
+
               </thead>
               <tbody>
                 <tr>
@@ -44,20 +44,20 @@
           <div class="panel-body">
             <table class="table">
               <thead>
-               
+
               </thead>
               <tbody>
                 <tr>
                   <td style="border-top: none;">Today's Fees Collection</td>
-                  <td style="border-top: none;">Rs. 500</td>
+                  <td style="border-top: none;" ng-show="dashboard.today_fees_collection">Rs. {{dashboard.today_fees_collection | number}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Fees Collected this Month</td>
-                  <td style="border-top: none;">Rs. 5000</td>
+                  <td style="border-top: none;" ng-show="dashboard.current_month_fees_collection">Rs. {{dashboard.current_month_fees_collection | number}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Fees Collected last month</td>
-                  <td style="border-top: none;">Rs. 3000</td>
+                  <td style="border-top: none;" ng-show="dashboard.last_month_fees_collection">Rs. {{dashboard.last_month_fees_collection | number}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Fees Outstanding</td>
@@ -73,7 +73,7 @@
           <div class="panel-body">
             <table class="table">
               <thead>
-               
+
               </thead>
               <tbody>
                 <tr>
@@ -82,11 +82,11 @@
                 </tr>
                 <tr>
                   <td style="border-top: none;">Total Expense this month</td>
-                  <td style="border-top: none;">Rs. 500</td>
+                  <td style="border-top: none;" ng-show="dashboard.expense_current_month">Rs. {{dashboard.expense_current_month | number}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Salary Expenses last month</td>
-                  <td style="border-top: none;">Rs. 30000</td>
+                  <td style="border-top: none;" ng-show="dashboard.salary_expenses_last_month">Rs. {{dashboard.salary_expenses_last_month | number}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Yesterday's closing balance</td>
@@ -103,7 +103,7 @@
           <div class="panel-body">
             <table class="table">
               <thead>
-               
+
               </thead>
               <tbody>
                 <tr>
