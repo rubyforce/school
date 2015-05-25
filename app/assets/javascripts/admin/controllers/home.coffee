@@ -1,6 +1,6 @@
 @admin.controller 'HomeController', [
-    '$scope', 'Student', 'Employee', 'MiddayManagement', '$http', 'PaidType'
-    ($scope, Student, Employee, MiddayManagement, $http, PaidType) ->
+    '$scope', 'Student', 'Employee', '$http'
+    ($scope, Student, Employee, $http) ->
 
       Student.get().then (students) ->
         $scope.students = students
