@@ -22,7 +22,7 @@
 en:
   layouts:
     application:
-      title: "Aadarsh Vidyalaya"
+      title: "Home"
   contacts:
     create:
       success: "Message was successfully sent."
