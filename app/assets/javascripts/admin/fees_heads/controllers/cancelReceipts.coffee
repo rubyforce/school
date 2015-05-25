@@ -17,16 +17,14 @@
 
         if $scope.receipt
           $scope.clicked = true
-        else 
-          $scope.alert = true 
+        else
+          $scope.alert = true
 
     $scope.cancel = ->
-      debugger
       if $scope.receipt
         $scope.receipt = new Receipt(id:  $scope.receipt.id)
         $scope.receipt.status = "canceled"
         $scope.receipt.remark = $scope.remark
-  
         $scope.receipt.update()
         reset()
 ]

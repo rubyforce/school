@@ -59,8 +59,8 @@ cash_managements.config [
                 url: "/settlements/new"
                 templateUrl: "admin/cash_managements/views/settlements/new.html"
             .state 'cash_managements.expense',
-                url: "/expense_voucher/new"
-                templateUrl: "admin/cash_managements/views/expense_voucher/new.html"
+                url: "/expense/new"
+                templateUrl: "admin/cash_managements/views/expense/new.html"
 ]
 
 @paid_types = angular.module('admin.paid_types', [])

@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20150522122535) do
     t.datetime "updated_at",                             null: false
     t.boolean  "cash_deposited_enabled", default: false
     t.boolean  "cash_moved_enabled",     default: false
-    t.integer  "nature_expense_id"
+    t.integer  "nature_id"
   end
 
   create_table "castes", force: :cascade do |t|
@@ -112,13 +112,6 @@ ActiveRecord::Schema.define(version: 20150522122535) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "employee_expense_receipts", force: :cascade do |t|
-    t.decimal  "expense"
-    t.integer  "employee_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "employee_salary_receipts", force: :cascade do |t|
@@ -157,21 +150,26 @@ ActiveRecord::Schema.define(version: 20150522122535) do
     t.string   "expense_made"
     t.string   "nature_of_expense"
     t.string   "payment_made"
-    t.string   "authorized_by"
     t.decimal  "amount"
-    t.string   "expense_by"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "nature_id"
+    t.integer  "expense_by_id"
+    t.integer  "authorized_by_id"
   end
 
   create_table "fees_heads", force: :cascade do |t|
     t.string   "name"
     t.string   "type_name"
+<<<<<<< HEAD
     t.decimal  "amount"
+=======
+>>>>>>> 1bef8a6b431d223accfcfe7bbf41e7c95a41e62d
     t.string   "recurrence"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "concession"
+    t.decimal  "amount"
   end
 
   create_table "finance_modes", force: :cascade do |t|
@@ -323,6 +321,7 @@ ActiveRecord::Schema.define(version: 20150522122535) do
     t.text     "address"
     t.date     "academic_year_from"
     t.date     "academic_year_to"
+    t.decimal  "remaining_amount",   default: 0.0
   end
 
   create_table "students_fees_heads", force: :cascade do |t|

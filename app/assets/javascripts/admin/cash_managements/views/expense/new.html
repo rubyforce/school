@@ -8,19 +8,19 @@
         <div class="col-sm-6">
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='expense.expense_made' class="control-label">Expense Made</label>
+              <label for='expense_receipt.expense_made' class="control-label">Expense Made</label>
             </div>
             <div class="col-sm-6">
-              <input name='expense.expense_made' type='text' ng-model='expense.expense_made' class="form-control" />
+              <input name='expense_receipt.expense_made' type='text' ng-model='expense_receipt.expense_made' class="form-control" />
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='expense.nature_expense' class="control-label">Nature of Expense</label>
+              <label for='expense_receipt.nature' class="control-label">Nature of Expense</label>
             </div>
             <div class="col-sm-6">
-              <select name='expense.nature_expense' ng-model='expense.nature_expense_id' class="form-control">
+              <select name='expense_receipt.nature' ng-model='expense_receipt.nature_id' class="form-control">
                 <option ng-repeat="nature in natures" value="{{nature.id}}">{{nature.title}}</option>
               </select>
             </div>
@@ -33,19 +33,19 @@
 
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='expense.payment' class="control-label">Payment Made to</label>
+              <label for='expense_receipt.payment_made' class="control-label">Payment Made to</label>
             </div>
             <div class="col-sm-6">
-              <input name='expense.payment' type='text' ng-model='expense.payment' class="form-control" />
+              <input name='expense_receipt.payment_made' type='text' ng-model='expense_receipt.payment_made' class="form-control" />
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='expense.authorized_by' class="control-label">Authorized By</label>
+              <label for='expense_receipt.authorized_by' class="control-label">Authorized By</label>
             </div>
             <div class="col-sm-6">
-              <select name='expense.authorized_by' ng-model='expense.authorized_by' class="form-control">
+              <select name='expense_receipt.authorized_by' ng-model='expense_receipt.authorized_by_id' class="form-control">
                 <option ng-repeat="employee in employees" value="{{employee.id}}">{{employee.firstName}}</option>
               </select>
             </div>
@@ -53,22 +53,22 @@
 
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='expense.amount' class="control-label ">Amount</label>
+              <label for='expense_receipt.amount' class="control-label ">Amount</label>
             </div>
             <div class="col-sm-6">
               <div class="input-group">
                 <div class="input-group-addon">Rs.</div>
-                <input type="text" class="form-control" name="expense.amount" ng-model='expense.amount'>
+                <input type="text" class="form-control" name="expense_receipt.amount" ng-model='expense_receipt.amount'>
               </div>
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='expense.expense_by' class="control-label">Expense By</label>
+              <label for='expense_receipt.expense_by' class="control-label">Expense By</label>
             </div>
             <div class="col-sm-6">
-              <select name='expense.expense_by' ng-model='expense.expense_by' class="form-control">
+              <select name='expense_receipt.expense_by' ng-model='expense_receipt.expense_by_id' class="form-control">
                 <option ng-repeat="employee in employees" value="{{employee.id}}">{{employee.firstName}}</option>
               </select>
             </div>
@@ -77,10 +77,8 @@
       </div>
         <!-- End First Column -->
 
-      <div class="form-group ui buttons">
-        <div class=" col-sm-12">
-          <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>SAVE and PRINT </button>
-        </div>
+      <div class="ui buttons padding">
+        <a class="btn btn-default" ng-click="create()" id="btnPrint">CREATE EXPENSE AND PRINT</a>
       </div>
     </form>
   </div>
