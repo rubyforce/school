@@ -1,5 +1,5 @@
 <div class="home" ng-controller="HomeController">
-  <div class="row" ng-controller="GetTotalController">
+  <div class="row">
     <div class="col-sm-12">
       <div class="col-sm-6">
         <div class="panel panel-default" style="height: 255px;">
@@ -11,27 +11,27 @@
               <tbody>
                 <tr>
                   <td style="border-top: none;">Total Female Students</td>
-                  <td style="border-top: none;">{{getTotalFemale()}}</td>
+                  <td style="border-top: none;">{{dashboard.students_female.length}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Total Male Students</td>
-                  <td style="border-top: none;">{{getTotalMale()}}</td>
+                  <td style="border-top: none;">{{dashboard.students_male.length}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Total Students</td>
-                  <td style="border-top: none;">{{students.length}}</td>
+                  <td style="border-top: none;">{{dashboard.students.length}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Total Teaching Staff</td>
-                  <td style="border-top: none;">{{employees.length}}</td>
+                  <td style="border-top: none;">{{dashboard.employees.length}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Total Non-teaching Staff</td>
-                  <td style="border-top: none;">{{midday_managements.length}}</td>
+                  <td style="border-top: none;">{{dashboard.employees_section.length}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Total Teachers on Govt. Pay</td>
-                  <td style="border-top: none;">25</td>
+                  <td style="border-top: none;">{{dashboard.employees_govt_pay.length}}</td>
                 </tr>
               </tbody>
             </table>
@@ -78,7 +78,7 @@
               <tbody>
                 <tr>
                   <td style="border-top: none;">Today's Expenses</td>
-                  <td style="border-top: none;">Rs. 50</td>
+                  <td style="border-top: none;" ng-show="dashboard.cash_management">Rs. {{dashboard.cash_management | number}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Total Expense this month</td>
