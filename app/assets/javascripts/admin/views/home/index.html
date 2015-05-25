@@ -82,7 +82,7 @@
                 </tr>
                 <tr>
                   <td style="border-top: none;">Total Expense this month</td>
-                  <td style="border-top: none;">Rs. {{dashboard.expense_current_month | number}}</td>
+                  <td style="border-top: none;" ng-show="dashboard.expense_current_month">Rs. {{dashboard.expense_current_month | number}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Salary Expenses last month</td>
