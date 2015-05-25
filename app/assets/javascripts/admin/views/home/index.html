@@ -49,15 +49,15 @@
               <tbody>
                 <tr>
                   <td style="border-top: none;">Today's Fees Collection</td>
-                  <td style="border-top: none;">Rs. {{dashboard.today_fees_collection | number}}</td>
+                  <td style="border-top: none;" ng-show="dashboard.today_fees_collection">Rs. {{dashboard.today_fees_collection | number}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Fees Collected this Month</td>
-                  <td style="border-top: none;">Rs. {{dashboard.current_month_fees_collection | number}}</td>
+                  <td style="border-top: none;" ng-show="dashboard.current_month_fees_collection">Rs. {{dashboard.current_month_fees_collection | number}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Fees Collected last month</td>
-                  <td style="border-top: none;">Rs. {{dashboard.last_month_fees_collection | number}}</td>
+                  <td style="border-top: none;" ng-show="dashboard.last_month_fees_collection">Rs. {{dashboard.last_month_fees_collection | number}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Fees Outstanding</td>
