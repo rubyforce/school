@@ -45,17 +45,8 @@
           </table>
         </div>
         <div class="col-sm-12">
-          <% if @receipt.total <= 0 %>
-            <p class="bg-danger">
-              You Owe Us <%= @receipt.total * (-1) %>
-            </p>
-          <% else %>
-            <p class="bg-success">
-              We Owe You <%= @receipt.total %>
-            </p>
-          <% end %>
           <p class="bg-primary">
-            Remaining amount: <%= @receipt.student.remaining_amount %>
+            Total to Pay <%= @receipt.total %>
           </p>
         </div>
       </div>
