@@ -5,5 +5,4 @@
       $http.get('/admin/dashboards').success( (response) ->
         $scope.dashboard = response 
       )
-
 ]

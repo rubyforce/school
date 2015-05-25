@@ -9,8 +9,8 @@ class Admin::DashboardsController < ApplicationController
       :students_male => Student.where(:gender => "male"),
       :employees_govt_pay => Employee.joins(:paid_type).where(paid_types: { title: 'Government pay' }),
       :employees_section => Employee.joins(:section).where(sections: { title: 'Non-teaching' }),
-      :expense => ExpenseReceipt.last.amount
-      ## :cash_managements => CashManagement.where("MONTH(created_at) = :month", :month => Date.today.month)
+      :expense => ExpenseReceipt.last.amount,
+      :expenses => ExpenseReceipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month)
     }
   end
 end
