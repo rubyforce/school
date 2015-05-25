@@ -10,7 +10,7 @@ class Admin::DashboardsController < ApplicationController
       :employees_govt_pay => Employee.joins(:paid_type).where(paid_types: { title: 'Government pay' }),
       :employees_section => Employee.joins(:section).where(sections: { title: 'Non-teaching' }),
       :expense => ExpenseReceipt.last.amount,
-      :expenses => ExpenseReceipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month)
+      :expenses => ExpenseReceipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month).sum(:amount)
     }
   end
 end
