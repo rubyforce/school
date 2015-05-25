@@ -86,7 +86,7 @@
                 </tr>
                 <tr>
                   <td style="border-top: none;">Salary Expenses last month</td>
-                  <td style="border-top: none;">Rs. {{dashboard.salary_expenses_last_month | number}}</td>
+                  <td style="border-top: none;" ng-show="dashboard.salary_expenses_last_month">Rs. {{dashboard.salary_expenses_last_month | number}}</td>
                 </tr>
                 <tr>
                   <td style="border-top: none;">Yesterday's closing balance</td>
