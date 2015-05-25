@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525122417) do
+ActiveRecord::Schema.define(version: 20150525152739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -260,9 +260,9 @@ ActiveRecord::Schema.define(version: 20150525122417) do
 
   create_table "salary_receipts", force: :cascade do |t|
     t.string   "year"
-    t.string   "month"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "month"
   end
 
   create_table "sections", force: :cascade do |t|

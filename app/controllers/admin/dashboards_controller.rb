@@ -11,7 +11,7 @@ class Admin::DashboardsController < ApplicationController
       :employees_section => Employee.joins(:section).where(sections: { title: 'Non-teaching' }),
       :expense => ExpenseReceipt.last.amount,
       :expense_current_month => ExpenseReceipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month).sum(:amount),
-      :salary_expenses_last_month => EmployeeSalaryReceipt.joins(:salary_receipt).where("EXTRACT(MONTH FROM month) = ?", Date.today.month.to_date-1).sum(:salary)
+      :salary_expenses_last_month => EmployeeSalaryReceipt.joins(:salary_receipt).where("EXTRACT(MONTH FROM month) = ?", Date.today.month-1).sum(:salary)
     }
   end
 end
