@@ -45,7 +45,7 @@
               <label for='expense_receipt.authorized_by' class="control-label">Authorized By</label>
             </div>
             <div class="col-sm-6">
-              <select name='expense_receipt.authorized_by' ng-model='expense_receipt.authorized_by' class="form-control">
+              <select name='expense_receipt.authorized_by' ng-model='expense_receipt.authorized_by_id' class="form-control">
                 <option ng-repeat="employee in employees" value="{{employee.id}}">{{employee.firstName}}</option>
               </select>
             </div>
@@ -68,7 +68,7 @@
               <label for='expense_receipt.expense_by' class="control-label">Expense By</label>
             </div>
             <div class="col-sm-6">
-              <select name='expense_receipt.expense_by' ng-model='expense_receipt.expense_by' class="form-control">
+              <select name='expense_receipt.expense_by' ng-model='expense_receipt.expense_by_id' class="form-control">
                 <option ng-repeat="employee in employees" value="{{employee.id}}">{{employee.firstName}}</option>
               </select>
             </div>

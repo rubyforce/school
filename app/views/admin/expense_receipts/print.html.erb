@@ -4,7 +4,10 @@
     <h1 style="text-align: center">Expense Vouchers</h1>
   </div>
 
-  <p class="lead" style="text-align: center">Authorized By: <%= @expense_receipt.authorized_by %> Expense By: <%= @expense_receipt.expense_by %></p>
+  <p class="lead" style="text-align: center">Authorized By: <%= @expense_receipt.authorized_by.full_name %>
+    <br />
+    Expense By: <%= @expense_receipt.expense_by.full_name %>
+  </p>
 
   <div class="update_form">
     <div class="row">

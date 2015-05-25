@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520134106) do
+ActiveRecord::Schema.define(version: 20150525122417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20150520134106) do
   end
 
   create_table "daily_meals", force: :cascade do |t|
-    t.string   "date"
+    t.datetime "date"
     t.decimal  "no_of_student1"
     t.decimal  "no_of_student2"
     t.decimal  "no_of_student3"
@@ -105,13 +105,6 @@ ActiveRecord::Schema.define(version: 20150520134106) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "employee_expense_receipts", force: :cascade do |t|
-    t.decimal  "expense"
-    t.integer  "employee_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "employee_salary_receipts", force: :cascade do |t|
@@ -133,6 +126,7 @@ ActiveRecord::Schema.define(version: 20150520134106) do
     t.text     "address"
     t.string   "middle_name"
     t.string   "qualification"
+    t.decimal  "salary"
     t.string   "contact_no"
     t.string   "entry_no",      default: "auto"
     t.string   "status"
@@ -143,7 +137,6 @@ ActiveRecord::Schema.define(version: 20150520134106) do
     t.integer  "section_id"
     t.integer  "pay_band_id"
     t.datetime "birthday"
-    t.decimal  "salary"
   end
 
   create_table "expense_receipts", force: :cascade do |t|
@@ -153,9 +146,9 @@ ActiveRecord::Schema.define(version: 20150520134106) do
     t.decimal  "amount"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.string   "expense_by"
-    t.string   "authorized_by"
     t.integer  "nature_id"
+    t.integer  "expense_by_id"
+    t.integer  "authorized_by_id"
   end
 
   create_table "fees_heads", force: :cascade do |t|
