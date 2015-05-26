@@ -1,3 +1,3 @@
 class DailyMeal < ActiveRecord::Base
-  has_many :midday_managements, dependent: :destroy
+  has_one :meals, dependent: :destroy
 end
