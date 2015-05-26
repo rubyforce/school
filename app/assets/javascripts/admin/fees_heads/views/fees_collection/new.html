@@ -33,7 +33,7 @@
 
   <form name='name' class="form-horizontal update no-print">
     <div class="panel panel-default fees" id="printThis">
-      <button type="submit" class="btn btn-default" disabled>Receipt # {{ receipt.number }}</button>
+      <button type="submit" class="btn btn-default" disabled>Receipt No. {{ receipt.number }}</button>
 
       <div class="update_form">
         <div class="row">
@@ -119,7 +119,7 @@
             <!-- Second Column -->
             <div class="form-group">
               <div class="col-sm-3">
-                <label for='cheque' class="control-label">Receipt #</label>
+                <label for='cheque' class="control-label">Receipt No.</label>
               </div>
               <div class="col-sm-3">
                 <input name='cheque' type='text' ng-model='receipt.number' class="form-control" />
@@ -128,7 +128,7 @@
 
             <div class="form-group">
               <div class="col-sm-3">
-                <label for='cheque' class="control-label">Cheque #</label>
+                <label for='cheque' class="control-label">Cheque No.</label>
               </div>
               <div class="col-sm-3">
                 <input name='cheque' type='text' ng-model='receipt.cheque_number' class="form-control" />
