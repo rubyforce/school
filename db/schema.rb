@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 20150525152739) do
   end
 
   create_table "daily_meals", force: :cascade do |t|
-    t.datetime "date"
+    t.string   "date"
     t.decimal  "no_of_student1"
     t.decimal  "no_of_student2"
     t.decimal  "no_of_student3"
@@ -133,7 +133,6 @@ ActiveRecord::Schema.define(version: 20150525152739) do
     t.text     "address"
     t.string   "middle_name"
     t.string   "qualification"
-    t.decimal  "salary"
     t.string   "contact_no"
     t.string   "entry_no",      default: "auto"
     t.string   "status"

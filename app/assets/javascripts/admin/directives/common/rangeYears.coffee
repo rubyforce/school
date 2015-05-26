@@ -8,12 +8,14 @@
                 yearRange: "1990:+5"
                 onClose: ( selectedDate ) ->
                     element.find('.to').datepicker( "option", "minDate", selectedDate )
+            element.find('.from').datepicker('option', 'dateFormat', 'yy-mm-dd')
 
             element.find('.to').datepicker
                 defaultDate: "+1y"
                 changeMonth: true
                 changeYear: true
                 yearRange: "1990:+5"
+            element.find('.to').datepicker('option', 'dateFormat', 'yy-mm-dd')
 
         compile: compile
         restrict: 'E'
