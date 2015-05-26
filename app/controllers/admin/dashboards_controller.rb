@@ -5,8 +5,8 @@ class Admin::DashboardsController < ApplicationController
     render :json => {
       :students => Student.all,
       :employees => Employee.all,
-      :students_female => Student.where(:gender => "female"),
-      :students_male => Student.where(:gender => "male"),
+      :students_female_count => Student.where(:gender => "female").count,
+      :students_male_count => Student.where(:gender => "male").count,
       :employees_govt_pay => Employee.joins(:paid_type).where(paid_types: { title: 'Government pay' }),
       :employees_section => Employee.joins(:section).where(sections: { title: 'Non-teaching' }),
       :expense => ExpenseReceipt.where("EXTRACT(DAY FROM created_at) = ?", Date.today.day).sum(:amount),
