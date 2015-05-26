@@ -11,7 +11,7 @@
         $scope.alert = true
 
     $scope.total = ->
-      $scope.settlement.cash_in_hand  = $scope.settlement.opening_cash - $scope.settlement.cash_paid
+      $scope.settlement.cash_in_hand  = $scope.settlement.cash_opening - $scope.settlement.cash_paid
 
     $scope.totalAmount = ->
       $scope.settlement.cash_closing  = $scope.settlement.cash_in_hand - $scope.settlement.cash_deposited -
