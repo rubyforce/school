@@ -14,8 +14,6 @@
                 changeMonth: true
                 changeYear: true
                 yearRange: "1990:+5"
-                onClose: ( selectedDate ) ->
-                    element.find('.from').datepicker( "option", "minDate", selectedDate )
 
         compile: compile
         restrict: 'E'
