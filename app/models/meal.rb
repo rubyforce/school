@@ -1,3 +1,3 @@
 class Meal < ActiveRecord::Base
-  has_many :daily_meals, dependent: :destroy
+  belongs_to :daily_meal
 end

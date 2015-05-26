@@ -1,4 +1,4 @@
-<div class="panel panel-default" ng-controller='CreateDailyMealsManagementsController'>
+<div class="panel panel-default" ng-controller='CreateDailyMealsController'>
   <div class="panel-heading">Daily Item Usage for Mid Day Meal</div>
   <div class="panel-body" ng-controller='CreateDailyMealsController'>
     <form name='form' class="form-horizontal">
@@ -88,7 +88,9 @@
                   </select>
                 </div>
                 <div class="col-sm-2" ng-controller="CreateMealsController">
-                  <a ng-click="openForm('sm')" class="btn btn-default">+</a>
+                  <a ng-click="openForm('sm')" class="btn btn-default">
+                    <i class="fa fa-folder-plus"></i>
+                  </a>
                 </div>
               </div>
             </div>
