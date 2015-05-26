@@ -13,6 +13,7 @@
         $scope.receipt = response[0]
 
         if $scope.receipt
+          $scope.receipt = new Receipt(id:  $scope.receipt.id)
           $scope.receipt.cheque_status = "bounced"
           $scope.receipt.cheque_remark = $scope.cheque_remark
           $scope.receipt.update()
