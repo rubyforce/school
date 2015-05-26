@@ -8,6 +8,13 @@
 
     $scope.alert = false
 
+    CURRENT_DATE =
+      date: new Date
+
+    build = -> _.clone(CURRENT_DATE)
+
+    $scope.daily_meal = build()
+
     $scope.create = ->
       new DailyMeal($scope.daily_meal).create().then (response) ->
         $scope.midday_managements.push(new DailyMeal(response))
