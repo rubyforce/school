@@ -17,13 +17,6 @@
 
     $scope.create = ->
       new DailyMeal($scope.daily_meal).create().then (response) ->
-        $scope.midday_managements.push(new DailyMeal(response))
-        $scope.daily_meal = {}
-        $scope.qty = ''
-        $scope.alert = true
-
-    $scope.add = ->
-      new DailyMeal($scope.daily_meal).create().then (response) ->
         $scope.daily_meals.push(new DailyMeal(response))
         $scope.daily_meal = {}
         $scope.qty = ''
