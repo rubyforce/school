@@ -1,14 +1,14 @@
-@midday_managements.controller 'CreateMonthlyRecordManagementsController', [
-  '$scope', 'MiddayManagement'
-  ($scope, MiddayManagement) ->
-
+@midday_managements.controller 'CreateMonthlyRecordsController', [
+  '$scope', 'MonthlyRecord'
+  ($scope, MonthlyRecord) ->
     $scope.alert = false
 
     $scope.create = ->
-      new MiddayManagement($scope.midday_meal).create().then (response) ->
-        $scope.midday_managements.push(new MiddayManagement(response))
+      new MonthlyRecord($scope.monthly_record).create().then (response) ->
+        $scope.monthly_records.push(new MonthlyRecord(response))
         $scope.alert = true
+      $scope.monthly_record = {}
 
-    $scope.add = ->
-      $scope.midday_managements.push(new MiddayManagement($scope.midday_meal))
+    $scope.reset = ->
+      $scope.monthly_record = {}
 ]
