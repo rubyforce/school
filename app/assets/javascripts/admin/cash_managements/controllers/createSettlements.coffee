@@ -10,10 +10,6 @@
         $scope.settlement = {}
         $scope.alert = true
 
-    $scope.settlement = build()
-
-    $scope.settlement.cash_paid = getTotal()
-
     $scope.total = ->
       $scope.settlement.cash_in_hand  = $scope.settlement.cash_opening - $scope.settlement.cash_paid
 
