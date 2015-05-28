@@ -133,6 +133,7 @@ ActiveRecord::Schema.define(version: 20150525152739) do
     t.text     "address"
     t.string   "middle_name"
     t.string   "qualification"
+    t.decimal  "salary"
     t.string   "contact_no"
     t.string   "entry_no",      default: "auto"
     t.string   "status"
