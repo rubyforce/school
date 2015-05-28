@@ -74,8 +74,6 @@ cash_managements.config [
 @finance_modes = angular.module('admin.finance_modes', [])
 @meals = angular.module('admin.meals', [])
 @natures = angular.module('admin.natures', [])
-# @daily_meals = angular.module('admin.daily_meals', [])
-@monthly_records = angular.module('admin.monthly_records', [])
 
 @midday_managements = angular.module('admin.midday_managements', [])
 
@@ -144,8 +142,6 @@ fees_heads.config [
     'admin.finance_modes',
     'admin.natures',
     'admin.meals',
-    # 'admin.daily_meals',
-    'admin.monthly_records'
     'admin.fees_heads',
 
     'admin.directives',
