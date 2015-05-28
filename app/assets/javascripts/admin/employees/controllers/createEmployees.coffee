@@ -20,8 +20,12 @@
     $scope.generate()
 
     $scope.create = ->
-      new Employee($scope.employee).create().then (response) ->
-        $scope.employees.push(new Employee(response))
-        $scope.employee = build()
-        $scope.alert = true
+      new Employee($scope.employee)
+          .create()
+          .then (response) ->
+                  $scope.employees.push(new Employee(response))
+                  $scope.employee = build()
+                  $scope.alert = true
+              , (errors) ->
+                  $scope.errors = errors
 ]
