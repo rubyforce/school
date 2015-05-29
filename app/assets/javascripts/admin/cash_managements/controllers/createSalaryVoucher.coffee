@@ -24,6 +24,7 @@
                 found.properties = {}
                 found.properties.enabled = true
                 found.properties.name = f.fullName()
+        
             else
                 found =  {}
                 found.employeeId = f.id

@@ -7,7 +7,7 @@
       yearRange: "1950:-0"
 
     DEFAULT_STUDENT =
-      entry_no: 'auto'
+      entry_no: uuid4.generate()
 
     build = -> _.clone(DEFAULT_STUDENT)
 

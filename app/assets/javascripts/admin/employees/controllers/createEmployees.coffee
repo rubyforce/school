@@ -12,7 +12,7 @@
       $scope.employee.entry_no = uuid4.generate()
 
     DEFAULT_EMPLOYEE =
-      entry_no: 'auto'
+      entry_no: uuid4.generate()
 
     build = -> _.clone(DEFAULT_EMPLOYEE)
 
