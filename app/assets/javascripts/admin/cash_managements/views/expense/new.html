@@ -11,7 +11,7 @@
               <label for='expense_receipt.expense_made' class="control-label">Expense Made</label>
             </div>
             <div class="col-sm-6">
-              <input name='expense_receipt.expense_made' type='text' ng-model='expense_receipt.expense_made' class="form-control" />
+              <input name='expense_receipt.expense_made' type='text' ng-model='expense_receipt.expense_made' class="form-control" required />
             </div>
           </div>
 
@@ -20,7 +20,7 @@
               <label for='expense_receipt.nature' class="control-label">Nature of Expense</label>
             </div>
             <div class="col-sm-6">
-              <select name='expense_receipt.nature' ng-model='expense_receipt.nature_id' class="form-control">
+              <select name='expense_receipt.nature' ng-model='expense_receipt.nature_id' class="form-control" required>
                 <option ng-repeat="nature in natures" value="{{nature.id}}">{{nature.title}}</option>
               </select>
             </div>
@@ -36,7 +36,7 @@
               <label for='expense_receipt.payment_made' class="control-label">Payment Made to</label>
             </div>
             <div class="col-sm-6">
-              <input name='expense_receipt.payment_made' type='text' ng-model='expense_receipt.payment_made' class="form-control" />
+              <input name='expense_receipt.payment_made' type='text' ng-model='expense_receipt.payment_made' class="form-control" required />
             </div>
           </div>
 
@@ -45,7 +45,7 @@
               <label for='expense_receipt.authorized_by' class="control-label">Authorized By</label>
             </div>
             <div class="col-sm-6">
-              <select name='expense_receipt.authorized_by' ng-model='expense_receipt.authorized_by_id' class="form-control">
+              <select name='expense_receipt.authorized_by' ng-model='expense_receipt.authorized_by_id' class="form-control" required>
                 <option ng-repeat="employee in employees" value="{{employee.id}}">{{employee.firstName}}</option>
               </select>
             </div>
@@ -58,7 +58,7 @@
             <div class="col-sm-6">
               <div class="input-group">
                 <div class="input-group-addon">Rs.</div>
-                <input type="text" class="form-control" name="expense_receipt.amount" ng-model='expense_receipt.amount'>
+                <input type="text" class="form-control" name="expense_receipt.amount" ng-model='expense_receipt.amount' required>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@
               <label for='expense_receipt.expense_by' class="control-label">Expense By</label>
             </div>
             <div class="col-sm-6">
-              <select name='expense_receipt.expense_by' ng-model='expense_receipt.expense_by_id' class="form-control">
+              <select name='expense_receipt.expense_by' ng-model='expense_receipt.expense_by_id' class="form-control" required>
                 <option ng-repeat="employee in employees" value="{{employee.id}}">{{employee.firstName}}</option>
               </select>
             </div>
@@ -78,7 +78,7 @@
         <!-- End First Column -->
 
       <div class="ui buttons padding">
-        <a class="btn btn-default" ng-click="create()" id="btnPrint">CREATE EXPENSE AND PRINT</a>
+        <a class="btn btn-default" ng-click="create()" ng-disabled="form.$invalid" id="btnPrint">CREATE EXPENSE AND PRINT</a>
       </div>
     </form>
   </div>
