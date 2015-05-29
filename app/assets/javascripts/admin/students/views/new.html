@@ -22,7 +22,7 @@
 
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='student.group_no' class="control-label">Group No.</label>
+              <label for='student.group_no' class="control-label">GR No.</label>
             </div>
             <div class="col-sm-6">
               <input name='student.group_no' type='text' ng-model='student.group_no' class="form-control" />
@@ -59,7 +59,21 @@
             </div>
           </div>
 
-          <range-years from='student.academic_year_from' to='student.academic_year_to' title='Academic Year'></range-years>
+          <div class="form-group">
+            <div class="col-sm-4">
+              <label for='student.academic_year' class="control-label">Academic Year</label>
+            </div>
+            <div class="col-sm-6">
+              <select name="student.academic_year" class="form-control" ng-model="student.academic_year_id">
+                <option ng-repeat="academic_year in academic_years" value='{{academic_year.id}}'>{{academic_year.range}}</option>
+              </select>
+            </div>
+            <div class="col-sm-2" ng-controller="CreateAcademicYearsController">
+              <a ng-click="openForm('sm')" class="btn btn-default">
+                <i class="fa fa-folder-plus"></i>
+              </a>
+            </div>
+          </div>
 
           <div class="form-group">
             <div class="col-sm-4">

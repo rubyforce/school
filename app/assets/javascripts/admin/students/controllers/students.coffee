@@ -1,6 +1,6 @@
 @students.controller 'StudentsController', [
-  '$scope', '$state', 'Student', 'Admission', 'Religion', 'Caste', 'Standard', 'Division', 'Transport', 'FinanceMode'
-  ($scope, $state, Student, Admission, Religion, Caste, Standard, Division, Transport, FinanceMode) ->
+  '$scope', '$state', 'Student', 'Admission', 'Religion', 'Caste', 'Standard', 'Division', 'Transport', 'FinanceMode', 'AcademicYear'
+  ($scope, $state, Student, Admission, Religion, Caste, Standard, Division, Transport, FinanceMode, AcademicYear) ->
     $state.go('students.new')
 
     Student.get().then (students) ->
@@ -26,4 +26,7 @@
 
     FinanceMode.get().then (finance_modes) ->
       $scope.finance_modes = finance_modes
+
+    AcademicYear.get().then (academic_years) ->
+      $scope.academic_years = academic_years
 ]

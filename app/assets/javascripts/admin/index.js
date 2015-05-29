@@ -17,3 +17,4 @@
 //= require_tree ./transports
 //= require_tree ./finance_modes
 //= require_tree ./fees_heads
+//= require_tree ./academic_years

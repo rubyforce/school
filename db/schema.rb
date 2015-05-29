@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529104708) do
+ActiveRecord::Schema.define(version: 20150529115530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "academic_years", force: :cascade do |t|
+    t.string   "range"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -290,12 +296,12 @@ ActiveRecord::Schema.define(version: 20150529104708) do
   create_table "students", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email",              default: "",     null: false
+    t.string   "email",            default: "",     null: false
     t.string   "gender"
     t.integer  "age"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "entry_no",           default: "auto"
+    t.string   "entry_no",         default: "auto"
     t.integer  "group_no"
     t.string   "admission_date"
     t.string   "father_name"
@@ -315,9 +321,8 @@ ActiveRecord::Schema.define(version: 20150529104708) do
     t.date     "birthday"
     t.string   "contact_no"
     t.text     "address"
-    t.date     "academic_year_from"
-    t.date     "academic_year_to"
-    t.decimal  "remaining_amount",   default: 0.0
+    t.decimal  "remaining_amount", default: 0.0
+    t.integer  "academic_year_id"
   end
 
   create_table "students_fees_heads", force: :cascade do |t|

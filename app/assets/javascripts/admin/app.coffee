@@ -74,6 +74,7 @@ cash_managements.config [
 @finance_modes = angular.module('admin.finance_modes', [])
 @meals = angular.module('admin.meals', [])
 @natures = angular.module('admin.natures', [])
+@academic_years = angular.module('admin.academic_years', [])
 
 @midday_managements = angular.module('admin.midday_managements', [])
 
@@ -143,6 +144,7 @@ fees_heads.config [
     'admin.natures',
     'admin.meals',
     'admin.fees_heads',
+    'admin.academic_years',
 
     'admin.directives',
 ])
