@@ -46,7 +46,7 @@
       </div>
 
       <div class="ui buttons padding">
-        <a class="btn btn-default" ng-click="create()" id="btnPrint">CREATE SALARY AND PRINT</a>
+        <a class="btn btn-default" ng-click="create()" ng-disabled="!isSomethingChecked()" id="btnPrint">CREATE SALARY AND PRINT</a>
       </div>
     </form>
   </div>

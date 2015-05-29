@@ -69,6 +69,9 @@
     $scope.$watchCollection 'employees', (collection) ->
         render()
 
+    $scope.isSomethingChecked = ->
+        _($scope.employeeSalaryReceipts).any (c) -> c.properties.enabled
+
     $scope.create = ->
       employeeSalaryReceiptsAttributes = new NestedAttributes($scope.employeeSalaryReceipts)
       employeeSalaryReceiptsAttributes = employeeSalaryReceiptsAttributes.get()
