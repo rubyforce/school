@@ -1,4 +1,4 @@
-@directives.directive 'studentsForm', [
+@directives.directive 'studentsList', [
     ->
         controller = [
             '$scope'
