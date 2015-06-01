@@ -23,6 +23,7 @@ Greenarea::Application.routes.draw do
     resources :fees_heads
     resources :dashboards
     resources :academic_years
+    resources :fees_head_types
 
     resources :salary_receipts do
       member do

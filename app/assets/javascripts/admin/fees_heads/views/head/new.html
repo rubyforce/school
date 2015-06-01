@@ -17,10 +17,17 @@
 
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='fees_head.type_name' class="control-label">Type</label>
+              <label for='fees_head.fees_head_type' class="control-label">Type</label>
             </div>
             <div class="col-sm-6">
-              <input name='fees_head.type_name' ng-model='fees_head.type_name' class="form-control"></input>
+              <select name='fees_head.fees_head_type' ng-model='fees_head.fees_head_type_id' class="form-control" required>
+                <option ng-repeat="fees_head_type in fees_head_types" value="{{fees_head_type.id}}">{{fees_head_type.name}}</option>
+              </select>
+            </div>
+            <div class="col-sm-2">
+              <a href="" class="btn btn-default" ng-click="openForm('sm')" ng-controller="CreateFeesHeadTypesController">
+                <i class="fa fa-folder-plus"></i>
+              </a>
             </div>
           </div>
 
