@@ -42,10 +42,17 @@
 
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='fees_head.recurrence' class="control-label">Recurrence</label>
+              <label for='fees_head.fees_head_recurrence' class="control-label">Recurrence</label>
             </div>
             <div class="col-sm-6">
-              <input name='fees_head.recurrence' ng-model='fees_head.recurrence' class="form-control"></input>
+              <select name='fees_head.fees_head_recurrence' ng-model='fees_head.fees_head_recurrence_id' class="form-control" required>
+                <option ng-repeat="fees_head_recurrence in fees_head_recurrences" value="{{fees_head_recurrence.id}}">{{fees_head_recurrence.name}}</option>
+              </select>
+            </div>
+            <div class="col-sm-2">
+              <a href="" class="btn btn-default" ng-click="openForm('sm')" ng-controller="CreateFeesHeadRecurrencesController">
+                <i class="fa fa-folder-plus"></i>
+              </a>
             </div>
           </div>
 

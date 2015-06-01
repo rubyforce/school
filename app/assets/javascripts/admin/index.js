@@ -19,3 +19,4 @@
 //= require_tree ./fees_heads
 //= require_tree ./academic_years
 //= require_tree ./fees_head_types
+//= require_tree ./fees_head_recurrences

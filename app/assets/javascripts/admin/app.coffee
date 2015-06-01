@@ -76,6 +76,7 @@ cash_managements.config [
 @natures = angular.module('admin.natures', [])
 @academic_years = angular.module('admin.academic_years', [])
 @fees_head_types = angular.module('admin.fees_head_types', [])
+@fees_head_recurrences = angular.module('admin.fees_head_recurrences', [])
 
 @midday_managements = angular.module('admin.midday_managements', [])
 
@@ -147,6 +148,7 @@ fees_heads.config [
     'admin.fees_heads',
     'admin.academic_years',
     'admin.fees_head_types',
+    'admin.fees_head_recurrences',
 
     'admin.directives',
 ])
