@@ -3,32 +3,8 @@
     <div class="alert-message">
       <div class="alert alert-success" role="alert" ng-show="alert">You successfully removed the student.</div>
     </div>
-    <div class="panel panel-default student-list">
-      <div class="panel-body scrolling">
-        <table class="table table-bordered table-striped scrolling">
-          <thead>
-            <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>GR No.</th>
-              <th>Date of Admission</th>
-              <th>Entry No.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr data-index='{{$index + (currentPage - 1) * itemsPerPage}}' ng-repeat='student in students | offset:(currentPage-1)*itemsPerPage | limitTo:itemsPerPage'>
-              <td>{{student.firstName}}</td>
-              <td>{{student.lastName}}</td>
-              <td>{{student.groupNo}}</td>
-              <td>{{student.admissionDate}}</td>
-              <td>{{student.entryNo}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <pagination total-items='students.length' ng-model='currentPage' items-per-page='itemsPerPage' max-size="5" data-previous-text="&laquo;" data-next-text="&raquo;">
-        </pagination>
-      </div>
-    </div>
+
+    <students-form></students-form>
 
     <div class="ui buttons padding">
       <button type="submit" class="btn btn-default" ng-click="remove()" ng-disabled="clicked">Delete Student</button>
