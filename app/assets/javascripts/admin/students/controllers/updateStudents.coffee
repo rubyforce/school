@@ -6,21 +6,7 @@
       changeYear: true
       yearRange: "1950:-0"
 
-    makeTableSelectable = ->
-      $timeout ->
-        table = $('table')
-        table.tableselect
-          multiple: false
-          activeClass: 'warning'
-          onSelectionChanged: (element) ->
-            return unless element?
-            user = $scope.students[element.data('index')]
-            $scope.$apply ->
-              editing(user)
-
-    $scope.$watch 'currentPage', makeTableSelectable
-
-    editing = (user) ->
+    $scope.formAction = (user) ->
       $scope.currentUser = user
       $scope.show_form = true
       $scope.clicked = true

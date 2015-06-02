@@ -1,25 +1,10 @@
 @students.controller 'DeleteStudentsController', [
   '$scope', 'Student', '$timeout'
   ($scope, Student, $timeout) ->
-    makeTableSelectable = ->
-      $timeout ->
-        table = $('table')
-        table.tableselect
-          multiple: false
-          activeClass: 'warning'
-          onSelectionChanged: (element) ->
-            return unless element?
-            user = $scope.students[element.data('index')]
-            $scope.$apply ->
-              deleting(user)
-
-    $scope.$watch 'currentPage', makeTableSelectable
-
     $scope.alert = false
-
     $scope.clicked = true
 
-    deleting = (user) ->
+    $scope.formAction = (user) ->
       $scope.currentUser = user
       $scope.clicked = false
 
