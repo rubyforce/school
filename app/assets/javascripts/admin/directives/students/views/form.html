@@ -35,7 +35,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr data-index='{{$index + (currentPage - 1) * itemsPerPage}}' ng-repeat='student in students | offset:(currentPage-1)*itemsPerPage | limitTo:itemsPerPage | filter:bySelectors'>
+        <tr data-id='{{student.id}}' ng-repeat='student in students | offset:(currentPage-1)*itemsPerPage | limitTo:itemsPerPage | filter:bySelectors'>
           <td>{{student.firstName}}</td>
           <td>{{student.lastName}}</td>
           <td>{{student.groupNo}}</td>
