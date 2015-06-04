@@ -3,13 +3,13 @@ class Admin::DailyMealsController < ApplicationController
 
   def index
     @daily_meals = DailyMeal.all
-    respond_with @daily_meals
+    render :json => @daily_meals.as_json(:include => :daily_meal_meals)
   end
 
   def show
     @daily_meal = DailyMeal.find(params[:id])
 
-    render :json => @daily_meal
+    render :json => @daily_meal.as_json(:include => :daily_meal_meals)
   end
 
   def new
@@ -17,20 +17,24 @@ class Admin::DailyMealsController < ApplicationController
   end
 
   def create
-    @daily_meal = DailyMeal.new(params[:daily_meal])
+    @daily_meal = DailyMeal.new(permit_attributes)
     @daily_meal.save
 
-    render :json => @daily_meal
+    render :json => @daily_meal.as_json(:include => :daily_meal_meals)
   end
 
   def edit
     @daily_meal = DailyMeal.find(params[:id])
-    render :json => @daily_meal
+    render :json => @daily_meal.as_json(:include => :daily_meal_meals)
   end
 
   def update
     @daily_meal = DailyMeal.find(params[:id])
-    @daily_meal.update_attributes(params[:daily_meal])
-    render :json => @daily_meal
+    @daily_meal.update_attributes(permit_attributes)
+    render :json => @daily_meal.as_json(:include => :daily_meal_meals)
+  end
+
+  def permit_attributes
+    params.require(:daily_meal).permit!
   end
 end
