@@ -15,7 +15,7 @@
 
     $scope.daily_meal = build()
 
-    $scope.create = ->
+    $scope.add = ->
       new DailyMeal($scope.daily_meal).create().then (response) ->
         $scope.daily_meals.push(new DailyMeal(response))
         $scope.daily_meal = {}
