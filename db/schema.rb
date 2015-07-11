@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601102717) do
+ActiveRecord::Schema.define(version: 20150711231902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -184,6 +184,7 @@ ActiveRecord::Schema.define(version: 20150601102717) do
     t.decimal  "amount"
     t.integer  "fees_head_type_id"
     t.integer  "fees_head_recurrence_id"
+    t.decimal  "total_amount"
   end
 
   create_table "finance_modes", force: :cascade do |t|
