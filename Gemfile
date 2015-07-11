@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+# ruby '2.1.6'
 ruby '2.2.2'
 
 gem 'rake', '~> 10.1.0'
@@ -7,13 +8,9 @@ gem 'rake', '~> 10.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
-gem 'puma'
-gem "rack-cache"
+gem 'thin'
 
 gem 'minitest'
-
-gem 'libv8', '3.16.14.7'
-gem 'therubyracer', '0.12.1'
 
 gem 'newrelic_rpm'
 
@@ -25,7 +22,6 @@ gem 'coffee-rails', '~> 4.0.0'
 
 group :assets do
   gem 'sass-rails'
-  gem "less-rails"
 end
 
 # Use jquery as the JavaScript library
@@ -41,12 +37,7 @@ gem 'json'
 gem 'devise'
 gem 'cancan'
 gem 'protected_attributes'
-gem 'kaminari'
-gem 'carrierwave'
-gem 'mini_magick'
 gem 'choices'
-gem 'draper'
-gem "geocoder"
 
 gem 'jquery-validation-rails'
 
@@ -55,8 +46,6 @@ gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'countries'
 gem 'country_select'
 gem 'state_select', github: 'stormsilver/state_select'
-
-gem 'airbrake'
 
 gem 'redis'
 gem 'redis-store'
@@ -70,24 +59,6 @@ group :doc do
 end
 
 gem 'pg'
-gem 'pghero'
-
-group :development, :test do
-  gem 'pry'
-  gem 'pry-remote'
-  gem 'pry-rails'
-  gem 'pry-coolline'
-  gem 'pry-byebug'
-
-  gem 'rspec-rails', '~> 2.0'
-  gem 'rspec-mocks'
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
-  gem 'fuubar'
-  gem 'database_cleaner'
-  gem 'heroku'
-  gem 'foreman'
-end
 
 gem 'angular-rails-templates'
 gem 'angularjs-rails-resource'
@@ -98,7 +69,6 @@ gem 'rails-assets-angular-ui', '~> 0.4.0', source: 'https://rails-assets.org/'
 gem 'rails-assets-angular', '1.3.15', source: 'https://rails-assets.org/'
 gem 'rails-assets-angular-ui-router', '0.2.13', source: 'https://rails-assets.org/'
 gem 'rails-assets-lodash', '~> 3.9.0', source: 'https://rails-assets.org/'
-# gem 'rails-assets-select2', '3.4.3', source: 'https://rails-assets.org/'
 gem 'rails-assets-bootstrap-css', '3.2.0', source: 'https://rails-assets.org/'
 gem 'rails-assets-jquery-ui', '1.10.3', source: 'https://rails-assets.org/'
 gem 'rails-assets-angular-schema-form', source: 'https://rails-assets.org/'

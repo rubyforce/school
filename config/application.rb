@@ -50,16 +50,6 @@ module Greenarea
 
     config.from_file 'settings.yml'
 
-    config.action_mailer.smtp_settings = {
-      :address              => Rails.configuration.email.host,
-      :port                 => Rails.configuration.email.port,
-      :domain               => Rails.configuration.email.domain,
-      :user_name            => Rails.configuration.email.username,
-      :password             => Rails.configuration.email.password,
-      :authentication       => :plain,
-      :enable_starttls_auto => true
-    }
-
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     config.assets.paths << Rails.root.join('app', 'assets', 'images')
 
