@@ -1,7 +1,8 @@
 class Standard < ActiveRecord::Base
   has_many :students, dependent: :destroy
 
-  has_and_belongs_to_many :fees_heads, join_table: :fees_heads_standarts
+  has_many :fees_heads_standards
+  has_many :fees_heads, through: :fees_heads_standards
 
   accepts_nested_attributes_for :fees_heads
 end

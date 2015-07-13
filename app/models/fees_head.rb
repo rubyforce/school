@@ -2,7 +2,8 @@ class FeesHead < ActiveRecord::Base
   has_many :students_fees_heads
   has_many :students, through: :students_fees_heads
 
-  has_and_belongs_to_many :standards, join_table: :fees_heads_standarts
+  has_many :fees_heads_standards
+  has_many :standards, through: :fees_heads_standards
 
   belongs_to :fees_head_type
   belongs_to :fees_head_recurrence
