@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711231902) do
+ActiveRecord::Schema.define(version: 20150713122355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -186,6 +186,16 @@ ActiveRecord::Schema.define(version: 20150711231902) do
     t.integer  "fees_head_recurrence_id"
     t.decimal  "total_amount"
   end
+
+  create_table "fees_heads_standarts", force: :cascade do |t|
+    t.integer  "fees_head_id"
+    t.integer  "standard_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "fees_heads_standarts", ["fees_head_id"], name: "index_fees_heads_standarts_on_fees_head_id", using: :btree
+  add_index "fees_heads_standarts", ["standard_id"], name: "index_fees_heads_standarts_on_standard_id", using: :btree
 
   create_table "finance_modes", force: :cascade do |t|
     t.string   "name"
