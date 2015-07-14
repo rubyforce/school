@@ -15,7 +15,6 @@
     $scope.daily_meal = build()
 
     $scope.add = ->
-      debugger
       meal = _($scope.meals).chain().find((m)-> parseInt(m.id, 10) is parseInt($scope.meal.meal_id, 10)).value()
       $scope.meal.title = meal.title
       meal.totalNumber = $scope.meal.total_number
