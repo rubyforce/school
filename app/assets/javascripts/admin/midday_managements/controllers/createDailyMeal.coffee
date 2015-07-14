@@ -1,6 +1,6 @@
 @midday_managements.controller 'CreateDailyMealsController', [
-  '$scope', 'DailyMeal'
-  ($scope, DailyMeal) ->
+  '$scope', 'DailyMeal', 'Food'
+  ($scope, DailyMeal, Food) ->
     $scope.dateOptions =
       changeMonth: true
       changeYear: true
@@ -15,10 +15,12 @@
 
     $scope.daily_meal = build()
 
-    $scope.dailyMeals = []
+    $scope.daily_meal = new DailyMeal()
+    $scope.daily_meal.foods = []
 
     $scope.add = ->
-      $scope.dailyMeals.push(new DailyMeal($scope.daily_meal))
+      debugger
+      $scope.daily_meal.foods.push(new Food())
       $scope.daily_meal = {}
       $scope.qty = ''
       $scope.alert = true
