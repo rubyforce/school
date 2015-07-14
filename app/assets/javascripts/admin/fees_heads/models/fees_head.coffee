@@ -1,8 +1,10 @@
 @fees_heads.factory "FeesHead", [
-  "$http", 'RailsResource'
-  ($http, RailsResource) ->
-    class FeesHead extends RailsResource
-      @configure
-        url: '/admin/fees_heads'
-        name: 'fees_head'
+  "$http", 'RailsResource', 'railsResourceFactory', 'railsSerializer'
+  ($http, RailsResource, railsResourceFactory, railsSerializer) ->
+    FeesHead = railsResourceFactory
+      url: '/admin/fees_heads'
+      name: 'fees_head'
+      serializer: railsSerializer ->
+        @nestedAttribute('feesHeadsStandards')
+
 ]
