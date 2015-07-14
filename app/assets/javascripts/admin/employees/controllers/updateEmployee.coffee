@@ -32,7 +32,13 @@
     $scope.alert = false
 
     $scope.update = ->
-      $scope.currentUser.update()
+      $scope.currentUser
+          .update()
+          .then (response) ->
+                  response
+              , (errors) ->
+                  $scope.errors = errors
+
       $scope.alert = true
 
     $scope.itemsPerPage = 5

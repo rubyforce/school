@@ -21,8 +21,12 @@
     $scope.generate()
 
     $scope.create = ->
-      new Student($scope.student).create().then (response) ->
-        $scope.students.push(new Student(response))
-        $scope.student = build()
-        $scope.alert = true
+        new Student($scope.student)
+            .create()
+            .then (response) ->
+                    $scope.students.push(new Student(response))
+                    $scope.student = build()
+                    $scope.alert = true
+                , (errors) ->
+                    $scope.errors = errors
 ]

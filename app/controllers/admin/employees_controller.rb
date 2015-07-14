@@ -18,9 +18,12 @@ class Admin::EmployeesController < ApplicationController
 
   def create
     @employee = Employee.new(params[:employee])
-    @employee.save
 
-    render :json => @employee
+    if @employee.save
+      render :json => @employee
+    else
+      render :status => 422, :json => { errors: @employee.errors.full_messages }
+    end
   end
 
   def edit
@@ -30,8 +33,12 @@ class Admin::EmployeesController < ApplicationController
 
   def update
     @employee = Employee.find(params[:id])
-    @employee.update_attributes(params[:employee])
-    render :json => @employee
+
+    if @employee.update_attributes(params[:employee])
+      render :json => @employee
+    else
+      render :status => 422, :json => { errors: @employee.errors.full_messages }
+    end
   end
 
   def destroy

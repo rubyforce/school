@@ -21,9 +21,12 @@ class Admin::StudentsController < ApplicationController
     if params[:student][:students_fees_heads_attributes].blank?
       params[:student].delete(:students_fees_heads_attributes)
     end
-    @student.save
 
-    render :json => @student.as_json(:include => :students_fees_heads)
+    if @student.save
+      render :json => @student.as_json(:include => :students_fees_heads)
+    else
+      render :status => 422, :json => { errors: @student.errors.full_messages }
+    end
   end
 
   def edit
@@ -38,9 +41,11 @@ class Admin::StudentsController < ApplicationController
       params[:student].delete(:students_fees_heads_attributes)
     end
 
-    @student.update_attributes(attributes)
-
-    render :json => @student.as_json(:include => :students_fees_heads)
+    if @student.update_attributes(attributes)
+      render :json => @student.as_json(:include => :students_fees_heads)
+    else
+      render :status => 422, :json => { errors: @student.errors.full_messages }
+    end
   end
 
   def destroy
