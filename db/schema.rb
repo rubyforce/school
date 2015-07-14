@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604114646) do
+ActiveRecord::Schema.define(version: 20150714211917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -191,7 +191,18 @@ ActiveRecord::Schema.define(version: 20150604114646) do
     t.decimal  "amount"
     t.integer  "fees_head_type_id"
     t.integer  "fees_head_recurrence_id"
+    t.decimal  "total_amount"
   end
+
+  create_table "fees_heads_standards", force: :cascade do |t|
+    t.integer  "fees_head_id"
+    t.integer  "standard_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "fees_heads_standards", ["fees_head_id"], name: "index_fees_heads_standards_on_fees_head_id", using: :btree
+  add_index "fees_heads_standards", ["standard_id"], name: "index_fees_heads_standards_on_standard_id", using: :btree
 
   create_table "finance_modes", force: :cascade do |t|
     t.string   "name"
@@ -201,8 +212,10 @@ ActiveRecord::Schema.define(version: 20150604114646) do
 
   create_table "meals", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.decimal  "total_number"
+    t.decimal  "qty"
   end
 
   create_table "midday_managements", force: :cascade do |t|
