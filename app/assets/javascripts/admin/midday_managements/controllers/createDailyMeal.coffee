@@ -15,12 +15,13 @@
 
     $scope.daily_meal = build()
 
+    $scope.dailyMeals = []
+
     $scope.add = ->
-      new DailyMeal($scope.daily_meal).create().then (response) ->
-        $scope.daily_meals.push(new DailyMeal(response))
-        $scope.daily_meal = {}
-        $scope.qty = ''
-        $scope.alert = true
+      $scope.dailyMeals.push(new DailyMeal($scope.daily_meal))
+      $scope.daily_meal = {}
+      $scope.qty = ''
+      $scope.alert = true
 
     $scope.total_number = ->
       $scope.daily_meal.total_number =
