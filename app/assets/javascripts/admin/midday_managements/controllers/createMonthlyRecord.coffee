@@ -5,6 +5,7 @@
 
     $scope.foods = []
     $scope.months = {}
+    $scope.monthly_record = {}
 
     class Month
       constructor: (response) ->
