@@ -3,7 +3,7 @@ class Admin::FeesHeadsController < ApplicationController
 
   def index
     @fees_heads = FeesHead.all
-    render :json => @fees_heads
+    render :json => @fees_heads.as_json(:include => :fees_heads_standards)
   end
 
   def show
@@ -19,7 +19,7 @@ class Admin::FeesHeadsController < ApplicationController
     @fees_head = FeesHead.new(permitted_params)
     @fees_head.save
 
-    render :json => @fees_head
+    render :json => @fees_head.as_json(:include => :fees_heads_standards)
   end
 
   def edit
@@ -30,7 +30,7 @@ class Admin::FeesHeadsController < ApplicationController
   def update
     @fees_head = FeesHead.find(params[:id])
     @fees_head.update_attributes(permitted_params)
-    render :json => @fees_head
+    render :json => @fees_head.as_json(:include => :fees_heads_standards)
   end
 
   def destroy
@@ -41,6 +41,9 @@ class Admin::FeesHeadsController < ApplicationController
 
   # TODO: permit only accessible params here. we don't need to permit all for security reasons.
   def permitted_params
-    params.require(:fees_head).permit!
+    params[:fees_head].delete(:id)
+    params[:fees_head].delete(:created_at)
+    params[:fees_head].delete(:updated_at)
+    params[:fees_head]
   end
 end
