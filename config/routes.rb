@@ -22,6 +22,7 @@ Greenarea::Application.routes.draw do
     resources :monthly_records do
       collection do
         get :month
+        get :meal
       end
     end
     resources :fees_heads

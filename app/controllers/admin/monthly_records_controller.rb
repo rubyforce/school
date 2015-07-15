@@ -37,10 +37,18 @@ class Admin::MonthlyRecordsController < ApplicationController
 
   def month
     daily_meals = DailyMeal
-        .where("EXTRACT(year FROM daily_meals.date) = EXTRACT(year FROM NOW()) AND EXTRACT(month FROM daily_meals.date) = ?", params[:month])
-        .includes(:daily_meal_meals)
-        .all
+    .where("EXTRACT(year FROM daily_meals.date) = EXTRACT(year FROM NOW()) AND EXTRACT(month FROM daily_meals.date) = ?", params[:month])
+    .includes(:daily_meal_meals)
+    .all
 
-    render :json => daily_meals.as_json(include: :daily_meal_meals)
+    monthly_record = MonthlyRecord
+    .where("EXTRACT(month FROM to_date(?, 'YYYY-MM-DD')) = cast(monthly_records.month as integer) AND EXTRACT(year FROM to_date(?, 'YYYY-MM-DD')) = cast(year as integer)", 1.month.ago.to_date, 1.month.ago.to_date)
+    .includes(:monthly_meal_meals)
+    .first
+
+    render :json => {
+      daily_meals: daily_meals.as_json(include: :daily_meal_meals),
+      monthly_record: monthly_record.as_json(include: :monthly_meal_meals)
+    }
   end
 end
