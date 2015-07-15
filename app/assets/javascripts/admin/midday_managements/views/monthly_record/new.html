@@ -84,11 +84,15 @@
               <thead>
                 <tr>
                   <th>Item Name</th>
+                  <th>Ordered</th>
+                  <th>Received this month</th>
                 </tr>
               </thead>
               <tbody>
                 <tr ng-repeat="food in foods">
                   <td>{{food.title}}</td>
+                  <td>{{food.ordered}}</td>
+                  <td>{{food.received}}</td>
                 </tr>
               </tbody>
             </table>
