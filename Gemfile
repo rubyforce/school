@@ -8,8 +8,6 @@ gem 'rake', '~> 10.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
-gem 'thin'
-
 gem 'minitest'
 
 gem 'newrelic_rpm'
@@ -23,6 +21,8 @@ gem 'coffee-rails', '~> 4.0.0'
 group :assets do
   gem 'sass-rails'
 end
+
+gem 'tzinfo-data'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -39,6 +39,8 @@ gem 'cancan'
 gem 'protected_attributes'
 gem 'choices'
 
+gem 'rack-cache'
+
 gem 'jquery-validation-rails'
 
 # admin pages
@@ -46,10 +48,6 @@ gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'countries'
 gem 'country_select'
 gem 'state_select', github: 'stormsilver/state_select'
-
-gem 'redis'
-gem 'redis-store'
-gem 'redis-rails'
 
 gem 'annotate'
 
