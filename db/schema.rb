@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715075522) do
+ActiveRecord::Schema.define(version: 20150715083017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -220,13 +220,25 @@ ActiveRecord::Schema.define(version: 20150715075522) do
     t.string   "meal"
   end
 
+  create_table "monthly_meal_meals", force: :cascade do |t|
+    t.integer  "meal_id"
+    t.integer  "monthly_record_id"
+    t.decimal  "left"
+    t.decimal  "last_received"
+    t.decimal  "used"
+    t.decimal  "ordered"
+    t.decimal  "received_this_month"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
   create_table "monthly_records", force: :cascade do |t|
     t.string   "month"
-    t.string   "item_name"
-    t.string   "ordered"
-    t.string   "received"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "expense"
+    t.string   "cooks"
+    t.string   "year"
   end
 
   create_table "natures", force: :cascade do |t|

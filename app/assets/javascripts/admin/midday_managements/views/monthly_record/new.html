@@ -25,11 +25,11 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="center">{{total1()}}</td>
-                    <td class="center">{{total2()}}</td>
-                    <td class="center">{{total3()}}</td>
-                    <td class="center">{{total4()}}</td>
-                    <td class="center">{{total5()}}</td>
+                    <td class="center">{{months[monthly_record.month].no_of_student1}}</td>
+                    <td class="center">{{months[monthly_record.month].no_of_student2}}</td>
+                    <td class="center">{{months[monthly_record.month].no_of_student3}}</td>
+                    <td class="center">{{months[monthly_record.month].no_of_student4}}</td>
+                    <td class="center">{{months[monthly_record.month].no_of_student5}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -52,22 +52,26 @@
               <tbody>
                 <tr>
                   <td class="center">
-                    <select name='monthly_record.item_name' ng-model='monthly_record.item_name' class="form-control">
-                      <option ng-repeat="daily in dailyMeals">{{daily.meal}}</option>
+                    <select name='meal.meal_id' ng-model='meal.meal_id' class="form-control">
+                      <option ng-repeat="meal in meals" ng-value='meal.meal_id'>{{meal.title}}</option>
                     </select>
                   </td>
-                  <td class="center">50</td>
-                  <td class="center">100</td>
-                  <td class="center">50</td>
+                  <td class="center"></td>
+                  <td class="center"></td>
+                  <td class="center"></td>
                   <td class="center">
-                    <input name='monthly_record.ordered' type='text' ng-model='monthly_record.ordered' class="form-control" />
+                    <input name='meal.ordered' type='text' ng-model='monthly_record.ordered' class="form-control" />
                   </td>
                   <td class="center">
-                    <input name='monthly_record.received' type='text' ng-model='monthly_record.received' class="form-control" />
+                    <input name='meal.received' type='text' ng-model='monthly_record.received' class="form-control" />
                   </td>
                 </tr>
               </tbody>
             </table>
+
+            <div class=" col-sm-1">
+                <button type="submit" class="btn btn-default" ng-click='add()'>Add</button>
+            </div>
           </div>
         </div>
       </form>
@@ -83,15 +87,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="monthly_record in monthly_records">
-                  <td>{{monthly_record.itemName}}</td>
+                <tr ng-repeat="food in foods">
+                  <td>{{food.title}}</td>
                 </tr>
               </tbody>
             </table>
-            <!--
-            <pagination total-items='employees.length' ng-model='currentPage' items-per-page='itemsPerPage' max-size="5" data-previous-text="&laquo;" data-next-text="&raquo;">
-            </pagination>
-            -->
           </div>
         </div>
 
@@ -101,11 +101,11 @@
               <tr>
                 <td width="27%">Expense made towards: Fuel and Vegetables</td>
                 <td>
-                  <input name='midday_meal.vegetable' type='text' ng-model='midday_meal.vegetable' class="form-control" />
+                  <input name='midday_meal.expense' type='text' ng-model='midday_meal.expense' class="form-control" />
                 </td>
                 <td width="12%">Cooks and helpers</td>
                 <td>
-                  <input name='midday_meal.cook' type='text' ng-model='midday_meal.cook' class="form-control" />
+                  <input name='midday_meal.cooks' type='text' ng-model='midday_meal.cooks' class="form-control" />
                 </td>
               </tr>
             </tbody>
@@ -114,7 +114,7 @@
 
         <div class="form-group ui buttons">
           <div class=" col-sm-12">
-            <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>Save</button>
+            <button type="submit" ng-click='create()' class="btn btn-default" ng-disabled='form.$invalid'>Save</button>
             <a ng-click="reset()" class="btn btn-default">Reset</a>
           </div>
         </div>
