@@ -39,4 +39,8 @@ class Admin::StandardsController < ApplicationController
     @standard.update_attributes(attributes)
     render :json => @standard.as_json(:include => :fees_heads_standards)
   end
+
+  def attributes
+    params[:standard]
+  end
 end

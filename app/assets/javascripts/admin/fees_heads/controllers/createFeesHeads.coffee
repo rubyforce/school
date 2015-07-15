@@ -22,6 +22,7 @@
           found.properties = {}
           found.properties.enabled = true
           found.properties.name = s.name
+          found.feesHeadId = $scope.fees_head?.id
         else
           found =  {}
           found.standardId = s.id
@@ -46,8 +47,9 @@
           if item.properties.enabled then item._destroy = 0 else item._destroy = 1
           delete item.properties
 
-        _(collection).remove (item) ->
-          item._destroy is 1 && item.isNew()
+        collection = _(collection)
+          .remove (item) -> item._destroy is 1 && item.isNew()
+          .value()
 
         collection
 
@@ -55,10 +57,7 @@
       $scope.fees_head = fees_head
 
     $scope.new = ->
-      new FeesHead($scope.fees_head).create().then (response) ->
-        $scope.fees_heads.push(new FeesHead(response))
-        $scope.fees_head = new FeesHead()
-        $scope.alert = true
+      $scope.fees_head = new FeesHead()
 
     $scope.remove = (fees_head) ->
         fees_head.delete()

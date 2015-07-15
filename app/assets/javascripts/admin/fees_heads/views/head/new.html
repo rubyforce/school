@@ -46,7 +46,7 @@
             </div>
             <div class="col-sm-6">
               <select name='fees_head.fees_head_recurrence' ng-model='fees_head.fees_head_recurrence_id' class="form-control" required>
-                <option ng-repeat="fees_head_recurrence in fees_head_recurrences" value="{{fees_head_recurrence.id}}">{{fees_head_recurrence.name}}</option>
+                <option ng-repeat="fees_head_recurrence in fees_head_recurrences" ng-value="fees_head_recurrence.id">{{fees_head_recurrence.name}}</option>
               </select>
             </div>
             <div class="col-sm-2">
@@ -101,7 +101,7 @@
 
       <div class="form-group ui buttons">
         <div class=" col-sm-12">
-          <button type="button" class="btn btn-default" ng-click='new()' ng-disabled='form.$invalid'>New</button>
+          <button type="button" class="btn btn-default" ng-click='new()'>New</button>
           <button type="submit" class="btn btn-default" ng-disabled='form.$invalid'>Save</button>
         </div>
       </div>
