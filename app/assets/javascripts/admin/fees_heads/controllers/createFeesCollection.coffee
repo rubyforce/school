@@ -1,6 +1,6 @@
 @fees_heads.controller 'CreateFeesCollectionController', [
-    '$scope', 'Receipt', '$timeout', '$state', '$window', '$location'
-    ($scope, Receipt, $timeout, $state, $window, $location) ->
+    '$scope', 'Receipt', '$timeout', '$state', '$window', '$location', 'uuid4'
+    ($scope, Receipt, $timeout, $state, $window, $location, uuid4) ->
         $scope.dateOptions =
             changeMonth: true
             changeYear: true
@@ -8,8 +8,12 @@
 
         $scope.alert = false
 
+        DEFAULT_NO =
+            number: uuid4.generate()
+
         build = ->
             new Receipt()
+            _.clone(DEFAULT_NO)
 
         $scope.receipt = build()
         $scope.receipt.receiptsFeesHeads = []
