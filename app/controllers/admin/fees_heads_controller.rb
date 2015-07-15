@@ -3,7 +3,7 @@ class Admin::FeesHeadsController < ApplicationController
 
   def index
     @fees_heads = FeesHead.all
-    render :json => @fees_heads
+    render :json => @fees_heads.as_json(:include => :fees_heads_standards)
   end
 
   def show

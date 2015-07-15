@@ -25,7 +25,7 @@
         else
           found =  {}
           found.standardId = s.id
-          found.feesHeadId = $scope.fees_head.id
+          found.feesHeadId = $scope.fees_head?.id
 
           found.isNew = -> true
 

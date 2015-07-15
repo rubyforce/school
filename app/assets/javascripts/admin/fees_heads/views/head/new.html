@@ -65,8 +65,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ng-repeat="standard in standards">
-                    <td><input type="checkbox" ng-model='standard.properties.enabled'>&nbsp; {{standard.name}}</input></td>
+                  <tr ng-repeat="s in feesHeadsStandards">
+                    <td><input type="checkbox" ng-model='s.properties.enabled'>&nbsp; {{s.properties.name}}</input></td>
                   </tr>
                 </tbody>
               </table>
