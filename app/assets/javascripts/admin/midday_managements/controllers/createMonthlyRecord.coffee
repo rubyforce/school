@@ -25,6 +25,7 @@
           $scope.months[month] = new Month(response)
 
     $scope.add = ->
+      debugger
       meal = _($scope.meals).chain().find((m)-> parseInt(m.id, 10) is parseInt($scope.meal.meal_id, 10)).value()
       $scope.meal.title = meal.title
       $scope.foods.push(_.clone($scope.meal))
