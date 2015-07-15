@@ -44,8 +44,8 @@
       $scope.meal = {}
       $scope.foods = []
 
-    $scope.submit = ->
-      $scope.daily_meal.dailyMealMealsAttributes = $scope.meals
+    $scope.create = ->
+      $scope.daily_meal.dailyMealMealsAttributes = $scope.foods
       $scope.daily_meal.create().then (response) ->
         $scope.alert = true
         $scope.reset()

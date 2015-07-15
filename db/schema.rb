@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714211917) do
+ActiveRecord::Schema.define(version: 20150715075522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,22 +96,23 @@ ActiveRecord::Schema.define(version: 20150714211917) do
   create_table "daily_meal_meals", force: :cascade do |t|
     t.integer  "meal_id"
     t.integer  "daily_meal_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "no_of_student1", default: 0
+    t.integer  "no_of_student2", default: 0
+    t.integer  "no_of_student3", default: 0
+    t.integer  "no_of_student4", default: 0
+    t.integer  "no_of_student5", default: 0
+    t.integer  "total_number",   default: 0
+    t.decimal  "qty",            default: 0.0
+    t.string   "title"
   end
 
   create_table "daily_meals", force: :cascade do |t|
     t.datetime "date"
-    t.decimal  "no_of_student1"
-    t.decimal  "no_of_student2"
-    t.decimal  "no_of_student3"
-    t.decimal  "no_of_student4"
-    t.decimal  "no_of_student5"
     t.decimal  "total_number"
-    t.decimal  "qty"
-    t.string   "meal"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "dashboards", force: :cascade do |t|
