@@ -48,8 +48,6 @@ module Greenarea
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
 
-    config.from_file 'settings.yml'
-
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     config.assets.paths << Rails.root.join('app', 'assets', 'images')
 

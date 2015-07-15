@@ -37,7 +37,6 @@ gem 'json'
 gem 'devise'
 gem 'cancan'
 gem 'protected_attributes'
-gem 'choices'
 
 gem 'rack-cache'
 
