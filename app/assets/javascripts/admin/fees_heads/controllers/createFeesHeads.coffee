@@ -65,13 +65,21 @@
         _.remove($scope.fees_heads, fees_head)
 
     $scope.create = ->
-      debugger
       feesHeadsStandardsAttributes = new NestedAttributes($scope.feesHeadsStandards)
       feesHeadsStandardsAttributes = feesHeadsStandardsAttributes.get()
 
       $scope.fees_head.feesHeadsStandards = feesHeadsStandardsAttributes
-      $scope.fees_head.update().then (response) ->
-        $scope.alert = true
-        $scope.fees_head.feesHeadsStandards = response.feesHeadsStandards
-        $timeout(render)
+
+      if $scope.fees_head.id?
+        $scope.fees_head.update().then (response) ->
+          $scope.alert = true
+          $scope.fees_head.feesHeadsStandards = response.feesHeadsStandards
+          $timeout(render)
+      else
+        $scope.fees_head.create().then (response) ->
+          $scope.fees_heads.push(new FeesHead(response))
+
+          $scope.alert = true
+          $scope.fees_head.feesHeadsStandards = response.feesHeadsStandards
+          $timeout(render)
 ]
