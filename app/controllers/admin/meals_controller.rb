@@ -2,7 +2,7 @@ class Admin::MealsController < ApplicationController
   respond_to :json
 
   def index
-    @meals = Meal.all
+    @meals = Meal.order('meals.title').all
     respond_with @meals
   end
 
@@ -30,7 +30,10 @@ class Admin::MealsController < ApplicationController
 
   def update
     @meal = Meal.find(params[:id])
-    @meal.update_attributes(params[:meal])
+
+    attributes = params[:meal] || {}
+    @meal.update_attributes!(qty: attributes[:qty])
+
     render :json => @meal
   end
 end

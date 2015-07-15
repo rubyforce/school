@@ -8,11 +8,12 @@
         <div class="col-sm-6">
           <div class="form-group">
             <div class="col-sm-4">
-              <label for='daily_meal.date' class="control-label">Date</label>
+              <label for='date' class="control-label">Date</label>
             </div>
             <div class="col-sm-4">
               <div class="input-group">
-                <input name='daily_meal.date' ng-model='daily_meal.date' class="form-control" ui-date='dateOptions'/>
+                <input name='date' ng-model='daily_meal.date' class="form-control" ui-date='dateOptions' />
+
                 <span class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -32,7 +33,7 @@
                 <label for='daily_meal.name_students' class="control-label">I:</label>
               </div>
               <div class="col-sm-6">
-                <input name='daily_meal.no_students' type='text' ng-change="total_number()" ng-model='daily_meal.no_of_student1' class="form-control" required/>
+                <input name='daily_meal.no_students' type='text' ng-model='meal.no_of_student1' class="form-control" required/>
               </div>
             </div>
             <div class="col-sm-2">
@@ -40,7 +41,7 @@
                 <label for='daily_meal.name_students' class="control-label">II:</label>
               </div>
               <div class="col-sm-6">
-                <input name='daily_meal.no_students' type='text' ng-change="total_number()" ng-model='daily_meal.no_of_student2' class="form-control" required/>
+                <input name='daily_meal.no_students' type='text' ng-model='meal.no_of_student2' class="form-control" required/>
               </div>
             </div>
             <div class="col-sm-2">
@@ -48,7 +49,7 @@
                 <label for='daily_meal.name_students' class="control-label">III:</label>
               </div>
               <div class="col-sm-6">
-                <input name='daily_meal.no_students' type='text' ng-change="total_number()" ng-model='daily_meal.no_of_student3' class="form-control" required/>
+                <input name='daily_meal.no_students' type='text' ng-model='meal.no_of_student3' class="form-control" required/>
               </div>
             </div>
             <div class="col-sm-2">
@@ -56,7 +57,7 @@
                 <label for='daily_meal.name_students' class="control-label">IV:</label>
               </div>
               <div class="col-sm-6">
-                <input name='daily_meal.no_students' type='text' ng-change="total_number()" ng-model='daily_meal.no_of_student4' class="form-control" required/>
+                <input name='daily_meal.no_students' type='text' ng-model='meal.no_of_student4' class="form-control" required/>
               </div>
             </div>
             <div class="col-sm-2">
@@ -64,12 +65,7 @@
                 <label for='daily_meal.name_students' class="control-label">V:</label>
               </div>
               <div class="col-sm-6">
-                <input name='daily_meal.no_students' type='text' ng-change="total_number()" ng-model='daily_meal.no_of_student5' class="form-control" required/>
-              </div>
-            </div>
-            <div class="col-sm-2">
-              <div class="col-sm-6">
-                <input type='hidden' ng-model='daily_meal.total_number' class="form-control" />
+                <input name='daily_meal.no_students' type='text' ng-model='meal.no_of_student5' class="form-control" required/>
               </div>
             </div>
           </div>
@@ -80,11 +76,11 @@
             <div class="col-sm-6">
               <div class="form-group">
                 <div class="col-sm-4">
-                  <label for='daily_meal.meal' class="control-label">Item Name</label>
+                  <label for='meal.meal_id' class="control-label">Item Name</label>
                 </div>
                 <div class="col-sm-4">
-                  <select name='daily_meal.meal' ng-model='daily_meal.meal' class="form-control" required>
-                    <option ng-repeat="meal in meals">{{meal.title}}</option>
+                  <select name='meal.meal_id' ng-model='meal.meal_id' class="form-control" required>
+                    <option ng-repeat="meal in meals" ng-value='{{meal.id}}'>{{meal.title}}</option>
                   </select>
                 </div>
                 <div class="col-sm-2" ng-controller="CreateMealsController">
@@ -100,10 +96,13 @@
                   <label for='meal.qty' class="control-label">Qty. per student in Kgs.</label>
                 </div>
                 <div class="col-sm-4">
-                  <input name='daily_meal.qty' type='text' ng-model='qty' ng-change="total_number()" class="form-control"/>
-                  <input type="hidden" name='daily_meal.qty' type='text' ng-model='daily_meal.qty' class="form-control"/>
+                  <input name='meal.qty' type='text' ng-model='meal.qty' class="form-control"/>
+                  <input type="hidden" name='daily_meal.qty' type='text' ng-model='meal.qty' class="form-control"/>
                 </div>
               </div>
+            </div>
+            <div class=" col-sm-1">
+              <button type="submit" class="btn btn-default" ng-click='add()'>Add</button>
             </div>
           </div>
         </div>
@@ -129,22 +128,18 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="daily in daily_meals">
-                  <td class="center">{{daily.meal}}</td>
-                  <td class="center">{{daily.noOfStudent1}}</td>
-                  <td class="center">{{daily.noOfStudent2}}</td>
-                  <td class="center">{{daily.noOfStudent3}}</td>
-                  <td class="center">{{daily.noOfStudent4}}</td>
-                  <td class="center">{{daily.noOfStudent5}}</td>
-                  <td class="center">{{daily.totalNumber}}</td>
-                  <td class="center">{{daily.qty}} Kgs</td>
+                <tr ng-repeat="food in foods">
+                  <td class="center">{{food.title}}</td>
+                  <td class="center">{{food.no_of_student1}}</td>
+                  <td class="center">{{food.no_of_student2}}</td>
+                  <td class="center">{{food.no_of_student3}}</td>
+                  <td class="center">{{food.no_of_student4}}</td>
+                  <td class="center">{{food.no_of_student5}}</td>
+                  <td class="center">{{food.total_number}}</td>
+                  <td class="center">{{food.qty}} Kgs</td>
                 </tr>
               </tbody>
             </table>
-            <!--
-            <pagination total-items='employees.length' ng-model='currentPage' items-per-page='itemsPerPage' max-size="5" data-previous-text="&laquo;" data-next-text="&raquo;">
-            -->
-            </pagination>
           </div>
         </div>
       </form>

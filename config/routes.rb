@@ -19,7 +19,12 @@ Greenarea::Application.routes.draw do
     resources :natures
     resources :meals
     resources :daily_meals
-    resources :monthly_records
+    resources :monthly_records do
+      collection do
+        get :month
+        get :meal
+      end
+    end
     resources :fees_heads
     resources :dashboards
     resources :academic_years
