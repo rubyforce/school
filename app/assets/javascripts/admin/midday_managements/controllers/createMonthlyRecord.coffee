@@ -16,6 +16,8 @@
         @no_of_student4 = 0
         @no_of_student5 = 0
 
+        d_meals = {}
+
         for d in response.daily_meals
           @no_of_student1 += _.sum(d.daily_meal_meals, 'no_of_student1')
           @no_of_student2 += _.sum(d.daily_meal_meals, 'no_of_student2')
@@ -23,26 +25,19 @@
           @no_of_student4 += _.sum(d.daily_meal_meals, 'no_of_student4')
           @no_of_student5 += _.sum(d.daily_meal_meals, 'no_of_student5')
 
+          for m in d.daily_meal_meals
+            d_meals[m.meal_id] ?= []
+            d_meals[m.meal_id].push(m)
+
         @meals = {}
         for meal in response.monthly_record.monthly_meal_meals || []
           m = _.clone(meal)
-          @meals[m.id.toString()] = m
-          m.last_received = 0
-          m.ordered = 0
-          m.used = 0
+          @meals[m.meal_id.toString()] = m
+          m.last_received = meal.received
+          m.used = _.sum(d_meals[m.meal_id], (m1) -> m1.qty)
+          m.left = m.last_received - m.used
 
         @meals
-
-    $scope.getLastReceived = ->
-      debugger
-
-      return 0 unless month?
-      return 1 unless meal?
-      return 2 unless meal.meal_id?
-
-      debugger
-      months[month].meals[meal.meal_id].last_received
-
 
     $scope.$watch 'monthly_record.month', (month) ->
       return unless month?

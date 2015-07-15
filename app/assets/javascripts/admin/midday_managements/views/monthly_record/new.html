@@ -56,9 +56,9 @@
                       <option ng-repeat="m in meals" ng-value='m.id'>{{m.title}}</option>
                     </select>
                   </td>
-                  <td class="center">{{getLastReceived()}}</td>
-                  <td class="center">{{months[month].meals[meal.meal_id].used}}</td>
-                  <td class="center">{{months[month].meals[meal.meal_id].ordered}}</td>
+                  <td class="center">{{months[monthly_record.month].meals[meal.meal_id].left}}</td>
+                  <td class="center">{{months[monthly_record.month].meals[meal.meal_id].last_received}}</td>
+                  <td class="center">{{months[monthly_record.month].meals[meal.meal_id].used}}</td>
                   <td class="center">
                     <input name='meal.ordered' type='text' ng-model='meal.ordered' class="form-control" />
                   </td>
