@@ -20,7 +20,7 @@
               <label for='fees_head.fees_head_type' class="control-label">Type</label>
             </div>
             <div class="col-sm-6">
-              <select name='fees_head.fees_head_type' ng-model='fees_head.fees_head_type_id' class="form-control" required>
+              <select id='fees_head_fees_head_type' name='fees_head.fees_head_type' ng-model='fees_head.feesHeadTypeId' class="form-control" required>
                 <option ng-repeat="fees_head_type in fees_head_types" value="{{fees_head_type.id}}">{{fees_head_type.name}}</option>
               </select>
             </div>
@@ -45,8 +45,8 @@
               <label for='fees_head.fees_head_recurrence' class="control-label">Recurrence</label>
             </div>
             <div class="col-sm-6">
-              <select name='fees_head.fees_head_recurrence' ng-model='fees_head.fees_head_recurrence_id' class="form-control" required>
-                <option ng-repeat="fees_head_recurrence in fees_head_recurrences" ng-value="fees_head_recurrence.id">{{fees_head_recurrence.name}}</option>
+              <select id='fees_head_fees_head_recurrence' name='fees_head.fees_head_recurrence' ng-model='fees_head.feesHeadRecurrenceId' class="form-control" required>
+                <option ng-repeat="fees_head_recurrence in fees_head_recurrences" value="{{fees_head_recurrence.id}}">{{fees_head_recurrence.name}}</option>
               </select>
             </div>
             <div class="col-sm-2">

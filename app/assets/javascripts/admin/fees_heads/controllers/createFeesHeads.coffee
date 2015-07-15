@@ -47,7 +47,7 @@
           if item.properties.enabled then item._destroy = 0 else item._destroy = 1
           delete item.properties
 
-        collection = _(collection)
+        _(collection)
           .remove (item) -> item._destroy is 1 && item.isNew()
           .value()
 
@@ -55,9 +55,11 @@
 
     $scope.select = (fees_head) ->
       $scope.fees_head = fees_head
+      $timeout(render)
 
     $scope.new = ->
       $scope.fees_head = new FeesHead()
+      $timeout(render)
 
     $scope.remove = (fees_head) ->
         fees_head.delete()
