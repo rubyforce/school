@@ -6,9 +6,7 @@
     $scope.fees_head = new FeesHead()
     $scope.fees_head.feesHeadsStandards = []
 
-    $scope.feesHeadsStandards = []
-
-    $scope.$watchCollection 'standard', (time) ->
+    $scope.$watch 'standards', (time) ->
       return unless time?
       render()
 
@@ -67,6 +65,7 @@
         _.remove($scope.fees_heads, fees_head)
 
     $scope.create = ->
+      debugger
       feesHeadsStandardsAttributes = new NestedAttributes($scope.feesHeadsStandards)
       feesHeadsStandardsAttributes = feesHeadsStandardsAttributes.get()
 
@@ -75,7 +74,4 @@
         $scope.alert = true
         $scope.fees_head.feesHeadsStandards = response.feesHeadsStandards
         $timeout(render)
-      # $scope.fees_head.update().then (response) ->
-      #   $scope.fees_head = build()
-      #   $scope.alert = true
 ]
