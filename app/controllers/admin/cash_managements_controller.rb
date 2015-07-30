@@ -41,6 +41,7 @@ class Admin::CashManagementsController < ApplicationController
   end
 
   def cash_paid
-    render :json => { value: 100 }
+    @cash_paid = ExpenseReceipt.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).sum(:amount)
+    render :json => { value: @cash_paid }
   end
 end
