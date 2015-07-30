@@ -12,6 +12,7 @@
         changeMonth: true
         changeYear: true
         yearRange: "1950:-0"
+        dateFormat: "dd/mm/yy"
 
       $compile(element)(scope);
 ]
