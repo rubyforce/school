@@ -73,4 +73,9 @@ class Admin::ReceiptsController < ApplicationController
   def check
     @student = Receipt.find(params[:student])
   end
+
+  def receipt_id
+    @receipt = Receipt.last
+    render :json => @receipt
+  end
 end

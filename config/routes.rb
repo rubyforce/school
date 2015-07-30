@@ -30,6 +30,7 @@ Greenarea::Application.routes.draw do
       end
     end
     resources :fees_heads
+
     resources :dashboards
     resources :academic_years
     resources :fees_head_types
@@ -48,6 +49,9 @@ Greenarea::Application.routes.draw do
     end
 
     resources :receipts do
+      collection do
+        get :receipt_id
+      end
       member do
         get :print
       end

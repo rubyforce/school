@@ -1,6 +1,6 @@
 @fees_heads.controller 'CreateFeesCollectionController', [
-    '$scope', 'Receipt', '$timeout', '$state', '$window', '$location', 'uuid4'
-    ($scope, Receipt, $timeout, $state, $window, $location, uuid4) ->
+    '$scope', 'Receipt', '$timeout', '$state', '$window', '$location', 'uuid4', '$http'
+    ($scope, Receipt, $timeout, $state, $window, $location, uuid4, $http) ->
         $scope.dateOptions =
             changeMonth: true
             changeYear: true
@@ -8,15 +8,14 @@
 
         $scope.alert = false
 
-        randomReceiptID = ->
-            Math.floor(Math.random() * 100000000)
+        $http.get("admin/receipts/receipt_id").success (response) ->
+            $timeout ->
+                $scope.receipt.number = response.id + 1
 
-        DEFAULT_NO =
-            number: randomReceiptID()
+        
 
         build = ->
             new Receipt()
-            _.clone(DEFAULT_NO)
 
         $scope.receipt = build()
         $scope.receipt.receiptsFeesHeads = []
