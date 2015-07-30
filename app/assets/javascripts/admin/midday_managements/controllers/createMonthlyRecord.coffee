@@ -38,6 +38,8 @@
           m.used = _.sum(d_meals[m.meal_id], (m1) -> m1.qty)
           m.left = m.last_received - m.used
 
+        @foods = response.monthly_record_month.monthly_meal_meals
+
         @meals
 
     $scope.$watch 'monthly_record.month', (month) ->
@@ -45,7 +47,9 @@
 
       $http.get("/admin/monthly_records/month?month=#{parseInt(month, 10) + 1}").then (response) ->
         $timeout ->
-          $scope.months[month] = new Month(response)
+          m = new Month(response)
+          $scope.months[month] = m
+          $scope.foods = m.foods
 
     $scope.add = ->
       meal = _($scope.meals).chain().find((m)-> parseInt(m.id, 10) is parseInt($scope.meal.meal_id, 10)).value()
