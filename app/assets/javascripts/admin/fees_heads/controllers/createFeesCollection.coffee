@@ -97,10 +97,8 @@
             $scope.receipt.receiptsFeesHeads = receiptsFeesHeadsAttributes
             $scope.receipt.studentId = $scope.student?.id
 
-            $scope.receipt.create().then (response) ->
+            new Receipt($scope.receipt).create().then (response) ->
                 $scope.alert = true
-
-                $scope.receipt = new Receipt()
 
                 protocol = $location.protocol()
                 host = $window.location.host
