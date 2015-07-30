@@ -9,15 +9,20 @@
         $scope.settlement = {}
         $scope.alert = true
 
-    $scope.total = ->
-      $scope.settlement.cash_in_hand  = $scope.settlement.cash_opening - $scope.settlement.cash_paid
+    $scope.$watch (-> $scope.settlement.cash_opening - $scope.settlement.cash_paid), (value) ->
+      return unless value?
+      $scope.settlement.cash_in_hand = value
 
-    $scope.totalAmount = ->
-      if(angular.isUndefined($scope.settlement.cash_moved))
-        $scope.settlement.cash_moved = 0
-      if(angular.isUndefined($scope.settlement.cash_deposited))
-        $scope.settlement.cash_deposited = 0
+    $scope.$watch (-> $scope.settlement.cash_in_hand - $scope.settlement.cash_deposited - $scope.settlement.cash_moved), (value) ->
+      return unless value?
+      $scope.settlement.cash_closing = value
 
-      $scope.settlement.cash_closing  = $scope.settlement.cash_in_hand - $scope.settlement.cash_deposited -
-                                        $scope.settlement.cash_moved
+    $scope.settlement = {}
+
+    if(angular.isUndefined($scope.settlement.cash_moved))
+      $scope.settlement.cash_moved = 0
+
+    if(angular.isUndefined($scope.settlement.cash_deposited))
+      $scope.settlement.cash_deposited = 0
+
 ]
