@@ -8,8 +8,11 @@
 
         $scope.alert = false
 
+        randomReceiptID = ->
+            Math.floor(Math.random() * 100000000)
+
         DEFAULT_NO =
-            number: uuid4.generate()
+            number: randomReceiptID()
 
         build = ->
             new Receipt()
