@@ -1,11 +1,6 @@
 @employees.controller 'CreateEmployeesController', [
   '$scope', 'Employee', 'uuid4'
   ($scope, Employee, uuid4) ->
-    $scope.dateOptions =
-      changeMonth: true
-      changeYear: true
-      yearRange: "1950:-0"
-
     $scope.alert = false
 
     $scope.generate = ->
