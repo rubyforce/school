@@ -1,9 +1,12 @@
 @directives.directive 'dateTime', [
   ->
     controller = [
-        '$scope'
-        ($scope) ->
+        '$scope', '$interval'
+        ($scope, $interval) ->
             $scope.date = Date
+
+            $interval (->
+            ), 1000
     ]
 
     restrict: 'E'

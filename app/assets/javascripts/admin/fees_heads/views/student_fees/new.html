@@ -14,31 +14,41 @@
       <div class="col-sm-12">
         <div class="panel panel-default">
           <div class="panel-body scrolling" style="height: 450px">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th width="25%" style="text-align: center;">Fees</th>
-                  <th width="25%" style="text-align: center;">Actual</th>
-                  <th width="25%" style="text-align: center;">Amount with Concession</th>
-                  <th width="25%" style="text-align: center;">Difference</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr ng-repeat='f in studentsFeesHeads'>
-                  <td>{{f.properties.name}}</td>
+            <div class="col-sm-12">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th width="25%" style="text-align: center;">Fees</th>
+                    <th width="25%" style="text-align: center;">Actual</th>
+                    <th width="25%" style="text-align: center;">Amount with Concession</th>
+                    <th width="25%" style="text-align: center;">Difference</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat='f in studentsFeesHeads'>
+                    <td>{{f.properties.name}}</td>
 
-                  <td style="text-align: left;">
-                    <input type="checkbox" ng-model='f.properties.enabled'>{{f.properties.amount}}</input>
-                  </td>
-                  <td>
-                    <input ng-model='f.concession' type='text' class="form-control" />
-                  </td>
-                  <td>
-                    {{f.amountConcession = f.properties.amount - f.concession}}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                    <td style="text-align: left;">
+                      <input type="checkbox" ng-model='f.properties.enabled'>{{f.properties.amount}}</input>
+                    </td>
+                    <td>
+                      <input ng-model='f.concession' type='text' class="form-control" />
+                    </td>
+                    <td>
+                      {{f.amountConcession = f.properties.amount - f.concession}}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-1">
+                <label for='reason' class="control-label">Reason</label>
+              </div>
+              <div class="col-sm-4">
+                <textarea name="reason" class="form-control"></textarea>
+              </div>
+            </div>
           </div>
         </div>
       </div>
