@@ -31,14 +31,14 @@
             d_meals[m.meal_id].push(m)
 
         @meals = {}
-        for meal in response.monthly_record.monthly_meal_meals || []
+        for meal in response.monthly_record?.monthly_meal_meals || []
           m = _.clone(meal)
           @meals[m.meal_id.toString()] = m
           m.last_received = meal.received
           m.used = _.sum(d_meals[m.meal_id], (m1) -> m1.qty)
           m.left = m.last_received - m.used
 
-        @foods = response.monthly_record_month.monthly_meal_meals
+        @foods = response.monthly_record_month?.monthly_meal_meals || []
 
         @meals
 
