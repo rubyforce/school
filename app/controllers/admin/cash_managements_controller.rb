@@ -39,4 +39,8 @@ class Admin::CashManagementsController < ApplicationController
     @cash_management.destroy
     render :json => @cash_management
   end
+
+  def cash_paid
+    render :json => { value: 100 }
+  end
 end

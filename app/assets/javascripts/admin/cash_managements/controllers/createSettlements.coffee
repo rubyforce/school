@@ -1,8 +1,8 @@
 @cash_managements.controller 'CreateSettlementsController', [
-  '$scope', 'CashManagement'
-  ($scope, CashManagement) ->
+  '$scope', 'CashManagement', '$http', '$timeout'
+  ($scope, CashManagement, $http, $timeout) ->
     $scope.alert = false
-    debugger
+
     $scope.create = ->
       new CashManagement($scope.settlement).create().then (response) ->
         $scope.cash_managements.push(new CashManagement(response))
@@ -25,4 +25,11 @@
     if(angular.isUndefined($scope.settlement.cash_deposited))
       $scope.settlement.cash_deposited = 0
 
+    $scope.cashPaidLoading = true
+    $http
+      .get('/admin/cash_managements/cash_paid')
+      .success (response) ->
+        $timeout ->
+          $scope.settlement.cash_paid = response.value
+          $scope.cashPaidLoading = false
 ]
