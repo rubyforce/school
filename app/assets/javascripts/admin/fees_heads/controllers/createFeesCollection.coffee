@@ -8,9 +8,16 @@
 
         $scope.alert = false
 
-        $http.get("admin/receipts/receipt_id").success (response) ->
-            $timeout ->
-                $scope.receipt.number = response.id + 1
+        $http.get("admin/receipts/receipt_id")
+            .success (response) ->
+                debugger
+                $timeout ->
+                    if response == null
+                       $scope.receipt.number = 1
+                    else
+                        $scope.receipt.number = response.id + 1
+
+
 
         
 
