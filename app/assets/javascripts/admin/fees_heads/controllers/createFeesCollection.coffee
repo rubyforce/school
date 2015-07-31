@@ -10,7 +10,6 @@
 
         $http.get("admin/receipts/receipt_id")
             .success (response) ->
-                debugger
                 $timeout ->
                     if response == null
                         $scope.receipt.number = "00001"
