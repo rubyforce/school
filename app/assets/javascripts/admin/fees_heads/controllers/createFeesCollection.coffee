@@ -13,11 +13,11 @@
                 debugger
                 $timeout ->
                     if response == null
-                       $scope.receipt.number = 1
+                        $scope.receipt.number = "00001"
                     else
-                        $scope.receipt.number = response.id + 1
-
-
+                        sum = response.id + 1
+                        r = (sum * 10000).toString().split("").reverse().join("")
+                        $scope.receipt.number = r
 
         
 
