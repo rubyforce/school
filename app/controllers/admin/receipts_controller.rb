@@ -75,7 +75,7 @@ class Admin::ReceiptsController < ApplicationController
   end
 
   def receipt_id
-    @receipt = Receipt.last
+    @receipt = Receipt.order('id asc').last
     render :json => @receipt
   end
 end
