@@ -77,16 +77,16 @@
                   <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th width="25%" style="text-align: center;">Fees</th>
-                        <th width="25%" style="text-align: center;">Paid</th>
-                        <th width="25%" style="text-align: center;">Balance</th>
+                        <th></th>
+                        <th width="30%" style="text-align: center;">Paid</th>
+                        <th width="30%" style="text-align: center;">Balance</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr ng-repeat='f in receiptsFeesHeads'>
                         <td>{{f.properties.name}}</td>
 
-                        <td style="text-align: left;">
+                        <td >
                           <input type="checkbox" ng-model='f.properties.enabled'>{{f.properties.amount}}</input>
                         </td>
                         <td>

@@ -78,4 +78,9 @@ class Admin::ReceiptsController < ApplicationController
     @receipt = Receipt.order('id asc').last
     render :json => @receipt
   end
+
+  def paid_fees
+    @receipts = Receipt.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_month, DateTime.now.end_of_month)
+    render :json => @receipts
+  end
 end
