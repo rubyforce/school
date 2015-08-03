@@ -52,6 +52,7 @@ Greenarea::Application.routes.draw do
       collection do
         get :receipt_id
         get :paid_fees
+        post :paid_fees
       end
       member do
         get :print

@@ -18,7 +18,7 @@
                         r = (sum * 10000).toString().split("").reverse().join("")
                         $scope.receipt.number = r
 
-        
+
 
         build = ->
             new Receipt()
@@ -68,13 +68,21 @@
                     found.isNew = -> true
 
                     found.properties = {}
-                    found.properties.enabled = false
+                    found.properties.enabled = true
                     found.properties.name = f.name
                     found.properties.amount = f.amount
+
 
                 collection = _($scope.receiptsFeesHeads)
                 unless collection.contains((o) -> o.feesHeadId is found.id)
                     $scope.receiptsFeesHeads.push(found)
+                debugger
+                $http
+                    .post('/admin/receipts/paid_fees', {student_id:f.id})
+                    .get('/admin/receipts/paid_fees')
+                    .success (response) ->
+                        $timeout ->
+                            $scope.fees_heads = response
 
         class NestedAttributes
             constructor: (@collection) ->

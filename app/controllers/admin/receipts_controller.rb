@@ -80,7 +80,7 @@ class Admin::ReceiptsController < ApplicationController
   end
 
   def paid_fees
-    @receipts = Receipt.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_month, DateTime.now.end_of_month)
+    @receipts = Receipt.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_month, DateTime.now.end_of_month).where(student_id: params[:student_id])
     render :json => @receipts
   end
 end
