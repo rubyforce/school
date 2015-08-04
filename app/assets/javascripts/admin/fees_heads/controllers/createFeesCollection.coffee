@@ -12,11 +12,15 @@
             return unless s?
             $http
                 .get("/admin/receipts/paid_fees?student_id=#{s.id}")
-                .success (response) ->
+                .success (response) -> # [fees_head1, fees_head2]
                     $timeout ->
-                        $scope.fhs = response
-                        $scope.fees_heads = $scope.fees_heads.concat($scope.fhs)
-                        $scope.fees_heads = $.unique($scope.fees_heads)
+                        for f1 in $scope.receiptsFeesHeads
+                          f2 = _.find response, (f) -> f.id is f1.feesHeadId
+                          if f2?
+                            f1.properties.disabled = true
+                            f1.properties.enabled = false
+                            f1.properties.balance = 0
+                            f1.properties.paid = f1.properties.amount
 
         $http.get("admin/receipts/receipt_id")
             .success (response) ->
@@ -68,6 +72,9 @@
                     found.properties.enabled = true
                     found.properties.name = f.name
                     found.properties.amount = f.amount
+                    found.properties.disabled = false
+                    found.properties.balance = f.amount
+                    found.properties.paid = 0
                 else
                     found =  {}
                     found.feesHeadId = f.id
@@ -80,6 +87,9 @@
                     found.properties.enabled = true
                     found.properties.name = f.name
                     found.properties.amount = f.amount
+                    found.properties.disabled = false
+                    found.properties.balance = f.amount
+                    found.properties.paid = 0
 
                 collection = _($scope.receiptsFeesHeads)
                 unless collection.contains((o) -> o.feesHeadId is found.id)

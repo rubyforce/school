@@ -78,6 +78,7 @@
                     <thead>
                       <tr>
                         <th></th>
+                        <th></th>
                         <th width="30%" style="text-align: center;">Paid</th>
                         <th width="30%" style="text-align: center;">Balance</th>
                       </tr>
@@ -87,10 +88,13 @@
                         <td>{{f.properties.name}}</td>
 
                         <td >
-                          <input type="checkbox" ng-model='f.properties.enabled'>{{f.properties.amount}}</input>
+                          <input type="checkbox" ng-model='f.properties.enabled' ng-disabled='f.properties.disabled'>&nbsp;{{f.properties.amount}}</input>
                         </td>
                         <td>
-                          <input ng-model='f.concession' type='text' class="form-control" />
+                            {{ f.properties.paid }}
+                        </td>
+                        <td>
+                            {{ f.properties.balance }}
                         </td>
                       </tr>
                     </tbody>
