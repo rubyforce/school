@@ -8,6 +8,14 @@
 
         $scope.alert = false
 
+        $scope.$watch 'student', (s) ->
+            return unless s?
+            $http
+                .get("/admin/receipts/paid_fees?student_id=#{s.id}")
+                .success (response) ->
+                    $timeout ->
+                        $scope.fees_heads = response
+
         $http.get("admin/receipts/receipt_id")
             .success (response) ->
                 $timeout ->
@@ -72,17 +80,9 @@
                     found.properties.name = f.name
                     found.properties.amount = f.amount
 
-
                 collection = _($scope.receiptsFeesHeads)
                 unless collection.contains((o) -> o.feesHeadId is found.id)
                     $scope.receiptsFeesHeads.push(found)
-                debugger
-                $http
-                    .post('/admin/receipts/paid_fees', {student_id:f.id})
-                    .get('/admin/receipts/paid_fees')
-                    .success (response) ->
-                        $timeout ->
-                            $scope.fees_heads = response
 
         class NestedAttributes
             constructor: (@collection) ->
