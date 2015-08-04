@@ -29,10 +29,16 @@
                         $scope.receipt.number = "00001"
                     else
                         sum = response.id + 1
-                        r = (sum * 10000).toString().split("").reverse().join("")
+                        r = numeral(sum/10000).format('0.0000').replace(/\./,'')
+
                         $scope.receipt.number = r
 
 
+        $scope.getTotal =->
+          _($scope.receiptsFeesHeads)
+            .chain()
+            .filter('properties.enabled', true)
+            .sum('properties.amount')
 
         build = ->
             new Receipt()
