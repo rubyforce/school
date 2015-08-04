@@ -27,7 +27,7 @@
             .sum('properties.amount')
 
         build = ->
-            new Receipt()
+            new Receipt(date: new Date())
 
         $scope.receipt = build()
         $scope.receipt.receiptsFeesHeads = []
