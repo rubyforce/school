@@ -14,7 +14,9 @@
                 .get("/admin/receipts/paid_fees?student_id=#{s.id}")
                 .success (response) ->
                     $timeout ->
-                        $scope.fees_heads = response
+                        $scope.fhs = response
+                        $scope.fees_heads = $scope.fees_heads.concat($scope.fhs)
+                        $scope.fees_heads = $.unique($scope.fees_heads)
 
         $http.get("admin/receipts/receipt_id")
             .success (response) ->
@@ -54,7 +56,6 @@
 
             for f in $scope.fees_heads
                 found = _.find $scope.receipt.receiptsFeesHeads, (o) -> o.feesHeadId is f.id
-
                 # We extend our resource by properties hash for storing skipped on requests
                 # data. Lets say we want to use extra `enabled` flag. We added as
                 # object.properties.enabled = true / false and then on getting attributes
