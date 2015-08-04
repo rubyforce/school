@@ -76,6 +76,7 @@ gem 'rails-assets-angular-ui-bootstrap', source: 'https://rails-assets.org/'
 gem 'rails-assets-angular-country-select', source: 'https://rails-assets.org/'
 gem 'rails-assets-angular-uuid4', source: 'https://rails-assets.org/'
 gem 'rails-assets-fontawesome-actions', source: 'https://rails-assets.org/'
+gem 'rails-assets-numeraljs', source: 'https://rails-assets.org/'
 
 group :development do
   gem 'pry'

@@ -10,6 +10,7 @@
 //= require angular-ui-date
 //= require angular-bootstrap
 //= require angular-uuid4
+//= require numeraljs
 //
 //= require angular-rails-templates
 //= require angularjs/rails/resource

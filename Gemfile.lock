@@ -175,6 +175,7 @@ GEM
     rails-assets-jquery-ui (1.10.3)
       rails-assets-jquery (>= 1.6)
     rails-assets-lodash (3.9.3)
+    rails-assets-numeraljs (1.5.3)
     rails-assets-objectpath (1.1.0)
     rails-assets-select2 (3.5.2)
       rails-assets-jquery (>= 1.7.1)
@@ -273,6 +274,7 @@ DEPENDENCIES
   rails-assets-fontawesome-actions!
   rails-assets-jquery-ui (= 1.10.3)!
   rails-assets-lodash (~> 3.9.0)!
+  rails-assets-numeraljs!
   rails-assets-objectpath!
   rake (~> 10.1.0)
   sass-rails
