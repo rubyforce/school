@@ -21,13 +21,10 @@
 
 
         $scope.getTotal =->
-            debugger
-            total = 0
-            for i in $scope.fees_heads
-                total += parseInt(i.amount)
-            total
-
-        
+          _($scope.receiptsFeesHeads)
+            .chain()
+            .filter('properties.enabled', true)
+            .sum('properties.amount')
 
         build = ->
             new Receipt()
@@ -54,7 +51,6 @@
             $scope.receiptsFeesHeads = []
 
             for f in $scope.fees_heads
-                debugger
                 found = _.find $scope.receipt.receiptsFeesHeads, (o) -> o.feesHeadId is f.id
 
                 # We extend our resource by properties hash for storing skipped on requests
