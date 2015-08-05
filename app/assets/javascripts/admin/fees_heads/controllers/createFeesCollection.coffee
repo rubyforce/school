@@ -8,6 +8,24 @@
 
         $scope.alert = false
 
+        disabled_fees = (s) ->
+            $http
+                .get("/admin/receipts/paid_fees?student_id=#{s.id}")
+                .success (response) -> # [fees_head1, fees_head2]
+                    $timeout ->
+                        for f1 in $scope.receiptsFeesHeads
+                          f2 = _.find response, (f) -> f.id is f1.feesHeadId
+                          if f2?
+                            f1.properties.disabled = true
+                            f1.properties.enabled = false
+                            f1.properties.balance = 0
+                            f1.properties.paid = f1.properties.amount
+
+        $scope.$watch 'student', (s) ->
+            return unless s?
+            debugger
+            disabled_fees(s)
+
         $http.get("admin/receipts/receipt_id")
             .success (response) ->
                 $timeout ->
@@ -52,7 +70,6 @@
 
             for f in $scope.fees_heads
                 found = _.find $scope.receipt.receiptsFeesHeads, (o) -> o.feesHeadId is f.id
-
                 # We extend our resource by properties hash for storing skipped on requests
                 # data. Lets say we want to use extra `enabled` flag. We added as
                 # object.properties.enabled = true / false and then on getting attributes
@@ -65,6 +82,9 @@
                     found.properties.enabled = true
                     found.properties.name = f.name
                     found.properties.amount = f.amount
+                    found.properties.disabled = false
+                    found.properties.balance = f.amount
+                    found.properties.paid = 0
                 else
                     found =  {}
                     found.feesHeadId = f.id
@@ -74,9 +94,12 @@
                     found.isNew = -> true
 
                     found.properties = {}
-                    found.properties.enabled = false
+                    found.properties.enabled = true
                     found.properties.name = f.name
                     found.properties.amount = f.amount
+                    found.properties.disabled = false
+                    found.properties.balance = f.amount
+                    found.properties.paid = 0
 
                 collection = _($scope.receiptsFeesHeads)
                 unless collection.contains((o) -> o.feesHeadId is found.id)
@@ -117,5 +140,6 @@
                 $window.open("#{domain}/admin/receipts/#{response.id}/print",'_blank')
 
                 $timeout(render)
+                disabled_fees($scope.student)
 
 ]
