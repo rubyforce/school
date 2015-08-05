@@ -44,7 +44,7 @@
                       <div class="col-sm-12">
                         <div class="panel panel-default receipt" style="width: 95%; margin: 20px auto;">
                           <div class="panel panel-default">
-                            <table class="table table-bordered" ng-repeat="f in receipt.feesHeads">
+                            <table class="table table-bordered">
                               <thead>
                                 <tr>
                                   <th width="25%" style="text-align: center;">Fees</th>
@@ -53,7 +53,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr>
+                                <tr ng-repeat="f in receipt.feesHeads">
                                   <td style="text-align: center;">{{f.name}}</td>
                                   <td style="text-align: center;">{{f.amount}}</td>
                                   <td style="text-align: center;" ng-repeat="receipt in receipt.receiptsFeesHeads">{{receipt.concession}}</td>
