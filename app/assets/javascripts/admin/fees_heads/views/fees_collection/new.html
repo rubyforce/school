@@ -77,10 +77,10 @@
                   <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th></th>
-                        <th></th>
-                        <th width="30%" style="text-align: center;">Paid</th>
-                        <th width="30%" style="text-align: center;">Balance</th>
+                        <th width="25%" style="text-align: center;">Fees</th>
+                        <th width="25%" style="text-align: center;">Amount</th>
+                        <th width="25%" style="text-align: center;">Paid</th>
+                        <th width="25%" style="text-align: center;">Balance</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -91,10 +91,10 @@
                           <input type="checkbox" ng-model='f.properties.enabled' ng-disabled='f.properties.disabled'>&nbsp;{{f.properties.amount}}</input>
                         </td>
                         <td>
-                            {{ f.properties.paid }}
+                          {{ f.properties.paid }}
                         </td>
                         <td>
-                            {{ f.properties.balance }}
+                          {{ f.properties.balance }}
                         </td>
                       </tr>
                     </tbody>
@@ -102,6 +102,7 @@
                       <tr>
                         <th>Total</th>
                         <th colspan="2">{{getTotal()}}</th>
+                        <th></th>
                     </tfoot>
                   </table>
                 </div>
@@ -114,11 +115,16 @@
             <!-- Firs column -->
             <div class="col-sm-3">
               <div class="form-group">
-                <div class="col-sm-3">
-                  <label for='cash' class="control-label">Cash</label>
+                <div>
+                  <label for='payment_method' class="control-label">Payment Method:</label>
                 </div>
-                <div class="col-sm-6">
-                  <input name='cash' type='text' ng-model='receipt.cash' class="form-control" />
+                <div>
+                  <label for='cash' class="radio-inline">
+                    <input type="radio" value="0" ng-model="receipt.payment_method">Cash
+                  </label>
+                  <label for='bank' class="radio-inline">
+                    <input type="radio" value="1" ng-model="receipt.payment_method">Bank
+                  </label>
                 </div>
               </div>
             </div>
@@ -134,7 +140,7 @@
                         <label for='cheque' class="control-label">Cheque No.</label>
                       </div>
                       <div class="col-sm-6">
-                        <input name='cheque' type='text' ng-model='receipt.cheque_number' class="form-control" />
+                        <input name='cheque' type='text' ng-model='receipt.cheque_number' class="form-control" ng-disabled="receipt.payment_method == null || receipt.payment_method == 0" />
                       </div>
                     </div>
                   </div>
@@ -145,7 +151,7 @@
                       </div>
                       <div class="col-sm-6">
                         <div class="input-group">
-                          <input name='datetime' ng-model='receipt.date' class="form-control" date-options/>
+                          <input name='datetime' ng-model='receipt.date' class="form-control" ng-disabled="receipt.payment_method == null || receipt.payment_method == 0" date-options/>
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -161,7 +167,7 @@
                     <label for='bank' class="control-label">Bank Name</label>
                   </div>
                   <div class="col-sm-8">
-                    <input name='bank' type='text' ng-model='receipt.bank_name' class="form-control" />
+                    <input name='bank' type='text' ng-model='receipt.bank_name' class="form-control" ng-disabled="receipt.payment_method == null || receipt.payment_method == 0" />
                   </div>
                 </div>
               </div>

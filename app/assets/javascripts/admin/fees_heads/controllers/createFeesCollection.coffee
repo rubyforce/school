@@ -8,8 +8,7 @@
 
         $scope.alert = false
 
-        $scope.$watch 'student', (s) ->
-            return unless s?
+        disabled_fees = (s) ->
             $http
                 .get("/admin/receipts/paid_fees?student_id=#{s.id}")
                 .success (response) -> # [fees_head1, fees_head2]
@@ -21,6 +20,11 @@
                             f1.properties.enabled = false
                             f1.properties.balance = 0
                             f1.properties.paid = f1.properties.amount
+
+        $scope.$watch 'student', (s) ->
+            return unless s?
+            debugger
+            disabled_fees(s)
 
         $http.get("admin/receipts/receipt_id")
             .success (response) ->
@@ -136,5 +140,6 @@
                 $window.open("#{domain}/admin/receipts/#{response.id}/print",'_blank')
 
                 $timeout(render)
+                disabled_fees($scope.student)
 
 ]

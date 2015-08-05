@@ -35,18 +35,13 @@
             </thead>
             <tbody>
               <tr>
-                <td style="text-align: center"><%= @receipt.cash %></td>
+                <td style="text-align: center"><%= @receipt.total %></td>
 
                 <td style="text-align: center"><%= @receipt.cheque_number %></td>
                 <td style="text-align: center"><%= @receipt.bank_name %></td>
               </tr>
             </tbody>
           </table>
-        </div>
-        <div class="col-sm-12">
-          <p class="bg-primary">
-            Total to Pay <%= @receipt.total %>
-          </p>
         </div>
       </div>
     </div>
