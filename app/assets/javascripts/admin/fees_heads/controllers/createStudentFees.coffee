@@ -87,7 +87,6 @@
             # Reassign and pass to server updated or added new items
             $scope.student.studentsFeesHeads = studentsFeesHeadsAttributes
             $scope.student.update().then (response) ->
-                debugger
                 $scope.alert = true
                 $scope.student.studentsFeesHeads = response.studentsFeesHeads
                 $timeout(render)
