@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe HomeController do
+describe HomeController, type: :controller do
   describe 'GET :index' do
 
     context 'with users' do
@@ -16,4 +16,3 @@ describe HomeController do
 
   end
 end
-

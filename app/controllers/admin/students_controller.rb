@@ -49,6 +49,11 @@ class Admin::StudentsController < ApplicationController
     render :json => @student.as_json(:include => :students_fees_heads)
   end
 
+  def fees
+    student = Student.joins(:students_fees_heads).find(params[:id])
+    render :json => student.students_fees_heads
+  end
+
   def attributes
     params.require(:student).permit!
   end

@@ -19,6 +19,8 @@ module AuthHelpers
   end
 end
 
+FactoryGirl.find_definitions
+
 RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
   config.include AuthHelpers, type: :controller

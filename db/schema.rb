@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150730142917) do
+ActiveRecord::Schema.define(version: 20150804135551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -280,18 +280,19 @@ ActiveRecord::Schema.define(version: 20150730142917) do
 
   create_table "receipts", force: :cascade do |t|
     t.integer  "student_id"
-    t.decimal  "total",         default: 0.0
+    t.decimal  "total",          default: 0.0
     t.text     "bank_name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "number"
     t.string   "cheque_number"
     t.date     "date"
-    t.decimal  "cash",          default: 0.0
+    t.decimal  "cash",           default: 0.0
     t.string   "status"
     t.string   "remark"
     t.string   "cheque_status"
     t.string   "cheque_remark"
+    t.boolean  "payment_method", default: false
   end
 
   create_table "receipts_fees_heads", force: :cascade do |t|
