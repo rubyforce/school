@@ -186,8 +186,8 @@
               <label for='student.standard' class="control-label">Standard</label>
             </div>
             <div class="col-sm-6">
-              <select name="student.standard" class="form-control" ng-model="student.standard_id">
-                <option ng-repeat="standard in standards" value='{{standard.id}}'>{{standard.name}}</option>
+              <select name="student.standard" class="form-control" ng-model="student.standard_id" required>
+                <option ng-repeat="standard in standards" value='{{standard.id}}' >{{standard.name}}</option>
               </select>
             </div>
             <div class="col-sm-2" ng-controller="CreateStandardsController">
@@ -202,7 +202,7 @@
               <label for='student.division' class="control-label">Division</label>
             </div>
             <div class="col-sm-6">
-              <select name="student.division" class="form-control" ng-model="student.division_id">
+              <select name="student.division" class="form-control" ng-model="student.division_id"required>
                 <option ng-repeat="division in divisions" value='{{division.id}}'>{{division.name}}</option>
               </select>
             </div>
