@@ -85,6 +85,7 @@ class Admin::ReceiptsController < ApplicationController
     @receipts = Receipt
         .where('date BETWEEN ? AND ?', date.beginning_of_month, date.end_of_month)
         .where(student_id: params[:student_id])
+        .where(status: nil)
         .includes(:fees_heads)
         .map(&:fees_heads)
         .flatten
