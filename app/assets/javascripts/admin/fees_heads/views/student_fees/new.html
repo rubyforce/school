@@ -32,10 +32,10 @@
                       <input type="checkbox" ng-model='f.properties.enabled'>{{f.properties.amount}}</input>
                     </td>
                     <td>
-                      <input ng-model='f.concession' type='text' class="form-control" />
+                      <input ng-model='f.amount_concession' type='text' class="form-control" />
                     </td>
                     <td>
-                      {{f.amountConcession = f.properties.amount - f.concession}}
+                      {{f.concession = f.properties.amount - f.amount_concession}}
                     </td>
                   </tr>
                 </tbody>

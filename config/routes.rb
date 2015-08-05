@@ -1,7 +1,11 @@
 Greenarea::Application.routes.draw do
 
   namespace :admin do
-    resources :students
+    resources :students do
+      member do
+        get :fees
+      end
+    end
     resources :employees
     resources :cash_managements do
       collection do

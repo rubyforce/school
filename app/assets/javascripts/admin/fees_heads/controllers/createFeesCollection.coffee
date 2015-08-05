@@ -15,16 +15,31 @@
                 .get("/admin/receipts/paid_fees?student_id=#{s.id}&date=#{$scope.feesHeadDate}")
                 .success (response) -> # [fees_head1, fees_head2]
                     $timeout ->
-                        for f1 in $scope.receiptsFeesHeads
-                          f1.properties.disabled = false
-                          f1.properties.enabled = true
+                      for f1 in $scope.receiptsFeesHeads
+                        f1.properties.disabled = false
+                        f1.properties.enabled = true
 
-                          f2 = _.find response, (f) -> f.id is f1.feesHeadId
-                          if f2?
-                            f1.properties.disabled = true
-                            f1.properties.enabled = false
-                            f1.properties.balance = 0
-                            f1.properties.paid = f1.properties.amount
+                        f2 = _.find response, (f) -> f.id is f1.feesHeadId
+                        if f2?
+                          f1.properties.disabled = true
+                          f1.properties.enabled = false
+                          f1.properties.balance = 0
+                          f1.properties.paid = f1.properties.amount
+
+                        $http
+                          .get("/admin/students/#{s.id}/fees")
+                          .success (response) ->
+                            $timeout ->
+                              for f1 in $scope.receiptsFeesHeads
+                                f2 = _.find response, (f) -> f.fees_head_id is f1.feesHeadId
+                                if f2?
+                                  f1.properties.concession = parseFloat(f2.concession, 10)
+                                  f1.properties.amount = parseFloat(f2.amount_concession, 10)
+                                  f1.properties.balance = parseFloat(f2.amount_concession, 10)
+
+                                  if f1.properties.disabled
+                                    f1.properties.balance = 0
+                                    f1.properties.paid = f1.properties.amount
 
         $scope.$watch 'student', (s) ->
             return unless s?
