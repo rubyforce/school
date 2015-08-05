@@ -13,7 +13,8 @@
               </div>
               <div class="col-sm-6">
                 <div class="input-group">
-                  <input name='datetime' ng-model='receipt.date' class="form-control" date-options/>
+                  <input name='datetime' ng-model='feesHeadDate' class="form-control" date-options/>
+
                   <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -120,10 +121,10 @@
                 </div>
                 <div>
                   <label for='cash' class="radio-inline">
-                    <input type="radio" value="0" ng-model="receipt.payment_method">Cash
+                    <input name='cash' type="radio" value="0" ng-model="receipt.payment_method" ng-init="receipt.payment_method='0'">Cash
                   </label>
                   <label for='bank' class="radio-inline">
-                    <input type="radio" value="1" ng-model="receipt.payment_method">Bank
+                    <input name='bank' type="radio" value="1" ng-model="receipt.payment_method">Bank
                   </label>
                 </div>
               </div>

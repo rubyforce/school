@@ -82,3 +82,10 @@ group :development do
   gem 'pry'
   gem 'pry-byebug'
 end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+end

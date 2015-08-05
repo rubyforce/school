@@ -1,6 +1,4 @@
 FactoryGirl.define do
-  factory :section do
-    
+  factory :receipt do
   end
-
 end

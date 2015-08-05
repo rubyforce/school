@@ -80,8 +80,10 @@ class Admin::ReceiptsController < ApplicationController
   end
 
   def paid_fees
+    date = Date.parse(params[:date])
+
     @receipts = Receipt
-        .where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_month, DateTime.now.end_of_month)
+        .where('date BETWEEN ? AND ?', date.beginning_of_month, date.end_of_month)
         .where(student_id: params[:student_id])
         .includes(:fees_heads)
         .map(&:fees_heads)

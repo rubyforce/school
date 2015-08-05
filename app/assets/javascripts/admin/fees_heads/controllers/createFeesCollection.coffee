@@ -1,6 +1,8 @@
 @fees_heads.controller 'CreateFeesCollectionController', [
     '$scope', 'Receipt', '$timeout', '$state', '$window', '$location', 'uuid4', '$http'
     ($scope, Receipt, $timeout, $state, $window, $location, uuid4, $http) ->
+        $scope.feesHeadDate = $.datepicker.formatDate("dd/mm/yy", new Date())
+
         $scope.dateOptions =
             changeMonth: true
             changeYear: true
@@ -10,10 +12,13 @@
 
         disabled_fees = (s) ->
             $http
-                .get("/admin/receipts/paid_fees?student_id=#{s.id}")
+                .get("/admin/receipts/paid_fees?student_id=#{s.id}&date=#{$scope.feesHeadDate}")
                 .success (response) -> # [fees_head1, fees_head2]
                     $timeout ->
                         for f1 in $scope.receiptsFeesHeads
+                          f1.properties.disabled = false
+                          f1.properties.enabled = true
+
                           f2 = _.find response, (f) -> f.id is f1.feesHeadId
                           if f2?
                             f1.properties.disabled = true
@@ -23,8 +28,13 @@
 
         $scope.$watch 'student', (s) ->
             return unless s?
-            debugger
             disabled_fees(s)
+
+        $scope.$watch 'feesHeadDate', (date) ->
+            return unless date?
+            return unless $scope.student?
+            disabled_fees($scope.student)
+
 
         $http.get("admin/receipts/receipt_id")
             .success (response) ->
@@ -34,7 +44,6 @@
                     else
                         sum = response.id + 1
                         r = numeral(sum/10000).format('0.0000').replace(/\./,'')
-
                         $scope.receipt.number = r
 
 
