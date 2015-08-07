@@ -16,6 +16,6 @@ class FeesHead < ActiveRecord::Base
   private
 
   def total
-    self.total_amount = amount * fees_head_recurrence.name.to_f
+    self.total_amount = amount
   end
 end
