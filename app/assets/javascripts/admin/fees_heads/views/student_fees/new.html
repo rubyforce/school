@@ -11,7 +11,7 @@
       <!-- End First Column -->
 
       <!-- Second Column -->
-      <div class="col-sm-12">
+      <div class="col-sm-12" ng-show="student.fullName()">
         <div class="panel panel-default">
           <div class="panel-body scrolling" style="height: 450px">
             <div class="col-sm-12">
@@ -24,7 +24,7 @@
                     <th width="25%" style="text-align: center;">Difference</th>
                   </tr>
                 </thead>
-                <tbody ng-show="student.fullName()">
+                <tbody>
                   <tr ng-repeat='f in studentsFeesHeads'>
                     <td>{{f.properties.name}}</td>
 
