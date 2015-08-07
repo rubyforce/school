@@ -24,7 +24,7 @@
                     <th width="25%" style="text-align: center;">Difference</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody ng-show="student.fullName()">
                   <tr ng-repeat='f in studentsFeesHeads'>
                     <td>{{f.properties.name}}</td>
 
