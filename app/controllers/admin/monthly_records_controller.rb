@@ -41,7 +41,13 @@ class Admin::MonthlyRecordsController < ApplicationController
     .includes(:daily_meal_meals)
     .all
 
-    previous_month = DateTime.parse("#{DateTime.now.year}-#{params[:month].to_i - 1}-01").to_date
+    lol = params[:month].to_i - 1
+
+    if lol == 0
+      previous_month = DateTime.parse("#{DateTime.now.year - 1}-12-01").to_date
+    else 
+      previous_month = DateTime.parse("#{DateTime.now.year}-#{lol}-01").to_date
+    end
 
     monthly_record = MonthlyRecord
     .where("EXTRACT(month FROM to_date(?, 'YYYY-MM-DD')) = cast(monthly_records.month as integer) AND EXTRACT(year FROM to_date(?, 'YYYY-MM-DD')) = cast(year as integer)", previous_month , previous_month)
