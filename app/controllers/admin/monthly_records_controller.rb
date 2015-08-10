@@ -17,9 +17,9 @@ class Admin::MonthlyRecordsController < ApplicationController
   end
 
   def create
-    @monthly_record = MonthlyRecord.new(params[:monthly_record])
-    @monthly_record.year = Date.today.year
-    @monthly_record.save
+    @monthly_record = MonthlyRecord.find_or_initialize_by(month: params[:monthly_record][:month], year: Date.today.year)
+    @monthly_record.assign_attributes(params[:monthly_record])
+    @monthly_record.save!
 
     render :json => @monthly_record
   end
@@ -41,8 +41,10 @@ class Admin::MonthlyRecordsController < ApplicationController
     .includes(:daily_meal_meals)
     .all
 
+    previous_month = DateTime.parse("#{DateTime.now.year}-#{params[:month].to_i - 1}-01").to_date
+
     monthly_record = MonthlyRecord
-    .where("EXTRACT(month FROM to_date(?, 'YYYY-MM-DD')) = cast(monthly_records.month as integer) AND EXTRACT(year FROM to_date(?, 'YYYY-MM-DD')) = cast(year as integer)", 1.month.ago.to_date, 1.month.ago.to_date)
+    .where("EXTRACT(month FROM to_date(?, 'YYYY-MM-DD')) = cast(monthly_records.month as integer) AND EXTRACT(year FROM to_date(?, 'YYYY-MM-DD')) = cast(year as integer)", previous_month , previous_month)
     .includes(:monthly_meal_meals)
     .first
 

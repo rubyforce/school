@@ -40,7 +40,7 @@
       $scope.meal = _($scope.meal).pick(['no_of_student1', 'no_of_student2', 'no_of_student3', 'no_of_student4', 'no_of_student5']).value()
 
     $scope.reset = ->
-      $scope.daily_meal = new DailyMeal()
+      $scope.daily_meal = build()
       $scope.meal = {}
       $scope.foods = []
 

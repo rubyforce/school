@@ -37,10 +37,7 @@
           m.last_received = meal.received
           m.used = _.sum(d_meals[m.meal_id], (m1) -> m1.qty)
           m.left = m.last_received - m.used
-
         @foods = response.monthly_record_month?.monthly_meal_meals || []
-
-        @meals
 
     $scope.$watch 'monthly_record.month', (month) ->
       return unless month?
