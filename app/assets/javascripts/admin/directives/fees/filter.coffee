@@ -5,7 +5,6 @@
         ($scope, $timeout) ->
           $scope.bySelectorFees = (students_fees_heads) ->
             return unless $scope.search?.standardId?
-            debugger
             fees_head = _.find($scope.fees_heads, (s2) -> s2.id is students_fees_heads.feesHeadId)
 
             for s in fees_head.feesHeadsStandards
