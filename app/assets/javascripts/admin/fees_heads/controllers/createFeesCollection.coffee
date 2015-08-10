@@ -1,6 +1,6 @@
 @fees_heads.controller 'CreateFeesCollectionController', [
-    '$scope', 'Receipt', '$timeout', '$state', '$window', '$location', 'uuid4', '$http'
-    ($scope, Receipt, $timeout, $state, $window, $location, uuid4, $http) ->
+    '$scope', 'Receipt', '$timeout', '$state', '$window', '$location', 'uuid4', '$http', '$filter'
+    ($scope, Receipt, $timeout, $state, $window, $location, uuid4, $http, $filter) ->
         $scope.feesHeadDate = $.datepicker.formatDate("dd/mm/yy", new Date())
 
         $scope.dateOptions =
@@ -147,9 +147,19 @@
 
                 collection
 
+        $scope.bySelectorFees = (receipt_fees_head) ->
+            return unless $scope.search?.standardId?
+            fees_head = _.find($scope.fees_heads, (s2) -> s2.id is receipt_fees_head.feesHeadId)
+
+            for s in fees_head.feesHeadsStandards
+                if s.standardId is parseInt($scope.search.standardId, 10)
+                    return true
+            false
+
         # TODO: create receipt and show page for printing.
         $scope.create = ->
-            receiptsFeesHeadsAttributes = new NestedAttributes($scope.receiptsFeesHeads)
+            collection = _.filter($scope.receiptsFeesHeads, (f) -> $scope.bySelectorFees(f))
+            receiptsFeesHeadsAttributes = new NestedAttributes(collection)
             receiptsFeesHeadsAttributes = receiptsFeesHeadsAttributes.get()
 
             $scope.receipt.receiptsFeesHeads = receiptsFeesHeadsAttributes
