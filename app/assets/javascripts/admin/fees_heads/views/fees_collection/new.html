@@ -72,43 +72,7 @@
 
             <!-- Second Column -->
             <div class="col-sm-9">
-              <div class="panel panel-default receipt">
-                <div class="panel-heading fees">Fees Heads</div>
-                <div class="panel panel-default">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th width="25%" style="text-align: center;">Fees</th>
-                        <th width="25%" style="text-align: center;">Amount</th>
-                        <th width="25%" style="text-align: center;">Paid</th>
-                        <th width="25%" style="text-align: center;">Balance</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr ng-repeat='f in receiptsFeesHeads'>
-                        <td>{{f.properties.name}}</td>
-
-                        <td >
-                          <input type="checkbox" ng-model='f.properties.enabled' ng-disabled='f.properties.disabled'>&nbsp;{{f.properties.amount}}</input>
-                          <span style='text-decoration: line-through;' ng-if='f.properties.concession'>{{ f.properties.amount +  f.properties.concession}}</span>
-                        </td>
-                        <td>
-                          {{ f.properties.paid }}
-                        </td>
-                        <td>
-                          {{ f.properties.balance }}
-                        </td>
-                      </tr>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <th>Total</th>
-                        <th colspan="2">{{getTotal()}}</th>
-                        <th></th>
-                    </tfoot>
-                  </table>
-                </div>
-              </div>
+              <fees-list></fees-list>
             </div>
             <!-- End Second Column -->
           </div>
