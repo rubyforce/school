@@ -13,17 +13,15 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="panel panel-default receipt" style="width: 95%; margin: 20px auto;">
-            <div class="panel panel-default">
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th width="50%" style="text-align: center;">Fees</th>
-                    <th width="50%" style="text-align: center;">Actual</th>
-                  </tr>
-                </thead>
-                <%= render partial: "receipts_fees_head", collection: @receipt.receipts_fees_heads %>
-              </table>
-            </div>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th width="50%" style="text-align: center;">Fees</th>
+                  <th width="50%" style="text-align: center;">Actual</th>
+                </tr>
+              </thead>
+              <%= render partial: "receipts_fees_head", collection: @receipt.receipts_fees_heads %>
+            </table>
           </div>
         </div>
         <div class="col-sm-12">
@@ -39,7 +37,7 @@
             </thead>
             <tbody>
               <tr>
-                <td style="text-align: center"><%= @receipt.total %></td>
+                <td style="text-align: center"><%= number_with_precision(@receipt.total, precision: 0, separator: ',', delimiter: '.') %></td>
                 <% if @receipt.cheque_number.present? && @receipt.bank_name.present? %>
                   <td style="text-align: center"><%= @receipt.cheque_number %></td>
                   <td style="text-align: center"><%= @receipt.bank_name %></td>

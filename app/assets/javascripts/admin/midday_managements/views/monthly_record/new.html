@@ -25,11 +25,11 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td class="center">{{months[monthly_record.month].no_of_student1}}</td>
-                    <td class="center">{{months[monthly_record.month].no_of_student2}}</td>
-                    <td class="center">{{months[monthly_record.month].no_of_student3}}</td>
-                    <td class="center">{{months[monthly_record.month].no_of_student4}}</td>
-                    <td class="center">{{months[monthly_record.month].no_of_student5}}</td>
+                    <td class="center">{{months[monthly_record.month].no_of_student1 | number}}</td>
+                    <td class="center">{{months[monthly_record.month].no_of_student2 | number}}</td>
+                    <td class="center">{{months[monthly_record.month].no_of_student3 | number}}</td>
+                    <td class="center">{{months[monthly_record.month].no_of_student4 | number}}</td>
+                    <td class="center">{{months[monthly_record.month].no_of_student5 | number}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -57,9 +57,9 @@
                       <option ng-repeat="m in meals" ng-value='m.id'>{{m.title}}</option>
                     </select>
                   </td>
-                  <td class="center">{{months[monthly_record.month].meals[meal.meal_id].left}}</td>
-                  <td class="center">{{months[monthly_record.month].meals[meal.meal_id].last_received}}</td>
-                  <td class="center">{{months[monthly_record.month].meals[meal.meal_id].used}}</td>
+                  <td class="center">{{months[monthly_record.month].meals[meal.meal_id].left | number}}</td>
+                  <td class="center">{{months[monthly_record.month].meals[meal.meal_id].last_received | number}}</td>
+                  <td class="center">{{months[monthly_record.month].meals[meal.meal_id].used | number}}</td>
                   <td class="center">
                     <input name='meal.ordered' type='text' ng-model='meal.ordered' class="form-control" />
                   </td>
@@ -91,8 +91,8 @@
               <tbody>
                 <tr ng-repeat="food in foods">
                   <td>{{food.title}}</td>
-                  <td>{{food.ordered}}</td>
-                  <td>{{food.received}}</td>
+                  <td>{{food.ordered | number}}</td>
+                  <td>{{food.received | number}}</td>
                 </tr>
               </tbody>
             </table>

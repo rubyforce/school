@@ -42,25 +42,23 @@
                   <div class="update_form">
                     <div class="row">
                       <div class="col-sm-12">
-                        <div class="panel panel-default receipt" style="width: 95%; margin: 20px auto;">
-                          <div class="panel panel-default">
-                            <table class="table table-bordered">
-                              <thead>
-                                <tr>
-                                  <th width="25%" style="text-align: center;">Fees</th>
-                                  <th width="25%" style="text-align: center;">Actual</th>
-                                  <th width="25%" style="text-align: center;">Amount with Concession</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr ng-repeat="f in receipt.feesHeads">
-                                  <td style="text-align: center;">{{f.name}}</td>
-                                  <td style="text-align: center;">{{f.amount}}</td>
-                                  <td style="text-align: center;" ng-repeat="receipt in receipt.receiptsFeesHeads">{{receipt.concession}}</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
+                        <div class="panel panel-default">
+                          <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th width="25%" style="text-align: center;">Fees</th>
+                                <th width="25%" style="text-align: center;">Actual</th>
+                                <th width="25%" style="text-align: center;">Amount with Concession</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr ng-repeat="f in receipt.feesHeads">
+                                <td style="text-align: center;">{{f.name}}</td>
+                                <td style="text-align: center;">{{f.amount | number}}</td>
+                                <td style="text-align: center;" ng-repeat="receipt in receipt.receiptsFeesHeads">{{receipt.concession | number}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </div>
                       <div class="col-sm-12">

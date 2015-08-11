@@ -130,13 +130,13 @@
               <tbody>
                 <tr ng-repeat="food in foods">
                   <td class="center">{{food.title}}</td>
-                  <td class="center">{{food.no_of_student1}}</td>
-                  <td class="center">{{food.no_of_student2}}</td>
-                  <td class="center">{{food.no_of_student3}}</td>
-                  <td class="center">{{food.no_of_student4}}</td>
-                  <td class="center">{{food.no_of_student5}}</td>
-                  <td class="center">{{food.total_number}}</td>
-                  <td class="center">{{food.qty}} Kgs</td>
+                  <td class="center">{{food.no_of_student1 | number}}</td>
+                  <td class="center">{{food.no_of_student2 | number}}</td>
+                  <td class="center">{{food.no_of_student3 | number}}</td>
+                  <td class="center">{{food.no_of_student4 | number}}</td>
+                  <td class="center">{{food.no_of_student5 | number}}</td>
+                  <td class="center">{{food.total_number | number}}</td>
+                  <td class="center">{{food.qty | number}} Kgs</td>
                 </tr>
               </tbody>
             </table>
