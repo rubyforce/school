@@ -66,9 +66,17 @@ table tbody td {
 .panel.panel-default.receipt {
   position: relative;
   padding: 10px 10px 10px 10px;
-  max-height: 200px;
-  overflow-y: auto;
 }
+.panel.panel-default.receipt tbody {
+  max-height: 100px;
+  overflow-y: auto;
+
+}
+
+.receipt thead, .receipt tbody, .receipt tfoot { display: block; width: 100%; }
+.receipt table { width: 100%; }
+.receipt th, .receipt td { width: 25%; }
+
 .panel.panel-default.cheque {
   position: relative;
   width: 95%;
@@ -148,4 +156,4 @@ form .update_form {
 }
 .table.meals .center {
   text-align: center;
-}                                                                                                                                       
+}

@@ -1,36 +1,34 @@
 <div class="panel panel-default receipt">
   <div class="panel-heading fees">Fees Heads</div>
   <div class="panel panel-default">
-    <table class="table table-bordered">
+    <table class="table table-bordered sticky">
+
       <thead>
-        <tr>
-          <th width="25%" style="text-align: center;">Fees</th>
-          <th width="25%" style="text-align: center;">Amount</th>
-          <th width="25%" style="text-align: center;">Paid</th>
-          <th width="25%" style="text-align: center;">Balance</th>
-        </tr>
+        <th width="25%" style="text-align: center;">Fees</th>
+        <th width="25%" style="text-align: center;">Amount</th>
+        <th width="25%" style="text-align: center;">Paid</th>
+        <th width="25%" style="text-align: center;">Balance</th>
       </thead>
       <tbody>
         <tr ng-repeat='f in receiptsFeesHeads | filter:bySelectorFees'>
-          <td>{{f.properties.name}}</td>
+          <td width="25%">{{f.properties.name}}</td>
 
-          <td >
+          <td width="25%">
             <input type="checkbox" ng-model='f.properties.enabled' ng-disabled='f.properties.disabled'>&nbsp;{{f.properties.amount}}</input>
             <span style='text-decoration: line-through;' ng-if='f.properties.concession'>{{ f.properties.amount +  f.properties.concession}}</span>
           </td>
-          <td>
+          <td width="25%">
             {{ f.properties.paid }}
           </td>
-          <td>
+          <td width="25%">
             {{ f.properties.balance }}
           </td>
         </tr>
       </tbody>
       <tfoot>
-        <tr>
-          <th>Total</th>
-          <th colspan="2">{{getTotal()}}</th>
-          <th></th>
+        <th>Total</th>
+        <th colspan="2">{{getTotal()}}</th>
+        <th></th>
       </tfoot>
     </table>
   </div>

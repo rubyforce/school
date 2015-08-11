@@ -22,3 +22,20 @@
 //= require ./admin/app
 //= require_tree ./admin
 //= require_tree ./vendors
+
+$(function() {
+  // Change the selector if needed
+  var $table = $('table.sticky'),
+      $bodyCells = $table.find('tbody tr:first').children(),
+      colWidth;
+
+  // Get the tbody columns width array
+  colWidth = $bodyCells.map(function() {
+    return $(this).width();
+  }).get();
+
+  // Set the width of thead columns
+  $table.find('thead tr').children().each(function(i, v) {
+    $(v).width(colWidth[i]);
+  });
+});
