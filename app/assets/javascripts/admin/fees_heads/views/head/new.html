@@ -72,7 +72,7 @@
                 <tbody>
                   <tr ng-repeat='fees_head in fees_heads'>
                     <td><a ng-click='select(fees_head)'>{{fees_head.name}}</a></td>
-                    <td>{{fees_head.totalAmount}}</td>
+                    <td>{{fees_head.totalAmount | number}}</td>
                     <td><a ng-click='remove(fees_head)'>Remove</a></td>
                   </tr>
                 </tbody>

@@ -62,17 +62,19 @@
                         $scope.receipt.number = r
 
 
-        $scope.getTotal =->
+        $scope.getTotal = ->
+          debugger
           collection = []
 
           for receiptFeesHead in $scope.receiptsFeesHeads
             if $scope.bySelectorFees(receiptFeesHead)
               collection.push(receiptFeesHead)
 
-          _(collection)
+          total = _(collection)
             .chain()
             .filter('properties.enabled', true)
             .sum('properties.amount')
+          $filter('number')(total.value())
 
         build = ->
             new Receipt(date: new Date())

@@ -16,14 +16,14 @@
           <td>{{f.properties.name}}</td>
 
           <td >
-            <input type="checkbox" ng-model='f.properties.enabled' ng-disabled='f.properties.disabled'>&nbsp;{{f.properties.amount}}</input>
-            <span style='text-decoration: line-through;' ng-if='f.properties.concession'>{{ f.properties.amount +  f.properties.concession}}</span>
+            <input type="checkbox" ng-model='f.properties.enabled' ng-disabled='f.properties.disabled'>&nbsp;{{f.properties.amount | number}}</input>
+            <span style='text-decoration: line-through;' ng-if='f.properties.concession'>{{ f.properties.amount +  f.properties.concession | number}}</span>
           </td>
           <td>
-            {{ f.properties.paid }}
+            {{ f.properties.paid | number}}
           </td>
           <td>
-            {{ f.properties.balance }}
+            {{ f.properties.balance | number}}
           </td>
         </tr>
       </tbody>

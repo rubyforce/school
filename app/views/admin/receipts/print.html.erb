@@ -10,18 +10,16 @@
     <div class="update_form">
       <div class="row">
         <div class="col-sm-12">
-          <div class="panel panel-default receipt" style="width: 95%; margin: 20px auto;">
-            <div class="panel panel-default">
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th width="50%" style="text-align: center;">Fees</th>
-                    <th width="50%" style="text-align: center;">Actual</th>
-                  </tr>
-                </thead>
-                <%= render partial: "fees_head", collection: @receipt.fees_heads %>
-              </table>
-            </div>
+          <div class="panel panel-default" style="width: 95%; margin: 20px auto;">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th width="50%" style="text-align: center;">Fees</th>
+                  <th width="50%" style="text-align: center;">Actual</th>
+                </tr>
+              </thead>
+              <%= render partial: "fees_head", collection: @receipt.fees_heads %>
+            </table>
           </div>
         </div>
         <div class="col-sm-12">
