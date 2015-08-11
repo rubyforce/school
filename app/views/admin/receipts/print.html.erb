@@ -1,55 +1,93 @@
+<style>
+  table, th, td
+  {
+    border-collapse:collapse;
+    border: 1px solid black;
+    width:70%;
+    text-align:right;
+  }
+  @media print {
+    .second {
+      display: none;
+    }
+    footer {
+      display: visible;
+    }
+  }
+</style>
 <%= stylesheet_link_tag "application" %>
 <div class="container">
-  <div class="page-header">
-    <h1 style="text-align: center"><%= @receipt.student.full_name %></h1>
+  <div class="header">
   </div>
-  <p class="lead" style="text-align: center">Class: <%= @receipt.student.standard.name %> Division: <%= @receipt.student.division.name %></p>
-  <div class="panel panel-default">
-    <button type="submit" class="btn btn-default" disabled>Receipt No. <%= @receipt.number %></button>
-
-    <div class="update_form">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="panel panel-default" style="width: 95%; margin: 20px auto;">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th width="50%" style="text-align: center;">Fees</th>
-                  <th width="50%" style="text-align: center;">Actual</th>
-                </tr>
-              </thead>
-              <%= render partial: "fees_head", collection: @receipt.fees_heads %>
-            </table>
+  <div class="row">
+    <div class="first">
+      <div class="col-xs-5">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Receipt No. <%= @receipt.number %> Date <%= @receipt.date.strftime("%d/%m/%Y") %></h4>
           </div>
-        </div>
-        <div class="col-sm-12">
-          <table class="table" style="width: 95%; margin: 50px auto">
-            <thead>
-              <tr>
-                <th width="25%" style="text-align: center;">Cash</th>
-                <% if @receipt.cheque_number.present? && @receipt.bank_name.present? %>
-                  <th width="25%" style="text-align: center;">Cheque #</th>
-                  <th width="25%" style="text-align: center;">Bank Name</th>
-                <% end %>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="text-align: center"><%= number_with_precision(@receipt.total, precision: 0, separator: ',', delimiter: '.') %></td>
-                <% if @receipt.cheque_number.present? && @receipt.bank_name.present? %>
-                  <td style="text-align: center"><%= @receipt.cheque_number %></td>
-                  <td style="text-align: center"><%= @receipt.bank_name %></td>
-                <% end %>
-              </tr>
-            </tbody>
-          </table>
+          <div class="panel-body">
+            <p>
+              Student Name: <%= @receipt.student.full_name %> <br>
+              Standard: <%= @receipt.student.standard.name %><br>
+              Div: <%= @receipt.student.division.name %><br>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-    <footer class="footer" style="text-align: center; margin-top: 50px;">
-      <div class="container">
-        <p class="text-muted">Created at <%= @receipt.date.strftime("%d/%m/%Y") %></p>
+    <div class="second">
+      <div class="col-xs-5 col-xs-offset-2 text-right">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Payment Method</h4>
+          </div>
+          <div class="panel-body">
+            <% if @receipt.cheque_number.present? && @receipt.bank_name.present? %>
+              <p>
+                Cheque No.: <%= @receipt.cheque_number %> <br>
+                Bank Name: <%= @receipt.bank_name %> <br>
+              </p>
+            <% else %>
+              Cash
+            <% end %>
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
   </div>
+  <div class="update_form">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-default" style="">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th width="50%" style="text-align: left;">Fees</th>
+                <th width="50%" style="text-align: right;">Actual</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <td style="text-align: center">Total</td>
+                <td style="text-align: right"><%= number_with_precision(@receipt.total, precision: 0, separator: ',', delimiter: '.') %></td>
+              </tr>
+            </tfoot>
+            <%= render partial: "fees_head", collection: @receipt.fees_heads %>
+          </table>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="col-sm-6">
+          <p>Indian Rupees <%= number_to_human(@receipt.total, precision: 2) %> Only</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer" style="text-align: center; margin-top: 50px;">
+    <div class="container">
+      <hr style="width: 30%;">
+      <p class="text-muted">Signature</p>
+    </div>
+  </footer>
 </div>
