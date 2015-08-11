@@ -1,6 +1,6 @@
 <tbody>
   <tr>
     <td style="text-align: center;"><%= fees_head.name %></td>
-    <td style="text-align: center;"><%= number_with_precision(fees_head.amount, separator: ',', delimiter: '.') %></td>
+    <td style="text-align: center;"><%= number_with_precision(fees_head.amount, precision: 0, separator: ',', delimiter: '.') %></td>
   </tr>
 </tbody>

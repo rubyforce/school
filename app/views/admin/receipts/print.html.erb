@@ -35,7 +35,7 @@
             </thead>
             <tbody>
               <tr>
-                <td style="text-align: center"><%= number_with_precision(@receipt.total, separator: ',', delimiter: '.') %></td>
+                <td style="text-align: center"><%= number_with_precision(@receipt.total, precision: 0, separator: ',', delimiter: '.') %></td>
                 <% if @receipt.cheque_number.present? && @receipt.bank_name.present? %>
                   <td style="text-align: center"><%= @receipt.cheque_number %></td>
                   <td style="text-align: center"><%= @receipt.bank_name %></td>
