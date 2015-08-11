@@ -10,9 +10,6 @@
     .second {
       display: none;
     }
-    footer {
-      display: visible;
-    }
   }
 </style>
 <%= stylesheet_link_tag "application" %>
@@ -73,7 +70,7 @@
                 <td style="text-align: right"><%= number_with_precision(@receipt.total, precision: 0, separator: ',', delimiter: '.') %></td>
               </tr>
             </tfoot>
-            <%= render partial: "fees_head", collection: @receipt.fees_heads %>
+            <%= render partial: "receipts_fees_head", collection: @receipt.receipts_fees_heads %>
           </table>
         </div>
       </div>
