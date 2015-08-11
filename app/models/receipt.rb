@@ -6,6 +6,6 @@ class Receipt < ActiveRecord::Base
   accepts_nested_attributes_for :receipts_fees_heads, allow_destroy: true
 
   def total
-    fees_heads.sum(:amount)
+    receipts_fees_heads.sum(:amount)
   end
 end
