@@ -24,7 +24,7 @@
                           f1.properties.disabled = true
                           f1.properties.enabled = false
                           f1.properties.balance = 0
-                          f1.properties.paid = f1.properties.amount
+                          f1.properties.paid = f1.amount
 
                         $http
                           .get("/admin/students/#{s.id}/fees")
@@ -34,12 +34,12 @@
                                 f2 = _.find response, (f) -> f.fees_head_id is f1.feesHeadId
                                 if f2?
                                   f1.properties.concession = parseFloat(f2.concession, 10)
-                                  f1.properties.amount = parseFloat(f2.amount_concession, 10)
+                                  f1.amount = parseFloat(f2.amount_concession, 10)
                                   f1.properties.balance = parseFloat(f2.amount_concession, 10)
 
                                   if f1.properties.disabled
                                     f1.properties.balance = 0
-                                    f1.properties.paid = f1.properties.amount
+                                    f1.properties.paid = f1.amount
 
         $scope.$watch 'student', (s) ->
             return unless s?
@@ -72,7 +72,7 @@
           _(collection)
             .chain()
             .filter('properties.enabled', true)
-            .sum('properties.amount')
+            .sum('amount')
 
         build = ->
             new Receipt(date: new Date())
@@ -100,6 +100,7 @@
 
             for f in $scope.fees_heads
                 found = _.find $scope.receipt.receiptsFeesHeads, (o) -> o.feesHeadId is f.id
+                debugger
                 # We extend our resource by properties hash for storing skipped on requests
                 # data. Lets say we want to use extra `enabled` flag. We added as
                 # object.properties.enabled = true / false and then on getting attributes
@@ -111,7 +112,7 @@
                     found.properties = {}
                     found.properties.enabled = true
                     found.properties.name = f.name
-                    found.properties.amount = f.amount
+                    found.amount = f.amount
                     found.properties.disabled = false
                     found.properties.balance = f.amount
                     found.properties.paid = 0
@@ -126,7 +127,7 @@
                     found.properties = {}
                     found.properties.enabled = true
                     found.properties.name = f.name
-                    found.properties.amount = f.amount
+                    found.amount = f.amount
                     found.properties.disabled = false
                     found.properties.balance = f.amount
                     found.properties.paid = 0

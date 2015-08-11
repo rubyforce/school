@@ -16,8 +16,8 @@
           <td>{{f.properties.name}}</td>
 
           <td >
-            <input type="checkbox" ng-model='f.properties.enabled' ng-disabled='f.properties.disabled'>&nbsp;{{f.properties.amount}}</input>
-            <span style='text-decoration: line-through;' ng-if='f.properties.concession'>{{ f.properties.amount +  f.properties.concession}}</span>
+            <input type="checkbox" ng-model='f.properties.enabled' ng-disabled='f.properties.disabled'>&nbsp;{{f.amount}}</input>
+            <span style='text-decoration: line-through;' ng-if='f.properties.concession'>{{ f.amount +  f.properties.concession}}</span>
           </td>
           <td>
             {{ f.properties.paid }}

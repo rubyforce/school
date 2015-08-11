@@ -1,12 +1,14 @@
 <%= stylesheet_link_tag "application" %>
 <div class="container">
-  <div class="page-header">
-    <h1 style="text-align: center"><%= @receipt.student.full_name %></h1>
-  </div>
-  <p class="lead" style="text-align: center">Class: <%= @receipt.student.standard.name %> Division: <%= @receipt.student.division.name %></p>
+  <h1 style="text-align: left">Receipt</h1>
   <div class="panel panel-default">
-    <button type="submit" class="btn btn-default" disabled>Receipt No. <%= @receipt.number %></button>
-
+    <div>
+      <p class="lead" style="padding: 30px 0px 30px 50px">Receipt No. <%= @receipt.number %></p>
+      <p class="lead">Date: <%= @receipt.date.strftime("%d/%m/%Y") %></p>
+    </div>
+    <p class="lead" style="padding-left: 50px">Student Name: <%= @receipt.student.full_name %></p>
+    <p class="lead" style="padding-left: 50px">Standard: <%= @receipt.student.standard.name %></p>
+    <p class="lead" style="padding-left: 50px">Div: <%= @receipt.student.division.name %></p>
     <div class="update_form">
       <div class="row">
         <div class="col-sm-12">
@@ -19,7 +21,7 @@
                     <th width="50%" style="text-align: center;">Actual</th>
                   </tr>
                 </thead>
-                <%= render partial: "fees_head", collection: @receipt.fees_heads %>
+                <%= render partial: "receipts_fees_head", collection: @receipt.receipts_fees_heads %>
               </table>
             </div>
           </div>
