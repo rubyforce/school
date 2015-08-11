@@ -63,7 +63,13 @@
 
 
         $scope.getTotal =->
-          _($scope.receiptsFeesHeads)
+          collection = []
+
+          for receiptFeesHead in $scope.receiptsFeesHeads
+            if $scope.bySelectorFees(receiptFeesHead)
+              collection.push(receiptFeesHead)
+
+          _(collection)
             .chain()
             .filter('properties.enabled', true)
             .sum('properties.amount')

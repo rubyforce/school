@@ -1,6 +1,7 @@
-<div class="panel panel-default receipt">
-  <div class="panel-heading fees">Fees Heads</div>
-  <div class="panel panel-default">
+<div class="panel panel-default">
+  <div class="panel-heading fees">Fees Heads
+  </div>
+  <div class="scroll-bar">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -26,12 +27,15 @@
           </td>
         </tr>
       </tbody>
-      <tfoot>
-        <tr>
-          <th>Total</th>
-          <th colspan="2">{{getTotal()}}</th>
-          <th></th>
-      </tfoot>
     </table>
+  </div>
+  <div class="foot">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-sm-6">
+          <h5>Total: {{getTotal()}}</h5>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

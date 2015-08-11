@@ -63,7 +63,7 @@ table tbody td {
   margin: 25px auto;
   overflow-y: auto;
 }
-.panel.panel-default.receipt {
+.scroll-bar {
   position: relative;
   padding: 10px 10px 10px 10px;
   max-height: 200px;
