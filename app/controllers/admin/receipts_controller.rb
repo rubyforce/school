@@ -32,7 +32,9 @@ class Admin::ReceiptsController < ApplicationController
     @receipt = Receipt.find(params[:id])
     render :json => @receipt.as_json(
      :include => [
-        :receipts_fees_heads
+        :receipts_fees_heads => {
+          :methods => [ :name ]
+        }
       ]
     )
   end
