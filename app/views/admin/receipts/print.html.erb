@@ -7,11 +7,9 @@
     .second {
       display: none;
     }
-
-    .text-left {
-      text-align: center;
+    .table-width {
+      width: 85% 
     }
-
     .table-bordered, .th, .td
     {
       border-collapse:collapse;
@@ -37,7 +35,7 @@
                     <h4>Receipt No. <%= @receipt.number %>
                   </th>
                   <th width="50%" style="text-align: right;">
-                    <h4 class="text-left"> Date <%= @receipt.date.strftime("%d/%m/%Y") %>
+                    <h4> Date <%= @receipt.date.strftime("%d/%m/%Y") %>
                   </th>
                 </tr>
               </thead>
