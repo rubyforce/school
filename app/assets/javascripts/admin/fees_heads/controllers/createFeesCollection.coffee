@@ -63,7 +63,6 @@
 
 
         $scope.getTotal = ->
-          debugger
           collection = []
 
           for receiptFeesHead in $scope.receiptsFeesHeads

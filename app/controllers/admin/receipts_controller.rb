@@ -17,7 +17,7 @@ class Admin::ReceiptsController < ApplicationController
     @receipts = @receipts.all
     render :json => @receipts.as_json(
       :include => [
-        :receipts_fees_heads,
+        { :receipts_fees_heads => { :methods=>:fees_name } },
         :fees_heads,
         :student => {
           :only => [ :id, :first_name, :last_name ],
