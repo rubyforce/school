@@ -1,14 +1,23 @@
 <style>
-  table, th, td
-  {
-    border-collapse:collapse;
-    border: 1px solid black;
-    width:70%;
-    text-align:right;
+  .table-width {
+    width: 100% 
   }
+
   @media print {
     .second {
       display: none;
+    }
+
+    .text-left {
+      text-align: center;
+    }
+
+    .table-bordered, .th, .td
+    {
+      border-collapse:collapse;
+      width:75%;
+      border: 1px solid black;
+      text-align:right;
     }
   }
 </style>
@@ -18,10 +27,21 @@
   </div>
   <div class="row">
     <div class="first">
-      <div class="col-xs-5">
+      <div class="col-xs-7">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4>Receipt No. <%= @receipt.number %></h4><h4> Date <%= @receipt.date.strftime("%d/%m/%Y") %></h4>
+            <table class="table-width">
+              <thead>
+                <tr>
+                  <th width="50%" style="text-align: left;">
+                    <h4>Receipt No. <%= @receipt.number %>
+                  </th>
+                  <th width="50%" style="text-align: right;">
+                    <h4 class="text-left"> Date <%= @receipt.date.strftime("%d/%m/%Y") %>
+                  </th>
+                </tr>
+              </thead>
+            </table>
           </div>
           <div class="panel-body">
             <p>
@@ -34,7 +54,7 @@
       </div>
     </div>
     <div class="second">
-      <div class="col-xs-5 col-xs-offset-2 text-right">
+      <div class="col-xs-5 text-right">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4>Payment Method</h4>
@@ -60,14 +80,14 @@
           <table class="table table-bordered">
             <thead>
               <tr>
-                <th width="50%" style="text-align: left;">Fees Head</th>
-                <th width="50%" style="text-align: right;">Amount</th>
+                <th width="50%" style="text-align: left;" class="th">Fees Head</th>
+                <th width="50%" style="text-align: right;" class="th">Amount</th>
               </tr>
             </thead>
             <tfoot>
               <tr>
-                <td style="text-align: center">Total</td>
-                <td style="text-align: right"><%= number_with_precision(@receipt.total, precision: 0, separator: ',', delimiter: '.') %></td>
+                <td style="text-align: center" class="td">Total</td>
+                <td style="text-align: right" class="td"><%= number_with_precision(@receipt.total, precision: 0, separator: ',', delimiter: '.') %></td>
               </tr>
             </tfoot>
             <%= render partial: "receipts_fees_head", collection: @receipt.receipts_fees_heads %>
