@@ -101,6 +101,7 @@
 
             for f in $scope.fees_heads
                 found = _.find $scope.receipt.receiptsFeesHeads, (o) -> o.feesHeadId is f.id
+                debugger
                 # We extend our resource by properties hash for storing skipped on requests
                 # data. Lets say we want to use extra `enabled` flag. We added as
                 # object.properties.enabled = true / false and then on getting attributes
