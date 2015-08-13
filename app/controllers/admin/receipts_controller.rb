@@ -33,7 +33,7 @@ class Admin::ReceiptsController < ApplicationController
     render :json => @receipt.as_json(
      :include => [
         :receipts_fees_heads => {
-          :methods => [ :name ]
+          :methods => [ :fees_name ]
         }
       ]
     )
