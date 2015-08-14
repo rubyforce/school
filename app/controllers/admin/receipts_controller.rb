@@ -20,7 +20,7 @@ class Admin::ReceiptsController < ApplicationController
         { :receipts_fees_heads => { :methods=>:fees_name } },
         :fees_heads,
         :student => {
-          :only => [ :id, :first_name, :last_name ],
+          :only => [ :id, :first_name, :last_name, :bounced ],
           :methods => [ :full_name ],
           :include => [ :standard, :division ]
         }

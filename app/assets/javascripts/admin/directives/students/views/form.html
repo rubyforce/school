@@ -37,7 +37,10 @@
       <tbody>
         <tr data-id='{{student.id}}' ng-repeat='student in students | offset:(currentPage-1)*itemsPerPage | limitTo:itemsPerPage | filter:bySelectors'>
           <td>{{student.firstName}}</td>
-          <td>{{student.lastName}}</td>
+          <td>
+            {{student.lastName}}
+            <label class="label label-danger" ng-if="student.bounced">bounced</label>
+          </td>
           <td>{{student.groupNo}}</td>
           <td>{{student.admissionDate}}</td>
           <td>{{student.entryNo}}</td>

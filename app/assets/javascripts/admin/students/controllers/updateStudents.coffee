@@ -7,6 +7,7 @@
       yearRange: "1950:-0"
 
     $scope.formAction = (user) ->
+      debugger
       $scope.currentUser = user
       $scope.show_form = true
       $scope.clicked = true
