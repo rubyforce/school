@@ -99,7 +99,7 @@
       </div>
       <div class="col-sm-12">
         <div class="col-sm-6">
-          <p>Indian Rupees <%= number_to_human(@receipt.total, precision: 2) %> Only</p>
+          <p>Indian Rupees <%= @receipt.total.to_words %> Only</p>
         </div>
       </div>
     </div>

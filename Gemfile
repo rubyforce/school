@@ -43,6 +43,8 @@ gem 'rack-cache'
 
 gem 'jquery-validation-rails'
 
+gem 'numbers_and_words' 
+
 # admin pages
 gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'countries'
