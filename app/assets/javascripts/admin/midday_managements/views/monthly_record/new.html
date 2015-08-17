@@ -74,6 +74,22 @@
             </table>
           </div>
         </div>
+        <div class="form-group">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td width="27%">Expense made towards: Fuel and Vegetables</td>
+                <td>
+                  <input name='monthly_record.expense' type='text' ng-model='meal.expense' class="form-control" />
+                </td>
+                <td width="12%">Cooks and helpers</td>
+                <td>
+                  <input name='monthly_record.cooks' type='text' ng-model='meal.cooks' class="form-control" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </form>
 
       <br />
@@ -86,6 +102,8 @@
                   <th>Item Name</th>
                   <th>Ordered</th>
                   <th>Received this month</th>
+                  <th>Expenses</th>
+                  <th>Cooks</th>
                 </tr>
               </thead>
               <tbody>
@@ -93,27 +111,12 @@
                   <td>{{food.title}}</td>
                   <td>{{food.ordered | number}}</td>
                   <td>{{food.received | number}}</td>
+                  <td>{{food.expense}}</td>
+                  <td>{{food.cooks}}</td>
                 </tr>
               </tbody>
             </table>
           </div>
-        </div>
-
-        <div class="form-group">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td width="27%">Expense made towards: Fuel and Vegetables</td>
-                <td>
-                  <input name='monthly_record.expense' type='text' ng-model='monthly_record.expense' class="form-control" />
-                </td>
-                <td width="12%">Cooks and helpers</td>
-                <td>
-                  <input name='monthly_record.cooks' type='text' ng-model='monthly_record.cooks' class="form-control" />
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
         <div class="form-group ui buttons">
