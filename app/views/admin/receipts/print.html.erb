@@ -1,6 +1,6 @@
 <style>
   .table-width {
-    width: 100% 
+    width: 100%
   }
 
   @page {
@@ -13,7 +13,7 @@
       display: none;
     }
     .table-width {
-      width: 85% 
+      width: 85%
     }
     .table-bordered, .th, .td
     {
@@ -90,7 +90,7 @@
             <tfoot>
               <tr>
                 <td style="text-align: center" class="td">Total</td>
-                <td style="text-align: right" class="td"><%= number_with_precision(@receipt.total, precision: 0, separator: ',', delimiter: '.') %></td>
+                <td style="text-align: right" class="td"><%= number_with_precision(@receipt.total_sum, precision: 2, separator: ',', delimiter: '.') %></td>
               </tr>
             </tfoot>
             <%= render partial: "receipts_fees_head", collection: @receipt.receipts_fees_heads %>
@@ -99,7 +99,7 @@
       </div>
       <div class="col-sm-12">
         <div class="col-sm-6">
-          <p>Indian Rupees <%= @receipt.total.to_words %> Only</p>
+          <p>Indian Rupees <%=number_with_precision(@receipt.total_sum.to_f.to_words.capitalize, precision: 2, separator: ',', delimiter: '.') %> Only</p>
         </div>
       </div>
     </div>

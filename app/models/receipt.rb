@@ -5,7 +5,9 @@ class Receipt < ActiveRecord::Base
 
   accepts_nested_attributes_for :receipts_fees_heads, allow_destroy: true
 
-  def total
-    receipts_fees_heads.sum(:amount).to_i
+  before_save :total_sum
+
+  def total_sum
+    self.total = self.receipts_fees_heads.map(&:amount).sum
   end
 end

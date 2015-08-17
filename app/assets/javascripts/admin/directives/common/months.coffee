@@ -30,7 +30,7 @@
             </div>
             <div class="col-sm-6">
               <select ng-model='ngModel' class="form-control">
-                <option ng-repeat="month in months" ng-value='$index'>{{month}}</option>
+                <option ng-repeat="month in months">{{month}}</option>
               </select>
             </div>
           </div>
