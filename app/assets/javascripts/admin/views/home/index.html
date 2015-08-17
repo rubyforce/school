@@ -61,7 +61,7 @@
                 </tr>
                 <tr>
                   <td style="border-top: none;">Fees Outstanding</td>
-                  <td style="border-top: none;">{{cooks}}</td>
+                  <td style="border-top: none;">Rs.  {{dashboard.outstanding_fees | number}}</td>
                 </tr>
               </tbody>
             </table>
@@ -90,7 +90,7 @@
                 </tr>
                 <tr>
                   <td style="border-top: none;">Yesterday's closing balance</td>
-                  <td style="border-top: none;">Rs. 250</td>
+                  <td style="border-top: none;">Rs. {{dashboard.yesterday_closing_balance | number}}</td>
                 </tr>
               </tbody>
             </table>

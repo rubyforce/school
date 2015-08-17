@@ -9,13 +9,16 @@ class Admin::DashboardsController < ApplicationController
       :students_male_count => Student.where(:gender => "male").count,
       :employees_govt_pay => Employee.joins(:paid_type).where(paid_types: { title: 'Government pay' }),
       :employees_section => Employee.joins(:section).where(sections: { title: 'Non-teaching' }),
+
       :expense => ExpenseReceipt.where("EXTRACT(DAY FROM created_at) = ?", Date.today.day).sum(:amount),
       :expense_current_month => ExpenseReceipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month).sum(:amount),
       :salary_expenses_last_month => EmployeeSalaryReceipt.joins(:salary_receipt).where("EXTRACT(MONTH FROM month) = ?", Date.today.month-1).sum(:salary),
+      :yesterday_closing_balance => CashManagement.where("EXTRACT(DAY FROM created_at) = ?", Date.today.day-1).sum(:cash_closing),
 
-      :today_fees_collection => Receipt.where("EXTRACT(DAY FROM created_at) = ?", Date.today.day).sum(:cash),
-      :current_month_fees_collection => Receipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month).sum(:cash),
-      :last_month_fees_collection => Receipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month-1).sum(:cash)
+      :today_fees_collection => Receipt.where("EXTRACT(DAY FROM created_at) = ?", Date.today.day).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
+      :current_month_fees_collection => Receipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
+      :last_month_fees_collection => Receipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month-1).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
+      :outstanding_fees => Receipt.all.sum(:total).round(2)
     }
   end
 end
