@@ -39,6 +39,9 @@
           m.left = m.last_received - m.used
         @foods = response.monthly_record_month?.monthly_meal_meals || []
 
+        @expense = response.monthly_record_month?.expense
+        @cooks = response.monthly_record_month?.cooks
+
     $scope.$watch 'monthly_record.month', (month) ->
       return unless month?
 
@@ -47,6 +50,8 @@
           m = new Month(response)
           $scope.months[month] = m
           $scope.foods = m.foods
+          $scope.monthly_record.expense = m.expense
+          $scope.monthly_record.cooks = m.cooks
 
     $scope.add = ->
       meal = _($scope.meals).chain().find((m)-> parseInt(m.id, 10) is parseInt($scope.meal.meal_id, 10)).value()

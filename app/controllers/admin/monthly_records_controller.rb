@@ -45,24 +45,24 @@ class Admin::MonthlyRecordsController < ApplicationController
 
     if lol == 0
       previous_month = DateTime.parse("#{DateTime.now.year - 1}-12-01").to_date
-    else 
+    else
       previous_month = DateTime.parse("#{DateTime.now.year}-#{lol}-01").to_date
     end
 
-    monthly_record = MonthlyRecord
+    monthly_record_previous_month = MonthlyRecord
     .where("EXTRACT(month FROM to_date(?, 'YYYY-MM-DD')) = cast(monthly_records.month as integer) AND EXTRACT(year FROM to_date(?, 'YYYY-MM-DD')) = cast(year as integer)", previous_month , previous_month)
     .includes(:monthly_meal_meals)
     .first
 
-    monthly_record_month = MonthlyRecord
+    monthly_record_selected_month = MonthlyRecord
     .where("CAST(monthly_records.year as integer) = EXTRACT(year FROM NOW()) AND CAST(monthly_records.month AS integer) = ?", params[:month].to_i)
     .includes(:monthly_meal_meals)
     .first
 
     render :json => {
       daily_meals: daily_meals.as_json(include: :daily_meal_meals),
-      monthly_record: monthly_record.as_json(include: :monthly_meal_meals),
-      monthly_record_month: monthly_record_month.as_json(include: :monthly_meal_meals)
+      monthly_record: monthly_record_previous_month.as_json(include: :monthly_meal_meals),
+      monthly_record_month: monthly_record_selected_month.as_json(include: :monthly_meal_meals)
     }
   end
 end
