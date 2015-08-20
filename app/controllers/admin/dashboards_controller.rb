@@ -2,6 +2,15 @@ class Admin::DashboardsController < ApplicationController
   respond_to :json
 
   def index
+    paid = Receipt.all.sum(:total).round(2)
+    concession = StudentsFeesHead.sum(:concession)
+
+    students = Student.all.group_by(&:standard_id)
+    expected = Standard.all.inject(0) do |summary, standard|
+      summary += standard.fees_heads.sum(:amount) * students[standard.id].to_a.size
+      summary
+    end
+
     render :json => {
       :students => Student.all,
       :employees => Employee.all,
@@ -18,7 +27,7 @@ class Admin::DashboardsController < ApplicationController
       :today_fees_collection => Receipt.where("EXTRACT(DAY FROM created_at) = ?", Date.today.day).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
       :current_month_fees_collection => Receipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
       :last_month_fees_collection => Receipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month-1).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
-      :outstanding_fees => Receipt.all.sum(:total).round(2)
+      :outstanding_fees => expected - paid - concession
     }
   end
 end
