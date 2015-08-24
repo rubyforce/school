@@ -42,11 +42,4 @@ class Admin::SalaryReceiptsController < ApplicationController
     @salary_receipt.destroy
     render :json => @salary_receipt
   end
-
-  def paid_salary
-    # date = Date.parse(params[:date])
-    # @salary_receipts = SalaryReceipt.where('date BETWEEN ? AND ?', date.beginning_of_month, date.end_of_month)
-    @salary_receipts = SalaryReceipt.all
-    render :json => @salary_receipts
-  end
 end

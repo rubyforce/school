@@ -88,10 +88,6 @@
             $scope.student.studentsFeesHeads = studentsFeesHeadsAttributes
             $scope.student.update().then (response) ->
                 $scope.alert = true
-                debugger
-                $scope.student.standardId = {}
-                $scope.student.divisionId = {}
-                $scope.student = {}
                 $scope.student.studentsFeesHeads = response.studentsFeesHeads
                 $timeout(render)
 

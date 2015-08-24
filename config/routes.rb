@@ -44,9 +44,6 @@ Greenarea::Application.routes.draw do
       member do
         get :print
       end
-      collection do
-        get :paid_salary
-      end
     end
 
     resources :expense_receipts do

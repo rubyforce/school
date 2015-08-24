@@ -80,8 +80,6 @@ class Admin::ReceiptsController < ApplicationController
   end
 
   def paid_fees
-    require 'pry'
-    binding.pry
     date = Date.parse(params[:date])
 
     @receipts = Receipt
