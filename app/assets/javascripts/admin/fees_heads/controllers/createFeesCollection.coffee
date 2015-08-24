@@ -76,7 +76,7 @@
           $filter('number')(total.value())
 
         build = ->
-            new Receipt(date: new Date())
+            new Receipt(date: $.datepicker.formatDate("dd/mm/yy", new Date()))
 
         $scope.receipt = build()
         $scope.receipt.receiptsFeesHeads = []
