@@ -17,7 +17,7 @@ class Admin::DashboardsController < ApplicationController
       :students_female_count => Student.where(:gender => "female").count,
       :students_male_count => Student.where(:gender => "male").count,
       :employees_govt_pay => Employee.joins(:paid_type).where(paid_types: { title: 'GOVT. PAY' }),
-      :employees_section => Employee.joins(:section).where(sections: { title: 'NNON-TEACHING' }),
+      :employees_section => Employee.joins(:section).where(sections: { title: 'NON-TEACHING' }),
 
       :expense => ExpenseReceipt.where("EXTRACT(DAY FROM created_at) = ?", Date.today.day).sum(:amount),
       :expense_current_month => ExpenseReceipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month).sum(:amount),
