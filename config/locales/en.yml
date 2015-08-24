@@ -22,7 +22,7 @@
 en:
   layouts:
     application:
-      title: "Home"
+      title: "AVIS"
   contacts:
     create:
       success: "Message was successfully sent."
