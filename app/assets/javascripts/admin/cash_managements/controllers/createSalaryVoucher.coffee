@@ -3,6 +3,29 @@
   ($scope, SalaryReceipt, $location, $window, $timeout) ->
     $scope.alert = false
 
+    $scope.salaryDate = $.datepicker.formatDate("mm", new Date())
+
+    disabled_employees = (e) ->
+        $http
+            .get("/admin/salary_receipts/paid_salary?date=#{$scope.salaryDate}")
+            .success (response) -> # [fees_head1, fees_head2]
+                $timeout ->
+                  for f1 in $scope.receiptsFeesHeads
+                    f1.properties.disabled = false
+                    f1.properties.enabled = true
+
+                    f2 = _.find response, (f) -> f.id is f1.feesHeadId
+                    if f2?
+                      f1.properties.disabled = true
+                      f1.properties.enabled = false
+                      f1.properties.balance = 0
+                      f1.properties.paid = f1.amount
+
+
+    $scope.$watch 'salaryDate', (month) ->
+            return unless month?
+            return unless $scope.employee?
+
     render = ->
         # Before making merges between student.studentsFeesHeads and fees_heads
         # we should clean up the previous populated collection.
@@ -24,7 +47,6 @@
                 found.properties = {}
                 found.properties.enabled = true
                 found.properties.name = f.fullName()
-        
             else
                 found =  {}
                 found.employeeId = f.id
