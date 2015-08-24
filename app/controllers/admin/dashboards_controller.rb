@@ -2,7 +2,7 @@ class Admin::DashboardsController < ApplicationController
   respond_to :json
 
   def index
-    paid = Receipt.all.sum(:total)
+    paid = Receipt.where(:status => nil).where(:cheque_status => nil).sum(:total)
     concession = StudentsFeesHead.sum(:concession)
 
     students = Student.all.group_by(&:standard_id)
@@ -16,8 +16,8 @@ class Admin::DashboardsController < ApplicationController
       :employees => Employee.all,
       :students_female_count => Student.where(:gender => "female").count,
       :students_male_count => Student.where(:gender => "male").count,
-      :employees_govt_pay => Employee.joins(:paid_type).where(paid_types: { title: 'Government pay' }),
-      :employees_section => Employee.joins(:section).where(sections: { title: 'Non-teaching' }),
+      :employees_govt_pay => Employee.joins(:paid_type).where(paid_types: { title: 'GOVT. PAY' }),
+      :employees_section => Employee.joins(:section).where(sections: { title: 'NNON-TEACHING' }),
 
       :expense => ExpenseReceipt.where("EXTRACT(DAY FROM created_at) = ?", Date.today.day).sum(:amount),
       :expense_current_month => ExpenseReceipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month).sum(:amount),
