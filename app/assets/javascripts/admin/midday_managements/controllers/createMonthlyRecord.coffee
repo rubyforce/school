@@ -20,11 +20,12 @@
         d_meals = {}
 
         for d in response.daily_meals
-          @no_of_student1 += _.sum(d.daily_meal_meals, 'no_of_student1')
-          @no_of_student2 += _.sum(d.daily_meal_meals, 'no_of_student2')
-          @no_of_student3 += _.sum(d.daily_meal_meals, 'no_of_student3')
-          @no_of_student4 += _.sum(d.daily_meal_meals, 'no_of_student4')
-          @no_of_student5 += _.sum(d.daily_meal_meals, 'no_of_student5')
+          for dm in d.daily_meal_meals
+            @no_of_student1 = dm.no_of_student1
+            @no_of_student2 = dm.no_of_student2
+            @no_of_student3 = dm.no_of_student3
+            @no_of_student4 = dm.no_of_student4
+            @no_of_student5 = dm.no_of_student5
 
           for m in d.daily_meal_meals
             d_meals[m.meal_id] ?= []
@@ -59,6 +60,7 @@
       $scope.foods.push(_.clone($scope.meal))
 
     $scope.create = ->
+      debugger
       $scope.monthly_record.month = parseInt($scope.monthly_record.month, 10) + 1
       $scope.monthly_record.monthlyMealMealsAttributes = $scope.foods
 

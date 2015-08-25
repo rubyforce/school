@@ -15,15 +15,15 @@
         $scope.student = response[0].student
 
         if $scope.receipt
-          $scope.receipt = new Receipt(id:  $scope.receipt.id)
-          $scope.student = new Student(id:  $scope.student.id)
-          $scope.receipt.cheque_status = "bounced"
-          $scope.student.bounced = true
-          $scope.receipt.cheque_remark = $scope.cheque_remark
-          $scope.receipt.update()
-          $scope.student.update()
-          reset()
-
-        else 
+          if (confirm("Do you want to save?"))
+            $scope.receipt = new Receipt(id:  $scope.receipt.id)
+            $scope.student = new Student(id:  $scope.student.id)
+            $scope.receipt.cheque_status = "bounced"
+            $scope.student.bounced = true
+            $scope.receipt.cheque_remark = $scope.cheque_remark
+            $scope.receipt.update()
+            $scope.student.update()
+            reset()
+        else
           $scope.alert = true
 ]

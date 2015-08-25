@@ -3,7 +3,7 @@ class Admin::MonthlyRecordsController < ApplicationController
 
   def index
     @monthly_records = MonthlyRecord.all
-    respond_with @monthly_records
+    render :json => @monthly_records
   end
 
   def show

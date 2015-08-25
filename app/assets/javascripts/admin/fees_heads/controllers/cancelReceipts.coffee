@@ -36,9 +36,10 @@
 
     $scope.cancel = ->
       if $scope.receipt
-        $scope.receipt = new Receipt(id:  $scope.receipt.id)
-        $scope.receipt.status = "canceled"
-        $scope.receipt.remark = $scope.remark
-        $scope.receipt.update()
-        reset()
+        if (confirm("Do you want to save?"))
+          $scope.receipt = new Receipt(id:  $scope.receipt.id)
+          $scope.receipt.status = "canceled"
+          $scope.receipt.remark = $scope.remark
+          $scope.receipt.update()
+          reset()
 ]
