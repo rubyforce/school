@@ -86,7 +86,8 @@
         $scope.receiptsFeesHeads = []
 
         $scope.reset = ->
-            $scope.receipt = build()
+           $scope.search = {}
+           $scope.student = []
 
         # Lets watch on change $scope.student to merge fees_heads with existing
         # receipt.receiptsFeesHeads feesHeadId id because of uniqueness.
@@ -180,6 +181,7 @@
                 domain = "#{protocol}://#{host}" # Example: http://example.com
                 $window.open("#{domain}/admin/receipts/#{response.id}/print",'_blank')
 
+                $scope.reset()
                 $timeout(render)
                 disabled_fees($scope.student)
 

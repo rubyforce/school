@@ -71,6 +71,10 @@
 
                 collection
 
+        $scope.reset = ->
+            $scope.search = {}
+            $scope.student = []
+
         $scope.create = ->
             return false if _.isUndefined($scope.student.id)
 
@@ -88,6 +92,7 @@
             $scope.student.studentsFeesHeads = studentsFeesHeadsAttributes
             $scope.student.update().then (response) ->
                 $scope.alert = true
+                $scope.reset()
                 $scope.student.studentsFeesHeads = response.studentsFeesHeads
                 $timeout(render)
 
