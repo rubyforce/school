@@ -46,10 +46,11 @@ class Admin::SalaryReceiptsController < ApplicationController
   def paid_salary
     date = Date.parse(params[:date])
 
-    @salary_receipt = SalaryReceipt
-        .where('month BETWEEN ? AND ?', date.beginning_of_month, date.end_of_month)
-        .includes(:employee_salary_receipts)
-        .map(&:employee_salary_receipts)
-    render :json => @salary_receipt
+    collection = SalaryReceipt
+    .where('month BETWEEN ? AND ?', date.beginning_of_month, date.end_of_month)
+    .includes(:employee_salary_receipts)
+    .map(&:employee_salary_receipts)
+    .flatten
+    render :json => collection
   end
 end
