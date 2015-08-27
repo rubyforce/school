@@ -6,7 +6,7 @@
     disabled_salary = (m) ->
       return unless m?
 
-      year = $scope.salary_receipt.year
+      year = $scope.salary_receipt.year || (new Date().getFullYear())
       month = parseInt(m, 10) + 1
 
       $http
@@ -99,12 +99,8 @@
 
         collection
 
-    CURRENT_DATE =
-        year: new Date().getFullYear()
-
     build = ->
         new SalaryReceipt()
-        _.clone(CURRENT_DATE)
 
     $scope.salary_receipt = build()
     $scope.salary_receipt.employeeSalaryReceipts = []
