@@ -41,6 +41,9 @@ Greenarea::Application.routes.draw do
     resources :fees_head_recurrences
 
     resources :salary_receipts do
+      collection do
+        get :paid_salary
+      end
       member do
         get :print
       end
