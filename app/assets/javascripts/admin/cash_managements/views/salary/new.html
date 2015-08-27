@@ -6,7 +6,7 @@
       <div class="col-sm-12">
         <!-- First Column -->
         <div class="col-sm-6">
-          <month ng-model='salary_receipt.month' title='Salary for the month of'></month>
+          <months ng-model='salary_receipt.month' title='Salary for the month of'></months>
         </div>
         <!-- End First Column -->
 
@@ -32,7 +32,7 @@
                   <td>{{f.properties.name}}</td>
 
                   <td style="text-align: left;">
-                    <input type="checkbox" ng-model='f.properties.enabled'>{{f.salary}}</input>
+                    <input type="checkbox" ng-disabled='f.properties.disabled' ng-model='f.properties.enabled'>&nbsp;{{f.salary}}</input>
                   </td>
 
                   <td>

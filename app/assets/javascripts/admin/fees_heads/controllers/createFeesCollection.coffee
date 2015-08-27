@@ -1,6 +1,6 @@
 @fees_heads.controller 'CreateFeesCollectionController', [
-    '$scope', 'Receipt', '$timeout', '$state', '$window', '$location', 'uuid4', '$http', '$filter'
-    ($scope, Receipt, $timeout, $state, $window, $location, uuid4, $http, $filter) ->
+    '$scope', 'Receipt', '$timeout', '$state', '$window', '$location', 'uuid4', '$http', '$filter', 'Student'
+    ($scope, Receipt, $timeout, $state, $window, $location, uuid4, $http, $filter, Student) ->
         $scope.feesHeadDate = $.datepicker.formatDate("dd/mm/yy", new Date())
 
         $scope.dateOptions =
@@ -88,6 +88,7 @@
         $scope.reset = ->
            $scope.search = {}
            $scope.student = []
+
 
         # Lets watch on change $scope.student to merge fees_heads with existing
         # receipt.receiptsFeesHeads feesHeadId id because of uniqueness.

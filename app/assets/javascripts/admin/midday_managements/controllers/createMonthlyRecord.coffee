@@ -60,7 +60,6 @@
       $scope.foods.push(_.clone($scope.meal))
 
     $scope.create = ->
-      debugger
       $scope.monthly_record.month = parseInt($scope.monthly_record.month, 10) + 1
       $scope.monthly_record.monthlyMealMealsAttributes = $scope.foods
 

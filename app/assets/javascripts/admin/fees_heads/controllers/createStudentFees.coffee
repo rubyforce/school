@@ -95,5 +95,4 @@
                 $scope.reset()
                 $scope.student.studentsFeesHeads = response.studentsFeesHeads
                 $timeout(render)
-
 ]
