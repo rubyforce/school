@@ -6,7 +6,7 @@
     disabled_salary = (m) ->
       return unless m?
 
-      year = $scope.year || (new Date().getFullYear())
+      year = $scope.salary_receipt.year || (new Date().getFullYear())
       month = parseInt(m, 10) + 1
 
       $http
@@ -23,6 +23,23 @@
     $scope.$watch 'salary_receipt.month', (m) ->
       return unless m?
       disabled_salary(m)
+
+    $scope.$watch 'salary_receipt.year', (y) ->
+      return unless y?
+
+      year = parseInt(y, 10)
+      month = parseInt($scope.salary_receipt.month, 10) + 1 || (new Date().getFullMonth())
+
+      $http
+        .get("/admin/salary_receipts/paid_salary?&date=#{month}/#{year}")
+        .success (response) ->
+          $timeout ->
+            for e1 in $scope.employeeSalaryReceipts
+              e1.properties.disabled = false
+
+              e2 = _.find response, (e) -> e.employee_id is e1.employeeId
+              if e2?
+                e1.properties.disabled = true
 
     render = ->
       # Before making merges between student.studentsFeesHeads and fees_heads
@@ -102,7 +119,6 @@
       $scope.salary_receipt.employeeSalaryReceipts = employeeSalaryReceiptsAttributes
 
       new SalaryReceipt($scope.salary_receipt).create().then (response) ->
-        debugger
         $scope.alert = true
 
         $scope.salary_receipt = new SalaryReceipt()
