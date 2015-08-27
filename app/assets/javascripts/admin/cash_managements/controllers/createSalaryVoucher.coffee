@@ -33,7 +33,6 @@
       $http
         .get("/admin/salary_receipts/paid_salary?&date=#{month}/#{year}")
         .success (response) ->
-          debugger
           $timeout ->
             for e1 in $scope.employeeSalaryReceipts
               e1.properties.disabled = false
