@@ -6,7 +6,7 @@
     disabled_salary = (m) ->
       return unless m?
 
-      year = $scope.salary_receipt.year || (new Date().getFullYear())
+      year = $scope.salary_receipt.year
       month = parseInt(m, 10) + 1
 
       $http
@@ -28,11 +28,12 @@
       return unless y?
 
       year = parseInt(y, 10)
-      month = parseInt($scope.salary_receipt.month, 10) + 1 || (new Date().getFullMonth())
+      month = parseInt($scope.salary_receipt.month, 10) + 1
 
       $http
         .get("/admin/salary_receipts/paid_salary?&date=#{month}/#{year}")
         .success (response) ->
+          debugger
           $timeout ->
             for e1 in $scope.employeeSalaryReceipts
               e1.properties.disabled = false
@@ -100,8 +101,7 @@
         collection
 
     CURRENT_DATE =
-        year: $.datepicker.formatDate("yy", new Date())
-
+        year: new Date().getFullYear()
 
     build = ->
         new SalaryReceipt()
