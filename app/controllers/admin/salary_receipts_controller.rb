@@ -46,8 +46,12 @@ class Admin::SalaryReceiptsController < ApplicationController
   def paid_salary
     date = Date.parse(params[:date])
 
+    # require 'pry'
+    # binding.pry
+
     collection = SalaryReceipt
-    .where('month BETWEEN ? AND ?', date.beginning_of_month, date.end_of_month)
+    .where('month = ?', date.month.to_s)
+    .where('year = ?', date.year.to_s)
     .includes(:employee_salary_receipts)
     .map(&:employee_salary_receipts)
     .flatten

@@ -3,8 +3,6 @@
   ($scope, SalaryReceipt, $location, $window, $timeout, $http) ->
     $scope.alert = false
 
-    $scope.salaryDate = $.datepicker.formatDate("dd/mm/yy", new Date())
-
     disabled_salary = (m) ->
       return unless m?
 
@@ -12,10 +10,12 @@
       month = parseInt(m, 10) + 1
 
       $http
-        .get("/admin/salary_receipts/paid_salary?&date=01/#{month}/#{year}")
+        .get("/admin/salary_receipts/paid_salary?&date=#{month}/#{year}")
         .success (response) ->
           $timeout ->
             for e1 in $scope.employeeSalaryReceipts
+              e1.properties.disabled = false
+
               e2 = _.find response, (e) -> e.employee_id is e1.employeeId
               if e2?
                 e1.properties.disabled = true
@@ -95,12 +95,14 @@
       _($scope.employeeSalaryReceipts).any (c) -> c.properties?.enabled
 
     $scope.create = ->
+      $scope.salary_receipt.month = parseInt($scope.salary_receipt.month, 10) + 1
       employeeSalaryReceiptsAttributes = new NestedAttributes($scope.employeeSalaryReceipts)
       employeeSalaryReceiptsAttributes = employeeSalaryReceiptsAttributes.get()
 
       $scope.salary_receipt.employeeSalaryReceipts = employeeSalaryReceiptsAttributes
 
       new SalaryReceipt($scope.salary_receipt).create().then (response) ->
+        debugger
         $scope.alert = true
 
         $scope.salary_receipt = new SalaryReceipt()
