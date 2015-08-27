@@ -82,8 +82,13 @@
 
         collection
 
+    CURRENT_DATE =
+        year: $.datepicker.formatDate("yy", new Date())
+
+
     build = ->
-      new SalaryReceipt()
+        new SalaryReceipt()
+        _.clone(CURRENT_DATE)
 
     $scope.salary_receipt = build()
     $scope.salary_receipt.employeeSalaryReceipts = []
