@@ -10,10 +10,9 @@
         .get("/admin/salary_receipts/paid_salary?&date=#{$scope.salaryDate}")
         .success (response) ->
           $timeout ->
-            for e1 in $scope.employeeSalaryReceipts
-              e1.properties.disabled = false
-
-              e2 = _.find response, (e) -> e.id is e1.salaryReceiptId
+            debugger
+            for e1 in $scope.employees
+              e2 = _.find response, (e) -> e.employeeId is e1.id
               if e2?
                 e1.properties.disabled = true
 

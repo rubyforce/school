@@ -48,6 +48,8 @@ class Admin::SalaryReceiptsController < ApplicationController
 
     @salary_receipt = SalaryReceipt
         .where('month BETWEEN ? AND ?', date.beginning_of_month, date.end_of_month)
+        .includes(:employee_salary_receipts)
+        .map(&:employee_salary_receipts)
     render :json => @salary_receipt
   end
 end
