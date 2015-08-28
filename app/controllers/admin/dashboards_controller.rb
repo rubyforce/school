@@ -23,7 +23,7 @@ class Admin::DashboardsController < ApplicationController
       :expense_current_month => ExpenseReceipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month).sum(:amount),
       :salary_expenses_last_month => EmployeeSalaryReceipt
       .joins(:salary_receipt)
-      .where("month = '#{(Date.today.month-1).to_s}'")
+      .where("month = ?", (Date.today.month-1).to_s)
       .sum(:salary),
       :yesterday_closing_balance => CashManagement.where("EXTRACT(DAY FROM created_at) = ?", Date.today.day-1).sum(:cash_closing),
 
