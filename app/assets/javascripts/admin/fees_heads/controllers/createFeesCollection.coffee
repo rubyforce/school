@@ -177,6 +177,10 @@
             new Receipt($scope.receipt).create().then (response) ->
                 $scope.alert = true
 
+                sum = response.id + 1
+                r = numeral(sum/10000).format('0.0000').replace(/\./,'')
+                $scope.receipt.number = r
+
                 protocol = $location.protocol()
                 host = $window.location.host
                 domain = "#{protocol}://#{host}" # Example: http://example.com
