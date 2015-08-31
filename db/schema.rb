@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150831083143) do
+ActiveRecord::Schema.define(version: 20150831123822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,28 +93,6 @@ ActiveRecord::Schema.define(version: 20150831083143) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "companies", force: :cascade do |t|
-    t.string   "name"
-    t.text     "address"
-    t.string   "contact_no"
-    t.string   "tax"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "containers", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "daily_meal_meals", force: :cascade do |t|
     t.integer  "meal_id"
     t.integer  "daily_meal_id"
@@ -133,8 +111,13 @@ ActiveRecord::Schema.define(version: 20150831083143) do
   create_table "daily_meals", force: :cascade do |t|
     t.date     "date"
     t.decimal  "total_number"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "no_of_student1"
+    t.integer  "no_of_student2"
+    t.integer  "no_of_student3"
+    t.integer  "no_of_student4"
+    t.integer  "no_of_student5"
   end
 
   create_table "dashboards", force: :cascade do |t|
@@ -142,14 +125,6 @@ ActiveRecord::Schema.define(version: 20150831083143) do
     t.string   "students_male"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-  end
-
-  create_table "devices", force: :cascade do |t|
-    t.string   "device_id"
-    t.string   "other_info"
-    t.integer  "vehicle_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "divisions", force: :cascade do |t|
@@ -202,13 +177,6 @@ ActiveRecord::Schema.define(version: 20150831083143) do
     t.integer  "authorized_by_id"
   end
 
-  create_table "expenses", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "fees_head_recurrences", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -244,31 +212,6 @@ ActiveRecord::Schema.define(version: 20150831083143) do
 
   create_table "finance_modes", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "grievances", force: :cascade do |t|
-    t.date     "date"
-    t.text     "note"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "items", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "company_id"
-    t.string   "min_qty"
-    t.integer  "package_type_id"
-    t.integer  "container_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "ledgers", force: :cascade do |t|
-    t.string   "name"
-    t.text     "address"
-    t.string   "contact_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -322,12 +265,6 @@ ActiveRecord::Schema.define(version: 20150831083143) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "package_types", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "paid_types", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
@@ -340,35 +277,10 @@ ActiveRecord::Schema.define(version: 20150831083143) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "payment_vouchers", force: :cascade do |t|
-    t.string   "voucher_no"
-    t.date     "date"
-    t.decimal  "amount"
-    t.boolean  "payment_method", default: false
-    t.string   "cheque_no"
-    t.string   "bank_name"
-    t.decimal  "cash"
-    t.string   "ledger_name"
-    t.string   "details"
-    t.integer  "ledger_id"
-    t.integer  "employee_id"
-    t.integer  "expense_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "status"
-  end
-
   create_table "place_of_births", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "rate_masters", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "companies"
-    t.decimal  "rate"
   end
 
   create_table "receipts", force: :cascade do |t|
@@ -527,29 +439,5 @@ ActiveRecord::Schema.define(version: 20150831083143) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-
-  create_table "vehicle_companies", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "vehicles", force: :cascade do |t|
-    t.string   "name"
-    t.string   "reg_no"
-    t.integer  "vehicle_company_id"
-    t.date     "date_of_purchase"
-    t.date     "insurance_renewal"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-  end
-
-  create_table "warehouses", force: :cascade do |t|
-    t.string   "name"
-    t.text     "address"
-    t.string   "contact_no"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
 end
