@@ -7,9 +7,6 @@ FactoryGirl.define do
     no_of_student5 30
     total_number 100
     qty 5
-
-    after(:build) do |meal|
-      create(:meal, title: "Rice")
-    end
+    meal
   end
 end
