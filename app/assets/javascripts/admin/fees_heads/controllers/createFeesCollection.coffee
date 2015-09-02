@@ -174,7 +174,10 @@
             $scope.receipt.receiptsFeesHeads = receiptsFeesHeadsAttributes
             $scope.receipt.studentId = $scope.student?.id
 
+            $scope.receipt.date = $scope.feesHeadDate
+
             new Receipt($scope.receipt).create().then (response) ->
+                debugger
                 $scope.alert = true
 
                 sum = response.id + 1

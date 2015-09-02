@@ -13,7 +13,7 @@ class Admin::DashboardsController < ApplicationController
 
     render :json => {
       :students => Student.all,
-      :employees => Employee.all,
+      :employees => Employee.joins(:section).where('lower(title) = ? ', 'Teaching'.downcase ),
       :students_female_count => Student.where(:gender => "female").count,
       :students_male_count => Student.where(:gender => "male").count,
       :employees_govt_pay => Employee.joins(:paid_type).where('lower(title) = ? ', 'Govt. pay'.downcase),
