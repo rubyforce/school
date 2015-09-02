@@ -16,4 +16,5 @@ describe DailyMeal do
   #     expect(daily_meal.no_of_student5).to eq(30)
   #   end
   # end
+
 end
