@@ -45,6 +45,11 @@
       $scope.foods = []
 
     $scope.create = ->
+      $scope.daily_meal.no_of_student1 = $scope.meal.no_of_student1
+      $scope.daily_meal.no_of_student2 = $scope.meal.no_of_student2
+      $scope.daily_meal.no_of_student3 = $scope.meal.no_of_student3
+      $scope.daily_meal.no_of_student4 = $scope.meal.no_of_student4
+      $scope.daily_meal.no_of_student5 = $scope.meal.no_of_student5
       $scope.daily_meal.dailyMealMealsAttributes = $scope.foods
       $scope.daily_meal.create().then (response) ->
         $scope.alert = true
