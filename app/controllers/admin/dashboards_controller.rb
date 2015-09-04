@@ -27,9 +27,9 @@ class Admin::DashboardsController < ApplicationController
       .sum(:salary),
       :yesterday_closing_balance => CashManagement.where("EXTRACT(DAY FROM created_at) = ?", Date.today.day-1).sum(:cash_closing),
 
-      :today_fees_collection => Receipt.where("EXTRACT(DAY FROM created_at) = ?", Date.today.day).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
-      :current_month_fees_collection => Receipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
-      :last_month_fees_collection => Receipt.where("EXTRACT(MONTH FROM created_at) = ?", Date.today.month-1).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
+      :today_fees_collection => Receipt.where("EXTRACT(DAY FROM date) = ?", Date.today.day).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
+      :current_month_fees_collection => Receipt.where("EXTRACT(MONTH FROM date) = ?", Date.today.month).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
+      :last_month_fees_collection => Receipt.where("EXTRACT(MONTH FROM date) = ?", Date.today.month-1).where(:status => nil).where(:cheque_status => nil).sum(:total).round(2),
       :outstanding_fees => (expected - paid - concession).round(2)
     }
   end
