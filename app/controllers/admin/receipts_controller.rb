@@ -83,7 +83,7 @@ class Admin::ReceiptsController < ApplicationController
     date = Date.parse(params[:date])
 
     @receipts = Receipt
-        .where('date BETWEEN ? AND ?', Date.parse("01/01/#{DateTime.now.year}"), Date.parse("31/12/#{DateTime.now.year}"))
+        .where('date BETWEEN ? AND ?', date.beginning_of_year, date.end_of_year)
         .where(student_id: params[:student_id])
         .where(status: nil)
         .where(cheque_status: nil)
