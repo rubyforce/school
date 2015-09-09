@@ -4,6 +4,20 @@
     $scope.alert = false
     $scope.clicked = true
 
+    makeTableSelectable = ->
+      $timeout ->
+        table = $('table')
+        table.tableselect
+          multiple: false
+          activeClass: 'warning'
+          onSelectionChanged: (element) ->
+            return unless element?
+            user = $scope.students[element.data('index')]
+            $scope.$apply ->
+              $scope.formAction(user)
+
+    $scope.$watch 'currentPage', makeTableSelectable
+
     $scope.formAction = (user) ->
       $scope.currentUser = user
       $scope.clicked = false
