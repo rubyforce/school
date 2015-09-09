@@ -38,10 +38,12 @@
           $timeout ->
             for e1 in $scope.employeeSalaryReceipts
               e1.properties.disabled = false
+              e1.remark = ""
 
               e2 = _.find response, (e) -> e.employee_id is e1.employeeId
               if e2?
                 e1.properties.disabled = true
+                e1.remark = e2.remark
 
     render = ->
       # Before making merges between student.studentsFeesHeads and fees_heads
