@@ -35,7 +35,7 @@ class Admin::PaidTypesController < ApplicationController
   end
 
   def destroy
-    @paid_type= PaidType.find(params[:id])
+    @paid_type = PaidType.find(params[:id])
     @paid_type.destroy
     render :json => @paid_type
   end
